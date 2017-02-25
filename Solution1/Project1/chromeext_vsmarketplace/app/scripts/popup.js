@@ -4,18 +4,12 @@ $(function () {
     var theTot = 999;
 
     //grab ALL elements from DOM with selector    .install-count
-
-
     //sum their values into 'theTot'
+
     console.log(theTot);
+    $('#daTotal').val(theTot);//i want this to be the dom of pop.html but i suspect is looking in the dom of the page
 
-
-
-    //$('#daTotal').val(theTot);
-    $('#daTotal').innerHtml(theTot);
-
-
-
+    
 
     // When button clicked do something
     //$('#GetTotalBtn').click(function () {
