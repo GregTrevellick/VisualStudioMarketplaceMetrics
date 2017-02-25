@@ -2,13 +2,13 @@
   "manifest_version":2,
   "name": "gregt Page action by URL",
   "version": "1.0",
-  "description": "gregt Shows a page action for urls which have the letter 'g' in them.",
+  "description": "gregt desc.",
  
 
   "page_action" :
   {
-    "default_icon" : "img/icon-19.png",
-    "default_title" : "gregt manifest default_title There's a 'G' in this URL!",
+    "default_icon" : "img/icon_purple.png",
+    "default_title" : "gregt manifest default_title ",
     "default_popup": "popup.html"
   },
 
@@ -25,14 +25,12 @@
   [
     {
       "matches": 
-      [
-        "http://localhost/*",
-        "http://www.bbc.co.uk/*",
+      [        
         "https://marketplace.visualstudio.com/*"
       ],
       "js": 
       [
-        "scripts/spur_dom.js",
+        "scripts/vsmarketplace_dom.js",
         "scripts/jquery-1.10.2.js"
       ]
     }
@@ -40,12 +38,10 @@
   
   "permissions" : [
     "declarativeContent",
-    "http://localhost/*",
-    "http://www.bbc.co.uk/*",
     "https://marketplace.visualstudio.com/*",
-    "tabs",
-    "storage",
-    "notifications"
+    "tabs"
+    //"storage",
+    //"notifications"
   ],
 
 

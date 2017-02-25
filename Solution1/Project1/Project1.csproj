@@ -34,37 +34,20 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="chromeext_vsmarketplace\app\manifest.json" />
-    <None Include="sischromeext\app\manifest.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="chromeext_vsmarketplace\app\img\icon_helloworld.png" />
     <Content Include="chromeext_vsmarketplace\app\img\icon_purple.png" />
-    <Content Include="chromeext_vsmarketplace\app\img\icon_xerox.png" />
     <Content Include="chromeext_vsmarketplace\app\popup.html" />
     <Content Include="chromeext_vsmarketplace\app\scripts\eventPage.js" />
     <Content Include="chromeext_vsmarketplace\app\img\icon-128.png" />
     <Content Include="chromeext_vsmarketplace\app\img\icon-19.png" />
     <Content Include="chromeext_vsmarketplace\app\img\icon-48.png" />
     <Content Include="chromeext_vsmarketplace\app\scripts\jquery-1.10.2.js" />
-    <Content Include="chromeext_vsmarketplace\app\scripts\zoptions.js" />
     <Content Include="chromeext_vsmarketplace\app\scripts\popup.js" />
-    <Content Include="chromeext_vsmarketplace\app\scripts\spur_dom.js" />
+    <Content Include="chromeext_vsmarketplace\app\scripts\vsmarketplace_dom.js" />
     <Content Include="chromeext_vsmarketplace\app\styles\my.css" />
     <Content Include="chromeext_vsmarketplace\scripts\chrome-api-vsdoc.js" />
     <Content Include="chromeext_vsmarketplace\scripts\_references.js" />
-    <Content Include="sischromeext\app\img\icon_helloworld.png" />
-    <Content Include="sischromeext\app\img\icon_purple.png" />
-    <Content Include="sischromeext\app\img\icon_xerox.png" />
-    <Content Include="sischromeext\app\options.html" />
-    <Content Include="sischromeext\app\popup.html" />
-    <Content Include="sischromeext\app\scripts\eventPage.js" />
-    <Content Include="sischromeext\app\scripts\jquery-1.10.2.js" />
-    <Content Include="sischromeext\app\scripts\options.js" />
-    <Content Include="sischromeext\app\scripts\popup.js" />
-    <Content Include="sischromeext\app\scripts\spur_dom.js" />
-    <Content Include="sischromeext\app\styles\my.css" />
-    <Content Include="sischromeext\scripts\chrome-api-vsdoc.js" />
-    <Content Include="sischromeext\scripts\_references.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
