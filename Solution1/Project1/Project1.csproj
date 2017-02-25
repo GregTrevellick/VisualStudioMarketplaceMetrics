@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4EE59A43-BFCE-4966-B43C-350E06592DE7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Project1</RootNamespace>
+    <AssemblyName>Project1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="app1\manifest.json" />
+    <None Include="sischromeext\app\manifest.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app1\eventPage.js" />
+    <Content Include="app1\icon-128.png" />
+    <Content Include="app1\icon-19.png" />
+    <Content Include="app1\icon-48.png" />
+    <Content Include="sischromeext\app\img\icon_helloworld.png" />
+    <Content Include="sischromeext\app\img\icon_purple.png" />
+    <Content Include="sischromeext\app\img\icon_xerox.png" />
+    <Content Include="sischromeext\app\options.html" />
+    <Content Include="sischromeext\app\popup.html" />
+    <Content Include="sischromeext\app\scripts\eventPage.js" />
+    <Content Include="sischromeext\app\scripts\jquery-1.10.2.js" />
+    <Content Include="sischromeext\app\scripts\options.js" />
+    <Content Include="sischromeext\app\scripts\popup.js" />
+    <Content Include="sischromeext\app\scripts\spur_dom.js" />
+    <Content Include="sischromeext\app\styles\my.css" />
+    <Content Include="sischromeext\app\TextFile1.txt" />
+    <Content Include="sischromeext\scripts\chrome-api-vsdoc.js" />
+    <Content Include="sischromeext\scripts\_references.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
