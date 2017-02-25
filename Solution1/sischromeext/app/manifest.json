@@ -1,0 +1,48 @@
+{
+	"manifest_version":2,
+	"name":"My Extension Name",
+	"description":"My Extension Description",
+	"version":"1.0",
+	"options_page" : "options.html",
+
+  "page_action": 
+  {
+    "default_icon": "img/icon_purple.png",
+    "default_title": "My Page Action Pop Up Title",
+    "default_popup": "popup.html"
+  },
+
+  "background": 
+  {
+    "scripts": 
+    [
+      "scripts/eventPage.js"
+    ],
+    "persistent": false
+  },
+
+  "content_scripts": 
+  [
+    {
+      "matches": 
+      [
+        "http://localhost/*"
+      ],
+      "js": 
+      [
+        "scripts/spur_dom.js",
+        "scripts/jquery-1.10.2.js"
+      ]
+    }
+  ],
+
+  "permissions": [
+    "http://localhost/*",
+    //"http://coretime/Coretime/tmnet.dll/Login",
+    //"http://coretime/*",
+    //"http://coretime/Coretime/",
+    "tabs",
+    "storage",
+    "notifications"
+  ]
+}

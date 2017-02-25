@@ -1,0 +1,20 @@
+﻿EasiPermits
+-----------
+renew permit   TESTSVR2008DEV1\SQL2012DEV   Cambridge_Sidem_Live   RB\1209   54943
+BUS\4580 pin 21257
+RA\3153(?) pin 28516(?)
+
+
+
+OCM
+----
+video wmv BS94092010 / DJC20A
+TX10155046 / sp01acs
+BS73738187 / AAAAAA
+
+
+
+CoreTime
+--------
+<input type="text" class="inputnew" name="UserIn" id="UserIn" tabindex="1" style="width:150px;" autocomplete="off">
+<input type="password" class="inputnew" name="PwdIn" id="PwdIn" tabindex="3" style="width:150px;" autocomplete="off">
