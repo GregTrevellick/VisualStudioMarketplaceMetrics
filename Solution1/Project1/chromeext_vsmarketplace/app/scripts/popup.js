@@ -9,7 +9,7 @@ $(function () {
     console.log(theTot);
     // $('#daTotal').val(theTot);
     var display = document.getElementById('daTotal');
-    display.innerHTML = '22222';
+    display.innerHTML = theTot;
 
 
 
