@@ -1,5 +1,7 @@
 $(function () {
 
+    $('#DaTotal').val('123456');
+
     // When button clicked do something
     $('#GetTotalBtn').click(function () {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {

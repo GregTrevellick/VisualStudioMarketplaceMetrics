@@ -15,7 +15,9 @@ chrome.runtime.onInstalled.addListener(function() {
           })
         ],
 
-        // And shows the extension's page action (defined in manifest.json as popup.html which invokes popup.js)
+        // And shows the extension's page action 
+        // i.e. show popup.html (as defined in the manifest's 'page action' section)
+        // which will display what popup.js instructs it too
         actions: [ new chrome.declarativeContent.ShowPageAction() ]
       }
     ]);
