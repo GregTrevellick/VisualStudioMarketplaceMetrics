@@ -38,9 +38,6 @@
 
   "permissions": [
     "http://localhost/*",
-    //"http://coretime/Coretime/tmnet.dll/Login",
-    //"http://coretime/*",
-    //"http://coretime/Coretime/",
     "tabs",
     "storage",
     "notifications"

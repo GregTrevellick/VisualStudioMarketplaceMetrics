@@ -33,14 +33,25 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="app1\manifest.json" />
+    <None Include="chromeext_vsmarketplace\app\manifest.json" />
     <None Include="sischromeext\app\manifest.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app1\eventPage.js" />
-    <Content Include="app1\icon-128.png" />
-    <Content Include="app1\icon-19.png" />
-    <Content Include="app1\icon-48.png" />
+    <Content Include="chromeext_vsmarketplace\app\img\icon_helloworld.png" />
+    <Content Include="chromeext_vsmarketplace\app\img\icon_purple.png" />
+    <Content Include="chromeext_vsmarketplace\app\img\icon_xerox.png" />
+    <Content Include="chromeext_vsmarketplace\app\popup.html" />
+    <Content Include="chromeext_vsmarketplace\app\scripts\eventPage.js" />
+    <Content Include="chromeext_vsmarketplace\app\img\icon-128.png" />
+    <Content Include="chromeext_vsmarketplace\app\img\icon-19.png" />
+    <Content Include="chromeext_vsmarketplace\app\img\icon-48.png" />
+    <Content Include="chromeext_vsmarketplace\app\scripts\jquery-1.10.2.js" />
+    <Content Include="chromeext_vsmarketplace\app\scripts\zoptions.js" />
+    <Content Include="chromeext_vsmarketplace\app\scripts\popup.js" />
+    <Content Include="chromeext_vsmarketplace\app\scripts\spur_dom.js" />
+    <Content Include="chromeext_vsmarketplace\app\styles\my.css" />
+    <Content Include="chromeext_vsmarketplace\scripts\chrome-api-vsdoc.js" />
+    <Content Include="chromeext_vsmarketplace\scripts\_references.js" />
     <Content Include="sischromeext\app\img\icon_helloworld.png" />
     <Content Include="sischromeext\app\img\icon_purple.png" />
     <Content Include="sischromeext\app\img\icon_xerox.png" />
@@ -52,7 +63,6 @@
     <Content Include="sischromeext\app\scripts\popup.js" />
     <Content Include="sischromeext\app\scripts\spur_dom.js" />
     <Content Include="sischromeext\app\styles\my.css" />
-    <Content Include="sischromeext\app\TextFile1.txt" />
     <Content Include="sischromeext\scripts\chrome-api-vsdoc.js" />
     <Content Include="sischromeext\scripts\_references.js" />
   </ItemGroup>

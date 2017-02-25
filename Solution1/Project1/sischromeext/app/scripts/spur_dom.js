@@ -30,7 +30,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         $('#ctl00_ContentPlaceHolder1_strVRM').val('AAAAAA');
     }
 
-    if (request.action == "ocmPcnVrm3") {
+    if (request.action == "OcmPcnVrm3GetTotal") {
         $('#ctl00_ContentPlaceHolder1_strFormattedCaseNo').val('BS94092010');
         $('#ctl00_ContentPlaceHolder1_strVRM').val('DJC20A');
     }
