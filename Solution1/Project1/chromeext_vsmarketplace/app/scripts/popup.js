@@ -7,9 +7,12 @@ $(function () {
     //sum their values into 'theTot'
 
     console.log(theTot);
-    $('#daTotal').val(theTot);//i want this to be the dom of pop.html but i suspect is looking in the dom of the page
+   // $('#daTotal').val(theTot);//i want this to be the dom of pop.html but i suspect is looking in the dom of the page
+    var display = document.getElementById('daTotal');
+    display.innerHTML = '22222';
 
-    
+
+
 
     // When button clicked do something
     //$('#GetTotalBtn').click(function () {
