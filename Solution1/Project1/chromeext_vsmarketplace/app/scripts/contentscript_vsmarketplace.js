@@ -4,16 +4,16 @@ console.log("content script 0");
 chrome.runtime.onMessage.addListener(
 
     function (request, sender, sendResponse) {
-        console.log("content script 1");
+       console.log("content script 1");
    
         //if (msg.text === 'report_back') {//ocmPcnVrm2
         if (request.action == "ocmPcnVrm1") {
-            console.log("content script 2");
+           // console.log("content script 2");
             // Call the specified callback, passing the web-page's DOM content as argument
             sendResponse(document.all[0].outerHTML);
         }
 
-        console.log("content script 3");
+       // console.log("content script 3");
     }
 
 );
