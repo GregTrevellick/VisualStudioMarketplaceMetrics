@@ -17,17 +17,17 @@ $(function () {
         var theTot = 999;
 
         //grab ALL elements from DOM with selector    .install-count
-        jQuery('.install-count').each(function () {
-            console.log("popup.js here5");
-            var currentElement = $(this);
-            var value = currentElement.val(); // if it is an input/select/textarea field
-            console.log(value);
-        });
+       // jQuery('.install-count').each(function () {
+          //  console.log("popup.js here5");
+         //   var currentElement = $(this);
+         //   var value = currentElement.val(); // if it is an input/select/textarea field
+         //   console.log(value);
+     //   });
 
-        console.log("popup.js here6 heres the tot...");
-        console.log(theTot);
+      //  console.log("popup.js here6 heres the tot...");
+      //  console.log(theTot);
         var display = document.getElementById('daTotal');
-        display.innerHTML = theTot;
+        display.innerHTML = domContent;//theTot;
 
     }
 });
