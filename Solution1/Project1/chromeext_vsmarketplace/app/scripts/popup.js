@@ -3,7 +3,13 @@ $(function () {
 
     var theTot = 999;
 
+    debugger;
+
     //grab ALL elements from DOM with selector    .install-count
+    var dlcounts = document.getElementsByClassName('install-count');
+    console.log(dlcounts.item(0));
+    console.log(dlcounts.innerHTML);
+    theTot = dlcounts.innerHTML;
     //sum their values into 'theTot'
 
     console.log(theTot);
