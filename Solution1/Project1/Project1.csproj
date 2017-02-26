@@ -38,13 +38,13 @@
   <ItemGroup>
     <Content Include="chromeext_vsmarketplace\app\img\icon_purple.png" />
     <Content Include="chromeext_vsmarketplace\app\popup.html" />
-    <Content Include="chromeext_vsmarketplace\app\scripts\eventPage.js" />
+    <Content Include="chromeext_vsmarketplace\app\scripts\backgroundEventPage.js" />
     <Content Include="chromeext_vsmarketplace\app\img\icon-128.png" />
     <Content Include="chromeext_vsmarketplace\app\img\icon-19.png" />
     <Content Include="chromeext_vsmarketplace\app\img\icon-48.png" />
     <Content Include="chromeext_vsmarketplace\app\scripts\jquery-1.10.2.js" />
     <Content Include="chromeext_vsmarketplace\app\scripts\popup.js" />
-    <Content Include="chromeext_vsmarketplace\app\scripts\vsmarketplace_dom_contentscript.js" />
+    <Content Include="chromeext_vsmarketplace\app\scripts\contentscript_vsmarketplace.js" />
     <Content Include="chromeext_vsmarketplace\app\styles\my.css" />
     <Content Include="chromeext_vsmarketplace\scripts\chrome-api-vsdoc.js" />
     <Content Include="chromeext_vsmarketplace\scripts\_references.js" />

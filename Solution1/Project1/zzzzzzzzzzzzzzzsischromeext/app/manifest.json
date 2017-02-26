@@ -16,7 +16,7 @@
   {
     "scripts": 
     [
-      "scripts/eventPage.js"
+      "scripts/backgroundEventPage_spur.js"
     ],
     "persistent": false
   },
@@ -30,7 +30,7 @@
       ],
       "js": 
       [
-        "scripts/spur_dom.js",
+        "scripts/contentscript_spur.js",
         "scripts/jquery-1.10.2.js"
       ]
     }

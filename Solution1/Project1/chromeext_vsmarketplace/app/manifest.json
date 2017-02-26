@@ -16,7 +16,7 @@
   {
     "scripts": 
     [
-    	"scripts/eventPage.js"
+      "scripts/backgroundEventPage.js"
     ],
     "persistent": false
   },
@@ -30,7 +30,7 @@
       ],
       "js": 
       [
-        "scripts/vsmarketplace_dom_contentscript.js",
+        "scripts/contentscript_vsmarketplace.js",
         "scripts/jquery-1.10.2.js"
       ]
     }
