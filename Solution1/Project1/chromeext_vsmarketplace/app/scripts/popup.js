@@ -1,19 +1,20 @@
 $(function () {
-    console.log('here');
 
+    console.log('here');
     var theTot = 999;
 
-    debugger;
-
     //grab ALL elements from DOM with selector    .install-count
-    var dlcounts = document.getElementsByClassName('install-count');
-    console.log(dlcounts.item(0));
-    console.log(dlcounts.innerHTML);
-    theTot = dlcounts.innerHTML;
-    //sum their values into 'theTot'
+    jQuery('.install-count').each(function () {
+        var currentElement = $(this);
+        var value = currentElement.val(); // if it is an input/select/textarea field
+        console.log(value);
+    });
+ 
+
+    //theTot = dlcounts.innerHTML;
+    
 
     console.log(theTot);
-    // $('#daTotal').val(theTot);
     var display = document.getElementById('daTotal');
     display.innerHTML = theTot;
 
