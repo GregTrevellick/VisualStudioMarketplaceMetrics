@@ -11,23 +11,14 @@ $(function () {
     psuedoClick();
     
     function doStuffWithDomCallBack(domContent) {
-     //   console.log("I received the following DOM content:\n" + domContent);
-
-        console.log("popup.js here4");
         var theTot = 999;
 
-        //grab ALL elements from DOM with selector    .install-count
-       // jQuery('.install-count').each(function () {
-          //  console.log("popup.js here5");
-         //   var currentElement = $(this);
-         //   var value = currentElement.val(); // if it is an input/select/textarea field
-         //   console.log(value);
-     //   });
+        // jQuery('.install-count').each(function () {
+        //   var currentElement = $(this);
+        //   var value = currentElement.val(); 
+        //   });
 
-      //  console.log("popup.js here6 heres the tot...");
-      //  console.log(theTot);
         var display = document.getElementById('daTotal');
-        display.innerHTML = domContent;//theTot;
-
+        display.innerHTML = domContent;
     }
 });
