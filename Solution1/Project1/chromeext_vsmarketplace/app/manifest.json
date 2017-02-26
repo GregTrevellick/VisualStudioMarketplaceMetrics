@@ -30,16 +30,17 @@
       ],
       "js": 
       [
-        "scripts/vsmarketplace_dom.js",
+        "scripts/vsmarketplace_dom_contentscript.js",
         "scripts/jquery-1.10.2.js"
       ]
     }
   ],
-  
-  "permissions" : [
+
+  "permissions": [
     "declarativeContent",
     "https://marketplace.visualstudio.com/*",
-    "tabs"
+    //"tabs"
+    "activeTab"
     //"storage",
     //"notifications"
   ],
