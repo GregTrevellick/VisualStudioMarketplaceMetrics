@@ -1,4 +1,11 @@
 ﻿body {
-    font-size: smaller;
+    /*font-size: smaller;*/
     /*background-color: aquamarine;*/
+}
+
+table {
+        max-width: 100%;
+ min-width: 400px;
+
+
 }
