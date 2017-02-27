@@ -3,7 +3,6 @@
     min-width: 400px;
 }
 
-/*gregt rename css class names below*/
 thead {
     font-weight: bold;
 }
@@ -11,6 +10,10 @@ thead {
 tfoot {
     text-decoration: overline;
 }
+
+
+
+/*gregt rename css class names below*/
 
 .nbr {
     text-align: right;
