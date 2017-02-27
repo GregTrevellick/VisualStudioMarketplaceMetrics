@@ -6,17 +6,9 @@ chrome.runtime.onMessage.addListener(
 
             var theDetailsJsonArray = new Array();
 
-            //jQuery('.install-count').each(function () {
-            //   console.log($(this).html());
-            //});
-
             jQuery('.core-info-cell').each(function () {
-                //debugger;
-                //var en = $(this).innerHtml.$('.item-title').innerHtml;//$(this).Child1.innerText
-                var itemtit = $(this).find('.item-title'); //$(this).find('.item-title').innerHtml;
-                //debugger;
+                var itemtit = $(this).find('.item-title');
                 var en = itemtit[0].innerText;
-                //debugger;
                 var dl = $(this).find('.install-count')[0].innerText;
 
                 var theJsonDetails =
