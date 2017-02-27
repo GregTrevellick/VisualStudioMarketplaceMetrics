@@ -1,15 +1,14 @@
 ﻿table {
-    max-width: 80%;
+    max-width: 85%;
     min-width: 400px;
 }
 
 /*gregt rename css class names below*/
-
-.hdr {
+thead {
     font-weight: bold;
 }
 
-.ftr {
+tfoot {
     text-decoration: overline;
 }
 

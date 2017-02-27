@@ -10,7 +10,25 @@
         Total install count: <div id="TotalInstallCount"></div>
         Total review count: <div id="TotalReviewCount"></div>
         <br />
-        <div id="DetailGrid"></div>
+        <!--<div id="DetailGrid"></div>-->
+        <table id="DetailGridTable">
+            <thead>
+                <tr>
+                    <td>Installs</td>
+                    <td>Title</td>
+                    <td>Reviews</td>
+                </tr>
+            </thead>
+            <tbody id="DetailGridTableBody"></tbody>
+            <tfoot>
+                <tr>
+                    <td class="nbr" id="GridTotalInstallCount"></td>
+                    <td></td>
+                    <td class="nbr" id="GridTotalReviewCount"></td>
+                </tr>
+            </tfoot>
+        </table>
+
     </body>
 </html>
 
