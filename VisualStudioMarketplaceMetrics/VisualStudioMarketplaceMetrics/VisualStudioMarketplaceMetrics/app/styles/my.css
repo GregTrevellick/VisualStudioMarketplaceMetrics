@@ -11,6 +11,10 @@ tfoot {
     text-decoration: overline;
 }
 
+.extensionTitle {
+    max-width: 44px;
+    background-color:burlywood;
+}
 
 
 /*gregt rename css class names below*/

@@ -8,13 +8,21 @@ chrome.runtime.onMessage.addListener(
 
             //jQuery('.core-info-cell').each(function () {
             //jQuery('.gallery-item-card').each(function () {
-            jQuery("[class^=gallery-item-card]").each(function () {
+            $("[class^=gallery-item-card]").each(function () {
+
+                var ratingTitle = $(this).find('.rating')[0].title;
+                var startRating = ratingTitle.indexOf('(');
+                var endRating = ratingTitle.indexOf(' ', startRating);
+
+                var reviewCount = ratingTitle.substring(startRating, endRating);
+
+
                // debugger;
                 var theJsonDetails =
                 {
                     InstallCount: $(this).find('.install-count')[0].innerText,
                     ItemTitle: $(this).find('.item-title')[0].innerText,
-                    ReviewCount: $(this).find('.rating')[0].title
+                    ReviewCount: reviewCount //$(this).find('.rating')[0].title
                 };
                 theDetailsJsonArray.push(theJsonDetails);
             });
