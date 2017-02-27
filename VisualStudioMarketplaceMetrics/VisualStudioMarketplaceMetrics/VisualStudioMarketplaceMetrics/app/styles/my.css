@@ -12,8 +12,9 @@ tfoot {
 }
 
 .extensionTitle {
-    max-width: 44px;
-    background-color:burlywood;
+    white-space: nowrap;
+    max-width: 13px;
+  /*  background-color:burlywood;*/
 }
 
 
