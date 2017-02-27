@@ -17,11 +17,12 @@ $(function () {
 
         var tbl = $("<table/>").attr("id", "mytable");
         $("#div1").append(tbl);
+
         for (var i = 0; i < obj.length; i++)
         {
             var tr = "<tr>";
             var td1 = "<td>" + obj[i]["DlCount"] + "</td>";
-            grandDLCount += obj[i]["DlCount"];
+            grandDLCount += parseInt(obj[i]["DlCount"]);
             var tdLast = "<td>" + obj[i]["ExtnNam"] + "</td></tr>";
             $("#mytable").append(tr + td1 + tdLast);
         }
