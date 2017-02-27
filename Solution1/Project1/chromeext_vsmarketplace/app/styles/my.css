@@ -1,11 +1,18 @@
-﻿body {
-    /*font-size: smaller;*/
-    /*background-color: aquamarine;*/
+﻿table {
+    max-width: 80%;
+    min-width: 400px;
 }
 
-table {
-        max-width: 100%;
- min-width: 400px;
+/*gregt rename css class names below*/
 
+.hdr {
+    font-weight: bold;
+}
 
+.ftr {
+    text-decoration: overline;
+}
+
+.nbr {
+    text-align: right;
 }
