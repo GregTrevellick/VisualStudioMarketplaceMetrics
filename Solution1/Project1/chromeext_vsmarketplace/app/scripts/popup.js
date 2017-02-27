@@ -1,5 +1,7 @@
 $(function () {
 
+    psuedoClick();
+
     function psuedoClick() {
         chrome.tabs.query(
             { active: true, currentWindow: true },
@@ -8,17 +10,22 @@ $(function () {
             });
     };
 
-    psuedoClick();
-    
-    function doStuffWithDomCallBack(domContent) {
-        var theTot = 999;
-
-        // jQuery('.install-count').each(function () {
-        //   var currentElement = $(this);
-        //   var value = currentElement.val(); 
-        //   });
-
+        
+    function doStuffWithDomCallBack(obj) {
         var display = document.getElementById('daTotal');
-        display.innerHTML = domContent;
+
+        var tbl = $("<table/>").attr("id", "mytable");
+        $("#div1").append(tbl);
+        for (var i = 0; i < obj.length; i++)
+        {
+            var tr = "<tr>";
+            var td1 = "<td>" + obj[i]["DlCount"] + "</td>";
+            var tdLast = "<td>" + obj[i]["ExtnNam"] + "</td></tr>";
+            $("#mytable").append(tr + td1 + tdLast);
+        }
+
+        daGrid.innerHTML = tbl;
+        //display.innerHTML = domDetailsJsonArray.DlCount;
+
     }
 });
