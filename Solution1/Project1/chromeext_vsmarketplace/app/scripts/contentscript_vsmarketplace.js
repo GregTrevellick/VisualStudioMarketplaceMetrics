@@ -11,10 +11,18 @@ chrome.runtime.onMessage.addListener(
             //});
 
             jQuery('.core-info-cell').each(function () {
+                //debugger;
+                //var en = $(this).innerHtml.$('.item-title').innerHtml;//$(this).Child1.innerText
+                var itemtit = $(this).find('.item-title'); //$(this).find('.item-title').innerHtml;
+                //debugger;
+                var en = itemtit[0].innerText;
+                //debugger;
+                var dl = $(this).find('.install-count')[0].innerText;
+
                 var theJsonDetails =
                 {
-                    ExtnNam: "oia",
-                    DlCount: 2
+                    DlCount: dl,
+                    ExtnNam: en
                 };
                 theDetailsJsonArray.push(theJsonDetails);
              });
