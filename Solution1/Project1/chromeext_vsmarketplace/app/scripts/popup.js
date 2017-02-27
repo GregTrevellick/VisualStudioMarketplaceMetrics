@@ -13,7 +13,7 @@ $(function () {
         
     function doStuffWithDomCallBack(obj) {
 
-        var grandDLCount = 0;
+        var totalInstallCount = 0;
 
         var tbl = $("<table/>").attr("id", "DetailTable");
         $("#DetailGrid").append(tbl);
@@ -21,13 +21,12 @@ $(function () {
         for (var i = 0; i < obj.length; i++)
         {
             var tr = "<tr>";
-            var td1 = "<td>" + obj[i]["DlCount"] + "</td>";
-            grandDLCount += parseInt(obj[i]["DlCount"]);
-            var tdLast = "<td>" + obj[i]["ExtnNam"] + "</td></tr>";
+            var td1 = "<td>" + obj[i]["InstallCount"] + "</td>";
+            totalInstallCount += parseInt(obj[i]["InstallCount"]);
+            var tdLast = "<td>" + obj[i]["ItemTitle"] + "</td></tr>";
             $("#DetailTable").append(tr + td1 + tdLast);
         }
 
-        var display = document.getElementById('OverallDownloadTotal');
-        display.innerHTML = grandDLCount;
+        document.getElementById('TotalInstallCount').innerHTML = totalInstallCount;
     }
 });
