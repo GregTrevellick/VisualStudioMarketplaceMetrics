@@ -2,7 +2,7 @@
 {
     class Class1
     {
-        public void Main()
+        static void Main()
         { }
     }
 }
