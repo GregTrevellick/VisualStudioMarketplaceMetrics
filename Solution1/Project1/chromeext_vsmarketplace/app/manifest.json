@@ -1,14 +1,13 @@
 {
   "manifest_version":2,
-  "name": "gregt Page action by URL",
+  "name": "Visual Studio Marketplace Metrics",
   "version": "1.0",
-  "description": "gregt desc.",
- 
+  "description": "See the total install count & other metrics for all your Visual Studio Marketplace extensions (VS IDE + VSTS + VS Code) with just 1 click.",
 
   "page_action" :
   {
     "default_icon" : "img/icon_purple.png",
-    "default_title" : "gregt manifest default_title ",
+    "default_title" : "Visual Studio Marketplace Metrics",
     "default_popup": "popup.html"
   },
 
@@ -16,7 +15,7 @@
   {
     "scripts": 
     [
-      "scripts/backgroundEventPage.js"
+      "scripts/background.js"
     ],
     "persistent": false
   },
@@ -30,7 +29,7 @@
       ],
       "js": 
       [
-        "scripts/contentscript_vsmarketplace.js",
+        "scripts/contentscript.js",
         "scripts/jquery-1.10.2.js"
       ]
     }
@@ -39,13 +38,8 @@
   "permissions": [
     "declarativeContent",
     "https://marketplace.visualstudio.com/*",
-    //"tabs"
     "activeTab"
-    //"storage",
-    //"notifications"
   ],
-
-
 
   "icons" : {
     "48" : "img/icon-48.png",
