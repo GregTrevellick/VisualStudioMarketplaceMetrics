@@ -35,7 +35,10 @@ $(function () {
         document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount;
         document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount;
 
-        
-        $("tbody").sortable();
+        $(document).ready(function () {
+            $("#DetailGridTable").tablesorter();
+
+        }); 
+
     }
 });
