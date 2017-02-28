@@ -12,14 +12,14 @@ chrome.runtime.onMessage.addListener(
                 var installCountRounded = $(this).find('.install-count')[0].innerText;
                 var installCount = installCountRounded.replace("K", ",000");
 
-                var ratingTitle = $(this).find('.rating')[0].title;
-                var startRating = ratingTitle.indexOf('(') + 1;
-                var endRating = ratingTitle.indexOf(' ', startRating);
-                var reviewCount = ratingTitle.substring(startRating, endRating);///////////////// "10,027,917";
+                var reviewTitle = $(this).find('.rating')[0].title;
+                var startReview = reviewTitle.indexOf('(') + 1;
+                var endReview = reviewTitle.indexOf(' ', startReview);
+                var reviewCount = reviewTitle.substring(startReview, endReview);
 
                 var theJsonDetails =
                 {
-                    InstallCount: installCount,/////////////// $(this).find('.install-count')[0].innerText,
+                    InstallCount: installCount,
                     ItemTitle: $(this).find('.item-title')[0].innerText,
                     ReviewCount: reviewCount 
                 };

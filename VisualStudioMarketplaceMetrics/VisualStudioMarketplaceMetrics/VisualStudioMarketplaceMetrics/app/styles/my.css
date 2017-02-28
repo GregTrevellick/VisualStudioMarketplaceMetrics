@@ -1,33 +1,12 @@
 ﻿table {
-    max-width: 85%;
+    /*max-width: 85%;*/
     min-width: 400px;
 }
 
 
-
-/*
-thead {
-    font-weight: bold;
-}
-
-tfoot {
-    text-decoration: overline;
-}
-    */
-
-
-
-/*
-.extensionTitle {
-    white-space: nowrap;
-}
-    */
-
-
-
 /*gregt rename css class names below*/
 
-.nbr {
+.numeric {
     text-align: right;
 }
     
