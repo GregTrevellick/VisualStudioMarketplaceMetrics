@@ -9,18 +9,17 @@ chrome.runtime.onMessage.addListener(
            //$("[class^=gallery-item-card]").each(function () {
              $("[class^=grid-item]").each(function () {
 
-
-                 var installCountRounded = $(this).find('.install-count')[0].innerText;
-                 var installCount = installCountRounded.replace("K", ",000");
+                var installCountRounded = $(this).find('.install-count')[0].innerText;
+                var installCount = installCountRounded.replace("K", ",000");
 
                 var ratingTitle = $(this).find('.rating')[0].title;
                 var startRating = ratingTitle.indexOf('(') + 1;
                 var endRating = ratingTitle.indexOf(' ', startRating);
-                var reviewCount = ratingTitle.substring(startRating, endRating);// "10,027,917";//
+                var reviewCount = ratingTitle.substring(startRating, endRating);///////////////// "10,027,917";
 
                 var theJsonDetails =
                 {
-                    InstallCount: installCount,// $(this).find('.install-count')[0].innerText,
+                    InstallCount: installCount,/////////////// $(this).find('.install-count')[0].innerText,
                     ItemTitle: $(this).find('.item-title')[0].innerText,
                     ReviewCount: reviewCount 
                 };
