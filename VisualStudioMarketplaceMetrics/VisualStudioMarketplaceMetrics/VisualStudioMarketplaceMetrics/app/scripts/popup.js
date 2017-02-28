@@ -21,17 +21,16 @@ $(function () {
         //Data rows
         for (var i = 0; i < obj.length; i++)
         {
-            //gregt alt text with full description 
-            //gregt href to the site for the vsix
-            //gregt add publish date
-            //gregt full description
-            //gregt publisher
+            //gregt href to the vsix 
+            //gregt full description (as alt text ?)
+            //gregt publish date ?
+            //gregt publisher ?
 
             var numericInstallCount = parseInt(obj[i]["InstallCount"]);
             var numericReviewCount = parseInt(obj[i]["ReviewCount"]);
 
-            totalInstallCount += numericInstallCount;//parseInt(obj[i]["InstallCount"]);
-            totalReviewCount += numericReviewCount;//parseInt(obj[i]["ReviewCount"]);
+            totalInstallCount += numericInstallCount;
+            totalReviewCount += numericReviewCount;
 
             var colInstallCount = "<td class='numeric'>" + numericInstallCount.toLocaleString() + "</td>";
             var colItemTitle = "<td>" + obj[i]["ItemTitle"] + "</td>";
@@ -45,6 +44,7 @@ $(function () {
         document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
         document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
 
+        //Enable table sorting
         $(document).ready(function () {
             $("#DetailGridTable").tablesorter();
 
