@@ -3,6 +3,9 @@
     min-width: 400px;
 }
 
+
+
+/*
 thead {
     font-weight: bold;
 }
@@ -10,6 +13,8 @@ thead {
 tfoot {
     text-decoration: overline;
 }
+    */
+
 
 
 /*
@@ -25,3 +30,4 @@ tfoot {
 .nbr {
     text-align: right;
 }
+    
