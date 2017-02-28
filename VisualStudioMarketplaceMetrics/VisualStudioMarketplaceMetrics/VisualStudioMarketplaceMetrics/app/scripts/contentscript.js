@@ -11,7 +11,7 @@ chrome.runtime.onMessage.addListener(
                 var ratingTitle = $(this).find('.rating')[0].title;
                 var startRating = ratingTitle.indexOf('(') + 1;
                 var endRating = ratingTitle.indexOf(' ', startRating);
-                var reviewCount = ratingTitle.substring(startRating, endRating);
+                var reviewCount = ratingTitle.substring(startRating, endRating);// "10,027,917";//
 
                 var theJsonDetails =
                 {

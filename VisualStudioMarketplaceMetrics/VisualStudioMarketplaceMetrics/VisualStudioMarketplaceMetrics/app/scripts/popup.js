@@ -36,9 +36,15 @@ $(function () {
         document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount;
 
         $(document).ready(function () {
-            $("#DetailGridTable").tablesorter();
+            $("#DetailGridTable").tablesorter();//({ textExtraction: myTextExtraction });
 
         }); 
+
+    //    var myTextExtraction = function (node) {
+      //      debugger;
+       //     // extract data from markup and return it 
+     //       return node.childNodes[0].childNodes[0].innerHTML;
+     //   }
 
     }
 });
