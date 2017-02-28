@@ -50,7 +50,7 @@
     <Content Include="VisualStudioMarketplaceMetrics\scripts\_references.js" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="dummy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

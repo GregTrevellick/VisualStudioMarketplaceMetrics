@@ -1,4 +1,4 @@
-﻿namespace VisualStudioMarketplaceMetrics
+﻿namespace dummy
 {
     class Class1
     {
