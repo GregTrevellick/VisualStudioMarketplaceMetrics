@@ -6,10 +6,7 @@ chrome.runtime.onMessage.addListener(
 
             var theDetailsJsonArray = new Array();
 
-            // $("[class^=gallery-item-card]").each(function () {
-            //     $("gallery-item-card").each(function () {
              $("[class^=grid-item]").each(function () {
-
 
                 var ratingTitle = $(this).find('.rating')[0].title;
                 var startRating = ratingTitle.indexOf('(') + 1;

@@ -1,41 +1,33 @@
 <!doctype html>
 <html>
-    <head>
-        <title>gregt vs marketplace My Chrome Extension Spur</title>
-
-        <link href="styles/my.css" rel="stylesheet" />
-
-        <!--gregt cdn this, with a fallback-->
-        <!--<script type="text/javascript" src="scripts/jquery-1.10.2.js"></script>-->
-        <script src="scripts/jquery-latest.js"></script>
-        <script type="text/javascript" src="scripts/jquery.tablesorter.js"></script>
-
-        <script src="scripts/popup.js"></script>
-    </head>
-    <body>
-        <div>
-            Total install count
-            <div id="TotalInstallCount"></div>
-            Total review count
-            <div id="TotalReviewCount"></div>
-        </div>
-        <table id="DetailGridTable" border="1" cellpadding="0" cellspacing="0" class="tablesorter">
-            <thead>
-                <tr>
-                    <th>Installs</th>
-                    <th>Title</th>
-                    <th>Reviews</th>
-                </tr>
-            </thead>
-            <tbody id="DetailGridTableBody"></tbody>
-            <tfoot>
-                <tr>
-                    <td class="nbr" id="GridTotalInstallCount"></td>
-                    <td></td>
-                    <td class="nbr" id="GridTotalReviewCount"></td>
-                </tr>
-            </tfoot>
-        </table>
-    </body>
+<head>
+    <title>Visual Studio Marketplace Metrics</title>
+    <link href="styles/my.css" rel="stylesheet" />
+    <!--gregt cdn this, with a fallback-->
+    <script src="scripts/jquery-latest.js"></script>
+    <script type="text/javascript" src="scripts/jquery.tablesorter.js"></script>
+    <script src="scripts/popup.js"></script>
+</head>
+<body>
+    Total install count&nbsp;<span id="TotalInstallCount"></span>
+    Total review count&nbsp;<span id="TotalReviewCount"></span>
+    <table id="DetailGridTable" border="1" cellpadding="0" cellspacing="0" class="tablesorter">
+        <thead>
+            <tr>
+                <th>Installs</th>
+                <th>Title</th>
+                <th>Reviews</th>
+            </tr>
+        </thead>
+        <tbody id="DetailGridTableBody"></tbody>
+        <tfoot>
+            <tr>
+                <td class="nbr" id="GridTotalInstallCount"></td>
+                <td></td>
+                <td class="nbr" id="GridTotalReviewCount"></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
 </html>
 

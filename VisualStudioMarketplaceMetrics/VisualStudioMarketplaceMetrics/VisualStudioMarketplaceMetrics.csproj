@@ -221,7 +221,7 @@
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\docs\index.html" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\docs\js\docs.js" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\docs\js\examples.js" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\jquery-1.10.2.js" />
+    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\zzzjquery-1.10.2.js" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\jquery-latest.js" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\jquery.metadata.js" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\jquery.tablesorter.js" />
