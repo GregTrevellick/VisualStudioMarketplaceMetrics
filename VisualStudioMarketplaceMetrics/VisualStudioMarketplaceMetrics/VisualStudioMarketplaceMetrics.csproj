@@ -39,7 +39,7 @@
     <None Include="VisualStudioMarketplaceMetrics\scripts\__jquery.tablesorter.zip" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="VisualStudioMarketplaceMetrics\app\img\Excel-Greek-Summation-Symbol.png" />
+    <Content Include="VisualStudioMarketplaceMetrics\scripts\Excel-Greek-Summation-Symbol.png" />
     <Content Include="VisualStudioMarketplaceMetrics\app\img\icon_19x19.png" />
     <Content Include="VisualStudioMarketplaceMetrics\app\popup.html" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\addons\pager\jquery.tablesorter.pager.css" />
