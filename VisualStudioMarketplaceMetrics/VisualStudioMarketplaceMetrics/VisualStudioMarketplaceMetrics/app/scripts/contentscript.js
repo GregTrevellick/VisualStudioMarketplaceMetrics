@@ -9,6 +9,10 @@ chrome.runtime.onMessage.addListener(
            //$("[class^=gallery-item-card]").each(function () {
              $("[class^=grid-item]").each(function () {
 
+
+                 var installCountRounded = $(this).find('.install-count')[0].innerText;
+                 var installCount = installCountRounded.replace("K", ",000");
+
                 var ratingTitle = $(this).find('.rating')[0].title;
                 var startRating = ratingTitle.indexOf('(') + 1;
                 var endRating = ratingTitle.indexOf(' ', startRating);
@@ -16,7 +20,7 @@ chrome.runtime.onMessage.addListener(
 
                 var theJsonDetails =
                 {
-                    InstallCount: $(this).find('.install-count')[0].innerText,
+                    InstallCount: installCount,// $(this).find('.install-count')[0].innerText,
                     ItemTitle: $(this).find('.item-title')[0].innerText,
                     ReviewCount: reviewCount 
                 };
