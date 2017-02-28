@@ -26,19 +26,24 @@ $(function () {
             //gregt add publish date
             //gregt full description
             //gregt publisher
-            totalInstallCount += parseInt(obj[i]["InstallCount"]);
-            totalReviewCount += parseInt(obj[i]["ReviewCount"]);
-            var colInstallCount = "<td class='numeric'>" +obj[i]["InstallCount"]+ "</td>";
+
+            var numericInstallCount = parseInt(obj[i]["InstallCount"]);
+            var numericReviewCount = parseInt(obj[i]["ReviewCount"]);
+
+            totalInstallCount += numericInstallCount;//parseInt(obj[i]["InstallCount"]);
+            totalReviewCount += numericReviewCount;//parseInt(obj[i]["ReviewCount"]);
+
+            var colInstallCount = "<td class='numeric'>" + numericInstallCount.toLocaleString() + "</td>";
             var colItemTitle = "<td>" + obj[i]["ItemTitle"] + "</td>";
-            var colReviewCount = "<td class='numeric'>" + obj[i]["ReviewCount"] + "</td>";
+            var colReviewCount = "<td class='numeric'>" + numericReviewCount.toLocaleString() + "</td>";
             $("#DetailGridTableBody").append(rowOpen + colInstallCount + colItemTitle + colReviewCount + rowClose);
         }
 
         //Set the totals
-        document.getElementById('TotalInstallCount').innerHTML = totalInstallCount;
-        document.getElementById('TotalReviewCount').innerHTML = totalReviewCount;
-        document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount;
-        document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount;
+        document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
+        document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
+        document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
+        document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
 
         $(document).ready(function () {
             $("#DetailGridTable").tablesorter();

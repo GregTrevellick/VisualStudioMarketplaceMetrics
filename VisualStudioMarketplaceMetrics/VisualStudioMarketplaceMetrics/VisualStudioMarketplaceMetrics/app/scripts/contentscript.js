@@ -9,9 +9,14 @@ chrome.runtime.onMessage.addListener(
            //$("[class^=gallery-item-card]").each(function () {
              $("[class^=grid-item]").each(function () {
 
+                //Determine install count (gregt extract)
                 var installCountRounded = $(this).find('.install-count')[0].innerText;
-                var installCount = installCountRounded.replace("K", ",000");
+                var installCount = installCountRounded
+                                                    .replace("M", "000000")
+                                                    .replace("K", "000")
+                                                    .replace(".", "");
 
+                //Determine review count (gregt extract)
                 var reviewTitle = $(this).find('.rating')[0].title;
                 var startReview = reviewTitle.indexOf('(') + 1;
                 var endReview = reviewTitle.indexOf(' ', startReview);
