@@ -24,7 +24,7 @@ $(function () {
             totalInstallCount += parseInt(obj[i]["InstallCount"]);
             totalReviewCount += parseInt(obj[i]["ReviewCount"]);
             var colInstallCount = "<td class='nbr'>" +obj[i]["InstallCount"]+ "</td>";
-            var colItemTitle = "<td class='extensionTitle'>" + obj[i]["ItemTitle"] + "</td>";//gregt alt text with full description //gregt href to the site for the vsix
+            var colItemTitle = "<td class='extensionTitle'>" + obj[i]["ItemTitle"] + "</td>";//gregt alt text with full description //gregt href to the site for the vsix//add publish date, full description,etc
             var colReviewCount = "<td class='nbr'>" + obj[i]["ReviewCount"] + "</td>";
             $("#DetailGridTableBody").append(rowOpen + colInstallCount + colItemTitle + colReviewCount + rowClose);
         }

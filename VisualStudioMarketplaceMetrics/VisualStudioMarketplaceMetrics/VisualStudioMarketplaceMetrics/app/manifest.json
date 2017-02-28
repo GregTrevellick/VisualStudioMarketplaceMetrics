@@ -6,7 +6,7 @@
 
   "page_action" :
   {
-    "default_icon" : "img/icon_purple.png",
+    "default_icon" : "img/icon_vsmm3.png",
     "default_title" : "Visual Studio Marketplace Metrics",
     "default_popup": "popup.html"
   },

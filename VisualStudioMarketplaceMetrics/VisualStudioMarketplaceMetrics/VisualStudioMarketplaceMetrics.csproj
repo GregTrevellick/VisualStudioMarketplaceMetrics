@@ -180,6 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="VisualStudioMarketplaceMetrics\app\img\icon_purple.png" />
+    <Content Include="VisualStudioMarketplaceMetrics\app\img\icon_vsmm3.png" />
     <Content Include="VisualStudioMarketplaceMetrics\app\popup.html" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\addons\pager\jquery.tablesorter.pager.css" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\addons\pager\jquery.tablesorter.pager.js" />
