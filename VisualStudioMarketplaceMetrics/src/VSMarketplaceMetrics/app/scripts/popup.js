@@ -23,6 +23,7 @@ $(function () {
         {
             var numericInstallCount = parseInt(obj[i]["InstallCount"]);
             var numericReviewCount = parseInt(obj[i]["ReviewCount"]);
+            var numericReviewsAsPercentageOfInstalls = parseFloat(obj[i]["ReviewsAsPercentageOfInstalls"]).toFixed(2)
 
             totalInstallCount += numericInstallCount;
             totalReviewCount += numericReviewCount;
@@ -31,7 +32,7 @@ $(function () {
             var colIcon = "<td><img src=\"" + obj[i]["Icon"] + "\" style=\"height: 15%\"></td>";
             var colItemTitle = "<td><div title=\"" + obj[i]["FullDescription"] + "\">" + obj[i]["ItemTitle"] + "</div></td>";
             var colReviewCount = "<td class='numeric'>" + numericReviewCount.toLocaleString() + "</td>";
-            var colReviewsAsPercentageOfInstalls = "<td>" + obj[i]["ReviewsAsPercentageOfInstalls"] + "</td>";
+            var colReviewsAsPercentageOfInstalls = "<td><div title=\"" + obj[i]["ReviewsAsPercentageOfInstalls"] + "\">" + numericReviewsAsPercentageOfInstalls + "</div></td>";
             var colPublisher = "<td>" + obj[i]["Publisher"] + "</td>";
             var colPrice = "<td>" + obj[i]["Price"] + "</td>";
             var colAverageReview = "<td>" + obj[i]["AverageReview"] + "</td>";

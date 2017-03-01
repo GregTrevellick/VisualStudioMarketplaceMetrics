@@ -21,7 +21,7 @@ chrome.runtime.onMessage.addListener(
                 var startReview = reviewTitle.indexOf('(') + 1;
                 var endReview = reviewTitle.indexOf(' ', startReview);
                 var reviewCount = reviewTitle.substring(startReview, endReview);
-                var reviewsAsPercentageOfInstalls = (reviewCount / installCount) * 100;
+                var reviewsAsPercentageOfInstalls = (reviewCount / installCount) * 100;//gregt divide by zero !
                 var publisher = $(this).find('.publisher')[0].innerText;
                 var price = $(this).find('.pricing-tag')[0].innerText;
                
