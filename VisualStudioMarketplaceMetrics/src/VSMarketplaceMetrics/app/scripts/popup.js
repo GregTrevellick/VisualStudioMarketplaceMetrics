@@ -35,17 +35,17 @@ $(function () {
             $("#DetailGridTableBody").append(
                 rowOpen +
                 colInstallCount +
-                "<td>icon</td>" +
+                "<td>ico</td>" +
                 colItemTitle +
                 colReviewCount +
-                "<td>ReviewsaspercInstalls</td>" +
-                "<td>Publisher</td>" +
-                "<td>Publisheddate</td>" +
-                "<td>Price</td>" +
-                "<td>Averagereview</td>" +
-                "<td>fullDescription</td>" +
+                "<td>0.2%</td>" +
+                "<td>Freddie bloggs</td>" +
+                "<td>dd.mm.yyyy</td>" +
+                "<td>Free</td>" +
+                "<td>0.0</td>" +
+                "<td>Xkdjk kj kj hkjh kjh kjhkfsfaffad</td>" +
                 "<td>url</td>" +
-                "<td>upsdateddate</td>" +
+                "<td>dd.mm.yyyy</td>" +
                 rowClose);
         }
 
