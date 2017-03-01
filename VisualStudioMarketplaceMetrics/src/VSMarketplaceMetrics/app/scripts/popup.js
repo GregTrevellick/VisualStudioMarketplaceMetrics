@@ -3,6 +3,10 @@
 //gregt try diff locales (should work for free)
 //gregt disable til dom loaded
 //gregt sort icons overlapping col hdr text
+//gregt total nbr of extensions
+//gregt total for reviews col (weighted & unweighted)
+//gregt styling for hyperlinks in popup 
+//gregt price to lower case
 
 $(function () {
 
