@@ -1,3 +1,9 @@
+//gregt try catch
+//gregt use strict
+//gregt try diff locales (should work for free)
+//gregt disable til dom loaded
+//gregt sort icons overlapping col hdr text
+
 $(function () {
 
     psuedoClick();
@@ -30,13 +36,24 @@ $(function () {
 
             var colInstallCount = "<td class='numeric'>" + numericInstallCount.toLocaleString() + "</td>";
             var colIcon = "<td><img src=\"" + obj[i]["Icon"] + "\" style=\"height: 18%\"></td>";
-            var colItemTitle = "<td><div title=\"" + obj[i]["FullDescription"] + "\">" + obj[i]["ItemTitle"] + "</div></td>";
+            var colItemTitle = "<td><div title=\"" + obj[i]["FullDescription"] + "\">"
+                + "<a href=\"" + obj[i]["URL"] + "\" target=\"_blank\">"
+                + obj[i]["ItemTitle"]
+                + "</a></div></td>";
+
             var colReviewCount = "<td class='numeric'>" + numericReviewCount.toLocaleString() + "</td>";
             var colReviewsAsPercentageOfInstalls = "<td><div title=\"" + obj[i]["ReviewsAsPercentageOfInstalls"] + "\">" + numericReviewsAsPercentageOfInstalls + "</div></td>";
-            var colPublisher = "<td>" + obj[i]["Publisher"] + "</td>";
+            var colPublisher = "<td>"
+                + "<a href=\""
+                + "https://marketplace.visualstudio.com/search?term=publisher%3A%22"
+                + obj[i]["Publisher"]
+                + "%22&target=VS&sortBy=Relevance"
+                + "\" target=\"_blank\">"
+                + obj[i]["Publisher"]
+                + "</a></td>";
+            
             var colPrice = "<td>" + obj[i]["Price"] + "</td>";
             var colAverageReview = "<td>" + obj[i]["AverageReview"] + "</td>";
-            var colURL = "<td><a href=\"" + obj[i]["URL"] + "\" target=\"_blank\">url</a></td>";
 
             $("#DetailGridTableBody").append(
                 rowOpen +
@@ -48,7 +65,6 @@ $(function () {
                 colPublisher +
                 colPrice +
                 colAverageReview +
-                colURL +
                 rowClose);
         }
 
