@@ -49,8 +49,6 @@ chrome.runtime.onMessage.addListener(
                     URL: url,
                 };
 
-               // console.log(theJsonDetails);
-
                 theDetailsJsonArray.push(theJsonDetails);
             });
 

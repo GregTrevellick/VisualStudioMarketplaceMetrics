@@ -29,13 +29,12 @@ $(function () {
 
             var colInstallCount = "<td class='numeric'>" + numericInstallCount.toLocaleString() + "</td>";
             var colIcon = "<td><img src=\"" + obj[i]["Icon"] + "\" style=\"height: 20%\"></td>";
-            var colItemTitle = "<td>" + obj[i]["ItemTitle"] + "</td>";
+            var colItemTitle = "<td><div title=\"" + obj[i]["FullDescription"] + "\">" + obj[i]["ItemTitle"] + "</div></td>";
             var colReviewCount = "<td class='numeric'>" + numericReviewCount.toLocaleString() + "</td>";
             var colReviewsAsPercentageOfInstalls = "<td>" + obj[i]["ReviewsAsPercentageOfInstalls"] + "</td>";
             var colPublisher = "<td>" + obj[i]["Publisher"] + "</td>";
             var colPrice = "<td>" + obj[i]["Price"] + "</td>";
             var colAverageReview = "<td>" + obj[i]["AverageReview"] + "</td>";
-            //var colFullDescription = "<td>" + obj[i]["FullDescription"] + "</td>";
             var colURL = "<td><a href=\"" + obj[i]["URL"] + "\" target=\"_blank\">url</a></td>";
 
             $("#DetailGridTableBody").append(
@@ -48,7 +47,6 @@ $(function () {
                 colPublisher +
                 colPrice +
                 colAverageReview +
-                //colFullDescription +
                 colURL +
                 rowClose);
         }
