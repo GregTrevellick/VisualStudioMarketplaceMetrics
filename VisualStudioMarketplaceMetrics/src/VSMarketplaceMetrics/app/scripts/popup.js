@@ -21,10 +21,7 @@ $(function () {
         //Data rows
         for (var i = 0; i < obj.length; i++)
         {
-            //gregt href to the vsix 
-            //gregt full description (as alt text ?)
-            //gregt publish date ?
-            //gregt publisher ?
+
 
             var numericInstallCount = parseInt(obj[i]["InstallCount"]);
             var numericReviewCount = parseInt(obj[i]["ReviewCount"]);
@@ -35,7 +32,21 @@ $(function () {
             var colInstallCount = "<td class='numeric'>" + numericInstallCount.toLocaleString() + "</td>";
             var colItemTitle = "<td>" + obj[i]["ItemTitle"] + "</td>";
             var colReviewCount = "<td class='numeric'>" + numericReviewCount.toLocaleString() + "</td>";
-            $("#DetailGridTableBody").append(rowOpen + colInstallCount + colItemTitle + colReviewCount + rowClose);
+            $("#DetailGridTableBody").append(
+                rowOpen +
+                colInstallCount +
+                "<td>icon</td>" +
+                colItemTitle +
+                colReviewCount +
+                "<td>ReviewsaspercInstalls</td>" +
+                "<td>Publisher</td>" +
+                "<td>Publisheddate</td>" +
+                "<td>Price</td>" +
+                "<td>Averagereview</td>" +
+                "<td>fullDescription</td>" +
+                "<td>url</td>" +
+                "<td>upsdateddate</td>" +
+                rowClose);
         }
 
         //Set the totals
