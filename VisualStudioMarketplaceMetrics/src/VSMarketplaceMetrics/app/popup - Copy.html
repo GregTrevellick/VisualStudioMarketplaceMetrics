@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <title>Visual Studio Marketplace Metrics</title>
+</head>
+<body>
+
+
+    <div data-bind="template: { name: $parent.itemDisplayTemplate, data: $data }, css: 'grid-item'" class="grid-item">
+        <a class="gallery-item-card-container" data-bind="attr: { href: link, target: linkTarget, 'aria-label': getScreenReaderText() }, click: function(data, event) { return $data.onItemTileClick(event)}" href="/items?itemName=GregTrevellick.OpeninAltovaXMLSpy" target="_self" aria-label="FREE Extension Open in Altova XMLSpy by publisher Greg Trevellick with download count 61 and average rating 0">
+            <div class="gallery-item-card" data-bind="attr: { link: itemClassName, title: title}" link="VS" title="Open in Altova XMLSpy">
+
+
+                <div class="stats-and-offer">
+
+                    <div class="rating-and-price">
+                        <div role="img" class="rating" data-bind="template: { name: 'rating-control-page-template', data: ratingViewModel }, attr: { 'alt': averageRatingText, title: averageRatingText }" alt="Average rating: 0.0 (0 rating)" title="Average rating: 0.0 (0 rating)">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+</body>
+</html>
+

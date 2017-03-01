@@ -38,6 +38,7 @@
     <None Include="VSMarketplaceMetrics\scripts\__jquery.tablesorter.zip" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="VSMarketplaceMetrics\app\popup - Copy.html" />
     <Content Include="VSMarketplaceMetrics\app\scripts\jquery-1.10.2.js" />
     <Content Include="VSMarketplaceMetrics\app\img\icon_19x19.png" />
     <Content Include="VSMarketplaceMetrics\app\popup.html" />
