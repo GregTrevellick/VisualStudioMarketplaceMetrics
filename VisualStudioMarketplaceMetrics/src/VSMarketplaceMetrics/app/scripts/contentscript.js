@@ -9,33 +9,43 @@ chrome.runtime.onMessage.addListener(
            //$("[class^=gallery-item-card]").each(function () {
              $("[class^=grid-item]").each(function () {
 
-                //Determine install count (gregt extract)
                 var installCountRounded = $(this).find('.install-count')[0].innerText;
                 var installCount = installCountRounded
                                                     .replace("M", "000000")
                                                     .replace("K", "000")
                                                     .replace(".", "");
 
-                //Determine review count (gregt extract)
+                var icon = "png";
+                var itemTitle = $(this).find('.item-title')[0].innerText;
+
                 var reviewTitle = $(this).find('.rating')[0].title;
                 var startReview = reviewTitle.indexOf('(') + 1;
                 var endReview = reviewTitle.indexOf(' ', startReview);
                 var reviewCount = reviewTitle.substring(startReview, endReview);
 
+                var reviewsAsPercentageOfInstalls = "reviewsAsPercentageOfInstalls";
+                var publisher = "publisher";
+                var publishedDate = "publishedDate";
+                var price = "price";
+                var averageReview = "averageReview";
+                var fullDescription = "fullDescription";
+                var url = "pngurl";
+                var UpdatedDate = "UpdatedDate";
+
                 var theJsonDetails =
                 {
                     InstallCount: installCount,
-                    Icon: "icon",
-                    ItemTitle: $(this).find('.item-title')[0].innerText,
+                    Icon: icon,
+                    ItemTitle: itemTitle,
                     ReviewCount: reviewCount,
-                    ReviewsAsPercentageOfInstalls: "0.2%",
-                    Publisher: "kristensen",
-                    PublishedDate: "ddmmyy",
-                    Price: "Free",
-                    AverageReview: "4.2",
-                    FullDescription: "desc",
-                    URL: "url",
-                    UpdatedDate: "ddmmyy"
+                    ReviewsAsPercentageOfInstalls: reviewsAsPercentageOfInstalls,
+                    Publisher: publisher,
+                    PublishedDate: publishedDate,
+                    Price: price,
+                    AverageReview: averageReview,
+                    FullDescription: fullDescription,
+                    URL: url,
+                    UpdatedDate: UpdatedDate
                 };
 
                 theDetailsJsonArray.push(theJsonDetails);
