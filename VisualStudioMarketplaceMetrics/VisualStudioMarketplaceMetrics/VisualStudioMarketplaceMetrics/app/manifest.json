@@ -30,7 +30,7 @@
       "js": 
       [
         "scripts/contentscript.js",
-        "scripts/jquery-latest.js"
+        "scripts/jquery-1.10.2.js"
       ]
     }
   ],

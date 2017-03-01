@@ -34,20 +34,16 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="VisualStudioMarketplaceMetrics\app\manifest.json" />
-    <None Include="VisualStudioMarketplaceMetrics\app\scripts\themes\blue\blue.zip" />
-    <None Include="VisualStudioMarketplaceMetrics\app\scripts\themes\green\green.zip" />
     <None Include="VisualStudioMarketplaceMetrics\scripts\__jquery.tablesorter.zip" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\jquery-1.10.2.js" />
     <Content Include="VisualStudioMarketplaceMetrics\scripts\Excel-Greek-Summation-Symbol.png" />
     <Content Include="VisualStudioMarketplaceMetrics\app\img\icon_19x19.png" />
     <Content Include="VisualStudioMarketplaceMetrics\app\popup.html" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\addons\pager\jquery.tablesorter.pager.css" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\addons\pager\jquery.tablesorter.pager.js" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\background.js" />
     <Content Include="VisualStudioMarketplaceMetrics\app\img\icon_128x128.png" />
     <Content Include="VisualStudioMarketplaceMetrics\app\img\icon_48x48.png" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\jquery-latest.js" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\jquery.metadata.js" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\jquery.tablesorter.js" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\jquery.tablesorter.min.js" />
@@ -57,10 +53,6 @@
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\themes\blue\bg.gif" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\themes\blue\desc.gif" />
     <Content Include="VisualStudioMarketplaceMetrics\app\scripts\themes\blue\style.css" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\themes\green\asc.png" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\themes\green\bg.png" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\themes\green\desc.png" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\themes\green\style.css" />
     <Content Include="VisualStudioMarketplaceMetrics\app\styles\my.css" />
     <Content Include="VisualStudioMarketplaceMetrics\scripts\chrome-api-vsdoc.js" />
     <Content Include="VisualStudioMarketplaceMetrics\scripts\_references.js" />
