@@ -33,29 +33,28 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="VisualStudioMarketplaceMetrics\app\manifest.json" />
-    <None Include="VisualStudioMarketplaceMetrics\scripts\__jquery.tablesorter.zip" />
+    <None Include="VSMarketplaceMetrics\app\manifest.json" />
+    <None Include="VSMarketplaceMetrics\scripts\__jquery.tablesorter.zip" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\jquery-1.10.2.js" />
-    <Content Include="VisualStudioMarketplaceMetrics\scripts\Excel-Greek-Summation-Symbol.png" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\img\icon_19x19.png" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\popup.html" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\background.js" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\img\icon_128x128.png" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\img\icon_48x48.png" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\jquery.metadata.js" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\jquery.tablesorter.js" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\jquery.tablesorter.min.js" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\popup.js" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\contentscript.js" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\themes\blue\asc.gif" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\themes\blue\bg.gif" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\themes\blue\desc.gif" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\scripts\themes\blue\style.css" />
-    <Content Include="VisualStudioMarketplaceMetrics\app\styles\my.css" />
-    <Content Include="VisualStudioMarketplaceMetrics\scripts\chrome-api-vsdoc.js" />
-    <Content Include="VisualStudioMarketplaceMetrics\scripts\_references.js" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\jquery-1.10.2.js" />
+    <Content Include="VSMarketplaceMetrics\app\img\icon_19x19.png" />
+    <Content Include="VSMarketplaceMetrics\app\popup.html" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\background.js" />
+    <Content Include="VSMarketplaceMetrics\app\img\icon_128x128.png" />
+    <Content Include="VSMarketplaceMetrics\app\img\icon_48x48.png" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\tablesorter\jquery.metadata.js" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\tablesorter\jquery.tablesorter.js" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\tablesorter\jquery.tablesorter.min.js" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\popup.js" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\contentscript.js" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\tablesorter\themes\blue\asc.gif" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\tablesorter\themes\blue\bg.gif" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\tablesorter\themes\blue\desc.gif" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\tablesorter\themes\blue\style.css" />
+    <Content Include="VSMarketplaceMetrics\app\styles\my.css" />
+    <Content Include="VSMarketplaceMetrics\scripts\chrome-api-vsdoc.js" />
+    <Content Include="VSMarketplaceMetrics\scripts\_references.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dummy.cs" />
