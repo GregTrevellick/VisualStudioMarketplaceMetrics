@@ -28,7 +28,7 @@ $(function () {
             totalReviewCount += numericReviewCount;
 
             var colInstallCount = "<td class='numeric'>" + numericInstallCount.toLocaleString() + "</td>";
-            var colIcon = "<td><img src=\"" + obj[i]["Icon"] + "\" style=\"height: 20%\"></td>";
+            var colIcon = "<td><img src=\"" + obj[i]["Icon"] + "\" style=\"height: 15%\"></td>";
             var colItemTitle = "<td><div title=\"" + obj[i]["FullDescription"] + "\">" + obj[i]["ItemTitle"] + "</div></td>";
             var colReviewCount = "<td class='numeric'>" + numericReviewCount.toLocaleString() + "</td>";
             var colReviewsAsPercentageOfInstalls = "<td>" + obj[i]["ReviewsAsPercentageOfInstalls"] + "</td>";
