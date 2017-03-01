@@ -30,22 +30,32 @@ $(function () {
             totalReviewCount += numericReviewCount;
 
             var colInstallCount = "<td class='numeric'>" + numericInstallCount.toLocaleString() + "</td>";
+            var colIcon = "<td>" + obj[i]["Icon"] + "</td>";
             var colItemTitle = "<td>" + obj[i]["ItemTitle"] + "</td>";
             var colReviewCount = "<td class='numeric'>" + numericReviewCount.toLocaleString() + "</td>";
+            var colReviewsAsPercentageOfInstalls = "<td>" + obj[i]["ReviewsAsPercentageOfInstalls"] + "</td>";
+            var colPublisher = "<td>" + obj[i]["Publisher"] + "</td>";
+            var colPublishedDate = "<td>" + obj[i]["PublishedDate"] + "</td>";
+            var colPrice = "<td>" + obj[i]["Price"] + "</td>";
+            var colAverageReview = "<td>" + obj[i]["AverageReview"] + "</td>";
+            var colFullDescription = "<td>" + obj[i]["FullDescription"] + "</td>";
+            var colURL = "<td>" + obj[i]["URL"] + "</td>";
+            var colUpdatedDate = "<td>" + obj[i]["UpdatedDate"] + "</td>";
+
             $("#DetailGridTableBody").append(
                 rowOpen +
                 colInstallCount +
-                "<td>ico</td>" +
+                colIcon +
                 colItemTitle +
                 colReviewCount +
-                "<td>0.2%</td>" +
-                "<td>Freddie bloggs</td>" +
-                "<td>dd.mm.yyyy</td>" +
-                "<td>Free</td>" +
-                "<td>0.0</td>" +
-                "<td>Xkdjk kj kj hkjh kjh kjhkfsfaffad</td>" +
-                "<td>url</td>" +
-                "<td>dd.mm.yyyy</td>" +
+                colReviewsAsPercentageOfInstalls +
+                colPublisher +
+                colPublishedDate +
+                colPrice +
+                colAverageReview +
+                colFullDescription +
+                colURL +
+                colUpdatedDate +
                 rowClose);
         }
 

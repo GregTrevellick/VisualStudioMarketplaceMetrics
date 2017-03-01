@@ -25,8 +25,17 @@ chrome.runtime.onMessage.addListener(
                 var theJsonDetails =
                 {
                     InstallCount: installCount,
+                    Icon: "icon",
                     ItemTitle: $(this).find('.item-title')[0].innerText,
-                    ReviewCount: reviewCount 
+                    ReviewCount: reviewCount,
+                    ReviewsAsPercentageOfInstalls: "0.2%",
+                    Publisher: "kristensen",
+                    PublishedDate: "ddmmyy",
+                    Price: "Free",
+                    AverageReview: "4.2",
+                    FullDescription: "desc",
+                    URL: "url",
+                    UpdatedDate: "ddmmyy"
                 };
 
                 theDetailsJsonArray.push(theJsonDetails);
