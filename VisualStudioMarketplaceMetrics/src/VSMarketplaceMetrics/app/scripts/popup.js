@@ -21,8 +21,6 @@ $(function () {
         //Data rows
         for (var i = 0; i < obj.length; i++)
         {
-
-
             var numericInstallCount = parseInt(obj[i]["InstallCount"]);
             var numericReviewCount = parseInt(obj[i]["ReviewCount"]);
 

@@ -6,11 +6,6 @@ chrome.runtime.onMessage.addListener(
 
             var theDetailsJsonArray = new Array();
 
-
-
-
-
-
            //$("[class^=gallery-item-card]").each(function () {
              $("[class^=grid-item]").each(function () {
 
@@ -29,10 +24,16 @@ chrome.runtime.onMessage.addListener(
                 var reviewsAsPercentageOfInstalls = "0.2%";
                 var publisher = $(this).find('.publisher')[0].innerText;
                 var price = $(this).find('.pricing-tag')[0].innerText;
-                var averageReview = "4.2";
+               
+                var averageReviewFull = $(this).find('.rating')[0].title;
+                var averageReviewSplit = averageReviewFull
+                    .replace(" ", "")
+                    .split(":");
+                var averageReviewNumberPlus = averageReviewSplit[1]
+                    .split("(");
+                
                 var fullDescription = $(this).find('.description')[0].innerText;
                 var url = $(this).find('.gallery-item-card-container')[0].href;
-
 
                 var theJsonDetails =
                 {
@@ -43,12 +44,12 @@ chrome.runtime.onMessage.addListener(
                     ReviewsAsPercentageOfInstalls: reviewsAsPercentageOfInstalls,
                     Publisher: publisher,
                     Price: price,
-                    AverageReview: averageReview,
+                    AverageReview: averageReviewNumberPlus[0],
                     FullDescription: fullDescription,
                     URL: url,
                 };
 
-                console.log(theJsonDetails);
+               // console.log(theJsonDetails);
 
                 theDetailsJsonArray.push(theJsonDetails);
             });
