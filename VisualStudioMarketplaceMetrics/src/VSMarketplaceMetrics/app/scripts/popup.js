@@ -5,7 +5,6 @@
 //gregt sort icons overlapping col hdr text
 //gregt total nbr of extensions
 //gregt total for reviews col (weighted & unweighted)
-//gregt price to lower case
 
 $(function () {
 
@@ -30,14 +29,9 @@ $(function () {
         var rowOpen = "<tr>";
         var rowClose = "</tr>";
 
-        //Data rows
         for (var i = 0; i < vsmpDom.length; i++)
         {
             var numericInstallCount = parseInt(vsmpDom[i]["InstallCount"]);
-
-            //console.log("numericInstallCount");
-            //console.log(numericInstallCount);
-
             var numericReviewCount = parseInt(vsmpDom[i]["ReviewCount"]);
             var numericReviewsAsPercentageOfInstalls = parseFloat(vsmpDom[i]["ReviewsAsPercentageOfInstalls"]).toFixed(3)
 
@@ -64,7 +58,11 @@ $(function () {
                 + vsmpDom[i]["Publisher"]
                 + "</a></td>";
             
-            var colPrice = "<td>" + vsmpDom[i]["Price"] + "</td>";
+            var colPriceLower = vsmpDom[i]["Price"].toLowerCase();
+            var colPrice = "<td>"
+                + colPriceLower.charAt(0).toUpperCase()
+                + colPriceLower.slice(1)
+                + "</td>";
             var colAverageReview = "<td>" + vsmpDom[i]["AverageReview"] + "</td>";
 
             $("#DetailGridTableBody").append(
@@ -79,10 +77,6 @@ $(function () {
                 rowClose);
         }
 
-        console.log("totalInstallCount");
-        console.log(totalInstallCount);
-
-        //Set the totals
         document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
         document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
         document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
