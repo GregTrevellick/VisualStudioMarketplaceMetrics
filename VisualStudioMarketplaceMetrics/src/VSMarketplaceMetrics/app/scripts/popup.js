@@ -51,7 +51,6 @@ $(function () {
             var numericInstallCount = parseInt(vsmpDom[i]["InstallCount"]);
             var numericReviewCount = parseInt(vsmpDom[i]["ReviewCount"]);
             var numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
-            //var numericReviewsAsPercentageOfInstalls = parseFloat(vsmpDom[i]["ReviewsAsPercentageOfInstalls"]).toFixed(3)
 
             totalInstallCount += numericInstallCount;
             totalReviewCount += numericReviewCount;
@@ -69,9 +68,7 @@ $(function () {
 
             
             var colReviewsAsPercentageOfInstalls = "<td><div title=\""
-                //+ vsmpDom[i]["ReviewsAsPercentageOfInstalls"]
-                + numericReviewsAsPercentageOfInstalls.toFixed(9).toLocaleString()
-                + "\">"
+                + numericReviewsAsPercentageOfInstalls.toFixed(9).toLocaleString() + "\">"
                 + numericReviewsAsPercentageOfInstalls.toFixed(2).toLocaleString() + "</div></td>";
 
             var colPublisher = "<td>"
