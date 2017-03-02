@@ -55,21 +55,21 @@ $(function () {
             totalInstallCount += numericInstallCount;
             totalReviewCount += numericReviewCount;
 
-            var colInstallCount = "<td class='numeric'>" + numericInstallCount.toLocaleString() + "</td>";
+            var colInstallCount = "<td class='numeric'>" + numericInstallCount + "</td>";
 
             var colItemTitle = "<td>"
                 + "<div title=\"" + vsmpDom[i]["FullDescription"] + "\">"
                 + "<a href=\"" + vsmpDom[i]["URL"] + "\" target=\"_blank\">"
-                + "<img src=\"" + vsmpDom[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
+                + "<img src=\"" + vsmpDom[i]["Icon"] + "\" style=\"width: 8%; height: 8%;\">"
+                + "&nbsp;"
                 + vsmpDom[i]["ItemTitle"]
                 + "</a></div></td>";
 
-            var colReviewCount = "<td class='numeric'>" + numericReviewCount.toLocaleString() + "</td>";
-
-            
+            var colReviewCount = "<td class='numeric'>" + numericReviewCount + "</td>";
+           
             var colReviewsAsPercentageOfInstalls = "<td><div title=\""
-                + numericReviewsAsPercentageOfInstalls.toFixed(9).toLocaleString() + "\">"
-                + numericReviewsAsPercentageOfInstalls.toFixed(2).toLocaleString() + "</div></td>";
+               + numericReviewsAsPercentageOfInstalls.toFixed(9) + "\">"
+               + numericReviewsAsPercentageOfInstalls.toFixed(2) + "</div></td>";
 
             var colPublisher = "<td>"
                 + "<a href=\""
@@ -120,8 +120,8 @@ $(function () {
         //Enable table sorting
         $(document).ready(function () {
             $("#DetailGridTable").tablesorter();
+        });
 
-        }); 
 
     }
 });
