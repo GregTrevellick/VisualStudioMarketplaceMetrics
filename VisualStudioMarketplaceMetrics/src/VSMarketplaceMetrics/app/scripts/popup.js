@@ -50,7 +50,8 @@ $(function () {
         {
             var numericInstallCount = parseInt(vsmpDom[i]["InstallCount"]);
             var numericReviewCount = parseInt(vsmpDom[i]["ReviewCount"]);
-            var numericReviewsAsPercentageOfInstalls = parseFloat(vsmpDom[i]["ReviewsAsPercentageOfInstalls"]).toFixed(3)
+            var numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
+            //var numericReviewsAsPercentageOfInstalls = parseFloat(vsmpDom[i]["ReviewsAsPercentageOfInstalls"]).toFixed(3)
 
             totalInstallCount += numericInstallCount;
             totalReviewCount += numericReviewCount;
@@ -66,9 +67,12 @@ $(function () {
 
             var colReviewCount = "<td class='numeric'>" + numericReviewCount.toLocaleString() + "</td>";
 
+            
             var colReviewsAsPercentageOfInstalls = "<td><div title=\""
-                + vsmpDom[i]["ReviewsAsPercentageOfInstalls"] + "\">"
-                + numericReviewsAsPercentageOfInstalls.toLocaleString() + "</div></td>";
+                //+ vsmpDom[i]["ReviewsAsPercentageOfInstalls"]
+                + numericReviewsAsPercentageOfInstalls.toFixed(9).toLocaleString()
+                + "\">"
+                + numericReviewsAsPercentageOfInstalls.toFixed(2).toLocaleString() + "</div></td>";
 
             var colPublisher = "<td>"
                 + "<a href=\""
@@ -105,7 +109,7 @@ $(function () {
         document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
 
         var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
-        document.getElementById('TotalReviewsAsPercentageOfTotalInstalls').innerHTML = totalReviewsAsPercentageOfTotalInstalls.toLocaleString();
+        document.getElementById('TotalReviewsAsPercentageOfTotalInstalls').innerHTML = totalReviewsAsPercentageOfTotalInstalls.toFixed(4).toLocaleString();//gregt add alt text for 1397 / 22212921 = totalReviewsAsPercentageOfTotalInstalls
 
         //Enable table sorting
         $(document).ready(function () {

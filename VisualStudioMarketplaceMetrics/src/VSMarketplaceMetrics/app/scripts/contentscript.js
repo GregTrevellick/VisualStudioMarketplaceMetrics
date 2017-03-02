@@ -18,7 +18,7 @@ chrome.runtime.onMessage.addListener(
                 var startReview = reviewTitle.indexOf('(') + 1;
                 var endReview = reviewTitle.indexOf(' ', startReview);
                 var reviewCount = reviewTitle.substring(startReview, endReview);
-                var reviewsAsPercentageOfInstalls = (reviewCount / installCount) * 100;//gregt divide by zero ! //gregt dedupe
+                //var reviewsAsPercentageOfInstalls = (reviewCount / installCount) * 100;//gregt divide by zero ! //gregt dedupe
                 var publisher = $(this).find('.publisher')[0].innerText;
                 var price = $(this).find('.pricing-tag')[0].innerText;
                 var averageReviewFull = $(this).find('.rating')[0].title;
@@ -34,7 +34,7 @@ chrome.runtime.onMessage.addListener(
                     Icon: icon,
                     ItemTitle: itemTitle,
                     ReviewCount: reviewCount,
-                    ReviewsAsPercentageOfInstalls: reviewsAsPercentageOfInstalls,
+                    //ReviewsAsPercentageOfInstalls: reviewsAsPercentageOfInstalls,
                     Publisher: publisher,
                     Price: price,
                     AverageReview: averageReview,
