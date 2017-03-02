@@ -5,23 +5,25 @@
 //gregt sort icons overlapping col hdr text
 //gregt total nbr of extensions
 //gregt total for reviews col (weighted & unweighted)
-//gregt styling for hyperlinks in popup 
 //gregt price to lower case
 
 $(function () {
 
-    psuedoClick();
+    onLoadRequestDomFromVsmp();
 
-    function psuedoClick() {
+    function onLoadRequestDomFromVsmp() {
         chrome.tabs.query(
             { active: true, currentWindow: true },
             function (tabs) {
-                chrome.tabs.sendMessage(tabs[0].id, { action: "sendTotalsToPopUp" }, domCallBack);
+                chrome.tabs.sendMessage(
+                    tabs[0].id,
+                    { action: "requestDomFromVsmpPopUp" },
+                    popUpCallBack
+                    );
             });
     };
 
-        
-    function domCallBack(obj) {
+    function popUpCallBack(vsmpDom) {
 
         var totalInstallCount = 0;
         var totalReviewCount = 0;
@@ -29,35 +31,41 @@ $(function () {
         var rowClose = "</tr>";
 
         //Data rows
-        for (var i = 0; i < obj.length; i++)
+        for (var i = 0; i < vsmpDom.length; i++)
         {
-            var numericInstallCount = parseInt(obj[i]["InstallCount"]);
-            var numericReviewCount = parseInt(obj[i]["ReviewCount"]);
-            var numericReviewsAsPercentageOfInstalls = parseFloat(obj[i]["ReviewsAsPercentageOfInstalls"]).toFixed(2)
+            var numericInstallCount = parseInt(vsmpDom[i]["InstallCount"]);
+
+            //console.log("numericInstallCount");
+            //console.log(numericInstallCount);
+
+            var numericReviewCount = parseInt(vsmpDom[i]["ReviewCount"]);
+            var numericReviewsAsPercentageOfInstalls = parseFloat(vsmpDom[i]["ReviewsAsPercentageOfInstalls"]).toFixed(3)
 
             totalInstallCount += numericInstallCount;
             totalReviewCount += numericReviewCount;
 
             var colInstallCount = "<td class='numeric'>" + numericInstallCount.toLocaleString() + "</td>";
-            var colItemTitle = "<td><div title=\"" + obj[i]["FullDescription"] + "\">"
-                + "<a href=\"" + obj[i]["URL"] + "\" target=\"_blank\">"
-                + "<img src=\"" + obj[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
-                + obj[i]["ItemTitle"]
+            var colItemTitle = "<td><div title=\"" + vsmpDom[i]["FullDescription"] + "\">"
+                + "<a href=\"" + vsmpDom[i]["URL"] + "\" target=\"_blank\">"
+                + "<img src=\"" + vsmpDom[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
+                + vsmpDom[i]["ItemTitle"]
                 + "</a></div></td>";
 
             var colReviewCount = "<td class='numeric'>" + numericReviewCount.toLocaleString() + "</td>";
-            var colReviewsAsPercentageOfInstalls = "<td><div title=\"" + obj[i]["ReviewsAsPercentageOfInstalls"] + "\">" + numericReviewsAsPercentageOfInstalls + "</div></td>";
+            var colReviewsAsPercentageOfInstalls = "<td><div title=\""
+                + vsmpDom[i]["ReviewsAsPercentageOfInstalls"] + "\">"
+                + numericReviewsAsPercentageOfInstalls.toLocaleString() + "</div></td>";
             var colPublisher = "<td>"
                 + "<a href=\""
                 + "https://marketplace.visualstudio.com/search?term=publisher%3A%22"
-                + obj[i]["Publisher"]
+                + vsmpDom[i]["Publisher"]
                 + "%22&target=VS&sortBy=Relevance"
                 + "\" target=\"_blank\">"
-                + obj[i]["Publisher"]
+                + vsmpDom[i]["Publisher"]
                 + "</a></td>";
             
-            var colPrice = "<td>" + obj[i]["Price"] + "</td>";
-            var colAverageReview = "<td>" + obj[i]["AverageReview"] + "</td>";
+            var colPrice = "<td>" + vsmpDom[i]["Price"] + "</td>";
+            var colAverageReview = "<td>" + vsmpDom[i]["AverageReview"] + "</td>";
 
             $("#DetailGridTableBody").append(
                 rowOpen +
@@ -71,11 +79,14 @@ $(function () {
                 rowClose);
         }
 
+        console.log("totalInstallCount");
+        console.log(totalInstallCount);
+
         //Set the totals
-        $('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
-        $('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
-        $('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
-        $('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
+        document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
+        document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
+        document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
+        document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
 
         //Enable table sorting
         $(document).ready(function () {
