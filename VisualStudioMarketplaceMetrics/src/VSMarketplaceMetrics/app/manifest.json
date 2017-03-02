@@ -36,9 +36,16 @@
   ],
 
   "permissions": [
+    "activeTab",
     "declarativeContent",
-    "https://marketplace.visualstudio.com/*",
-    "activeTab"
+    "https://marketplace.visualstudio.com/",
+    "https://marketplace.visualstudio.com/search*",
+    "https://marketplace.visualstudio.com/manage*",
+    "https://marketplace.visualstudio.com/vs*",
+    "https://marketplace.visualstudio.com/vsts*",
+    "https://marketplace.visualstudio.com/vscode*",
+    "https://visualstudiogallery.msdn.microsoft.com/site/mydashboard",
+    "http://www.gregt.co.uk/*"
   ],
 
   "icons": {

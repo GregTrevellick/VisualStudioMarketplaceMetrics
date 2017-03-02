@@ -6,6 +6,23 @@
 //gregt total nbr of extensions
 //gregt total for reviews col (weighted & unweighted)
 
+//YES
+//https://marketplace.visualstudio.com
+//https://marketplace.visualstudio.com/vs
+//https://marketplace.visualstudio.com/vsts
+//https://marketplace.visualstudio.com/vscode
+//https://marketplace.visualstudio.com/search  IDE & VSTS & Code
+//https://marketplace.visualstudio.com/manage
+//https://visualstudiogallery.msdn.microsoft.com/site/mydashboard
+//https://social.msdn.microsoft.com/profile/Greg%20Trevellick/extensions
+
+//NO
+//https://marketplace.visualstudio.com/subscriptions
+//https://marketplace.visualstudio.com/items?itemName=vs-publisher-1455028.OpsHubVisualStudioOnlineMigrationUtility
+
+
+
+
 $(function () {
 
     onLoadRequestDomFromVsmp();
@@ -39,16 +56,20 @@ $(function () {
             totalReviewCount += numericReviewCount;
 
             var colInstallCount = "<td class='numeric'>" + numericInstallCount.toLocaleString() + "</td>";
-            var colItemTitle = "<td><div title=\"" + vsmpDom[i]["FullDescription"] + "\">"
+
+            var colItemTitle = "<td>"
+                + "<div title=\"" + vsmpDom[i]["FullDescription"] + "\">"
                 + "<a href=\"" + vsmpDom[i]["URL"] + "\" target=\"_blank\">"
                 + "<img src=\"" + vsmpDom[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
                 + vsmpDom[i]["ItemTitle"]
                 + "</a></div></td>";
 
             var colReviewCount = "<td class='numeric'>" + numericReviewCount.toLocaleString() + "</td>";
+
             var colReviewsAsPercentageOfInstalls = "<td><div title=\""
                 + vsmpDom[i]["ReviewsAsPercentageOfInstalls"] + "\">"
                 + numericReviewsAsPercentageOfInstalls.toLocaleString() + "</div></td>";
+
             var colPublisher = "<td>"
                 + "<a href=\""
                 + "https://marketplace.visualstudio.com/search?term=publisher%3A%22"
@@ -63,6 +84,7 @@ $(function () {
                 + colPriceLower.charAt(0).toUpperCase()
                 + colPriceLower.slice(1)
                 + "</td>";
+
             var colAverageReview = "<td>" + vsmpDom[i]["AverageReview"] + "</td>";
 
             $("#DetailGridTableBody").append(
@@ -81,6 +103,9 @@ $(function () {
         document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
         document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
         document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
+
+        var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
+        document.getElementById('TotalReviewsAsPercentageOfTotalInstalls').innerHTML = totalReviewsAsPercentageOfTotalInstalls.toLocaleString();
 
         //Enable table sorting
         $(document).ready(function () {

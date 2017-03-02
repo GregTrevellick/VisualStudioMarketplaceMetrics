@@ -8,11 +8,9 @@
 }
     
 a {
-    /*outline: none;*/
     text-decoration: none;
 }
 
 a:hover {
-    /*color: #FFFEF2;*/
     text-decoration: underline;
 }
