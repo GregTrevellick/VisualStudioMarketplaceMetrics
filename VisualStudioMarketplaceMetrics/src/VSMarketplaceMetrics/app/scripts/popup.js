@@ -3,7 +3,6 @@
 //gregt try diff locales (should work for free)
 //gregt disable til dom loaded
 //gregt sort icons overlapping col hdr text
-//gregt total nbr of extensions
 //gregt total for reviews col (weighted & unweighted)
 
 //YES
@@ -60,7 +59,7 @@ $(function () {
             var colItemTitle = "<td>"
                 + "<div title=\"" + vsmpDom[i]["FullDescription"] + "\">"
                 + "<a href=\"" + vsmpDom[i]["URL"] + "\" target=\"_blank\">"
-                + "<img src=\"" + vsmpDom[i]["Icon"] + "\" style=\"width: 8%; height: 8%;\">"
+                + "<img src=\"" + vsmpDom[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
                 + "&nbsp;"
                 + vsmpDom[i]["ItemTitle"]
                 + "</a></div></td>";
@@ -102,6 +101,7 @@ $(function () {
 
         var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
 
+        document.getElementById('TotalExtensionsCount').innerHTML = vsmpDom.length.toLocaleString() + " extensions";
         document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " installs";
         document.getElementById('TotalReviewCount').innerHTML =
             totalReviewCount.toLocaleString()
@@ -116,6 +116,8 @@ $(function () {
             + totalReviewCount.toLocaleString()
             + " divided by "
             + totalInstallCount.toLocaleString();
+
+        //QUNIT document.getElementById('OverallAverageReview').innerHTML =  + " weighted average reviews";
 
         //Enable table sorting
         $(document).ready(function () {

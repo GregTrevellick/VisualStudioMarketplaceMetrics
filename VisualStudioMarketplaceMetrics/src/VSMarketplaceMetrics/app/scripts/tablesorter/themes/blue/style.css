@@ -21,16 +21,17 @@ table.tablesorter thead tr .header {
 	cursor: pointer;
 }
 
-table.tablesorter tbody td a,
-table.tablesorter tbody td img,
 table.tablesorter tbody td {
 	color: #3D3D3D;
 	padding: 4px;
 	background-color: #FFF;
+}
+
+table.tablesorter tbody td a,
+table.tablesorter tbody td img,
+table.tablesorter tbody td {
 	/*vertical-align: top;*/
     vertical-align: middle;
-    /*text-wrap: none;*/
-    /*text-wrap:avoid;*/
 }
 
 table.tablesorter tbody tr.odd td {

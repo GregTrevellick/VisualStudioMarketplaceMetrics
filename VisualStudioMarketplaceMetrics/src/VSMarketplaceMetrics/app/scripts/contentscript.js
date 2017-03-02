@@ -11,7 +11,7 @@ chrome.runtime.onMessage.addListener(
             $("[class^=grid-item]").each(function () {
 
                 var installCountRounded = $(this).find('.install-count')[0].innerText;
-                var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");
+                var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
                 var icon = $(this).find('.item-icon')[0].src;
                 var itemTitle = $(this).find('.item-title')[0].innerText;
                 var reviewTitle = $(this).find('.rating')[0].title;
