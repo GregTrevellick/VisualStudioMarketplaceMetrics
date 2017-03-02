@@ -1,7 +1,11 @@
-﻿table {
-    /*max-width: 85%;*/
-    min-width: 400px;
+﻿body {
+    min-width:300px;
 }
+
+
+/*table {
+    min-width: 400px;
+}*/
 
 .numeric {
     text-align: right;

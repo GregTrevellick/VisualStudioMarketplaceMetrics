@@ -100,12 +100,15 @@ $(function () {
                 rowClose);
         }
 
-        document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
-        document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
+        var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
+
+        document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " installs"
+        document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " reviews (" + 
+                        totalReviewsAsPercentageOfTotalInstalls + "% of installs)";
+
         document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
         document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
 
-        var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
         document.getElementById('TotalReviewsAsPercentageOfTotalInstalls').innerHTML
             = "<div title=\""
             + totalReviewCount.toLocaleString()
