@@ -102,21 +102,20 @@ $(function () {
 
         var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
 
-        document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " installs"
-        document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " reviews (" + 
-                        totalReviewsAsPercentageOfTotalInstalls + "% of installs)";
+        document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " installs";
+        document.getElementById('TotalReviewCount').innerHTML =
+            totalReviewCount.toLocaleString()
+            + " reviews ("
+            + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
+            + "% of installs)";
 
         document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
         document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
 
-        document.getElementById('TotalReviewsAsPercentageOfTotalInstalls').innerHTML
-            = "<div title=\""
+        document.getElementById('TotalReviewCount').title =
             + totalReviewCount.toLocaleString()
             + " divided by "
-            + totalInstallCount.toLocaleString()
-            + "\">"
-            + totalReviewsAsPercentageOfTotalInstalls.toFixed(4).toLocaleString()
-            + "</div>";
+            + totalInstallCount.toLocaleString();
 
         //Enable table sorting
         $(document).ready(function () {
