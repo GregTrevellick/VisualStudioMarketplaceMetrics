@@ -1,9 +1,6 @@
-//gregt try catch
-//gregt use strict
-//gregt try diff locales (should work for free)
 //gregt disable til dom loaded
 //gregt sort icons overlapping col hdr text
-//gregt total for reviews col (weighted & unweighted)
+//gregt QUNIT for gregt items
 
 //YES
 //https://marketplace.visualstudio.com
@@ -20,7 +17,16 @@
 //https://marketplace.visualstudio.com/items?itemName=vs-publisher-1455028.OpsHubVisualStudioOnlineMigrationUtility
 
 
-
+//////gregt try diff locales (should work for free)
+//////gregt try catch
+//////gregt cdn for jquery, with a fallback
+//////gregt highlight initial sort column
+//////mads kristensens tweet about low nbr of reviews
+//////gregt aria tags
+//////minify the extension if large kb ?
+//////gregt copy to clipboard
+//////gregt use strict
+//////gregt total for reviews col (weighted & unweighted)
 
 $(function () {
 
@@ -101,6 +107,7 @@ $(function () {
 
         var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
 
+        //H2
         document.getElementById('TotalExtensionsCount').innerHTML = vsmpDom.length.toLocaleString() + " extensions";
         document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " installs";
         document.getElementById('TotalReviewCount').innerHTML =
@@ -108,16 +115,16 @@ $(function () {
             + " reviews ("
             + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
             + "% of installs)";
-
-        document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
-        document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
-
         document.getElementById('TotalReviewCount').title =
             + totalReviewCount.toLocaleString()
             + " divided by "
             + totalInstallCount.toLocaleString();
-
         //QUNIT document.getElementById('OverallAverageReview').innerHTML =  + " weighted average reviews";
+
+        //TFOOT
+        document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
+        document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
+        //QUNIT document.getElementById('AverageReview').innerHTML = totalReviewCount.toLocaleString();
 
         //Enable table sorting
         $(document).ready(function () {
