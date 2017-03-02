@@ -1,6 +1,6 @@
 //gregt disable til dom loaded
-//gregt sort icons overlapping col hdr text
 //gregt QUNIT for gregt items
+//gregt 3 diff tabs / 3 diff URLs
 
 //YES
 //https://marketplace.visualstudio.com
@@ -17,16 +17,16 @@
 //https://marketplace.visualstudio.com/items?itemName=vs-publisher-1455028.OpsHubVisualStudioOnlineMigrationUtility
 
 
-//////gregt try diff locales (should work for free)
-//////gregt try catch
-//////gregt cdn for jquery, with a fallback
-//////gregt highlight initial sort column
+//////try diff locales (should work for free)
+//////try catch
+//////cdn for jquery, with a fallback
+//////highlight initial sort column
 //////mads kristensens tweet about low nbr of reviews
-//////gregt aria tags
+//////aria tags
 //////minify the extension if large kb ?
-//////gregt copy to clipboard
-//////gregt use strict
-//////gregt total for reviews col (weighted & unweighted)
+//////copy to clipboard
+//////use strict
+//////total for reviews col (weighted & unweighted)
 
 $(function () {
 
@@ -72,7 +72,7 @@ $(function () {
 
             var colReviewCount = "<td class='numeric'>" + numericReviewCount + "</td>";
            
-            var colReviewsAsPercentageOfInstalls = "<td><div title=\""
+            var colReviewsAsPercentageOfInstalls = "<td class='numeric'><div title=\""
                + numericReviewsAsPercentageOfInstalls.toFixed(9) + "\">"
                + numericReviewsAsPercentageOfInstalls.toFixed(2) + "</div></td>";
 
@@ -91,7 +91,7 @@ $(function () {
                 + colPriceLower.slice(1)
                 + "</td>";
 
-            var colAverageReview = "<td>" + vsmpDom[i]["AverageReview"] + "</td>";
+            var colAverageReview = "<td class='numeric'>" + vsmpDom[i]["AverageReview"] + "</td>";
 
             $("#DetailGridTableBody").append(
                 rowOpen +
