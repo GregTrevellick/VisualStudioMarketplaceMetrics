@@ -39,9 +39,12 @@ $(function () {
             totalReviewCount += numericReviewCount;
 
             var colInstallCount = "<td class='numeric'>" + numericInstallCount.toLocaleString() + "</td>";
-            var colIcon = "<td><img src=\"" + obj[i]["Icon"] + "\" style=\"height: 18%\"></td>";
+            //var colIcon = "<td>
+            //<img src=\"" + obj[i]["Icon"] + "\" style=\"height: 18%\">
+            //</td>";
             var colItemTitle = "<td><div title=\"" + obj[i]["FullDescription"] + "\">"
                 + "<a href=\"" + obj[i]["URL"] + "\" target=\"_blank\">"
+                + "<img src=\"" + obj[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
                 + obj[i]["ItemTitle"]
                 + "</a></div></td>";
 
@@ -62,7 +65,7 @@ $(function () {
             $("#DetailGridTableBody").append(
                 rowOpen +
                 colInstallCount +
-                colIcon +
+                //colIcon +
                 colItemTitle +
                 colReviewCount +
                 colReviewsAsPercentageOfInstalls +
@@ -73,9 +76,9 @@ $(function () {
         }
 
         //Set the totals
-        document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
+        $('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
         document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
-        document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
+        $('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
         document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
 
         //Enable table sorting
