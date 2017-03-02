@@ -106,7 +106,14 @@ $(function () {
         document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
 
         var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
-        document.getElementById('TotalReviewsAsPercentageOfTotalInstalls').innerHTML = totalReviewsAsPercentageOfTotalInstalls.toFixed(4).toLocaleString();//gregt add alt text for 1397 / 22212921 = totalReviewsAsPercentageOfTotalInstalls
+        document.getElementById('TotalReviewsAsPercentageOfTotalInstalls').innerHTML
+            = "<div title=\""
+            + totalReviewCount.toLocaleString()
+            + " divided by "
+            + totalInstallCount.toLocaleString()
+            + "\">"
+            + totalReviewsAsPercentageOfTotalInstalls.toFixed(4).toLocaleString()
+            + "</div>";
 
         //Enable table sorting
         $(document).ready(function () {
