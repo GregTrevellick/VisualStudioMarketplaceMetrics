@@ -3,13 +3,13 @@ chrome.runtime.onMessage.addListener(
 
     function (request, sender, popUpCallBackFn) {
 
-        
-
         if (request.action === "requestDomFromVsmpPopUp") {
 
             //NO
             //https://marketplace.visualstudio.com/manage
             //https://marketplace.visualstudio.com/subscriptions
+            //https://marketplace.visualstudio.com/items?itemName=vs-publisher-1455028.OpsHubVisualStudioOnlineMigrationUtility
+            //https://marketplace.visualstudio.com/items?itemName=GregTrevellick.OpeninMarkdownMonster
 
             var typ = "";
             var href = window.location.href;

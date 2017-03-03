@@ -1,13 +1,7 @@
 //gregt disable til dom loaded
 //gregt QUNIT for gregt items
-//gregt 3 diff tabs / 3 diff URLs
 
 
-
-//NO
-//https://visualstudiogallery.msdn.microsoft.com/site/mydashboard
-//https://marketplace.visualstudio.com/subscriptions
-//https://marketplace.visualstudio.com/items?itemName=vs-publisher-1455028.OpsHubVisualStudioOnlineMigrationUtility
 
 
 //////try diff locales (should work for free)
