@@ -47,13 +47,13 @@ chrome.runtime.onMessage.addListener(
                             }
                         }
                     }
-                    else {
-                        if (href.indexOf("https://social.msdn.microsoft.com/profile/") != -1) {
-                            if (href.indexOf("/extensions") != -1) {
-                                typ = "browse_ProfileExtensions";
-                            }
-                        }
-                    }
+                    //else {
+                    //    if (href.indexOf("https://social.msdn.microsoft.com/profile/") != -1) {
+                    //        if (href.indexOf("/extensions") != -1) {
+                    //            typ = "browse_ProfileExtensions";
+                    //        }
+                    //    }
+                    //}
                     break;
             }
             
@@ -132,41 +132,7 @@ chrome.runtime.onMessage.addListener(
                     };
                     vsmpDomJsonDataArray.push(vsmpDomJsonData);
                 });
-            }
-
-            if (typ == "browse_ProfileExtensions") {
-                $("[class^=gallery-item-card]").each(function () {
-                    var installCountRounded = "msdnProfExtn";//$(this).find('.install-count')[0].innerText;
-                    var installCount = "msdnProfExtn";// installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
-                    var icon = "msdnProfExtn";//$(this).find('.item-icon')[0].src;
-                    var itemTitle = "msdnProfExtn";//$(this).find('.item-title')[0].innerText;
-                    var reviewTitle = "msdnProfExtn";//"asadssa";//$(this).find('.rating')[0].title;
-                    var startReview = "msdnProfExtn";//"asadssa";//reviewTitle.indexOf('(') + 1;
-                    var endReview = "msdnProfExtn";//"asadssa";//reviewTitle.indexOf(' ', startReview);
-                    var reviewCount = "msdnProfExtn";//"asadssa";//reviewTitle.substring(startReview, endReview);
-                    var publisher = "msdnProfExtn";//$(this).find('.publisher')[0].innerText;
-                    var price = "msdnProfExtn";//$(this).find('.pricing-tag')[0].innerText;
-                    var averageReviewFull = "msdnProfExtn";//"asadssa";//$(this).find('.rating')[0].title;
-                    var averageReviewSplit = "msdnProfExtn";//"asadssa";//averageReviewFull.replace(" ", "").split(":");
-                    var averageReviewNumberPlus = "msdnProfExtn";//"asadssa";//averageReviewSplit[1].split("(");
-                    var averageReview = "msdnProfExtn";//"asadssa";//averageReviewNumberPlus[0];
-                    var fullDescription = "msdnProfExtn";//"asadssa";//$(this).find('.description')[0].innerText;
-                    var url = "msdnProfExtn";//"asadssa";//$(this).find('.gallery-item-card-container')[0].href;
-                    var vsmpDomJsonData =
-                    {
-                        InstallCount: installCount,
-                        Icon: icon,
-                        ItemTitle: itemTitle,
-                        ReviewCount: reviewCount,
-                        Publisher: publisher,
-                        Price: price,
-                        AverageReview: averageReview,
-                        FullDescription: fullDescription,
-                        URL: url,
-                    };
-                    vsmpDomJsonDataArray.push(vsmpDomJsonData);
-                });
-            }
+            }          
 
             // Call the specified callback
             popUpCallBackFn(vsmpDomJsonDataArray);
