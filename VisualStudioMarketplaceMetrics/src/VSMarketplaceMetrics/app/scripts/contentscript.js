@@ -105,10 +105,10 @@ chrome.runtime.onMessage.addListener(
                     var reviewCount = reviewTitle.substring(startReview, endReview);
                     var publisher = $(this).find('.publisher')[0].innerText;
                     var price = $(this).find('.pricing-tag')[0].innerText;
-                    var averageReviewFull = "asadssa";//$(this).find('.rating')[0].title;
-                    var averageReviewSplit = "asadssa";//averageReviewFull.replace(" ", "").split(":");
-                    var averageReviewNumberPlus = "asadssa";//averageReviewSplit[1].split("(");
-                    var averageReview = "asadssa";//averageReviewNumberPlus[0];
+                    var averageReviewFull = $(this).find('.rating')[0].title;
+                    var averageReviewSplit = averageReviewFull.replace(" ", "").split(":");
+                    var averageReviewNumberPlus = averageReviewSplit[1].split("(");
+                    var averageReview = averageReviewNumberPlus[0];
                     var fullDescription = $(this).find('.icon-cell')[0].title;
                     var url = "asadssa";//$(this).find('.gallery-item-card-container')[0].href;
                     var vsmpDomJsonData =
