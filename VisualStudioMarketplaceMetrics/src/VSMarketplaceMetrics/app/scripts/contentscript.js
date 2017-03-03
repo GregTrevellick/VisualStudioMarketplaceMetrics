@@ -7,50 +7,49 @@ chrome.runtime.onMessage.addListener(
 
         if (request.action === "requestDomFromVsmpPopUp") {
 
-            //http://stackoverflow.com/questions/1789945/how-to-check-if-one-string-contains-another-substring-in-javascript
-            //You can easily add a contains method to String with this statement:
-            //String.prototype.contains = function (it) { return this.indexOf(it) != -1; };
-            //Note: see the comments below for a valid argument for not using this. My advice: use your own judgement.
-            //Alternatively:
-            //if (typeof String.prototype.contains === 'undefined') { String.prototype.contains = function (it) { return this.indexOf(it) != -1; }; }
-
-            //YES
-            //https://marketplace.visualstudio.com
-            //https://marketplace.visualstudio.com/vs
-            //https://marketplace.visualstudio.com/vsts
-            //https://marketplace.visualstudio.com/vscode
-            //https://marketplace.visualstudio.com/search  IDE & VSTS & Code
-            //https://marketplace.visualstudio.com/search?term=agile&target=VSTS&sortBy=Relevance
-            //https://marketplace.visualstudio.com/search?term=trevellick&target=VS&sortBy=Relevance
             //https://marketplace.visualstudio.com/manage
             //https://social.msdn.microsoft.com/profile/Greg%20Trevellick/extensions
+            //NO
+            //https://marketplace.visualstudio.com/subscriptions
 
-            var href = window.location.href;
             var typ = "";
-            if (href == "https://marketplace.visualstudio.com/") {
-                typ = "browse_Root";
-            }
-            if (href.indexOf("marketplace.visualstudio.com/search") != -1) {
-                if (href.indexOf("&target=VS&") != -1) {
-                    typ = "search_VS";
-                }
-                if (href.indexOf("&target=VSCode&") != -1) {
-                    typ = "search_VSCode";
-                }
-                if (href.indexOf("&target=VSTS&") != -1) {
-                    typ = "search_VSTS";
-                }
-            }
-            if (href.indexOf("marketplace.visualstudio.com/vs") != -1) {
-                typ = "browse_VS";
-                if (href.indexOf(".com/vsts") != -1) {
+            var href = window.location.href;
+            switch (href) {
+                case "http://marketplace.visualstudio.com/":
+                case "https://marketplace.visualstudio.com/":
+                    typ = "browse_Root";
+                    break;
+                case "http://marketplace.visualstudio.com/vs":
+                case "https://marketplace.visualstudio.com/vs":
+                    typ = "browse_VS";
+                    break;
+                case "http://marketplace.visualstudio.com/vsts":
+                case "https://marketplace.visualstudio.com/vsts":
                     typ = "browse_VSTS";
-                }
-                if (href.indexOf("com/vscode") != -1) {
+                    break;
+                case "http://marketplace.visualstudio.com/vscode":
+                case "https://marketplace.visualstudio.com/vscode":
                     typ = "browse_VSCode";
-                }
+                    break;
+                default:
+                    if (href.indexOf("marketplace.visualstudio.com/search") != -1) {
+                        if (href.indexOf("&target=VS&") != -1) {
+                            typ = "search_VS";
+                        }
+                        else {
+                            if (href.indexOf("&target=VSCode&") != -1) {
+                                typ = "search_VSCode";
+                            }
+                            else {
+                                if (href.indexOf("&target=VSTS&") != -1) {
+                                    typ = "search_VSTS";
+                                }
+                            }
+                        }
+                    }
+                    break;
             }
-
+            
             var vsmpDomJsonDataArray = new Array();
 
             if (typ == "search_VS" ||
