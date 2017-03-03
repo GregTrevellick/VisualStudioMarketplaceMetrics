@@ -38,7 +38,7 @@ $(function () {
 
         if (vsmpDom[0]["URL"] == "na") {
             document.getElementById('TotalExtensionsCount').innerHTML = "Marketplace metrics data is unfortunately not available in this view.";
-            //document.getElementById('DetailGridTable').hide();
+            $("#DetailGridTable").hide();
         }
         else {
 
