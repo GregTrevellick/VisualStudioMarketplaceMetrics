@@ -37,14 +37,9 @@ $(function () {
         var totalReviewCount = 0;
         var rowOpen = "<tr>";
         var rowClose = "</tr>";
-        
-          if (vsmpDom[0]["URL"] = "n/a"
-       //if (
-            //vsmpDom["URL"] == "n/a"
-            //&& 
-         //   vsmpDom[0].url == "na"
-            ) {
-           var nildata = "<td>no data avail</td>";
+
+        if (vsmpDom[0]["URL"] = "n/a") {
+            var nildata = "<td>no data avail</td>";
 
             $("#DetailGridTableBody").append(
                    rowOpen +
