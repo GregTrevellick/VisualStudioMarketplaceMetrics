@@ -33,10 +33,7 @@ $(function () {
 
     function popUpCallBack(vsmpDom) {
 
-        console.log("vsmpDom");
-        console.log(vsmpDom);
-
-        if (vsmpDom[0]["URL"] == "na") {
+        if (vsmpDom[0]["URL"] == "n/a") {
             document.getElementById('TotalExtensionsCount').innerHTML = "Marketplace metrics data is unfortunately not available in this view.";
             $("#DetailGridTable").hide();
         }
