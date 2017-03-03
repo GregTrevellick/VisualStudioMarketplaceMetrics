@@ -37,13 +37,25 @@ $(function () {
         var totalReviewCount = 0;
         var rowOpen = "<tr>";
         var rowClose = "</tr>";
-
-        //  if (vsmpDom[0]["URL"] == "n/a"
-        if (vsmpDom["URL"] == "n/a"
-            //&& vsmpDom[0].url == "na"
+        
+          if (vsmpDom[0]["URL"] = "n/a"
+       //if (
+            //vsmpDom["URL"] == "n/a"
+            //&& 
+         //   vsmpDom[0].url == "na"
             ) {
-            var colItemTitle = "<td>" + "data not avail" + "</td>";
-            var colReviewCount = "<td>" + "data not avail" + "</td>";
+           var nildata = "<td>no data avail</td>";
+
+            $("#DetailGridTableBody").append(
+                   rowOpen +
+                   nildata +
+                   nildata +
+                   nildata +
+                   nildata +
+                   nildata +
+                   nildata +
+                   nildata +
+                   rowClose);
         }
         else {
 

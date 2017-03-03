@@ -127,12 +127,6 @@ chrome.runtime.onMessage.addListener(
                         });
                     }
 
-                   console.log("na1");
-               //     console.log(typ);
-                //    console.log("na2");
-
-
-
                     if (typ == "" ||
                         typ == "notAllowed") {
 
@@ -172,7 +166,6 @@ chrome.runtime.onMessage.addListener(
 
                     // Call the specified callback
                     popUpCallBackFn(vsmpDomJsonDataArray);
-       //     }
         }
     });
 
