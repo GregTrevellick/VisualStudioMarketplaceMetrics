@@ -110,7 +110,11 @@ chrome.runtime.onMessage.addListener(
                     var averageReviewNumberPlus = averageReviewSplit[1].split("(");
                     var averageReview = averageReviewNumberPlus[0];
                     var fullDescription = $(this).find('.icon-cell')[0].title;
-                    var url = "asadssa";//$(this).find('.gallery-item-card-container')[0].href;
+              //      var url = $(this).find('.gallery-item-card-container')[0].href;
+                    //      gallery-item-card-container
+                    var url = $(this).find('.gallery-item-card-container').href;
+
+
                     var vsmpDomJsonData =
                     {
                         InstallCount: installCount,
@@ -134,3 +138,51 @@ chrome.runtime.onMessage.addListener(
 );
 
 chrome.runtime.sendMessage({ action: "openPopUp" });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
