@@ -25,29 +25,37 @@ chrome.runtime.onMessage.addListener(
             //https://marketplace.visualstudio.com/manage
             //https://social.msdn.microsoft.com/profile/Greg%20Trevellick/extensions
 
-            console.log(window.location.href);
-
             var href = window.location.href;
-
-            console.log(href);
             var typ = "";
-
-            if (href.indexOf("marketplace.visualstudio.com/search") !=-1) {
-                if (href.indexOf("&target=VS") !=-1) {
-                    typ="search_VS";
+            if (href == "https://marketplace.visualstudio.com/") {
+                typ = "browse_Root";
+            }
+            if (href.indexOf("marketplace.visualstudio.com/search") != -1) {
+                if (href.indexOf("&target=VS&") != -1) {
+                    typ = "search_VS";
                 }
-                if (href.indexOf("&target=VSTS") !=-1) {
-                    typ="search_VSTS";
+                if (href.indexOf("&target=VSCode&") != -1) {
+                    typ = "search_VSCode";
+                }
+                if (href.indexOf("&target=VSTS&") != -1) {
+                    typ = "search_VSTS";
                 }
             }
-            console.log("typ="+typ);
+            if (href.indexOf("marketplace.visualstudio.com/vs") != -1) {
+                typ = "browse_VS";
+                if (href.indexOf(".com/vsts") != -1) {
+                    typ = "browse_VSTS";
+                }
+                if (href.indexOf("com/vscode") != -1) {
+                    typ = "browse_VSCode";
+                }
+            }
 
             var vsmpDomJsonDataArray = new Array();
 
-            //REPEATING LOOP FOR VS
-            if (typ == "search_VS")
+            if (typ == "search_VS" ||
+                typ == "search_VSCode")
             {
-                //$("[class^=gallery-item-card]").each(function () {
                 $("[class^=grid-item]").each(function () {
                     var installCountRounded = $(this).find('.install-count')[0].innerText;
                     var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
@@ -81,18 +89,13 @@ chrome.runtime.onMessage.addListener(
                 });
             }
 
-            //REPEATING LOOP FOR VSTS
-            if (typ == "search_VSTS") {
-
-                console.log("carouseling");
-
-                //$("[class^=carousel-item]").each(function () {
-                //$(".carousel-item").each(function () {
+            if (typ == "browse_Root" ||
+                typ == "browse_VS" ||
+                typ == "browse_VSTS" ||
+                typ == "browse_VSCode" ||
+                typ == "search_VSTS")
+            {
                 $("[class^=gallery-item-card]").each(function () {
-
-                    console.log("carousel looping");
-
-
                     var installCountRounded = "asadssa";//$(this).find('.install-count')[0].innerText;
                     var installCount = "asadssa";//installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
                     var icon = "asadssa";//$(this).find('.item-icon')[0].src;
