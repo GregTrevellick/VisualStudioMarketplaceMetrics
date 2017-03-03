@@ -99,17 +99,17 @@ chrome.runtime.onMessage.addListener(
                     var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
                     var icon = $(this).find('.item-icon')[0].src;
                     var itemTitle = $(this).find('.item-title')[0].innerText;
-                    var reviewTitle = "asadssa";//$(this).find('.rating')[0].title;
-                    var startReview = "asadssa";//reviewTitle.indexOf('(') + 1;
-                    var endReview = "asadssa";//reviewTitle.indexOf(' ', startReview);
-                    var reviewCount = "asadssa";//reviewTitle.substring(startReview, endReview);
+                    var reviewTitle = $(this).find('.rating')[0].title;
+                    var startReview = reviewTitle.indexOf('(') + 1;
+                    var endReview = reviewTitle.indexOf(' ', startReview);
+                    var reviewCount = reviewTitle.substring(startReview, endReview);
                     var publisher = $(this).find('.publisher')[0].innerText;
                     var price = $(this).find('.pricing-tag')[0].innerText;
                     var averageReviewFull = "asadssa";//$(this).find('.rating')[0].title;
                     var averageReviewSplit = "asadssa";//averageReviewFull.replace(" ", "").split(":");
                     var averageReviewNumberPlus = "asadssa";//averageReviewSplit[1].split("(");
                     var averageReview = "asadssa";//averageReviewNumberPlus[0];
-                    var fullDescription = $(this).find('.icon-cell')[0].title;//$(this).find('.description')[0].innerText;
+                    var fullDescription = $(this).find('.icon-cell')[0].title;
                     var url = "asadssa";//$(this).find('.gallery-item-card-container')[0].href;
                     var vsmpDomJsonData =
                     {
