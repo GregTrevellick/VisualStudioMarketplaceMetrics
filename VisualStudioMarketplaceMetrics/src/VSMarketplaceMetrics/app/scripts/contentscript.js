@@ -86,23 +86,29 @@ chrome.runtime.onMessage.addListener(
 
                 console.log("carouseling");
 
-                $("[class^=carousel-item]").each(function () {
-                    var installCountRounded = $(this).find('.install-count')[0].innerText;
-                    var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
-                    var icon = $(this).find('.item-icon')[0].src;
-                    var itemTitle = $(this).find('.item-title')[0].innerText;
-                    var reviewTitle = $(this).find('.rating')[0].title;
-                    var startReview = reviewTitle.indexOf('(') + 1;
-                    var endReview = reviewTitle.indexOf(' ', startReview);
-                    var reviewCount = reviewTitle.substring(startReview, endReview);
-                    var publisher = $(this).find('.publisher')[0].innerText;
-                    var price = $(this).find('.pricing-tag')[0].innerText;
-                    var averageReviewFull = $(this).find('.rating')[0].title;
-                    var averageReviewSplit = averageReviewFull.replace(" ", "").split(":");
-                    var averageReviewNumberPlus = averageReviewSplit[1].split("(");
-                    var averageReview = averageReviewNumberPlus[0];
-                    var fullDescription = $(this).find('.description')[0].innerText;
-                    var url = $(this).find('.gallery-item-card-container')[0].href;
+                //$("[class^=carousel-item]").each(function () {
+                //$(".carousel-item").each(function () {
+                $("[class^=gallery-item-card]").each(function () {
+
+                    console.log("carousel looping");
+
+
+                    var installCountRounded = "asadssa";//$(this).find('.install-count')[0].innerText;
+                    var installCount = "asadssa";//installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
+                    var icon = "asadssa";//$(this).find('.item-icon')[0].src;
+                    var itemTitle = "asadssa";//$(this).find('.item-title')[0].innerText;
+                    var reviewTitle = "asadssa";//$(this).find('.rating')[0].title;
+                    var startReview = "asadssa";//reviewTitle.indexOf('(') + 1;
+                    var endReview = "asadssa";//reviewTitle.indexOf(' ', startReview);
+                    var reviewCount = "asadssa";//reviewTitle.substring(startReview, endReview);
+                    var publisher = "asadssa";//$(this).find('.publisher')[0].innerText;
+                    var price = "asadssa";//$(this).find('.pricing-tag')[0].innerText;
+                    var averageReviewFull = "asadssa";//$(this).find('.rating')[0].title;
+                    var averageReviewSplit = "asadssa";//averageReviewFull.replace(" ", "").split(":");
+                    var averageReviewNumberPlus = "asadssa";//averageReviewSplit[1].split("(");
+                    var averageReview = "asadssa";//averageReviewNumberPlus[0];
+                    var fullDescription = "asadssa";//$(this).find('.description')[0].innerText;
+                    var url = "asadssa";//$(this).find('.gallery-item-card-container')[0].href;
                     var vsmpDomJsonData =
                     {
                         InstallCount: installCount,
