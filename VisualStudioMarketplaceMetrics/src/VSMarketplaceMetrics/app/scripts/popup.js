@@ -2,17 +2,10 @@
 //gregt QUNIT for gregt items
 //gregt 3 diff tabs / 3 diff URLs
 
-//YES
-//https://marketplace.visualstudio.com
-//https://marketplace.visualstudio.com/vs
-//https://marketplace.visualstudio.com/vsts
-//https://marketplace.visualstudio.com/vscode
-//https://marketplace.visualstudio.com/search  IDE & VSTS & Code
-//https://marketplace.visualstudio.com/manage
-//https://visualstudiogallery.msdn.microsoft.com/site/mydashboard
-//https://social.msdn.microsoft.com/profile/Greg%20Trevellick/extensions
+
 
 //NO
+//https://visualstudiogallery.msdn.microsoft.com/site/mydashboard
 //https://marketplace.visualstudio.com/subscriptions
 //https://marketplace.visualstudio.com/items?itemName=vs-publisher-1455028.OpsHubVisualStudioOnlineMigrationUtility
 
