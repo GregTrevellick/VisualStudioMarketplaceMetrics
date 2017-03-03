@@ -33,26 +33,19 @@ $(function () {
 
     function popUpCallBack(vsmpDom) {
 
-        var totalInstallCount = 0;
-        var totalReviewCount = 0;
-        var rowOpen = "<tr>";
-        var rowClose = "</tr>";
+        console.log("vsmpDom");
+        console.log(vsmpDom);
 
-        if (vsmpDom[0]["URL"] = "n/a") {
-            var nildata = "<td>no data avail</td>";
-
-            $("#DetailGridTableBody").append(
-                   rowOpen +
-                   nildata +
-                   nildata +
-                   nildata +
-                   nildata +
-                   nildata +
-                   nildata +
-                   nildata +
-                   rowClose);
+        if (vsmpDom[0]["URL"] == "na") {
+            document.getElementById('TotalExtensionsCount').innerHTML = "Marketplace metrics data is unfortunately not available in this view.";
+            //document.getElementById('DetailGridTable').hide();
         }
         else {
+
+            var totalInstallCount = 0;
+            var totalReviewCount = 0;
+            var rowOpen = "<tr>";
+            var rowClose = "</tr>";
 
             for (var i = 0; i < vsmpDom.length; i++) {
                 var numericInstallCount = parseInt(vsmpDom[i]["InstallCount"]);
@@ -93,7 +86,7 @@ $(function () {
                     + colPriceLower.slice(1)
                     + "</td>";
 
-                var colAverageReview = "<td class='numeric'>" + vsmpDom[i]["AverageReview"] + "</td>";
+                var colAverageReview = "<td class='numeric'>" + vsmpDom[i]["AverageReview"] + "</td>";//gregt to be trimmed
 
                 $("#DetailGridTableBody").append(
                     rowOpen +
@@ -113,12 +106,12 @@ $(function () {
             document.getElementById('TotalExtensionsCount').innerHTML = vsmpDom.length.toLocaleString() + " extensions";
             document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " installs";
             document.getElementById('TotalReviewCount').innerHTML =
-                totalReviewCount.toLocaleString()
+                  totalReviewCount.toLocaleString()
                 + " reviews ("
                 + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
                 + "% of installs)";
             document.getElementById('TotalReviewCount').title =
-                +totalReviewCount.toLocaleString()
+                + totalReviewCount.toLocaleString()
                 + " divided by "
                 + totalInstallCount.toLocaleString();
             //QUNIT document.getElementById('OverallAverageReview').innerHTML =  + " weighted average reviews";
@@ -128,13 +121,10 @@ $(function () {
             document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
             //QUNIT document.getElementById('AverageReview').innerHTML = totalReviewCount.toLocaleString();
 
+            //Enable table sorting
+            $(document).ready(function () {
+                $("#DetailGridTable").tablesorter();
+            });
         }
-
-        //Enable table sorting
-        $(document).ready(function () {
-            $("#DetailGridTable").tablesorter();
-        });
-
-
     }
 });
