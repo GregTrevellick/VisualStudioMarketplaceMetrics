@@ -7,8 +7,8 @@ chrome.runtime.onMessage.addListener(
 
         if (request.action === "requestDomFromVsmpPopUp") {
 
+            //YES
             //https://marketplace.visualstudio.com/manage
-            //https://social.msdn.microsoft.com/profile/Greg%20Trevellick/extensions
             //NO
             //https://marketplace.visualstudio.com/subscriptions
 
@@ -47,13 +47,6 @@ chrome.runtime.onMessage.addListener(
                             }
                         }
                     }
-                    //else {
-                    //    if (href.indexOf("https://social.msdn.microsoft.com/profile/") != -1) {
-                    //        if (href.indexOf("/extensions") != -1) {
-                    //            typ = "browse_ProfileExtensions";
-                    //        }
-                    //    }
-                    //}
                     break;
             }
             
@@ -116,7 +109,7 @@ chrome.runtime.onMessage.addListener(
                     var averageReviewSplit = "asadssa";//averageReviewFull.replace(" ", "").split(":");
                     var averageReviewNumberPlus = "asadssa";//averageReviewSplit[1].split("(");
                     var averageReview = "asadssa";//averageReviewNumberPlus[0];
-                    var fullDescription = "asadssa";//$(this).find('.description')[0].innerText;
+                    var fullDescription = $(this).find('.icon-cell')[0].title;//$(this).find('.description')[0].innerText;
                     var url = "asadssa";//$(this).find('.gallery-item-card-container')[0].href;
                     var vsmpDomJsonData =
                     {
