@@ -95,16 +95,16 @@ chrome.runtime.onMessage.addListener(
                 typ == "search_VSTS")
             {
                 $("[class^=gallery-item-card]").each(function () {
-                    var installCountRounded = "asadssa";//$(this).find('.install-count')[0].innerText;
-                    var installCount = "asadssa";//installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
-                    var icon = "asadssa";//$(this).find('.item-icon')[0].src;
-                    var itemTitle = "asadssa";//$(this).find('.item-title')[0].innerText;
+                    var installCountRounded = $(this).find('.install-count')[0].innerText;
+                    var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
+                    var icon = $(this).find('.item-icon')[0].src;
+                    var itemTitle = $(this).find('.item-title')[0].innerText;
                     var reviewTitle = "asadssa";//$(this).find('.rating')[0].title;
                     var startReview = "asadssa";//reviewTitle.indexOf('(') + 1;
                     var endReview = "asadssa";//reviewTitle.indexOf(' ', startReview);
                     var reviewCount = "asadssa";//reviewTitle.substring(startReview, endReview);
-                    var publisher = "asadssa";//$(this).find('.publisher')[0].innerText;
-                    var price = "asadssa";//$(this).find('.pricing-tag')[0].innerText;
+                    var publisher = $(this).find('.publisher')[0].innerText;
+                    var price = $(this).find('.pricing-tag')[0].innerText;
                     var averageReviewFull = "asadssa";//$(this).find('.rating')[0].title;
                     var averageReviewSplit = "asadssa";//averageReviewFull.replace(" ", "").split(":");
                     var averageReviewNumberPlus = "asadssa";//averageReviewSplit[1].split("(");
