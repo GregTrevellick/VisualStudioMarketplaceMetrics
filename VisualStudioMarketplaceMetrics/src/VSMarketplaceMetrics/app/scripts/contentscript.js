@@ -7,9 +7,8 @@ chrome.runtime.onMessage.addListener(
 
         if (request.action === "requestDomFromVsmpPopUp") {
 
-            //YES
-            //https://marketplace.visualstudio.com/manage
             //NO
+            //https://marketplace.visualstudio.com/manage
             //https://marketplace.visualstudio.com/subscriptions
 
             var typ = "";
