@@ -99,28 +99,29 @@ $(function () {
 
             var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
 
-            //H2
+            //Pop up header
             document.getElementById('TotalExtensionsCount').innerHTML = vsmpDom.length.toLocaleString() + " extensions";
             document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " installs";
-            document.getElementById('TotalReviewCount').innerHTML =
-                  totalReviewCount.toLocaleString()
-                + " reviews";
+
+            //1,399 reviews (0.020% of installs) & mouseover text
+            document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " reviews";
             if (totalReviewsAsPercentageOfTotalInstalls > 0) {
                 document.getElementById('TotalReviewCount').innerHTML += " ("
                 + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
                 + "% of installs)";
-            }
+            };
+            document.getElementById('TotalReviewCount').title = totalReviewCount + " divided by " + totalInstallCount;
 
-            document.getElementById('TotalReviewCount').title =
-                + totalReviewCount.toLocaleString()
-                + " divided by "
-                + totalInstallCount.toLocaleString();
-            //QUNIT document.getElementById('OverallAverageReview').innerHTML =  + " weighted average reviews";
+            //TODO
+            //document.getElementById('OverallAverageReview').innerHTML =  + " weighted average reviews";
 
-            //TFOOT
+            //Table footer
             document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
             document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
-            //QUNIT document.getElementById('AverageReview').innerHTML = totalReviewCount.toLocaleString();
+            document.getElementById('ReviewsAsPercentageOfInstalls').innerHTML = totalReviewsAsPercentageOfTotalInstalls.toFixed(2).toLocaleString();
+            
+            //TODO
+            //document.getElementById('AverageReview').innerHTML = totalReviewCount.toLocaleString();
 
             //Enable table sorting
             $(document).ready(function () {

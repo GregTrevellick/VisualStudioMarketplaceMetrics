@@ -70,8 +70,10 @@ chrome.runtime.onMessage.addListener(
             if (vsmpDomSelector != "") {
 
                 $(vsmpDomSelector).each(function () {
+
                     var installCountRounded = $(this).find('.install-count')[0].innerText;
                     var installCount = GetInstallCount(installCountRounded);
+
                     var icon = $(this).find('.item-icon')[0].src;
                     var itemTitle = $(this).find('.item-title')[0].innerText;
                     var reviewTitle = $(this).find('.rating')[0].title;
