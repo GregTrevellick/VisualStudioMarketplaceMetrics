@@ -51,11 +51,9 @@ chrome.runtime.onMessage.addListener(
                     break;
             }
 
+            var vsmpDomSelector = "";
             var vsmpDomJsonDataArray = new Array();
 
-
-
-            var vsmpDomSelector = "";
             if (visitType == "search_VS" || visitType == "search_VSCode") {
                 vsmpDomSelector = "[class^=grid-item]";
             }
@@ -68,7 +66,6 @@ chrome.runtime.onMessage.addListener(
                     vsmpDomSelector = "[class^=gallery-item-card]";
                 }
             }
-                
 
             if (vsmpDomSelector != "") {
 
@@ -93,19 +90,6 @@ chrome.runtime.onMessage.addListener(
                         $(vsmpDomSelector).each(function () {
                             fullDescription = $(this).find('.description')[0].innerText;
                             url = $(this).find('.gallery-item-card-container')[0].href;
-                            //var vsmpDomJsonData =
-                            //{
-                            //    InstallCount: installCount,
-                            //    Icon: icon,
-                            //    ItemTitle: itemTitle,
-                            //    ReviewCount: reviewCount,
-                            //    Publisher: publisher,
-                            //    Price: price,
-                            //    AverageReview: averageReview,
-                            //    FullDescription: fullDescription,
-                            //    URL: url,
-                            //};
-                            //vsmpDomJsonDataArray.push(vsmpDomJsonData);
                         });
                     }
 
@@ -117,19 +101,6 @@ chrome.runtime.onMessage.addListener(
                         $(vsmpDomSelector).each(function () {
                             fullDescription = $(this).find('.icon-cell')[0].title;
                             url = $(this).find('.gallery-item-card-container').href;
-                            //var vsmpDomJsonData =
-                            //{
-                            //    InstallCount: installCount,
-                            //    Icon: icon,
-                            //    ItemTitle: itemTitle,
-                            //    ReviewCount: reviewCount,
-                            //    Publisher: publisher,
-                            //    Price: price,
-                            //    AverageReview: averageReview,
-                            //    FullDescription: fullDescription,
-                            //    URL: url,
-                            //};
-                            //vsmpDomJsonDataArray.push(vsmpDomJsonData);
                         });
                     }
 
@@ -145,17 +116,13 @@ chrome.runtime.onMessage.addListener(
                                 FullDescription: fullDescription,
                                 URL: url,
                             };
+
                     vsmpDomJsonDataArray.push(vsmpDomJsonData);
                 });
-
-                
             }
 
-
-
-
             if (visitType == "") {
-                //notify gregt !!!
+                //auto-notify gregt ?
             }
 
             if (visitType == "" || visitType == "notAllowed") {
