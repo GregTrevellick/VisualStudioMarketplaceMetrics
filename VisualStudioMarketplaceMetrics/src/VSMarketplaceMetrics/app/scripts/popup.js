@@ -33,12 +33,13 @@ $(function () {
 
     function popUpCallBack(vsmpDom) {
 
+        $("dataAvailable").hide();
+        $("dataNotAvailable").hide();
+
         if (vsmpDom[0]["URL"] == "n/a") {
             $("dataNotAvailable").show();
-            $("dataAvailable").hide();
         }
         else {
-            $("dataNotAvailable").hide();
             $("dataAvailable").show();
 
             var totalInstallCount = 0;
