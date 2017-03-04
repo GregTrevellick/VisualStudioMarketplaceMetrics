@@ -1,7 +1,6 @@
 //gregt disable til dom loaded
 //gregt jslint
 //gregt numeric formating (w/o screwing up sorting)
-//gregt when search results is empty
 //1 review not reviews
 //hide hdr avg review when nil reviews
 
@@ -119,8 +118,10 @@ $(function () {
                     + "% of installs)";
                 };
                 document.getElementById('TotalReviewCount').title = totalReviewCount + " divided by " + totalInstallCount;
-                document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview + " average review score";
-
+                if (totalReviewCount > 0) {
+                    document.getElementById('TotalOverallAverageReview').removeAttribute("hidden");
+                    document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview + " average review score";
+                };
                 document.getElementById('FooterGridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
                 document.getElementById('FooterGridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
                 document.getElementById('FooterReviewsAsPercentageOfInstalls').innerHTML = totalReviewsAsPercentageOfTotalInstalls.toFixed(2).toLocaleString();
