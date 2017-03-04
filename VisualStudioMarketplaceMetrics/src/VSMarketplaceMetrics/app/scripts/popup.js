@@ -2,7 +2,7 @@
 //gregt QUNIT for gregt items
 //gregt jslint
 //gregt numeric formating (w/o screwing up sorting)
-
+//gregt when search results is empty
 
 
 //////try diff locales (should work for free)
