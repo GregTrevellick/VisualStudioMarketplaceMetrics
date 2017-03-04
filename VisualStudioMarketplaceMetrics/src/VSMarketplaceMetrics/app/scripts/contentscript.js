@@ -104,9 +104,6 @@ chrome.runtime.onMessage.addListener(
                         });
                     }
 
-                    console.log("installCount");
-                    console.log(installCount);
-
                     var vsmpDomJsonData =
                             {
                                 InstallCount: installCount,
