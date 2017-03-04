@@ -127,7 +127,7 @@ $(function () {
                 if (totalReviewsAsPercentageOfTotalInstalls > 0) {
                     document.getElementById('TotalReviewCount').innerHTML += " ("
                     + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
-                    + "% of installs)";
+                    + "% of installations)";
                 };
                 document.getElementById('TotalReviewCount').title = totalReviewCount + " divided by " + totalInstallCount;
                 if (totalReviewCount > 0) {
