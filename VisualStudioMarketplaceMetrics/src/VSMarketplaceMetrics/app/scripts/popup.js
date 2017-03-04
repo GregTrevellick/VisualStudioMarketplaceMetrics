@@ -1,7 +1,7 @@
 //gregt disable til dom loaded
 //gregt QUNIT for gregt items
 //gregt jslint
-
+//gregt numeric formating (w/o screwing up sorting)
 
 
 
@@ -34,16 +34,10 @@ $(function () {
 
     function popUpCallBack(vsmpDom) {
 
-        //$("dataAvailable").hide();
-        //$("dataUnavailable").hide();
-
         if (vsmpDom[0]["URL"] == "n/a") {
-            //$("dataUnavailable").show();
             document.getElementById('dataUnavailable').removeAttribute("hidden");
         }
         else {
-            //$("dataAvailable").show();
-            //$("dataAvailable").removeAttribute("hidden");
             document.getElementById('dataAvailable').removeAttribute("hidden");
 
             var totalInstallCount = 0;
@@ -113,8 +107,7 @@ $(function () {
                   totalReviewCount.toLocaleString()
                 + " reviews";
             if (totalReviewsAsPercentageOfTotalInstalls > 0) {
-                document.getElementById('TotalReviewCount').innerHTML +=
-                " ("
+                document.getElementById('TotalReviewCount').innerHTML += " ("
                 + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
                 + "% of installs)";
             }
