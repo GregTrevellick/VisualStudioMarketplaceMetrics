@@ -108,9 +108,24 @@ $(function () {
                 var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);//gregt divide by zero ! //gregt dedupe
                 var totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
 
-                document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " extensions";
-                document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " installs";
-                document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " reviews";
+                var totalExtensionsCountSuffix = "";
+                if (totalExtensionsCount != 1) {
+                    totalExtensionsCountSuffix = "s";
+                };
+                document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " extension" + totalExtensionsCountSuffix;
+
+                var totalInstallCountSuffix = "";
+                if (totalInstallCount != 1) {
+                    totalInstallCountSuffix = "s";
+                };
+                document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " install" + totalInstallCountSuffix;
+
+                var totalReviewCountSuffix = "";
+                if (totalReviewCount != 1) {
+                    totalReviewCountSuffix = "s";
+                };
+                document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " review" + totalReviewCountSuffix;
+
                 if (totalReviewsAsPercentageOfTotalInstalls > 0) {
                     document.getElementById('TotalReviewCount').innerHTML += " ("
                     + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
