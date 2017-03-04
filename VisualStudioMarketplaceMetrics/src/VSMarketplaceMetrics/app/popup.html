@@ -9,37 +9,48 @@
     <script type="text/javascript" src="scripts/popup.js"></script>
 </head>
 <body>
-    <h2>
-        <span id="TotalExtensionsCount"></span><br />
-        <span id="TotalInstallCount"></span><br />
-        <span id="TotalReviewCount"></span><br />
-        <span id="OverallAverageReview"></span>
-    </h2>
-    <table id="DetailGridTable" class="tablesorter">
-        <thead>
-            <tr>
-                <th>Installs</th>
-                <th>Title</th>
-                <th>Reviews</th>
-                <th>Reviews as % of installs<p></th>
-                <th>Publisher</th>
-                <th>Price</th>
-                <th>Average review</th>
-            </tr>
-        </thead>
-        <tbody id="DetailGridTableBody"></tbody>
-        <tfoot>
-            <tr>
-                <td class='numeric' id="GridTotalInstallCount"></td>
-                <td></td>
-                <td class='numeric' id="GridTotalReviewCount"></td>
-                <td class='numeric' id="ReviewsAsPercentageOfInstalls"></td>
-                <td></td>
-                <td></td>
-                <td class='numeric' id="AverageReview"></td>
-            </tr>
-        </tfoot>
-    </table>
+    <div id="dataNotAvailable">
+            <h2>
+                Marketplace metrics data is unfortunately not available in this view.
+            </h2>
+                <h4>
+                    If wrong click here to send pre-populated email to author.
+                    <a href="mailto:dataNotAvailable.VSMarketplaceMetrics@gmail.com?subject=The%20subject%20of%20the%20email &amp;body=The%20body%20of%20the%20email">gggggggg</a>
+                </h4>
+    </div>
+    <div id="dataAvailable">
+            <h2>
+                <span id="TotalExtensionsCount"></span><br />
+                <span id="TotalInstallCount"></span><br />
+                <span id="TotalReviewCount"></span><br />
+                <span id="OverallAverageReview"></span>
+            </h2>
+        <table id="DetailGridTable" class="tablesorter">
+            <thead>
+                <tr>
+                    <th>Installs</th>
+                    <th>Title</th>
+                    <th>Reviews</th>
+                    <th>Reviews as % of installs<p></th>
+                    <th>Publisher</th>
+                    <th>Price</th>
+                    <th>Average review</th>
+                </tr>
+            </thead>
+            <tbody id="DetailGridTableBody"></tbody>
+            <tfoot>
+                <tr>
+                    <td class='numeric' id="GridTotalInstallCount"></td>
+                    <td></td>
+                    <td class='numeric' id="GridTotalReviewCount"></td>
+                    <td class='numeric' id="ReviewsAsPercentageOfInstalls"></td>
+                    <td></td>
+                    <td></td>
+                    <td class='numeric' id="AverageReview"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 </body>
 </html>
 

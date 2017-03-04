@@ -34,10 +34,12 @@ $(function () {
     function popUpCallBack(vsmpDom) {
 
         if (vsmpDom[0]["URL"] == "n/a") {
-            document.getElementById('TotalExtensionsCount').innerHTML = "Marketplace metrics data is unfortunately not available in this view.";
-            $("#DetailGridTable").hide();
+            $("dataNotAvailable").show();
+            $("dataAvailable").hide();
         }
         else {
+            $("dataNotAvailable").hide();
+            $("dataAvailable").show();
 
             var totalInstallCount = 0;
             var totalReviewCount = 0;
