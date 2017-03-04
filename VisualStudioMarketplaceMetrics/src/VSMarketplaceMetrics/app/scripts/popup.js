@@ -34,7 +34,7 @@ $(function () {
 
     function popUpCallBack(vsmpDom) {
 
-        if (vsmpDom[0]["URL"] == "n/a") {
+        if (vsmpDom[0]["URL"] == "notAllowed") {
             document.getElementById('dataUnavailable').removeAttribute("hidden");
         }
         else {

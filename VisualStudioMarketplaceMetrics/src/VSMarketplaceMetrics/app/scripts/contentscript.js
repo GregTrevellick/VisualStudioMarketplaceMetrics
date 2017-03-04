@@ -134,28 +134,28 @@ chrome.runtime.onMessage.addListener(
             if (visitType == "" ||
                 visitType == "notAllowed") {
 
-                var na = "n/a";
-                var installCount = na;
-                var icon = na;
-                var itemTitle = na;
-                var reviewTitle = na;
-                var reviewCount = na;
-                var publisher = na;
-                var price = na;
-                var averageReview = na;
-                var fullDescription = na;
-                var url = na;
+                //var na = "n/a";
+                //var installCount = na;
+                //var icon = na;
+                //var itemTitle = na;
+                //var reviewTitle = na;
+                //var reviewCount = na;
+                //var publisher = na;
+                //var price = na;
+                //var averageReview = na;
+                //var fullDescription = na;
+                //var url = na;
                 var vsmpDomJsonData =
                     {
-                        InstallCount: installCount,
-                        Icon: icon,
-                        ItemTitle: itemTitle,
-                        ReviewCount: reviewCount,
-                        Publisher: publisher,
-                        Price: price,
-                        AverageReview: averageReview,
-                        FullDescription: fullDescription,
-                        URL: url,
+                        //InstallCount: installCount,
+                        //Icon: icon,
+                        //ItemTitle: itemTitle,
+                        //ReviewCount: reviewCount,
+                        //Publisher: publisher,
+                        //Price: price,
+                        //AverageReview: averageReview,
+                        //FullDescription: fullDescription,
+                        URL: "notAllowed"
                     };
                 vsmpDomJsonDataArray.push(vsmpDomJsonData);
             }
