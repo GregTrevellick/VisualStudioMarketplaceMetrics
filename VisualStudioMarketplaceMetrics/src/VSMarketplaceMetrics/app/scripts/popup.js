@@ -1,4 +1,3 @@
-//gregt numeric formating (w/o screwing up sorting)
 //gregt try catch
 
 
@@ -48,7 +47,7 @@ $(function () {
 
                     var numericInstallCount = parseInt(vsmpDom[i]["InstallCount"]);
                     var numericReviewCount = parseInt(vsmpDom[i]["ReviewCount"]);
-                    var numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
+                    var numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;
                     var numericAverageReview = parseInt(vsmpDom[i]["AverageReview"]);
 
                     totalInstallCount += numericInstallCount;
@@ -86,7 +85,7 @@ $(function () {
                         + colPriceLower.slice(1)
                         + "</td>";
 
-                    var colAverageReview = "<td class='numeric'>" + vsmpDom[i]["AverageReview"] + "</td>";//gregt to be trimmed
+                    var colAverageReview = "<td class='numeric'>" + vsmpDom[i]["AverageReview"] + "</td>";
 
                     $("#DetailGridTableBody").append(
                         rowOpen +
@@ -101,8 +100,8 @@ $(function () {
                 }
 
                 var totalExtensionsCount = vsmpDom.length;
-                var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
-                var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);//gregt divide by zero ! //gregt dedupe
+                var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;
+                var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);
                 var totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
 
                 var totalExtensionsCountSuffix = "";

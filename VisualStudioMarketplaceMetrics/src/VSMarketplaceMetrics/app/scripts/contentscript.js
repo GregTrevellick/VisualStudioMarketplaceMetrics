@@ -85,7 +85,7 @@ chrome.runtime.onMessage.addListener(
                     var averageReviewFull = $(this).find('.rating')[0].title;
                     var averageReviewSplit = averageReviewFull.replace(" ", "").split(":");
                     var averageReviewNumberPlus = averageReviewSplit[1].split("(");
-                    var averageReview = averageReviewNumberPlus[0];
+                    var averageReview = averageReviewNumberPlus[0].trim();
 
                     if (visitType == "search_VS" ||
                         visitType == "search_VSCode") {
