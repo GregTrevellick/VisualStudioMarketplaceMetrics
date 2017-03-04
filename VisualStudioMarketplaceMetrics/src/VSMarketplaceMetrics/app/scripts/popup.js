@@ -1,5 +1,3 @@
-//content_scripts/run_at : "document_start"
-//https://developer.chrome.com/extensions/content_scripts
 //gregt numeric formating (w/o screwing up sorting)
 
 //////jslint
