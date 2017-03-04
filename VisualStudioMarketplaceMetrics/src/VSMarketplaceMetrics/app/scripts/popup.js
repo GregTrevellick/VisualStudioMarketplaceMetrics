@@ -133,7 +133,6 @@ $(function () {
         selectElementContents(document.getElementById('ClipboardBuffer'));
     });
 
-
     function selectElementContents(element) {
 
         var body = document.body, range, sel;
