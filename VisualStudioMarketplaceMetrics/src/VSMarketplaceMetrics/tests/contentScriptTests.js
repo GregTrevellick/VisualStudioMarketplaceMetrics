@@ -1,4 +1,4 @@
-﻿/// <reference path="c:\users\greg\source\repos\ciugjgfhvjgh\visualstudiomarketplacemetrics\src\vsmarketplacemetrics\app\scripts\contentscript.js" />
+﻿/// <reference path="..\app\scripts\contentscript.js" />
 
 test("GetInstallCountTest", function () {
 
