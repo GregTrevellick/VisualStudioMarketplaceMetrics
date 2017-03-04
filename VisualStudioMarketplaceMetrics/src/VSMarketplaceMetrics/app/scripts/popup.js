@@ -26,7 +26,7 @@ $(function () {
             function (tabs) {
                 chrome.tabs.sendMessage(
                     tabs[0].id,
-                    { action: "requestDomFromVsmpPopUp" },
+                    { action: "requestDomFromVsmmPopUp" },
                     popUpCallBack
                     );
             });

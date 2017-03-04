@@ -3,40 +3,40 @@ chrome.runtime.onMessage.addListener(
 
     function (request, sender, popUpCallBackFn) {
 
-        if (request.action === "requestDomFromVsmpPopUp") {
+        if (request.action === "requestDomFromVsmmPopUp") {
 
-            var typ = "";
+            var visitType = "";
             var href = window.location.href;
 
             switch (href) {
                 case "http://marketplace.visualstudio.com/":
                 case "https://marketplace.visualstudio.com/":
-                    typ = "browse_Root";
+                    visitType = "browse_Root";
                     break;
                 case "http://marketplace.visualstudio.com/vs":
                 case "https://marketplace.visualstudio.com/vs":
-                    typ = "browse_VS";
+                    visitType = "browse_VS";
                     break;
                 case "http://marketplace.visualstudio.com/vsts":
                 case "https://marketplace.visualstudio.com/vsts":
-                    typ = "browse_VSTS";
+                    visitType = "browse_VSTS";
                     break;
                 case "http://marketplace.visualstudio.com/vscode":
                 case "https://marketplace.visualstudio.com/vscode":
-                    typ = "browse_VSCode";
+                    visitType = "browse_VSCode";
                     break;
                 default:
                     if (href.indexOf("marketplace.visualstudio.com/search") != -1) {
                         if (href.indexOf("&target=VS&") != -1) {
-                            typ = "search_VS";
+                            visitType = "search_VS";
                         }
                         else {
                             if (href.indexOf("&target=VSCode&") != -1) {
-                                typ = "search_VSCode";
+                                visitType = "search_VSCode";
                             }
                             else {
                                 if (href.indexOf("&target=VSTS&") != -1) {
-                                    typ = "search_VSTS";
+                                    visitType = "search_VSTS";
                                 }
                             }
                         }
@@ -45,7 +45,7 @@ chrome.runtime.onMessage.addListener(
                         if (href.indexOf("marketplace.visualstudio.com/manage") != -1
                          || href.indexOf("marketplace.visualstudio.com/subscriptions") != -1
                          || href.indexOf("marketplace.visualstudio.com/items?itemName=") != -1) {
-                            typ = "notAllowed";
+                            visitType = "notAllowed";
                         }
                     }
                     break;
@@ -53,8 +53,8 @@ chrome.runtime.onMessage.addListener(
 
             var vsmpDomJsonDataArray = new Array();
 
-            if (typ == "search_VS" ||
-                typ == "search_VSCode") {
+            if (visitType == "search_VS" ||
+                visitType == "search_VSCode") {
                 $("[class^=grid-item]").each(function () {
                     var installCountRounded = $(this).find('.install-count')[0].innerText;
                     var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
@@ -88,11 +88,11 @@ chrome.runtime.onMessage.addListener(
                 });
             }
 
-            if (typ == "browse_Root" ||
-                typ == "browse_VS" ||
-                typ == "browse_VSTS" ||
-                typ == "browse_VSCode" ||
-                typ == "search_VSTS") {
+            if (visitType == "browse_Root" ||
+                visitType == "browse_VS" ||
+                visitType == "browse_VSTS" ||
+                visitType == "browse_VSCode" ||
+                visitType == "search_VSTS") {
                 $("[class^=gallery-item-card]").each(function () {
                     var installCountRounded = $(this).find('.install-count')[0].innerText;
                     var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
@@ -127,12 +127,12 @@ chrome.runtime.onMessage.addListener(
                 });
             }
 
-            if (typ == "") {
+            if (visitType == "") {
                 //notify gregt !!!
             }
 
-            if (typ == "" ||
-                typ == "notAllowed") {
+            if (visitType == "" ||
+                visitType == "notAllowed") {
 
                 var na = "n/a";
                 var installCount = na;
