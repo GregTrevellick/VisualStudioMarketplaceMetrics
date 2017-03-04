@@ -143,12 +143,12 @@ $(function () {
 
 
     $('#CopyToClipboard').click(function (e) {
-        e.preventDefault();//gregt needed ?
+        //////////////////////////////////e.preventDefault();//gregt needed ?
         selectElementContents(document.getElementById('ClipboardBuffer'));
     });
 
 
-    function selectElementContents(el) {
+    function selectElementContents(element) {
 
         var body = document.body, range, sel;
 
@@ -157,16 +157,16 @@ $(function () {
             sel = window.getSelection();
             sel.removeAllRanges();
             try {
-                range.selectNodeContents(el);
+                range.selectNodeContents(element);
                 sel.addRange(range);
             } catch (e) {
-                range.selectNode(el);
+                range.selectNode(element);
                 sel.addRange(range);
             }
         } else {
             if (body.createTextRange) {
                 range = body.createTextRange();
-                range.moveToElementText(el);
+                range.moveToElementText(element);
                 range.select();
             }
         }
