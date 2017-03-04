@@ -1,56 +1,54 @@
 <!doctype html>
 <html>
-<head>
-    <title>Visual Studio Marketplace Metrics</title>
-    <link href="styles/my.css" rel="stylesheet" />
-    <link rel="stylesheet" href="scripts/tablesorter/themes/blue/style.css" />
-    <script type="text/javascript" src="scripts/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="scripts/tablesorter/jquery.tablesorter.js"></script>
-    <script type="text/javascript" src="scripts/popup.js"></script>
-</head>
-<body>
-    <div id="dataAvailable">
+    <head>
+        <title>Visual Studio Marketplace Metrics</title>
+        <link href="styles/my.css" rel="stylesheet" />
+        <link rel="stylesheet" href="scripts/tablesorter/themes/blue/style.css" />
+        <script type="text/javascript" src="scripts/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="scripts/tablesorter/jquery.tablesorter.js"></script>
+        <script type="text/javascript" src="scripts/popup.js"></script>
+    </head>
+    <body>
+        <div id="dataUnavailable" hidden="hidden">
+            <h2>
+                Marketplace metrics data is unfortunately not available for this page.
+            </h2>
+            <h4>
+                If wrong click <a href="mailto:dataUnavailable.VSMarketplaceMetrics@gmail.com?subject=The%20subject%20of%20the%20email&amp;body=The%20body%20of%20the%20email">here</a> to send pre-populated email to author.
+            </h4>
+        </div>
+        <div id="dataAvailable" hidden="hidden">
             <h2>
                 <span id="TotalExtensionsCount"></span><br />
                 <span id="TotalInstallCount"></span><br />
                 <span id="TotalReviewCount"></span><br />
                 <span id="OverallAverageReview"></span>
             </h2>
-        <table id="DetailGridTable" class="tablesorter">
-            <thead>
-                <tr>
-                    <th>Installs</th>
-                    <th>Title</th>
-                    <th>Reviews</th>
-                    <th>Reviews as % of installs<p></th>
-                    <th>Publisher</th>
-                    <th>Price</th>
-                    <th>Average review</th>
-                </tr>
-            </thead>
-            <tbody id="DetailGridTableBody"></tbody>
-            <tfoot>
-                <tr>
-                    <td class='numeric' id="GridTotalInstallCount"></td>
-                    <td></td>
-                    <td class='numeric' id="GridTotalReviewCount"></td>
-                    <td class='numeric' id="ReviewsAsPercentageOfInstalls"></td>
-                    <td></td>
-                    <td></td>
-                    <td class='numeric' id="AverageReview"></td>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
-    <div id="dataNotAvailable">
-        <h2>
-            Marketplace metrics data is unfortunately not available for this page.
-        </h2>
-        <h4>
-            If wrong click here to send pre-populated email to author.
-            <a href="mailto:dataNotAvailable.VSMarketplaceMetrics@gmail.com?subject=The%20subject%20of%20the%20email&amp;body=The%20body%20of%20the%20email">gggggggg</a>
-        </h4>
-    </div>
-</body>
+            <table id="DetailGridTable" class="tablesorter">
+                <thead>
+                    <tr>
+                        <th>Installs</th>
+                        <th>Title</th>
+                        <th>Reviews</th>
+                        <th>Reviews as % of installs<p></th>
+                        <th>Publisher</th>
+                        <th>Price</th>
+                        <th>Average review</th>
+                    </tr>
+                </thead>
+                <tbody id="DetailGridTableBody"></tbody>
+                <tfoot>
+                    <tr>
+                        <td class='numeric' id="GridTotalInstallCount"></td>
+                        <td></td>
+                        <td class='numeric' id="GridTotalReviewCount"></td>
+                        <td class='numeric' id="ReviewsAsPercentageOfInstalls"></td>
+                        <td></td>
+                        <td></td>
+                        <td class='numeric' id="AverageReview"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </body>
 </html>
-

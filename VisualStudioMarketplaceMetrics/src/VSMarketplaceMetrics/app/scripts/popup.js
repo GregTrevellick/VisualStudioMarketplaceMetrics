@@ -34,14 +34,17 @@ $(function () {
 
     function popUpCallBack(vsmpDom) {
 
-        $("dataAvailable").hide();
-        $("dataNotAvailable").hide();
+        //$("dataAvailable").hide();
+        //$("dataUnavailable").hide();
 
         if (vsmpDom[0]["URL"] == "n/a") {
-            $("dataNotAvailable").show();
+            //$("dataUnavailable").show();
+            document.getElementById('dataUnavailable').removeAttribute("hidden");
         }
         else {
-            $("dataAvailable").show();
+            //$("dataAvailable").show();
+            //$("dataAvailable").removeAttribute("hidden");
+            document.getElementById('dataAvailable').removeAttribute("hidden");
 
             var totalInstallCount = 0;
             var totalReviewCount = 0;
