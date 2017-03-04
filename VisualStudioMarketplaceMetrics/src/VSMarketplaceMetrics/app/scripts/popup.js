@@ -104,6 +104,7 @@ $(function () {
             var totalExtensionsCount = vsmpDom.length;
             var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
             var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);//gregt divide by zero ! //gregt dedupe
+            var totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
 
             //Pop up header
             document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " extensions";
@@ -117,13 +118,13 @@ $(function () {
                 + "% of installs)";
             };
             document.getElementById('TotalReviewCount').title = totalReviewCount + " divided by " + totalInstallCount;
-            //document.getElementById('OverallAverageReview').innerHTML =  + " weighted average reviews";
+            document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview + " average review score";
 
             //Table footer
             document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
             document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
             document.getElementById('ReviewsAsPercentageOfInstalls').innerHTML = totalReviewsAsPercentageOfTotalInstalls.toFixed(2).toLocaleString();
-            document.getElementById('OverallAverageReview').innerHTML = overallAverageReview.toFixed(2).toLocaleString();
+            document.getElementById('OverallAverageReview').innerHTML = totalOverallAverageReview;
 
             //Enable table sorting
             $(document).ready(function () {
