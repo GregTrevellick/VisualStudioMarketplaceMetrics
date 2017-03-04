@@ -1,5 +1,6 @@
 //gregt disable til dom loaded
 //gregt QUNIT for gregt items
+//gregt jslint
 
 
 
@@ -107,9 +108,14 @@ $(function () {
             document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " installs";
             document.getElementById('TotalReviewCount').innerHTML =
                   totalReviewCount.toLocaleString()
-                + " reviews ("
+                + " reviews";
+            if (totalReviewsAsPercentageOfTotalInstalls > 0) {
+                document.getElementById('TotalReviewCount').innerHTML +=
+                " ("
                 + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
                 + "% of installs)";
+            }
+
             document.getElementById('TotalReviewCount').title =
                 + totalReviewCount.toLocaleString()
                 + " divided by "
