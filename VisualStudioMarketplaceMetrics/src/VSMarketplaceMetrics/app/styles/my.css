@@ -2,7 +2,6 @@
     min-width:400px;
 }
 
-
 /*table {
     min-width: 400px;
 }*/
@@ -21,19 +20,5 @@ a:hover {
 }
 
 .copyToClipboard {
-    float: right;
     font-size: smaller;
 }
-
-
-/*th.rotate {
-  white-space: nowrap;
-}*/
-
-/*th.rotate  {
-  transform:*/ 
-    /* Magic Numbers */
-    /*translate(25px, 51px)*/
-    /* 45 is really 360 - 45 */
-    /*rotate(315deg);*/
-/*}*/

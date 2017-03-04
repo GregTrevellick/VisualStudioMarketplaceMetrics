@@ -12,7 +12,6 @@
 //////mads kristensens tweet about low nbr of reviews
 //////aria tags
 //////minify the extension if large kb ?
-//////copy to clipboard
 //////use strict
 //////total for reviews col (weighted & unweighted)
 
@@ -130,20 +129,7 @@ $(function () {
         }
     }
 
-
-
-
-
-
-
-   
-
-
-
-
-
     $('#CopyToClipboard').click(function (e) {
-        //////////////////////////////////e.preventDefault();//gregt needed ?
         selectElementContents(document.getElementById('ClipboardBuffer'));
     });
 
@@ -172,5 +158,7 @@ $(function () {
         }
 
         document.execCommand('copy');
+
+        document.getSelection().removeAllRanges();
     }
 });
