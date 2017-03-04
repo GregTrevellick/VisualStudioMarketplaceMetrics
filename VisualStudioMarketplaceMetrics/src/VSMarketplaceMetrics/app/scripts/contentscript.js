@@ -135,12 +135,17 @@ chrome.runtime.onMessage.addListener(
             // Call the specified callback
             popUpCallBackFn(vsmpDomJsonDataArray);
         }
-
-
-
     });
 
+
+
+
+
+
 chrome.runtime.sendMessage({ action: "openPopUp" });
+
+
+
 
 
 function GetInstallCount(installCountRounded) {

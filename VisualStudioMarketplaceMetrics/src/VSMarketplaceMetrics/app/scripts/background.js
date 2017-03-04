@@ -1,3 +1,4 @@
+
 // When the extension is installed or upgraded...
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
@@ -9,3 +10,4 @@ chrome.runtime.onMessage.addListener(
                 });
         }
     });
+

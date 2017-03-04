@@ -1,4 +1,6 @@
-//gregt disable til dom loaded
+//gregt disable til dom loaded  
+//content_scripts/run_at : "document_start"
+//https://developer.chrome.com/extensions/content_scripts
 //gregt numeric formating (w/o screwing up sorting)
 
 //////jslint
@@ -27,6 +29,15 @@ $(function () {
     };
 
     function popUpCallBack(vsmpDom) {
+
+     //   console.log("document.readyState2");
+    //    console.log(document.readyState);
+        //only activate extn once vsmp dom has loaded
+     //  if (document.readyState != "loading") {
+            //
+     //   });
+
+
 
         if (vsmpDom.length == 0) {
             document.getElementById('nilSearchResults').removeAttribute("hidden");

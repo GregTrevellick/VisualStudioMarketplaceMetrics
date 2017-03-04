@@ -13,25 +13,15 @@
 
   "background": 
   {
-    "scripts": 
-    [
-      "scripts/background.js"
-    ],
+    "scripts": [ "scripts/background.js" ],
     "persistent": false
   },
 
   "content_scripts": 
   [
     {
-      "matches": 
-      [        
-        "https://marketplace.visualstudio.com/*"
-      ],
-      "js": 
-      [
-        "scripts/contentscript.js",
-        "scripts/jquery-1.10.2.js"
-      ]
+      "matches": [ "https://marketplace.visualstudio.com/*" ],
+      "js": [ "scripts/contentscript.js", "scripts/jquery-1.10.2.js" ]
     }
   ],
 
@@ -49,8 +39,7 @@
     "http://marketplace.visualstudio.com/vsts*",
     "https://marketplace.visualstudio.com/vsts*",
     "http://marketplace.visualstudio.com/vscode*",
-    "https://marketplace.visualstudio.com/vscode*",
-    "http://www.bbc.co.uk/*"
+    "https://marketplace.visualstudio.com/vscode*"
   ],
 
   "icons": {
