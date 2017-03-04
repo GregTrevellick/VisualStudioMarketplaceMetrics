@@ -137,16 +137,7 @@ chrome.runtime.onMessage.addListener(
         }
     });
 
-
-
-
-
-
 chrome.runtime.sendMessage({ action: "openPopUp" });
-
-
-
-
 
 function GetInstallCount(installCountRounded) {
 
