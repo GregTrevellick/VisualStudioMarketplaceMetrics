@@ -1,19 +1,18 @@
 //gregt disable til dom loaded
-//gregt QUNIT for gregt items
 //gregt jslint
 //gregt numeric formating (w/o screwing up sorting)
 //gregt when search results is empty
+//1 review not reviews
+//hide hdr avg review when nil reviews
 
 
 //////try diff locales (should work for free)
 //////try catch
 //////cdn for jquery, with a fallback
-//////highlight initial sort column
 //////mads kristensens tweet about low nbr of reviews
 //////aria tags
 //////minify the extension if large kb ?
 //////use strict
-//////total for reviews col (weighted & unweighted)
 
 $(function () {
 
