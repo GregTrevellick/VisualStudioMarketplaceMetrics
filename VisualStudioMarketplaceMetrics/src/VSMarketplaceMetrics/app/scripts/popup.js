@@ -135,16 +135,6 @@ $(function () {
 
 
 
-    //$('#CopyToClipboard').click(function (e) {
-    //    var table = document.getElementById('DetailGridTable');
-    //    // Below line is essential !!!
-    //    table.contentEditable = 'true';
-    //    //var controlRange = document.body.createControlRange();
-    //    var controlRange = document.body.createTextRange();
-    //    controlRange.addElement(table);
-    //    //controlRange.moveToElementText(table);
-    //    controlRange.execCommand("Copy");
-    //});
 
    
 
@@ -157,43 +147,30 @@ $(function () {
         selectElementContents(document.getElementById('ClipboardBuffer'));
     });
 
-    //function copyToClipboard(tableId) {
-    //    var textRange = document.body.createTextRange();
-    //    textRange.moveToElementText(document.getElementById(tableId));
-    //    textRange.execCommand("Copy");
-    //}
 
     function selectElementContents(el) {
 
-        //    // Below line is essential !!!
-        //    table.contentEditable = 'true';
-
         var body = document.body, range, sel;
+
         if (document.createRange && window.getSelection) {
-            console.log("here1");
             range = document.createRange();
             sel = window.getSelection();
             sel.removeAllRanges();
             try {
                 range.selectNodeContents(el);
                 sel.addRange(range);
-                console.log("here1b");
-                //range.execCommand("Copy");
-                //sel.execCommand("Copy");
-                document.execCommand('copy');
             } catch (e) {
                 range.selectNode(el);
                 sel.addRange(range);
             }
-        } else if (body.createTextRange) {
-            console.log("here2");
-            range = body.createTextRange();
-            range.moveToElementText(el);
-            range.select();
-            //range.addElement(table);
-            //range.moveToElementText(table);
-
-            //range.execCommand("Copy");
+        } else {
+            if (body.createTextRange) {
+                range = body.createTextRange();
+                range.moveToElementText(el);
+                range.select();
+            }
         }
+
+        document.execCommand('copy');
     }
 });
