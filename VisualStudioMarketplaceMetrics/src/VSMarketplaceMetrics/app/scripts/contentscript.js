@@ -53,9 +53,29 @@ chrome.runtime.onMessage.addListener(
 
             var vsmpDomJsonDataArray = new Array();
 
-            if (visitType == "search_VS" ||
-                visitType == "search_VSCode") {
-                $("[class^=grid-item]").each(function () {
+
+
+            var vsmpDomSelector = "";
+            if (visitType == "search_VS" || visitType == "search_VSCode") {
+                vsmpDomSelector = "[class^=grid-item]";
+            }
+            else {
+                if (visitType == "browse_Root" ||
+                    visitType == "browse_VS" ||
+                    visitType == "browse_VSTS" ||
+                    visitType == "browse_VSCode" ||
+                    visitType == "search_VSTS") {
+                    vsmpDomSelector = "[class^=gallery-item-card]";
+                }
+            }
+                
+
+            if (vsmpDomSelector != "") {
+                
+                console.log("vsmpDomSelector");
+                console.log(vsmpDomSelector);
+
+                $(vsmpDomSelector).each(function () {
                     var installCountRounded = $(this).find('.install-count')[0].innerText;
                     var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
                     var icon = $(this).find('.item-icon')[0].src;
@@ -70,93 +90,95 @@ chrome.runtime.onMessage.addListener(
                     var averageReviewSplit = averageReviewFull.replace(" ", "").split(":");
                     var averageReviewNumberPlus = averageReviewSplit[1].split("(");
                     var averageReview = averageReviewNumberPlus[0];
-                    var fullDescription = $(this).find('.description')[0].innerText;
-                    var url = $(this).find('.gallery-item-card-container')[0].href;
-                    var vsmpDomJsonData =
-                    {
-                        InstallCount: installCount,
-                        Icon: icon,
-                        ItemTitle: itemTitle,
-                        ReviewCount: reviewCount,
-                        Publisher: publisher,
-                        Price: price,
-                        AverageReview: averageReview,
-                        FullDescription: fullDescription,
-                        URL: url,
-                    };
-                    vsmpDomJsonDataArray.push(vsmpDomJsonData);
+
+                    if (visitType == "search_VS" ||
+                    visitType == "search_VSCode") {
+                        //$("[class^=grid-item]").each(function () {
+                        $(vsmpDomSelector).each(function () {
+                            //var installCountRounded = $(this).find('.install-count')[0].innerText;
+                            //var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
+                            //var icon = $(this).find('.item-icon')[0].src;
+                            //var itemTitle = $(this).find('.item-title')[0].innerText;
+                            //var reviewTitle = $(this).find('.rating')[0].title;
+                            //var startReview = reviewTitle.indexOf('(') + 1;
+                            //var endReview = reviewTitle.indexOf(' ', startReview);
+                            //var reviewCount = reviewTitle.substring(startReview, endReview);
+                            //var publisher = $(this).find('.publisher')[0].innerText;
+                            //var price = $(this).find('.pricing-tag')[0].innerText;
+                            //var averageReviewFull = $(this).find('.rating')[0].title;
+                            //var averageReviewSplit = averageReviewFull.replace(" ", "").split(":");
+                            //var averageReviewNumberPlus = averageReviewSplit[1].split("(");
+                            //var averageReview = averageReviewNumberPlus[0];
+                            var fullDescription = $(this).find('.description')[0].innerText;
+                            var url = $(this).find('.gallery-item-card-container')[0].href;
+                            var vsmpDomJsonData =
+                            {
+                                InstallCount: installCount,
+                                Icon: icon,
+                                ItemTitle: itemTitle,
+                                ReviewCount: reviewCount,
+                                Publisher: publisher,
+                                Price: price,
+                                AverageReview: averageReview,
+                                FullDescription: fullDescription,
+                                URL: url,
+                            };
+                            vsmpDomJsonDataArray.push(vsmpDomJsonData);
+                        });
+                    }
+
+                    if (visitType == "browse_Root" ||
+                        visitType == "browse_VS" ||
+                        visitType == "browse_VSTS" ||
+                        visitType == "browse_VSCode" ||
+                        visitType == "search_VSTS") {
+                        //$("[class^=gallery-item-card]").each(function () {
+                        $(vsmpDomSelector).each(function () {
+                            //var installCountRounded = $(this).find('.install-count')[0].innerText;
+                            //var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
+                            //var icon = $(this).find('.item-icon')[0].src;
+                            //var itemTitle = $(this).find('.item-title')[0].innerText;
+                            //var reviewTitle = $(this).find('.rating')[0].title;
+                            //var startReview = reviewTitle.indexOf('(') + 1;
+                            //var endReview = reviewTitle.indexOf(' ', startReview);
+                            //var reviewCount = reviewTitle.substring(startReview, endReview);
+                            //var publisher = $(this).find('.publisher')[0].innerText;
+                            //var price = $(this).find('.pricing-tag')[0].innerText;
+                            //var averageReviewFull = $(this).find('.rating')[0].title;
+                            //var averageReviewSplit = averageReviewFull.replace(" ", "").split(":");
+                            //var averageReviewNumberPlus = averageReviewSplit[1].split("(");
+                            //var averageReview = averageReviewNumberPlus[0];
+                            var fullDescription = $(this).find('.icon-cell')[0].title;
+                            var url = $(this).find('.gallery-item-card-container').href;
+                            var vsmpDomJsonData =
+                            {
+                                InstallCount: installCount,
+                                Icon: icon,
+                                ItemTitle: itemTitle,
+                                ReviewCount: reviewCount,
+                                Publisher: publisher,
+                                Price: price,
+                                AverageReview: averageReview,
+                                FullDescription: fullDescription,
+                                URL: url,
+                            };
+                            vsmpDomJsonDataArray.push(vsmpDomJsonData);
+                        });
+                    }
                 });
+
+                
             }
 
-            if (visitType == "browse_Root" ||
-                visitType == "browse_VS" ||
-                visitType == "browse_VSTS" ||
-                visitType == "browse_VSCode" ||
-                visitType == "search_VSTS") {
-                $("[class^=gallery-item-card]").each(function () {
-                    var installCountRounded = $(this).find('.install-count')[0].innerText;
-                    var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
-                    var icon = $(this).find('.item-icon')[0].src;
-                    var itemTitle = $(this).find('.item-title')[0].innerText;
-                    var reviewTitle = $(this).find('.rating')[0].title;
-                    var startReview = reviewTitle.indexOf('(') + 1;
-                    var endReview = reviewTitle.indexOf(' ', startReview);
-                    var reviewCount = reviewTitle.substring(startReview, endReview);
-                    var publisher = $(this).find('.publisher')[0].innerText;
-                    var price = $(this).find('.pricing-tag')[0].innerText;
-                    var averageReviewFull = $(this).find('.rating')[0].title;
-                    var averageReviewSplit = averageReviewFull.replace(" ", "").split(":");
-                    var averageReviewNumberPlus = averageReviewSplit[1].split("(");
-                    var averageReview = averageReviewNumberPlus[0];
-                    var fullDescription = $(this).find('.icon-cell')[0].title;
-                    var url = $(this).find('.gallery-item-card-container').href;
 
-                    var vsmpDomJsonData =
-                    {
-                        InstallCount: installCount,
-                        Icon: icon,
-                        ItemTitle: itemTitle,
-                        ReviewCount: reviewCount,
-                        Publisher: publisher,
-                        Price: price,
-                        AverageReview: averageReview,
-                        FullDescription: fullDescription,
-                        URL: url,
-                    };
-                    vsmpDomJsonDataArray.push(vsmpDomJsonData);
-                });
-            }
+
 
             if (visitType == "") {
                 //notify gregt !!!
             }
 
-            if (visitType == "" ||
-                visitType == "notAllowed") {
-
-                //var na = "n/a";
-                //var installCount = na;
-                //var icon = na;
-                //var itemTitle = na;
-                //var reviewTitle = na;
-                //var reviewCount = na;
-                //var publisher = na;
-                //var price = na;
-                //var averageReview = na;
-                //var fullDescription = na;
-                //var url = na;
-                var vsmpDomJsonData =
-                    {
-                        //InstallCount: installCount,
-                        //Icon: icon,
-                        //ItemTitle: itemTitle,
-                        //ReviewCount: reviewCount,
-                        //Publisher: publisher,
-                        //Price: price,
-                        //AverageReview: averageReview,
-                        //FullDescription: fullDescription,
-                        URL: "notAllowed"
-                    };
+            if (visitType == "" || visitType == "notAllowed") {
+                var vsmpDomJsonData = { URL: "notAllowed" };
                 vsmpDomJsonDataArray.push(vsmpDomJsonData);
             }
 
