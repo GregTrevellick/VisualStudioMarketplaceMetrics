@@ -71,7 +71,8 @@ chrome.runtime.onMessage.addListener(
 
                 $(vsmpDomSelector).each(function () {
                     var installCountRounded = $(this).find('.install-count')[0].innerText;
-                    var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
+                    //var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
+                    var installCount = GetInstallCount(installCountRounded);
                     var icon = $(this).find('.item-icon')[0].src;
                     var itemTitle = $(this).find('.item-title')[0].innerText;
                     var reviewTitle = $(this).find('.rating')[0].title;
@@ -132,6 +133,12 @@ chrome.runtime.onMessage.addListener(
 
             // Call the specified callback
             popUpCallBackFn(vsmpDomJsonDataArray);
+        }
+
+        function GetInstallCount(installCountRounded) {
+            //var installCountRounded = $(this).find('.install-count')[0].innerText;
+            var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
+            return installCount;
         }
     });
 
