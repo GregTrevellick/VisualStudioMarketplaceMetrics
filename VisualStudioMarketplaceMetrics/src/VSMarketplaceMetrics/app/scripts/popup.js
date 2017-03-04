@@ -1,9 +1,7 @@
 //gregt disable til dom loaded
-//gregt jslint
 //gregt numeric formating (w/o screwing up sorting)
-//1 review not reviews
 
-
+//////jslint
 //////try diff locales (should work for free)
 //////try catch
 //////cdn for jquery, with a fallback
