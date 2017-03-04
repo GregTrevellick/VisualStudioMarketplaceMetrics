@@ -2,7 +2,6 @@
 //gregt jslint
 //gregt numeric formating (w/o screwing up sorting)
 //1 review not reviews
-//hide hdr avg review when nil reviews
 
 
 //////try diff locales (should work for free)
