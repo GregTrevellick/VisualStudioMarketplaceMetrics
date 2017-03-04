@@ -101,14 +101,15 @@ $(function () {
                     rowClose);
             }
 
+            var totalExtensionsCount = vsmpDom.length;
             var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
-            var overallAverageReview = (numericAverageReviewSum / totalInstallCount);//gregt divide by zero ! //gregt dedupe
+            var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);//gregt divide by zero ! //gregt dedupe
 
             //Pop up header
-            document.getElementById('TotalExtensionsCount').innerHTML = vsmpDom.length.toLocaleString() + " extensions";
+            document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " extensions";
             document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " installs";
 
-            //1,399 reviews (0.020% of installs) & mouseover text
+            //1400 reviews (.02% of installs) & mouseover text
             document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " reviews";
             if (totalReviewsAsPercentageOfTotalInstalls > 0) {
                 document.getElementById('TotalReviewCount').innerHTML += " ("
@@ -122,7 +123,7 @@ $(function () {
             document.getElementById('GridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
             document.getElementById('GridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
             document.getElementById('ReviewsAsPercentageOfInstalls').innerHTML = totalReviewsAsPercentageOfTotalInstalls.toFixed(2).toLocaleString();
-            document.getElementById('OverallAverageReview').innerHTML = overallAverageReview;//.toLocaleString();//.toLocaleString();            
+            document.getElementById('OverallAverageReview').innerHTML = overallAverageReview.toFixed(2).toLocaleString();
 
             //Enable table sorting
             $(document).ready(function () {
