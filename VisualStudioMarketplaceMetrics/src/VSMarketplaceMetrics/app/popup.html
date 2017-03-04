@@ -9,13 +9,18 @@
         <script type="text/javascript" src="scripts/popup.js"></script>
     </head>
     <body>
-        <div id="dataUnavailable" hidden="hidden">
+        <div id="dataUnavailable" hidden="hidden"><!--gregt rename to invalidpage-->
             <h2>
                 Marketplace metrics data is unfortunately not available for this page.
             </h2>
             <h4>
                 If wrong click <a href="mailto:dataUnavailable.VSMarketplaceMetrics@gmail.com?subject=The%20subject%20of%20the%20email&amp;body=The%20body%20of%20the%20email">here</a> to send pre-populated email to author.
             </h4>
+        </div>
+        <div id="nilSearchResults" hidden="hidden"><!--gregt rename to datanotavaialbe-->
+            <h2>
+                Repeat your search to get some results.
+            </h2>
         </div>
         <div id="dataAvailable" hidden="hidden">
             <h2>
@@ -31,23 +36,23 @@
                         <tr>
                             <th>Installs</th>
                             <th>Title</th>
-                            <th>Reviews</th>
+                            <th>No. of reviews</th>
                             <th>Reviews as % of installs<p></th>
                             <th>Publisher</th>
                             <th>Price</th>
-                            <th>Average review</th>
+                            <th>Average review score</th>
                         </tr>
                     </thead>
                     <tbody id="DetailGridTableBody"></tbody>
                     <tfoot>
                         <tr>
-                            <td class='numeric' id="GridTotalInstallCount"></td>
+                            <td class='numeric' id="FooterGridTotalInstallCount"></td>
                             <td></td>
-                            <td class='numeric' id="GridTotalReviewCount"></td>
-                            <td class='numeric' id="ReviewsAsPercentageOfInstalls"></td>
+                            <td class='numeric' id="FooterGridTotalReviewCount"></td>
+                            <td class='numeric' id="FooterReviewsAsPercentageOfInstalls"></td>
                             <td></td>
                             <td></td>
-                            <td class='numeric' id="OverallAverageReview"></td>
+                            <td class='numeric' id="FooterOverallAverageReview"></td>
                         </tr>
                     </tfoot>
                 </table>
