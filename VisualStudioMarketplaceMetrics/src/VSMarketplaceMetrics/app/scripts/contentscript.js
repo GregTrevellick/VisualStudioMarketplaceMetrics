@@ -71,8 +71,9 @@ chrome.runtime.onMessage.addListener(
 
                 $(vsmpDomSelector).each(function () {
                     var installCountRounded = $(this).find('.install-count')[0].innerText;
-                    //var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
+                    //////////////////////////////////////////////////////////////////////////////////////var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
                     var installCount = GetInstallCount(installCountRounded);
+                    /////////////////////////////////////////////////////////////////////////////GetInstallCount($(this).find('.install-count')[0].innerText);
                     var icon = $(this).find('.item-icon')[0].src;
                     var itemTitle = $(this).find('.item-title')[0].innerText;
                     var reviewTitle = $(this).find('.rating')[0].title;
@@ -105,6 +106,9 @@ chrome.runtime.onMessage.addListener(
                         });
                     }
 
+                    console.log("installCount");
+                    console.log(installCount);
+
                     var vsmpDomJsonData =
                             {
                                 InstallCount: installCount,
@@ -135,11 +139,38 @@ chrome.runtime.onMessage.addListener(
             popUpCallBackFn(vsmpDomJsonDataArray);
         }
 
-        function GetInstallCount(installCountRounded) {
-            //var installCountRounded = $(this).find('.install-count')[0].innerText;
-            var installCount = installCountRounded.replace("M", "000000").replace("K", "000").replace(".", "");//gregt 1.9M is not 19000000
-            return installCount;
-        }
+
+
     });
 
 chrome.runtime.sendMessage({ action: "openPopUp" });
+
+
+function GetInstallCount(installCountRounded) {
+
+    if (installCountRounded.indexOf("M") != -1) {
+        if (installCountRounded.indexOf(".") != -1) {
+            //e.g. "4.8M"
+            return installCountRounded.replace(".", "").replace("M", "00000");
+        }
+        else {
+            //e.g. "4M"
+            return installCountRounded.replace("M", "000000");
+        }
+    }
+    else {
+        if (installCountRounded.indexOf("K") != -1) {
+            if (installCountRounded.indexOf(".") != -1) {
+                //e.g. "4.8K"
+                return installCountRounded.replace(".", "").replace("K", "00");
+            }
+            else {
+                //e.g. "4K"
+                return installCountRounded.replace("K", "000");
+            }
+        }
+        else {
+            return installCountRounded;
+        }
+    }
+};

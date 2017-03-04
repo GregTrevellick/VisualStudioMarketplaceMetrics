@@ -47,6 +47,7 @@ $(function () {
 
             for (var i = 0; i < vsmpDom.length; i++) {
                 var numericInstallCount = parseInt(vsmpDom[i]["InstallCount"]);
+                //var numericInstallCount = vsmpDom[i]["InstallCount"];
                 var numericReviewCount = parseInt(vsmpDom[i]["ReviewCount"]);
                 var numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;//gregt divide by zero ! //gregt dedupe
 

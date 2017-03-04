@@ -59,8 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dummy.cs" />
-    <Content Include="VSMarketplaceMetrics\tests\calcTests.js" />
-    <Content Include="VSMarketplaceMetrics\tests\calc.js" />
+    <Content Include="VSMarketplaceMetrics\tests\contentScriptTests.js" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
