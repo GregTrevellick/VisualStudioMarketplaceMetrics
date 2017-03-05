@@ -1,10 +1,17 @@
+//gregt notice "microsoft can change dom at any time and this stops working"
 //gregt try catch
-//jslint
 
-//gregt create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
-//////cdn for jquery, with a fallback
-//////aria tags
-//////use strict
+
+
+
+//jslint
+//create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
+//cdn for jquery, with a fallback
+//aria tags
+//use strict
+
+
+
 
 $(function () {
 
