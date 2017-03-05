@@ -1,4 +1,3 @@
-//gregt notice "microsoft can change dom at any time and this stops working"
 //gregt try catch
 
 
