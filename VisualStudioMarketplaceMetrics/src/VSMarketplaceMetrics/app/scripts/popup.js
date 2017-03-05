@@ -29,10 +29,8 @@ $(function () {
         }
         else {
             if (vsmpDom[0]["URL"] == "notAllowed") {
-                var chromeVersion = navigator.appVersion;//gregt de-duplicate this http://stackoverflow.com/questions/27022527/javascript-detect-what-chrome-version
-                var pageUrl = window.location.href;//gregt de-triplicate this
-                document.getElementById('ChromeVersion').innerHTML = chromeVersion;
-                document.getElementById('PageUrl').innerHTML = pageUrl;
+                document.getElementById('PageUrl').innerHTML = "Page url: " + vsmpDom[0]["PageUrl"];
+                document.getElementById('UserAgent').innerHTML = "Browser version: "+ vsmpDom[0]["UserAgent"];
                 document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
             }
             else {

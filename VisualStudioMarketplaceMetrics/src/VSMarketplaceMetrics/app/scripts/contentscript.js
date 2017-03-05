@@ -5,9 +5,9 @@ chrome.runtime.onMessage.addListener(
         if (request.action === "requestDomFromVsmmPopUp") {
 
             var visitType = "";
-            var href = window.location.href;
+            var pageUrl = window.location.href;
 
-            switch (href) {
+            switch (pageUrl) {
                 case "http://marketplace.visualstudio.com/":
                 case "https://marketplace.visualstudio.com/":
                     visitType = "browse_Root";
@@ -25,25 +25,25 @@ chrome.runtime.onMessage.addListener(
                     visitType = "browse_VSCode";
                     break;
                 default:
-                    if (href.indexOf("marketplace.visualstudio.com/search") != -1) {
-                        if (href.indexOf("&target=VS&") != -1) {
+                    if (pageUrl.indexOf("marketplace.visualstudio.com/search") != -1) {
+                        if (pageUrl.indexOf("&target=VS&") != -1) {
                             visitType = "search_VS";
                         }
                         else {
-                            if (href.indexOf("&target=VSCode&") != -1) {
+                            if (pageUrl.indexOf("&target=VSCode&") != -1) {
                                 visitType = "search_VSCode";
                             }
                             else {
-                                if (href.indexOf("&target=VSTS&") != -1) {
+                                if (pageUrl.indexOf("&target=VSTS&") != -1) {
                                     visitType = "search_VSTS";
                                 }
                             }
                         }
                     }
                     else {
-                        if (href.indexOf("marketplace.visualstudio.com/manage") != -1
-                         || href.indexOf("marketplace.visualstudio.com/subscriptions") != -1
-                         || href.indexOf("marketplace.visualstudio.com/items?itemName=") != -1) {
+                        if (pageUrl.indexOf("marketplace.visualstudio.com/manage") != -1
+                         || pageUrl.indexOf("marketplace.visualstudio.com/subscriptions") != -1
+                         || pageUrl.indexOf("marketplace.visualstudio.com/items?itemName=") != -1) {
                             visitType = "notAllowed";
                         }
                     }
@@ -123,7 +123,12 @@ chrome.runtime.onMessage.addListener(
             }
 
             if (visitType == "" || visitType == "notAllowed") {
-                var vsmpDomJsonData = { URL: "notAllowed" };
+                var vsmpDomJsonData =
+                    {
+                        PageUrl: pageUrl,
+                        URL: "notAllowed",
+                        UserAgent: navigator.userAgent
+                    };
                 vsmpDomJsonDataArray.push(vsmpDomJsonData);
             }
 

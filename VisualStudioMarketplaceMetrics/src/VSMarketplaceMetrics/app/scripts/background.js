@@ -13,10 +13,10 @@ function dataUnavailableEmail() {
 
     var mailto = "support.vsmarketplacemetrics@gmail.com";
     var subject = "VS Marketplace Metrics Data Unavailable Page";
-    var chromeVersion = navigator.appVersion;//gregt http://stackoverflow.com/questions/27022527/javascript-detect-what-chrome-version
-    var pageUrl = window.location.href;
+    var userAgent = navigator.userAgent;//gregt dedupe
+    var pageUrl = window.location.href;//gregt dedupe
     var body =
-        "Chrome version: " + chromeVersion +
+        "User agent: " + userAgent +
         "<br />" + 
         "Page url: " + pageUrl;
     var emailUrl = "mailto:" + mailto + "?subject=" + subject + "&body=" + body;
