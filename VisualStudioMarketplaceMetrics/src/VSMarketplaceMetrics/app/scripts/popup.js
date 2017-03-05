@@ -175,6 +175,10 @@ $(function () {
         });
     }
 
+    $('#VisualStudioHelpIcon').click(function (e) {
+        document.getElementById('VisualStudioHelpText').removeAttribute("hidden");
+    });
+
     $('#CopyToClipboard').click(function (e) {
         selectElementContents(document.getElementById('ClipboardBuffer'));
     });
