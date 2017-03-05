@@ -1,27 +1,10 @@
 //gregt try catch
+//jslint
 
-
-//////jslint
+//gregt create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
 //////cdn for jquery, with a fallback
-//////mads kristensens tweet about low nbr of reviews
 //////aria tags
-//////minify the extension if large kb ?
 //////use strict
-
-
-//////////////////////////////////////////////"http://marketplace.visualstudio.com/search*",
-//////////////////////////////////////////////"https://marketplace.visualstudio.com/search*",
-//////////////////////////////////////////////"http://marketplace.visualstudio.com/manage*",
-//////////////////////////////////////////////"https://marketplace.visualstudio.com/manage*",
-//////////////////////////////////////////////"http://marketplace.visualstudio.com/vs*",
-//////////////////////////////////////////////"https://marketplace.visualstudio.com/vs*",
-//////////////////////////////////////////////"http://marketplace.visualstudio.com/vsts*",
-//////////////////////////////////////////////"https://marketplace.visualstudio.com/vsts*",
-//////////////////////////////////////////////"http://marketplace.visualstudio.com/vscode*",
-//////////////////////////////////////////////"https://marketplace.visualstudio.com/vscode*"
-
-
-
 
 $(function () {
 
@@ -46,6 +29,10 @@ $(function () {
         }
         else {
             if (vsmpDom[0]["URL"] == "notAllowed") {
+                var chromeVersion = navigator.appVersion;//gregt de-duplicate this http://stackoverflow.com/questions/27022527/javascript-detect-what-chrome-version
+                var pageUrl = window.location.href;//gregt de-triplicate this
+                document.getElementById('ChromeVersion').innerHTML = chromeVersion;
+                document.getElementById('PageUrl').innerHTML = pageUrl;
                 document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
             }
             else {

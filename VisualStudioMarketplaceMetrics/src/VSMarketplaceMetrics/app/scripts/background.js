@@ -9,9 +9,18 @@ chrome.runtime.onMessage.addListener(
         }
     });
 
-function sendEmail() {
-    //gregt include chrome vers, url etc in email
-    var emailUrl = "mailto:blah@blah.com";
+function dataUnavailableEmail() {
+
+    var mailto = "support.vsmarketplacemetrics@gmail.com";
+    var subject = "VS Marketplace Metrics Data Unavailable Page";
+    var chromeVersion = navigator.appVersion;//gregt http://stackoverflow.com/questions/27022527/javascript-detect-what-chrome-version
+    var pageUrl = window.location.href;
+    var body =
+        "Chrome version: " + chromeVersion +
+        "<br />" + 
+        "Page url: " + pageUrl;
+    var emailUrl = "mailto:" + mailto + "?subject=" + subject + "&body=" + body;
+
     chrome.tabs.create({ url: emailUrl }, function (tab) {
         setTimeout(function () {
             chrome.tabs.remove(tab.id);
