@@ -152,6 +152,27 @@ $(function () {
         }
     }
 
+    $('#DataUnavailableEmail').click(function (e) {
+        dataUnavailableEmail();
+    });
+
+    function dataUnavailableEmail() {
+        var mailto = "support.vsmarketplacemetrics@gmail.com";
+        var subject = "VS Marketplace Metrics Data Unavailable Page";
+        var userAgent = navigator.userAgent;//gregt dedupe
+        var pageUrl = window.location.href;//gregt dedupe
+        var body = "User agent: " + userAgent +
+                   "\n" + "\n" +
+                   "Page url: " + pageUrl;
+        var emailUrl = encodeURI("mailto:" + mailto + "?subject=" + subject + "&body=" + body);
+
+        chrome.tabs.create({ url: emailUrl }, function (tab) {
+            setTimeout(function () {
+                chrome.tabs.remove(tab.id);
+            }, 500);
+        });
+    }
+
     $('#CopyToClipboard').click(function (e) {
         selectElementContents(document.getElementById('ClipboardBuffer'));
     });
