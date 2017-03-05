@@ -8,6 +8,21 @@
 //////minify the extension if large kb ?
 //////use strict
 
+
+//////////////////////////////////////////////"http://marketplace.visualstudio.com/search*",
+//////////////////////////////////////////////"https://marketplace.visualstudio.com/search*",
+//////////////////////////////////////////////"http://marketplace.visualstudio.com/manage*",
+//////////////////////////////////////////////"https://marketplace.visualstudio.com/manage*",
+//////////////////////////////////////////////"http://marketplace.visualstudio.com/vs*",
+//////////////////////////////////////////////"https://marketplace.visualstudio.com/vs*",
+//////////////////////////////////////////////"http://marketplace.visualstudio.com/vsts*",
+//////////////////////////////////////////////"https://marketplace.visualstudio.com/vsts*",
+//////////////////////////////////////////////"http://marketplace.visualstudio.com/vscode*",
+//////////////////////////////////////////////"https://marketplace.visualstudio.com/vscode*"
+
+
+
+
 $(function () {
 
     onLoadRequestDomFromVsmp();
@@ -31,7 +46,7 @@ $(function () {
         }
         else {
             if (vsmpDom[0]["URL"] == "notAllowed") {
-                document.getElementById('dataUnavailable').removeAttribute("hidden");
+                document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
             }
             else {
 

@@ -9,19 +9,25 @@
         <script type="text/javascript" src="scripts/popup.js"></script>
     </head>
     <body>
-        <div id="dataUnavailable" hidden="hidden"><!--gregt rename to invalidPage-->
+        <div id="dataUnavailableForPage" hidden="hidden">
             <h2>
-                Marketplace metrics data is unfortunately not available for this page.
+                VS Marketplace Metrics data is unfortunately not available for this page.
             </h2>
             <h4>
-                If you think data is available or this window is being shown in error please click <a href="#" id="SendEmail" class="sendEmail">here</a> to send pre-populated email to author.
+                If you believe you are seeing this notice incorrectly click <a href="#" id="SendEmail" class="sendEmail">here</a> to notify the VS Marketplace Metrics author via a pre-populated email. If you prefer to contact the author via other means please include the following in your communication:
             </h4>
+            <ul>
+                <li>this is the chrome version</li>
+                <li>this is the url</li>
+            </ul>
         </div>
-        <div id="nilSearchResults" hidden="hidden"><!--gregt rename to datanotavaialbe-->
+        <div id="nilSearchResults" hidden="hidden">
             <h2>
-                gregt Repeat your search to get some results.<br />
-                Or on particularly slow connections u pressed button too soon, so wait til doms loads.
+                The Visual Studio Marketplace page you are on has no search results.
             </h2>
+            <h4>
+                On particularly slow connections it is possible for the VS Marketplace Metrics button to be triggered before the VS Marketplace page itself has fully loaded. In this case simply re-try the VS Marketplace Metrics button a few seconds later.
+            </h4>
         </div>
         <div id="dataAvailable" hidden="hidden">
             <h2>
