@@ -8,62 +8,58 @@
         <script type="text/javascript" src="scripts/tablesorter/jquery.tablesorter.js"></script>
         <script type="text/javascript" src="scripts/popup.js"></script>
     </head>
-    <body>
-        <div id="dataUnavailableForPage" hidden="hidden">
-            <h2>
-                Visual Studio Marketplace Metrics data is unfortunately not available for this page.
-            </h2>
-            <h4>
-                If you believe you are seeing this notice incorrectly click <a href="#" id="SendEmail" class="sendEmail">here</a> to notify the Visual Studio Marketplace Metrics author via a pre-populated email. If you prefer to contact the author via other means please include the following in your communication:
-            </h4>
-            <ul>
-                <li>this is the chrome version gregt</li>
-                <li>this is the url gregt</li>
-            </ul>
+<body>
+    <div id="dataUnavailableForPage" hidden="hidden">
+        <h2>
+            Visual Studio Marketplace Metrics data is unfortunately not available for this page.
+        </h2>
+        If you believe you are seeing this notice incorrectly click <a href="#" id="SendEmail" class="sendEmail">here</a> to notify the extension author via a pre-populated email. If you prefer to contact the author via other means please include the following:
+        <ul>
+            <li>Chrome version: 1.2.3.4 gregt</li>
+            <li>Page URL: https://marketplace.visualstudio.com/subscriptionsgregt </li>
+        </ul>
+    </div>
+    <div id="nilSearchResults" hidden="hidden">
+        <h2>
+            The Visual Studio Marketplace page you are on has no search results.
+        </h2>
+        On slower connections it is possible to trigger the Metrics button before the Marketplace page itself has fully loaded. If you suspect that this is the case wait a few seconds and try the Metrics button again.
+    </div>
+    <div id="dataAvailable" hidden="hidden">
+        <h2>
+            <span id="TotalExtensionsCount"></span><br />
+            <span id="TotalInstallCount"></span><br />
+            <span id="TotalReviewCount"></span><br />
+            <span id="TotalOverallAverageReview" hidden="hidden"></span>
+        </h2>
+        <a href="#" id="CopyToClipboard" class="copyToClipboard">Copy table to clipboard</a>
+        <div id="ClipboardBuffer">
+            <table id="DetailGridTable" class="tablesorter">
+                <thead>
+                    <tr>
+                        <th>No. of installs</th>
+                        <th>Title</th>
+                        <th>No. of reviews</th>
+                        <th>Reviews as % of installs<p></th>
+                        <th>Publisher</th>
+                        <th>Price</th>
+                        <th>Average review score</th>
+                    </tr>
+                </thead>
+                <tbody id="DetailGridTableBody"></tbody>
+                <tfoot>
+                    <tr>
+                        <td class='numeric' id="FooterGridTotalInstallCount"></td>
+                        <td></td>
+                        <td class='numeric' id="FooterGridTotalReviewCount"></td>
+                        <td class='numeric' id="FooterReviewsAsPercentageOfInstalls"></td>
+                        <td></td>
+                        <td></td>
+                        <td class='numeric' id="FooterOverallAverageReview"></td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
-        <div id="nilSearchResults" hidden="hidden">
-            <h2>
-                The Visual Studio Marketplace page you are on has no search results.
-            </h2>
-            <h4>
-                On particularly slow connections it is possible for the Visual Studio Marketplace Metrics button to be triggered before the Visual Studio Marketplace page itself has fully loaded. In this case simply re-try the Visual Studio Marketplace Metrics button a few seconds later.
-            </h4>
-        </div>
-        <div id="dataAvailable" hidden="hidden">
-            <h2>
-                <span id="TotalExtensionsCount"></span><br />
-                <span id="TotalInstallCount"></span><br />
-                <span id="TotalReviewCount"></span><br />
-                <span id="TotalOverallAverageReview" hidden="hidden"></span>
-            </h2>
-            <a href="#" id="CopyToClipboard" class="copyToClipboard">Copy table to clipboard</a>
-            <div id="ClipboardBuffer">
-                <table id="DetailGridTable" class="tablesorter">
-                    <thead>
-                        <tr>
-                            <th>No. of installs</th>
-                            <th>Title</th>
-                            <th>No. of reviews</th>
-                            <th>Reviews as % of installs<p></th>
-                            <th>Publisher</th>
-                            <th>Price</th>
-                            <th>Average review score</th>
-                        </tr>
-                    </thead>
-                    <tbody id="DetailGridTableBody"></tbody>
-                    <tfoot>
-                        <tr>
-                            <td class='numeric' id="FooterGridTotalInstallCount"></td>
-                            <td></td>
-                            <td class='numeric' id="FooterGridTotalReviewCount"></td>
-                            <td class='numeric' id="FooterReviewsAsPercentageOfInstalls"></td>
-                            <td></td>
-                            <td></td>
-                            <td class='numeric' id="FooterOverallAverageReview"></td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-    </body>
+    </div>
+</body>
 </html>
