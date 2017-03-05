@@ -2,6 +2,7 @@
     min-width:400px;
 }
 
+.VSMarketplaceMetricsHelp,
 div.numeric,
 td.numeric {
     text-align: right;
@@ -15,6 +16,7 @@ a:hover {
     text-decoration: underline;
 }
 
+.VSMarketplaceMetricsHelp,
 .copyToClipboard {
     font-size: smaller;
 }
