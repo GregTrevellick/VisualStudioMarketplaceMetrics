@@ -168,8 +168,10 @@ $(function () {
 
         chrome.tabs.create({ url: emailUrl }, function (tab) {
             setTimeout(function () {
-                chrome.tabs.remove(tab.id);
-            }, 500);
+                chrome.tabs.remove(tab.id);//gregt mailto tab not auto-closing
+            }
+            , 500
+           );
         });
     }
 
