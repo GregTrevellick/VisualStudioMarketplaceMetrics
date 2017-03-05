@@ -123,10 +123,6 @@ chrome.runtime.onMessage.addListener(
                 });
             }
 
-            if (visitType == "") {
-                //auto-notify gregt ?
-            }
-
             if (visitType == "" || visitType == "notAllowed") {
                 var vsmpDomJsonData = { URL: "notAllowed" };
                 vsmpDomJsonDataArray.push(vsmpDomJsonData);
@@ -142,23 +138,19 @@ chrome.runtime.sendMessage({ action: "openPopUp" });
 function GetInstallCount(installCountRounded) {
 
     if (installCountRounded.indexOf("M") != -1) {
-        if (installCountRounded.indexOf(".") != -1) {
-            //e.g. "4.8M"
+        if (installCountRounded.indexOf(".") != -1) { //e.g. "4.8M"
             return installCountRounded.replace(".", "").replace("M", "00000");
         }
-        else {
-            //e.g. "4M"
+        else { //e.g. "4M"
             return installCountRounded.replace("M", "000000");
         }
     }
     else {
         if (installCountRounded.indexOf("K") != -1) {
-            if (installCountRounded.indexOf(".") != -1) {
-                //e.g. "4.8K"
+            if (installCountRounded.indexOf(".") != -1) { //e.g. "4.8K"
                 return installCountRounded.replace(".", "").replace("K", "00");
             }
-            else {
-                //e.g. "4K"
+            else { //e.g. "4K"
                 return installCountRounded.replace("K", "000");
             }
         }

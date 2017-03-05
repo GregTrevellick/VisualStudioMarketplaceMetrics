@@ -10,3 +10,14 @@ chrome.runtime.onMessage.addListener(
         }
     });
 
+
+
+function sendEmail() {
+    //include chrome vers, url etc in email
+    var emailUrl = "mailto:blah@blah.com";
+    chrome.tabs.create({ url: emailUrl }, function (tab) {
+        setTimeout(function () {
+            chrome.tabs.remove(tab.id);
+        }, 500);
+    });
+}
