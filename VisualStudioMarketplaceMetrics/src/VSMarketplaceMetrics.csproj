@@ -53,7 +53,7 @@
     <Content Include="VSMarketplaceMetrics\app\scripts\tablesorter\themes\blue\bg.gif" />
     <Content Include="VSMarketplaceMetrics\app\scripts\tablesorter\themes\blue\desc.gif" />
     <Content Include="VSMarketplaceMetrics\app\scripts\tablesorter\themes\blue\style.css" />
-    <Content Include="VSMarketplaceMetrics\app\styles\my.css" />
+    <Content Include="VSMarketplaceMetrics\app\styles\vsmm.css" />
     <Content Include="VSMarketplaceMetrics\scripts\chrome-api-vsdoc.js" />
     <Content Include="VSMarketplaceMetrics\scripts\_references.js" />
   </ItemGroup>

@@ -1,4 +1,3 @@
-/* tables */
 table.tablesorter {
 	font-family:arial;
 	background-color: #CDCDCD;
@@ -16,7 +15,6 @@ table.tablesorter thead tr th, table.tablesorter tfoot tr th {
 table.tablesorter thead tr .header {
 	background-image: url(bg.gif);
 	background-repeat: no-repeat;
-	/*background-position: center right;*/
     background-position: left bottom;
 	cursor: pointer;
     vertical-align: top;
@@ -31,7 +29,6 @@ table.tablesorter tbody td {
 table.tablesorter tbody td a,
 table.tablesorter tbody td img,
 table.tablesorter tbody td {
-	/*vertical-align: top;*/
     vertical-align: middle;
 }
 
@@ -45,5 +42,5 @@ table.tablesorter thead tr .headerSortDown {
 	background-image: url(desc.gif);
 }
 table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
-background-color: #8dbdd8;
+    background-color: #8dbdd8;
 }

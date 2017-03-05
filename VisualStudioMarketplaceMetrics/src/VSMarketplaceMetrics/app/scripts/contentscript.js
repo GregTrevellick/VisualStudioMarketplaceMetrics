@@ -1,4 +1,3 @@
-//Set up the active tab to listen to for messages from popup.js 
 chrome.runtime.onMessage.addListener(
 
     function (request, sender, popUpCallBackFn) {

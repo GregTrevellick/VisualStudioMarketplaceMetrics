@@ -2,7 +2,7 @@
   "manifest_version":2,
   "name": "Visual Studio Marketplace Metrics",
   "version": "1.0",
-  "description": "See the total install count & other metrics for all your Visual Studio Marketplace extensions (VS IDE + VSTS + VS Code) with just 1 click.",
+  "description": "See the total install count and other metrics for all your Visual Studio Marketplace extensions with one easy click.",
 
   "page_action" :
   {

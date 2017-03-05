@@ -1,4 +1,3 @@
-// When the extension is installed or upgraded...
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
 
@@ -10,10 +9,8 @@ chrome.runtime.onMessage.addListener(
         }
     });
 
-
-
 function sendEmail() {
-    //include chrome vers, url etc in email
+    //gregt include chrome vers, url etc in email
     var emailUrl = "mailto:blah@blah.com";
     chrome.tabs.create({ url: emailUrl }, function (tab) {
         setTimeout(function () {
