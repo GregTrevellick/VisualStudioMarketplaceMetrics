@@ -8,26 +8,3 @@ chrome.runtime.onMessage.addListener(
                 });
         }
     });
-
-//function dataUnavailableEmail() {
-
-//    console.log("email url=" + emailUrl);
-
-//    var mailto = "support.vsmarketplacemetrics@gmail.com";
-//    var subject = "VS Marketplace Metrics Data Unavailable Page";
-//    var userAgent = navigator.userAgent;//gregt dedupe
-//    var pageUrl = window.location.href;//gregt dedupe
-//    var body =
-//        "User agent: " + userAgent +
-//        "<br />" + 
-//        "Page url: " + pageUrl;
-//    var emailUrl = "mailto:" + mailto + "?subject=" + subject + "&body=" + body;
-
-//    console.log("email url=" +emailUrl);
-
-//    chrome.tabs.create({ url: emailUrl }, function (tab) {
-//        setTimeout(function () {
-//            chrome.tabs.remove(tab.id);
-//        }, 500);
-//    });
-//}
