@@ -1,6 +1,7 @@
 chrome.runtime.onMessage.addListener(
 
     function (request, sender, popUpCallBackFn) {
+        console.log("line 4");
 
         if (request.action === "requestDomFromVsmmPopUp") {
 
@@ -55,6 +56,10 @@ chrome.runtime.onMessage.addListener(
             var vsmpDomSelector = "";
             var vsmpDomJsonDataArray = new Array();
 
+        //    debugger;
+          console.log("line 59");
+
+
             if (visitType == "search_VS" ||
                 visitType == "search_VSCode" ||
                 visitType == "search_VSTS") {
@@ -70,6 +75,8 @@ chrome.runtime.onMessage.addListener(
             }
 
             if (vsmpDomSelector != "") {
+
+                console.log("line 78");
 
                 $(vsmpDomSelector).each(function () {
 
@@ -125,6 +132,9 @@ chrome.runtime.onMessage.addListener(
                 });
             }
 
+            console.log("line 135");
+
+
             if (visitType == "" || visitType == "notAllowed") {
                 var vsmpDomJsonData =
                     {
@@ -137,7 +147,11 @@ chrome.runtime.onMessage.addListener(
 
             // Call the specified callback
             popUpCallBackFn(vsmpDomJsonDataArray);
+            console.log("line 150");
+
         }
+        console.log("line 153");
+
     });
 
 chrome.runtime.sendMessage({ action: "openPopUp" });

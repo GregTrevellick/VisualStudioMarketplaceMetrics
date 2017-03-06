@@ -1,5 +1,7 @@
 //gregt try catch
-
+//incognito
+//logged out
+//chrome.runtime.getURL()
 
 
 
@@ -40,6 +42,10 @@ $(function () {
                 document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
             }
             else {
+
+
+                $("#DetailGridTableBody").innerHTML = "";
+
 
                 document.getElementById('dataAvailable').removeAttribute("hidden");
 
