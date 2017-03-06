@@ -55,9 +55,6 @@ chrome.runtime.onMessage.addListener(
             var vsmpDomSelector = "";
             var vsmpDomJsonDataArray = new Array();
 
-            debugger;
-
-
             if (visitType == "search_VS" ||
                 visitType == "search_VSCode" ||
                 visitType == "search_VSTS") {
@@ -68,7 +65,7 @@ chrome.runtime.onMessage.addListener(
                     visitType == "browse_VS" ||
                     visitType == "browse_VSTS" ||
                     visitType == "browse_VSCode") {
-                    vsmpDomSelector = "[class^=gallery-item-card]";
+                    vsmpDomSelector = "[class^=gallery-item-card-container]";
                 }
             }
 
