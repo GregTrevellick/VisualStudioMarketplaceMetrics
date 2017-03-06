@@ -158,8 +158,8 @@ $(function () {
     function dataUnavailableEmail() {
         var mailto = "support.vsmarketplacemetrics@gmail.com";
         var subject = "VS Marketplace Metrics Data Unavailable Page";
-        var userAgent = navigator.userAgent;//gregt dedupe
-        var pageUrl = window.location.href;//gregt dedupe
+        var userAgent = navigator.userAgent;//TODO dedupe
+        var pageUrl = window.location.href;//TODO dedupe
         var body = "User agent: " + userAgent +
                    "\n" + "\n" +
                    "Page url: " + pageUrl;

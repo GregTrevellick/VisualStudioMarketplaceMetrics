@@ -4,8 +4,10 @@ chrome.runtime.onMessage.addListener(
 
         if (request.action === "requestDomFromVsmmPopUp") {
 
+            //TODO extract long code below into smaller functions
+
             var visitType = "";
-            var pageUrl = window.location.href;
+            var pageUrl = window.location.href;//TODO dedupe
 
             switch (pageUrl) {
                 case "http://marketplace.visualstudio.com/":
@@ -127,7 +129,7 @@ chrome.runtime.onMessage.addListener(
                     {
                         PageUrl: pageUrl,
                         URL: "notAllowed",
-                        UserAgent: navigator.userAgent
+                        UserAgent: navigator.userAgent//TODO dedupe
                     };
                 vsmpDomJsonDataArray.push(vsmpDomJsonData);
             }
