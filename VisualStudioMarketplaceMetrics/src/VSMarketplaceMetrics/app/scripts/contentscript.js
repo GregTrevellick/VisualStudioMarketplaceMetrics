@@ -55,15 +55,19 @@ chrome.runtime.onMessage.addListener(
             var vsmpDomSelector = "";
             var vsmpDomJsonDataArray = new Array();
 
-            if (visitType == "search_VS" || visitType == "search_VSCode") {
+            debugger;
+
+
+            if (visitType == "search_VS" ||
+                visitType == "search_VSCode" ||
+                visitType == "search_VSTS") {
                 vsmpDomSelector = "[class^=grid-item]";
             }
             else {
                 if (visitType == "browse_Root" ||
                     visitType == "browse_VS" ||
                     visitType == "browse_VSTS" ||
-                    visitType == "browse_VSCode" ||
-                    visitType == "search_VSTS") {
+                    visitType == "browse_VSCode") {
                     vsmpDomSelector = "[class^=gallery-item-card]";
                 }
             }
