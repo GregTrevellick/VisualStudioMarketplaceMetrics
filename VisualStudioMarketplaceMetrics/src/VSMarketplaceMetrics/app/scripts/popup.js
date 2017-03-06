@@ -175,7 +175,13 @@ $(function () {
     }
 
     $('#VisualStudioHelpIcon').click(function (e) {
-        document.getElementById('VisualStudioHelpText').removeAttribute("hidden");
+        var hdn = document.getElementById('VisualStudioHelpText').getAttribute("hidden");
+        if (hdn == null) {
+            document.getElementById('VisualStudioHelpText').setAttribute("hidden", "hidden");
+        }
+        else {
+            document.getElementById('VisualStudioHelpText').removeAttribute("hidden");
+        }
     });
 
     $('#CopyToClipboard').click(function (e) {
