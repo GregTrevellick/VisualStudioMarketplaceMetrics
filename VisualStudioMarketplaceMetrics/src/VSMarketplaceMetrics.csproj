@@ -36,6 +36,7 @@
     <None Include="App.config" />
     <None Include="VSMarketplaceMetrics\app\manifest.json" />
     <None Include="VSMarketplaceMetrics\scripts\__jquery.tablesorter.zip" />
+    <None Include="VSMarketplaceMetrics\tests\TestCases.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="VSMarketplaceMetrics\app\img\VisualStudioHelpIcon.png" />
