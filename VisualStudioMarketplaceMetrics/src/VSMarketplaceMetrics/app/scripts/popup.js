@@ -175,12 +175,13 @@ $(function () {
     }
 
     $('#VisualStudioHelpIcon').click(function (e) {
-        var hdn = document.getElementById('VisualStudioHelpText').getAttribute("hidden");
+        var elem = document.getElementById('VisualStudioHelpText')
+        var hdn = elem.getAttribute("hidden");
         if (hdn == null) {
-            document.getElementById('VisualStudioHelpText').setAttribute("hidden", "hidden");
+            elem.setAttribute("hidden", "hidden");
         }
         else {
-            document.getElementById('VisualStudioHelpText').removeAttribute("hidden");
+            elem.removeAttribute("hidden");
         }
     });
 
