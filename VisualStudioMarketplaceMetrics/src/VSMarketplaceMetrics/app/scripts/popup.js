@@ -2,6 +2,7 @@
 //incognito
 //logged out
 //chrome.runtime.getURL()
+//https://marketplace.visualstudio.com/search?target=VS&sortBy=Rating
 
 
 
@@ -42,11 +43,6 @@ $(function () {
                 document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
             }
             else {
-
-
-                $("#DetailGridTableBody").innerHTML = "";
-
-
                 document.getElementById('dataAvailable').removeAttribute("hidden");
 
                 var totalInstallCount = 0;

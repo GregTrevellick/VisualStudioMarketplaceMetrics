@@ -1,7 +1,6 @@
 chrome.runtime.onMessage.addListener(
 
     function (request, sender, popUpCallBackFn) {
-        console.log("line 4");
 
         if (request.action === "requestDomFromVsmmPopUp") {
 
@@ -56,10 +55,6 @@ chrome.runtime.onMessage.addListener(
             var vsmpDomSelector = "";
             var vsmpDomJsonDataArray = new Array();
 
-        //    debugger;
-          console.log("line 59");
-
-
             if (visitType == "search_VS" ||
                 visitType == "search_VSCode" ||
                 visitType == "search_VSTS") {
@@ -76,15 +71,33 @@ chrome.runtime.onMessage.addListener(
 
             if (vsmpDomSelector != "") {
 
-                console.log("line 78");
-
                 $(vsmpDomSelector).each(function () {
+
+                    if (visitType == "browse_Root" ||
+                        visitType == "browse_VS" ||
+                        visitType == "browse_VSTS" ||
+                        visitType == "browse_VSCode")
+                    {
+                        //var 
+                        tabIndex = $(this).find('.gallery-item-card-container').context.tabIndex;
+                        if (tabIndex != "0") {
+                            //element is hidden so break out
+                            //return true;
+                            return;
+                            ////////////////////////////////////////////http://stackoverflow.com/questions/1784780/how-to-break-out-of-jquery-each-loop
+                            ////////////////////////////////////////////To break a $.each loop, you have to return false in the loop callback.
+                            ////////////////////////////////////////////Returning true skips to the next iteration, equivalent to a continue in a normal loop.
+                        }
+                    }
 
                     var installCountRounded = $(this).find('.install-count')[0].innerText;
                     var installCount = GetInstallCount(installCountRounded);
 
                     var icon = $(this).find('.item-icon')[0].src;
-                    var itemTitle = $(this).find('.item-title')[0].innerText;
+var itemTitle =
+" " + tabIndex + "</br>" +
+$(this).find('.item-title')[0].innerText;
+
                     var reviewTitle = $(this).find('.rating')[0].title;
                     var startReview = reviewTitle.indexOf('(') + 1;
                     var endReview = reviewTitle.indexOf(' ', startReview);
@@ -132,9 +145,6 @@ chrome.runtime.onMessage.addListener(
                 });
             }
 
-            console.log("line 135");
-
-
             if (visitType == "" || visitType == "notAllowed") {
                 var vsmpDomJsonData =
                     {
@@ -147,10 +157,7 @@ chrome.runtime.onMessage.addListener(
 
             // Call the specified callback
             popUpCallBackFn(vsmpDomJsonDataArray);
-            console.log("line 150");
-
         }
-        console.log("line 153");
 
     });
 
