@@ -1,13 +1,10 @@
 //gregt try catch
-//chrome.runtime.getURL()
+//gregt create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
 
 
-
-//jslint
-//create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
-//cdn for jquery, with a fallback
-//use strict
-
+////cdn for jquery, with a fallback
+////use strict
+////jslint
 
 
 
