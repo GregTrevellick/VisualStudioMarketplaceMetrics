@@ -1,0 +1,350 @@
+﻿<div class="carousel" role="listbox" aria-orientation="horizontal" data-bind="foreach: items, event: { keydown: carouselKeyHandler }, attr: {id: carouselIdSelector}, style: {width: cssStyleWidth}" id="vs_Featured" style="width: 1173px;">
+    <!-- ko if: $index() < $parent.numberOfItemsToRender() -->
+    <div class="carousel-item" data-bind="component: {name: $parent.componentName, params: {item: $data, containerName:$parent.carouselIdSelector, removeTabFocus: $index() < $parent._viewPortStartIndex() || $index() >= $parent._viewPortStartIndex() + $parent._numberOfItemsToDisplay}}">
+        <a class="gallery-item-card-container" data-bind="attr: { href: item.link, target: linkTarget, tabindex : removeTabFocus? -1: 0, 'aria-label': getScreenReaderText() }, click: function(data,event){return logTelemetryToCI()}" href="/items?itemName=JaredParMSFT.VsVim" target="" tabindex="0" aria-label="FREE Extension VsVim by publisher JaredPar MSFT with download count 405K and average rating 4.900355815887451">
+            <div class="gallery-item-cardHomePage" data-bind="attr: { title: item.title}" title="VsVim">
+                <div class="cover">
+                    <div class="icon-cell" data-bind="template: { name: 'image-template', data: imageViewModel}, attr: { title: item.summary }" title="VIM emulation layer for Visual Studio">
+                        <img data-bind="attr: { src: imageSrc }, css: imageStyle, visible: imageVisible, event:{error: imageOnError, onload: centerImage($element) }" src="https://jaredparmsft.gallerycdn.vsassets.io/extensions/jaredparmsft/vsvim/2.3.0.0/1488387305468/Microsoft.VisualStudio.Services.Icons.Default" class="item-icon" style="top: 4px; visibility: visible;">
+                    </div>
+                    <div class="core-info-cell">
+                        <div class="name">
+                            <span class="item-title" data-bind="text: item.title, attr: { title: item.summary}" title="VIM emulation layer for Visual Studio">VsVim</span>
+                            <span class="text-fadeout" data-bind="style: {width: calculateWidthBasedOnSibling($element, 'item-title', 158, '30px')}" style="width: 0px;"></span>
+                        </div>
+                        <!--ko ifnot: showDownloadCount --><!-- /ko -->
+                        <!--ko if: showDownloadCount -->
+                        <div class="core-info-second-row">
+                            <span class="installs" data-bind="visible: item.installCount &amp;&amp; item.installCount !== '0'">
+                                <span class="install-icon" data-bind="css: highContrastInstallIcon()"></span>
+                                <span class="install-count" data-bind="text: item.installCount">405K</span>
+                            </span>
+                            <div class="publisher">
+                                <span data-bind="text: item.author , attr: { title: item.author }" title="JaredPar MSFT">JaredPar MSFT</span>
+                                <span class="text-fadeout"></span>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <div class="stats-and-offer">
+                    <!-- ko if: showRatingReview -->
+                    <div class="rating-and-price">
+                        <div role="img" class="rating" data-bind="component: {name: 'gallery-rating-control', params: ratingControlParams}, attr: { 'alt': averageRatingText, title: averageRatingText }" alt="Average rating: 4.9 (281 ratings)" title="Average rating: 4.9 (281 ratings)">
+                            <div class="rating-control">
+                                <!-- ko foreach: new Array(fullStars) -->
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+                                <!-- /ko -->
+                                <!-- ko if: halfStarPresent --><!-- /ko -->
+                                <!-- ko foreach: new Array(emptyStars) --><!-- /ko -->
+                            </div>
+                        </div>
+                        <div class="pricing-tag" data-bind="text: item.costCategory, attr: { title: item.costCategory }" title="FREE">FREE</div>
+                        <span class="text-fadeout"></span>
+                    </div>
+                    <!-- /ko -->
+                    <!-- ko ifnot: showRatingReview --><!-- /ko -->
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: $index() < $parent.numberOfItemsToRender() -->
+    <div class="carousel-item" data-bind="component: {name: $parent.componentName, params: {item: $data, containerName:$parent.carouselIdSelector, removeTabFocus: $index() < $parent._viewPortStartIndex() || $index() >= $parent._viewPortStartIndex() + $parent._numberOfItemsToDisplay}}">
+        <a class="gallery-item-card-container" data-bind="attr: { href: item.link, target: linkTarget, tabindex : removeTabFocus? -1: 0, 'aria-label': getScreenReaderText() }, click: function(data,event){return logTelemetryToCI()}" href="/items?itemName=RionWilliams.Glyphfriend2017" target="" tabindex="0" aria-label="FREE Extension Glyphfriend 2017 by publisher Rion Williams with download count 32.4K and average rating 5">
+            <div class="gallery-item-cardHomePage" data-bind="attr: { title: item.title}" title="Glyphfriend 2017">
+                <div class="cover">
+                    <div class="icon-cell" data-bind="template: { name: 'image-template', data: imageViewModel}, attr: { title: item.summary }" title="Glyphfriend is a Visual Studio extension to enhance the existing Intellisense to display preview glyphs for many of the common glyph-based font libraries like Font Awesome, Material Design, Octicons, and more.">
+                        <img data-bind="attr: { src: imageSrc }, css: imageStyle, visible: imageVisible, event:{error: imageOnError, onload: centerImage($element) }" src="https://rionwilliams.gallerycdn.vsassets.io/extensions/rionwilliams/glyphfriend2017/2.1.0.2/1488402011847/Microsoft.VisualStudio.Services.Icons.Default" class="item-icon" style="top: 2px; visibility: visible;">
+                    </div>
+                    <div class="core-info-cell">
+                        <div class="name">
+                            <span class="item-title" data-bind="text: item.title, attr: { title: item.summary}" title="Glyphfriend is a Visual Studio extension to enhance the existing Intellisense to display preview glyphs for many of the common glyph-based font libraries like Font Awesome, Material Design, Octicons, and more.">Glyphfriend 2017</span>
+                            <span class="text-fadeout" data-bind="style: {width: calculateWidthBasedOnSibling($element, 'item-title', 158, '30px')}" style="width: 30px;"></span>
+                        </div>
+                        <!--ko ifnot: showDownloadCount --><!-- /ko -->
+                        <!--ko if: showDownloadCount -->
+                        <div class="core-info-second-row">
+                            <span class="installs" data-bind="visible: item.installCount &amp;&amp; item.installCount !== '0'">
+                                <span class="install-icon" data-bind="css: highContrastInstallIcon()"></span>
+                                <span class="install-count" data-bind="text: item.installCount">32.4K</span>
+                            </span>
+                            <div class="publisher">
+                                <span data-bind="text: item.author , attr: { title: item.author }" title="Rion Williams">Rion Williams</span>
+                                <span class="text-fadeout"></span>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <div class="stats-and-offer">
+                    <!-- ko if: showRatingReview -->
+                    <div class="rating-and-price">
+                        <div role="img" class="rating" data-bind="component: {name: 'gallery-rating-control', params: ratingControlParams}, attr: { 'alt': averageRatingText, title: averageRatingText }" alt="Average rating: 5.0 (4 ratings)" title="Average rating: 5.0 (4 ratings)">
+                            <div class="rating-control">
+                                <!-- ko foreach: new Array(fullStars) -->
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+                                <!-- /ko -->
+                                <!-- ko if: halfStarPresent --><!-- /ko -->
+                                <!-- ko foreach: new Array(emptyStars) --><!-- /ko -->
+                            </div>
+                        </div>
+                        <div class="pricing-tag" data-bind="text: item.costCategory, attr: { title: item.costCategory }" title="FREE">FREE</div>
+                        <span class="text-fadeout"></span>
+                    </div>
+                    <!-- /ko -->
+                    <!-- ko ifnot: showRatingReview --><!-- /ko -->
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: $index() < $parent.numberOfItemsToRender() -->
+    <div class="carousel-item" data-bind="component: {name: $parent.componentName, params: {item: $data, containerName:$parent.carouselIdSelector, removeTabFocus: $index() < $parent._viewPortStartIndex() || $index() >= $parent._viewPortStartIndex() + $parent._numberOfItemsToDisplay}}">
+        <a class="gallery-item-card-container" data-bind="attr: { href: item.link, target: linkTarget, tabindex : removeTabFocus? -1: 0, 'aria-label': getScreenReaderText() }, click: function(data,event){return logTelemetryToCI()}" href="/items?itemName=vs-publisher-306627.RedgateReadyRoll-18319" target="" tabindex="0" aria-label="FREE TRIAL Extension Redgate ReadyRoll for VS2017 by publisher Redgate with download count 6.9K and average rating 0">
+            <div class="gallery-item-cardHomePage" data-bind="attr: { title: item.title}" title="Redgate ReadyRoll for VS2017">
+                <div class="cover">
+                    <div class="icon-cell" data-bind="template: { name: 'image-template', data: imageViewModel}, attr: { title: item.summary }" title="Extend DevOps processes to your SQL Server databases. Develop, source control, and safely automate database deployments alongside application changes.">
+                        <img data-bind="attr: { src: imageSrc }, css: imageStyle, visible: imageVisible, event:{error: imageOnError, onload: centerImage($element) }" src="https://vs-publisher-306627.gallerycdn.vsassets.io/extensions/vs-publisher-306627/redgatereadyroll-18319/1.13.21.3064/1488209428108/Microsoft.VisualStudio.Services.Icons.Default" class="item-icon" style="top: 2px; visibility: visible;">
+                    </div>
+                    <div class="core-info-cell">
+                        <div class="name">
+                            <span class="item-title" data-bind="text: item.title, attr: { title: item.summary}" title="Extend DevOps processes to your SQL Server databases. Develop, source control, and safely automate database deployments alongside application changes.">Redgate ReadyRoll for VS2017</span>
+                            <span class="text-fadeout" data-bind="style: {width: calculateWidthBasedOnSibling($element, 'item-title', 158, '30px')}" style="width: 30px;"></span>
+                        </div>
+                        <!--ko ifnot: showDownloadCount --><!-- /ko -->
+                        <!--ko if: showDownloadCount -->
+                        <div class="core-info-second-row">
+                            <span class="installs" data-bind="visible: item.installCount &amp;&amp; item.installCount !== '0'">
+                                <span class="install-icon" data-bind="css: highContrastInstallIcon()"></span>
+                                <span class="install-count" data-bind="text: item.installCount">6.9K</span>
+                            </span>
+                            <div class="publisher">
+                                <span data-bind="text: item.author , attr: { title: item.author }" title="Redgate">Redgate</span>
+                                <span class="text-fadeout"></span>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <div class="stats-and-offer">
+                    <!-- ko if: showRatingReview -->
+                    <div class="rating-and-price">
+                        <div role="img" class="rating" data-bind="component: {name: 'gallery-rating-control', params: ratingControlParams}, attr: { 'alt': averageRatingText, title: averageRatingText }" alt="Average rating: 0.0 (0 rating)" title="Average rating: 0.0 (0 rating)">
+                            <div class="rating-control">
+                                <!-- ko foreach: new Array(fullStars) --><!-- /ko -->
+                                <!-- ko if: halfStarPresent --><!-- /ko -->
+                                <!-- ko foreach: new Array(emptyStars) -->
+                                <img alt="" class="star empty-star" data-bind="attr:{src: $parent.emptyStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/EmptyStar.svg">
+
+                                <img alt="" class="star empty-star" data-bind="attr:{src: $parent.emptyStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/EmptyStar.svg">
+
+                                <img alt="" class="star empty-star" data-bind="attr:{src: $parent.emptyStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/EmptyStar.svg">
+
+                                <img alt="" class="star empty-star" data-bind="attr:{src: $parent.emptyStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/EmptyStar.svg">
+
+                                <img alt="" class="star empty-star" data-bind="attr:{src: $parent.emptyStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/EmptyStar.svg">
+                                <!-- /ko -->
+                            </div>
+                        </div>
+                        <div class="pricing-tag" data-bind="text: item.costCategory, attr: { title: item.costCategory }" title="FREE TRIAL">FREE TRIAL</div>
+                        <span class="text-fadeout"></span>
+                    </div>
+                    <!-- /ko -->
+                    <!-- ko ifnot: showRatingReview --><!-- /ko -->
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: $index() < $parent.numberOfItemsToRender() -->
+    <div class="carousel-item" data-bind="component: {name: $parent.componentName, params: {item: $data, containerName:$parent.carouselIdSelector, removeTabFocus: $index() < $parent._viewPortStartIndex() || $index() >= $parent._viewPortStartIndex() + $parent._numberOfItemsToDisplay}}">
+        <a class="gallery-item-card-container" data-bind="attr: { href: item.link, target: linkTarget, tabindex : removeTabFocus? -1: 0, 'aria-label': getScreenReaderText() }, click: function(data,event){return logTelemetryToCI()}" href="/items?itemName=VisualStudioProductTeam.ProductivityPowerPack2017" target="" tabindex="0" aria-label="FREE Extension Productivity Power Tools 2017 by publisher Microsoft with download count 6.1K and average rating 4.199999809265137">
+            <div class="gallery-item-cardHomePage" data-bind="attr: { title: item.title}" title="Productivity Power Tools 2017">
+                <div class="cover">
+                    <div class="icon-cell" data-bind="template: { name: 'image-template', data: imageViewModel}, attr: { title: item.summary }" title="Installs the individual extensions of Productivity Power Tools 2017">
+                        <img data-bind="attr: { src: imageSrc }, css: imageStyle, visible: imageVisible, event:{error: imageOnError, onload: centerImage($element) }" src="https://visualstudioproductteam.gallerycdn.vsassets.io/extensions/visualstudioproductteam/productivitypowerpack2017/15.0.2/1488588904443/Microsoft.VisualStudio.Services.Icons.Default" class="item-icon" style="top: 2px; visibility: visible;">
+                    </div>
+                    <div class="core-info-cell">
+                        <div class="name">
+                            <span class="item-title" data-bind="text: item.title, attr: { title: item.summary}" title="Installs the individual extensions of Productivity Power Tools 2017">Productivity Power Tools 2017</span>
+                            <span class="text-fadeout" data-bind="style: {width: calculateWidthBasedOnSibling($element, 'item-title', 158, '30px')}" style="width: 30px;"></span>
+                        </div>
+                        <!--ko ifnot: showDownloadCount --><!-- /ko -->
+                        <!--ko if: showDownloadCount -->
+                        <div class="core-info-second-row">
+                            <span class="installs" data-bind="visible: item.installCount &amp;&amp; item.installCount !== '0'">
+                                <span class="install-icon" data-bind="css: highContrastInstallIcon()"></span>
+                                <span class="install-count" data-bind="text: item.installCount">6.1K</span>
+                            </span>
+                            <div class="publisher">
+                                <span data-bind="text: item.author , attr: { title: item.author }" title="Microsoft">Microsoft</span>
+                                <span class="text-fadeout"></span>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <div class="stats-and-offer">
+                    <!-- ko if: showRatingReview -->
+                    <div class="rating-and-price">
+                        <div role="img" class="rating" data-bind="component: {name: 'gallery-rating-control', params: ratingControlParams}, attr: { 'alt': averageRatingText, title: averageRatingText }" alt="Average rating: 4.2 (15 ratings)" title="Average rating: 4.2 (15 ratings)">
+                            <div class="rating-control">
+                                <!-- ko foreach: new Array(fullStars) -->
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+                                <!-- /ko -->
+                                <!-- ko if: halfStarPresent --><!-- /ko -->
+                                <!-- ko foreach: new Array(emptyStars) -->
+                                <img alt="" class="star empty-star" data-bind="attr:{src: $parent.emptyStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/EmptyStar.svg">
+                                <!-- /ko -->
+                            </div>
+                        </div>
+                        <div class="pricing-tag" data-bind="text: item.costCategory, attr: { title: item.costCategory }" title="FREE">FREE</div>
+                        <span class="text-fadeout"></span>
+                    </div>
+                    <!-- /ko -->
+                    <!-- ko ifnot: showRatingReview --><!-- /ko -->
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: $index() < $parent.numberOfItemsToRender() -->
+    <div class="carousel-item" data-bind="component: {name: $parent.componentName, params: {item: $data, containerName:$parent.carouselIdSelector, removeTabFocus: $index() < $parent._viewPortStartIndex() || $index() >= $parent._viewPortStartIndex() + $parent._numberOfItemsToDisplay}}">
+        <a class="gallery-item-card-container" data-bind="attr: { href: item.link, target: linkTarget, tabindex : removeTabFocus? -1: 0, 'aria-label': getScreenReaderText() }, click: function(data,event){return logTelemetryToCI()}" href="/items?itemName=VSIDEDevOpsMSFT.ContinuousDeliveryToolsforVisualStudio" target="" tabindex="0" aria-label="FREE Extension Continuous Delivery Tools for Visual Studio by publisher Microsoft DevLabs with download count 2.1K and average rating 4.25">
+            <div class="gallery-item-cardHomePage" data-bind="attr: { title: item.title}" title="Continuous Delivery Tools for Visual Studio">
+                <div class="cover">
+                    <div class="icon-cell" data-bind="template: { name: 'image-template', data: imageViewModel}, attr: { title: item.summary }" title="Simplifying the configuration of continuous build integration and continuous build delivery from within the Visual Studio IDE.">
+                        <img data-bind="attr: { src: imageSrc }, css: imageStyle, visible: imageVisible, event:{error: imageOnError, onload: centerImage($element) }" src="https://vsidedevopsmsft.gallerycdn.vsassets.io/extensions/vsidedevopsmsft/continuousdeliverytoolsforvisualstudio/0.2.108.1548/1488394363895/Microsoft.VisualStudio.Services.Icons.Default" class="item-icon" style="top: 2px; visibility: visible;">
+                    </div>
+                    <div class="core-info-cell">
+                        <div class="name">
+                            <span class="item-title" data-bind="text: item.title, attr: { title: item.summary}" title="Simplifying the configuration of continuous build integration and continuous build delivery from within the Visual Studio IDE.">Continuous Delivery Tools for Visual Studio</span>
+                            <span class="text-fadeout" data-bind="style: {width: calculateWidthBasedOnSibling($element, 'item-title', 158, '30px')}" style="width: 30px;"></span>
+                        </div>
+                        <!--ko ifnot: showDownloadCount --><!-- /ko -->
+                        <!--ko if: showDownloadCount -->
+                        <div class="core-info-second-row">
+                            <span class="installs" data-bind="visible: item.installCount &amp;&amp; item.installCount !== '0'">
+                                <span class="install-icon" data-bind="css: highContrastInstallIcon()"></span>
+                                <span class="install-count" data-bind="text: item.installCount">2.1K</span>
+                            </span>
+                            <div class="publisher">
+                                <span data-bind="text: item.author , attr: { title: item.author }" title="Microsoft DevLabs">Microsoft DevLabs</span>
+                                <span class="text-fadeout"></span>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <div class="stats-and-offer">
+                    <!-- ko if: showRatingReview -->
+                    <div class="rating-and-price">
+                        <div role="img" class="rating" data-bind="component: {name: 'gallery-rating-control', params: ratingControlParams}, attr: { 'alt': averageRatingText, title: averageRatingText }" alt="Average rating: 4.3 (4 ratings)" title="Average rating: 4.3 (4 ratings)">
+                            <div class="rating-control">
+                                <!-- ko foreach: new Array(fullStars) -->
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+                                <!-- /ko -->
+                                <!-- ko if: halfStarPresent -->
+                                <img alt="" class="star half-star" data-bind="attr:{src: halfStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/HalfStar.svg">
+                                <!-- /ko -->
+                                <!-- ko foreach: new Array(emptyStars) --><!-- /ko -->
+                            </div>
+                        </div>
+                        <div class="pricing-tag" data-bind="text: item.costCategory, attr: { title: item.costCategory }" title="FREE">FREE</div>
+                        <span class="text-fadeout"></span>
+                    </div>
+                    <!-- /ko -->
+                    <!-- ko ifnot: showRatingReview --><!-- /ko -->
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: $index() < $parent.numberOfItemsToRender() -->
+    <div class="carousel-item" data-bind="component: {name: $parent.componentName, params: {item: $data, containerName:$parent.carouselIdSelector, removeTabFocus: $index() < $parent._viewPortStartIndex() || $index() >= $parent._viewPortStartIndex() + $parent._numberOfItemsToDisplay}}">
+        <a class="gallery-item-card-container" data-bind="attr: { href: item.link, target: linkTarget, tabindex : removeTabFocus? -1: 0, 'aria-label': getScreenReaderText() }, click: function(data,event){return logTelemetryToCI()}" href="/items?itemName=SyncfusionInc.SyncfusionBigDataPlatform" target="" tabindex="0" aria-label="FREE Extension Syncfusion Big Data Platform by publisher Syncfusion, Inc. _ with download count 1.2K and average rating 5">
+            <div class="gallery-item-cardHomePage" data-bind="attr: { title: item.title}" title="Syncfusion Big Data Platform">
+                <div class="cover">
+                    <div class="icon-cell" data-bind="template: { name: 'image-template', data: imageViewModel}, attr: { title: item.summary }" title="The Syncfusion Big Data Platform is the first and only complete development environment for big data available on Windows. Easily develop and deploy big data solutions. ">
+                        <img data-bind="attr: { src: imageSrc }, css: imageStyle, visible: imageVisible, event:{error: imageOnError, onload: centerImage($element) }" src="https://syncfusioninc.gallerycdn.vsassets.io/extensions/syncfusioninc/syncfusionbigdataplatform/3.1.0.59/1487954717825/Microsoft.VisualStudio.Services.Icons.Default" class="item-icon" style="top: 2px; visibility: visible;">
+                    </div>
+                    <div class="core-info-cell">
+                        <div class="name">
+                            <span class="item-title" data-bind="text: item.title, attr: { title: item.summary}" title="The Syncfusion Big Data Platform is the first and only complete development environment for big data available on Windows. Easily develop and deploy big data solutions. ">Syncfusion Big Data Platform</span>
+                            <span class="text-fadeout" data-bind="style: {width: calculateWidthBasedOnSibling($element, 'item-title', 158, '30px')}" style="width: 30px;"></span>
+                        </div>
+                        <!--ko ifnot: showDownloadCount --><!-- /ko -->
+                        <!--ko if: showDownloadCount -->
+                        <div class="core-info-second-row">
+                            <span class="installs" data-bind="visible: item.installCount &amp;&amp; item.installCount !== '0'">
+                                <span class="install-icon" data-bind="css: highContrastInstallIcon()"></span>
+                                <span class="install-count" data-bind="text: item.installCount">1.2K</span>
+                            </span>
+                            <div class="publisher">
+                                <span data-bind="text: item.author , attr: { title: item.author }" title="Syncfusion, Inc. _">Syncfusion, Inc. _</span>
+                                <span class="text-fadeout"></span>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <div class="stats-and-offer">
+                    <!-- ko if: showRatingReview -->
+                    <div class="rating-and-price">
+                        <div role="img" class="rating" data-bind="component: {name: 'gallery-rating-control', params: ratingControlParams}, attr: { 'alt': averageRatingText, title: averageRatingText }" alt="Average rating: 5.0 (2 ratings)" title="Average rating: 5.0 (2 ratings)">
+                            <div class="rating-control">
+                                <!-- ko foreach: new Array(fullStars) -->
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+
+                                <img alt="" class="star full-star" data-bind="attr:{src: $parent.fullStarPath}" src="https://cdn.vsassets.io/v/20170307T115009/_content/FullStar.svg">
+                                <!-- /ko -->
+                                <!-- ko if: halfStarPresent --><!-- /ko -->
+                                <!-- ko foreach: new Array(emptyStars) --><!-- /ko -->
+                            </div>
+                        </div>
+                        <div class="pricing-tag" data-bind="text: item.costCategory, attr: { title: item.costCategory }" title="FREE">FREE</div>
+                        <span class="text-fadeout"></span>
+                    </div>
+                    <!-- /ko -->
+                    <!-- ko ifnot: showRatingReview --><!-- /ko -->
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- /ko -->
+</div>
