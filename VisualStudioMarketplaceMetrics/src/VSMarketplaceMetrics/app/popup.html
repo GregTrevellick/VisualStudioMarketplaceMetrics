@@ -9,18 +9,18 @@
         <script type="text/javascript" src="scripts/popup.js"></script>
     </head>
 <body>
-    <div id="dataUnavailableForPage" hidden="hidden">
-        <h2>
+    <div id="dataUnavailableForPage" hidden="hidden"  aria-describedby="dataUnavailableForPageText">
+        <h2 id="dataUnavailableForPageText">
             Visual Studio Marketplace Metrics data is unfortunately not available for this page.
         </h2>
-        If you believe you are seeing this notice incorrectly click <a href="#" id="DataUnavailableEmail">here</a> to notify the extension author via a pre-populated email. If you prefer to contact the author via other means please include the following:
+        If you believe you are seeing this notice incorrectly click <a aria-label="Email author" href="#" id="DataUnavailableEmail">here</a> to notify the extension author via a pre-populated email. If you prefer to contact the author via other means please include the following:
         <ul>
             <li id="PageUrl"></li>
             <li id="UserAgent"></li>
         </ul>
     </div>
-    <div id="nilSearchResults" hidden="hidden">
-        <h2>
+    <div id="nilSearchResults" hidden="hidden" aria-describedby="nilSearchResultsText">
+        <h2 id="nilSearchResultsText">
             The Visual Studio Marketplace page you are on has no search results.
         </h2>
         On slower connections it is possible to trigger the Metrics button before the Marketplace page itself has fully loaded. If you suspect that this is the case wait a few seconds and try the Metrics button again.
@@ -32,7 +32,7 @@
             <span id="TotalReviewCount"></span><br />
             <span id="TotalOverallAverageReview" hidden="hidden"></span>
         </h2>
-        <a href="#" id="CopyToClipboard" class="copyToClipboard">Copy table to clipboard</a>
+        <a aria-label="Copy table to clipboard" href="#" id="CopyToClipboard" class="copyToClipboard">Copy table to clipboard</a>
         <div id="ClipboardBuffer">
             <table id="DetailGridTable" class="tablesorter">
                 <thead>
@@ -61,8 +61,8 @@
             </table>
         </div>
     </div>
-    <div class="VSMarketplaceMetricsHelp">
-        <a href="#" id="VisualStudioHelpIcon">
+    <div class="VSMarketplaceMetricsHelp" aria-describedby="VisualStudioHelpText">
+        <a aria-label="Help" href="#" id="VisualStudioHelpIcon">
             <img src="img/VisualStudioHelpIcon.png">
         </a>
         <div id="VisualStudioHelpText" hidden="hidden">
@@ -71,3 +71,17 @@
     </div>
 </body>
 </html>
+
+
+
+
+<div role="applicaton" aria-labelledby="calendarH1" aria-describedby="infoP">
+    <h1 id="calendarH1">
+        Calendar<h1>
+            <p id="infoP">
+                This calendar shows the game schedule for the Boston Red Sox.
+            </p>
+            <div role="grid">
+                ...
+            </div>
+</div>

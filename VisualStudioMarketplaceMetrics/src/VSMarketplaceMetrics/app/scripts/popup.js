@@ -1,15 +1,11 @@
 //gregt try catch
-//incognito
-//logged out
 //chrome.runtime.getURL()
-//https://marketplace.visualstudio.com/search?target=VS&sortBy=Rating
 
 
 
 //jslint
 //create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
 //cdn for jquery, with a fallback
-//aria tags
 //use strict
 
 
