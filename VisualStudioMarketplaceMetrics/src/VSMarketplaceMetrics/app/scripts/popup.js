@@ -1,4 +1,4 @@
-//gregt try catch
+//gregt try catch (extract out of popup.js single main function and contentscript.js single main function)
 //gregt create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
 
 
