@@ -91,23 +91,6 @@ chrome.runtime.onMessage.addListener(
 
                     var tabIndex = "";
 
-                    //if (visitType == "browse_Root" ||
-                    //    visitType == "browse_VS" ||
-                    //    visitType == "browse_VSTS" ||
-                    //    visitType == "browse_VSCode")
-                    //{
-                    //    //var 
-                    //      tabIndex = $(this).find('.gallery-item-card-container').context.tabIndex;
-                    //    if (tabIndex != "0") {
-                    //        //element is hidden so break out
-                    //        //return true;
-                    //        return;
-                    //        ////////////////////////////////////////////http://stackoverflow.com/questions/1784780/how-to-break-out-of-jquery-each-loop
-                    //        ////////////////////////////////////////////To break a $.each loop, you have to return false in the loop callback.
-                    //        ////////////////////////////////////////////Returning true skips to the next iteration, equivalent to a continue in a normal loop.
-                    //    }
-                    //}
-
                     var thisTabSource = $(this).parent().parent()[0].id;
 
                     if (thisTabSource.startsWith(vsmpDomParentSelector)) {
@@ -116,11 +99,7 @@ chrome.runtime.onMessage.addListener(
                         var installCount = GetInstallCount(installCountRounded);
 
                         var icon = $(this).find('.item-icon')[0].src;
-
-                        var itemTitle =
-    //" " + tabIndex + "</br>" + " " + thisTabSource + "</br>" +
-                                         $(this).find('.item-title')[0].innerText;
-
+                        var itemTitle = $(this).find('.item-title')[0].innerText;
                         var reviewTitle = $(this).find('.rating')[0].title;
                         var startReview = reviewTitle.indexOf('(') + 1;
                         var endReview = reviewTitle.indexOf(' ', startReview);

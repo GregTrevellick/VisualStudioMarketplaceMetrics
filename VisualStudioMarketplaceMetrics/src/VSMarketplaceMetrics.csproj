@@ -39,7 +39,6 @@
     <None Include="VSMarketplaceMetrics\tests\TestCases.xlsx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="tab3.html" />
     <Content Include="VSMarketplaceMetrics\app\img\VisualStudioHelpIcon.png" />
     <Content Include="VSMarketplaceMetrics\app\scripts\jquery-1.10.2.js" />
     <Content Include="VSMarketplaceMetrics\app\img\icon_19x19.png" />
@@ -61,7 +60,6 @@
     <Content Include="VSMarketplaceMetrics\scripts\_references.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="tab1.html" />
     <Compile Include="dummy.cs" />
     <Content Include="VSMarketplaceMetrics\tests\contentScriptTests.js" />
   </ItemGroup>
