@@ -1,10 +1,12 @@
 //gregt try catch (extract out of popup.js single main function and contentscript.js single main function)
-//gregt create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
 
 
-////cdn for jquery, with a fallback
-////use strict
-////jslint
+
+
+//create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
+//cdn for jquery, with a fallback
+//use strict
+//jslint
 
 
 
