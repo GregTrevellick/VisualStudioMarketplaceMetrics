@@ -69,6 +69,22 @@ chrome.runtime.onMessage.addListener(
                 }
             }
 
+            var vsmpDomParentSelector = "";
+            if (visitType == "browse_Root" ||
+                visitType == "browse_VS") {
+                vsmpDomParentSelector = "vs_";
+            }
+            else {
+                if (visitType == "browse_VSTS") {
+                    vsmpDomParentSelector = "vsts_";
+                }
+                else {
+                    if (visitType == "browse_VSCode") {
+                        vsmpDomParentSelector = "vscode_";
+                    }
+                }
+            }
+
             if (vsmpDomSelector != "") {
 
                 $(vsmpDomSelector).each(function () {
@@ -92,58 +108,66 @@ chrome.runtime.onMessage.addListener(
                     //    }
                     //}
 
-                    var installCountRounded = $(this).find('.install-count')[0].innerText;
-                    var installCount = GetInstallCount(installCountRounded);
+                    var thisTabSource = $(this).parent().parent()[0].id;
 
-                    var icon = $(this).find('.item-icon')[0].src;
-                    var itemTitle =
-//" " + tabIndex + "</br>" +
-                                    $(this).find('.item-title')[0].innerText;
+                    if (thisTabSource.startsWith(vsmpDomParentSelector)) {
 
-                    var reviewTitle = $(this).find('.rating')[0].title;
-                    var startReview = reviewTitle.indexOf('(') + 1;
-                    var endReview = reviewTitle.indexOf(' ', startReview);
-                    var reviewCount = reviewTitle.substring(startReview, endReview);
-                    var publisher = $(this).find('.publisher')[0].innerText;
-                    var price = $(this).find('.pricing-tag')[0].innerText;
-                    var averageReviewFull = $(this).find('.rating')[0].title;
-                    var averageReviewSplit = averageReviewFull.replace(" ", "").split(":");
-                    var averageReviewNumberPlus = averageReviewSplit[1].split("(");
-                    var averageReview = averageReviewNumberPlus[0].trim();
+                        var installCountRounded = $(this).find('.install-count')[0].innerText;
+                        var installCount = GetInstallCount(installCountRounded);
 
-                    if (visitType == "search_VS" ||
-                        visitType == "search_VSCode") {
-                        $(vsmpDomSelector).each(function () {
-                            fullDescription = $(this).find('.description')[0].innerText;
-                            url = $(this).find('.gallery-item-card-container')[0].href;
-                        });
-                    }
+                        var icon = $(this).find('.item-icon')[0].src;
 
-                    if (visitType == "browse_Root" ||
-                        visitType == "browse_VS" ||
-                        visitType == "browse_VSTS" ||
-                        visitType == "browse_VSCode" ||
-                        visitType == "search_VSTS") {
-                        $(vsmpDomSelector).each(function () {
-                            fullDescription = $(this).find('.icon-cell')[0].title;
-                            url = $(this).find('.gallery-item-card-container').href;
-                        });
-                    }
+                        var itemTitle =
+    //" " + tabIndex + "</br>" + " " + thisTabSource + "</br>" +
+                                         $(this).find('.item-title')[0].innerText;
 
-                    var vsmpDomJsonData =
-                            {
-                                InstallCount: installCount,
-                                Icon: icon,
-                                ItemTitle: itemTitle,
-                                ReviewCount: reviewCount,
-                                Publisher: publisher,
-                                Price: price,
-                                AverageReview: averageReview,
-                                FullDescription: fullDescription,
-                                URL: url,
-                            };
+                        var reviewTitle = $(this).find('.rating')[0].title;
+                        var startReview = reviewTitle.indexOf('(') + 1;
+                        var endReview = reviewTitle.indexOf(' ', startReview);
+                        var reviewCount = reviewTitle.substring(startReview, endReview);
+                        var publisher = $(this).find('.publisher')[0].innerText;
+                        var price = $(this).find('.pricing-tag')[0].innerText;
+                        var averageReviewFull = $(this).find('.rating')[0].title;
+                        var averageReviewSplit = averageReviewFull.replace(" ", "").split(":");
+                        var averageReviewNumberPlus = averageReviewSplit[1].split("(");
+                        var averageReview = averageReviewNumberPlus[0].trim();
 
-                    vsmpDomJsonDataArray.push(vsmpDomJsonData);
+                        if (visitType == "search_VS" ||
+                            visitType == "search_VSCode") {
+                            $(vsmpDomSelector).each(function () {
+                                fullDescription = $(this).find('.description')[0].innerText;
+                                url = $(this).find('.gallery-item-card-container')[0].href;
+                            });
+                        }
+
+                        if (visitType == "browse_Root" ||
+                            visitType == "browse_VS" ||
+                            visitType == "browse_VSTS" ||
+                            visitType == "browse_VSCode" ||
+                            visitType == "search_VSTS") {
+                            $(vsmpDomSelector).each(function () {
+                                fullDescription = $(this).find('.icon-cell')[0].title;
+                                url = $(this).find('.gallery-item-card-container').href;
+                            });
+                        }
+
+                        var vsmpDomJsonData =
+                                {
+                                    InstallCount: installCount,
+                                    Icon: icon,
+                                    ItemTitle: itemTitle,
+                                    ReviewCount: reviewCount,
+                                    Publisher: publisher,
+                                    Price: price,
+                                    AverageReview: averageReview,
+                                    FullDescription: fullDescription,
+                                    URL: url,
+                                };
+
+                        vsmpDomJsonDataArray.push(vsmpDomJsonData);
+
+                    };
+
                 });
             }
 
