@@ -1,5 +1,10 @@
 //gregt bug- go to home, then vsts, then home (so vsts tab is still selected), page action says nil data !
 //gregt try catch (extract contentscript.js single main function)
+//email hyperlink styling
+//loading gif
+//capture console errors into pre-populated email
+//add github issues to email link section
+//add VSMM logo to console styling
 
 
 
