@@ -3,11 +3,11 @@
 //email hyperlink styling
 //loading gif
 //capture console errors into pre-populated email
+
+
+
 //add github issues to email link section
 //when hitting help question mark, dont scroll to the top !
-
-
-
 //create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
 //cdn for jquery, with a fallback
 //use strict
