@@ -39,6 +39,7 @@
     <None Include="VSMarketplaceMetrics\tests\TestCases.xlsx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="VSMarketplaceMetrics\app\img\ajax-loader.gif" />
     <Content Include="VSMarketplaceMetrics\app\img\VisualStudioHelpIcon.png" />
     <Content Include="VSMarketplaceMetrics\app\scripts\console.image.js" />
     <Content Include="VSMarketplaceMetrics\app\scripts\console.image.min.js" />

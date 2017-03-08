@@ -42,6 +42,8 @@ $(function () {
             ProcessVsmpDom();
         }
 
+        document.getElementById('ajaxLoader').setAttribute("hidden", "hidden");
+
         function ProcessVsmpDom() {
 
             if (vsmpDom[0]["URL"] == "notAllowed") {
@@ -185,6 +187,8 @@ $(function () {
             };
 
         };
+
+
     }
 
     $('#DataUnavailableEmail').click(function (e) {
