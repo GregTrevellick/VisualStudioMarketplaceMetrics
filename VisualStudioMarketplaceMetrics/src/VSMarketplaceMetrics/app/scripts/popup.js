@@ -5,7 +5,7 @@
 //capture console errors into pre-populated email
 //add github issues to email link section
 //add VSMM logo to console styling
-
+//when hitting help question mark, dont scroll to the top !
 
 
 
