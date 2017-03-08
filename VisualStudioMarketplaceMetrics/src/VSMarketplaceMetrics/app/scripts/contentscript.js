@@ -95,55 +95,60 @@ chrome.runtime.onMessage.addListener(
 
                     if (thisTabSource.startsWith(vsmpDomParentSelector)) {
 
-                        var installCountRounded = $(this).find('.install-count')[0].innerText;
-                        var installCount = GetInstallCount(installCountRounded);
+                        PopulateJsonArrayFromDom($(this));
 
-                        var icon = $(this).find('.item-icon')[0].src;
-                        var itemTitle = $(this).find('.item-title')[0].innerText;
-                        var reviewTitle = $(this).find('.rating')[0].title;
-                        var startReview = reviewTitle.indexOf('(') + 1;
-                        var endReview = reviewTitle.indexOf(' ', startReview);
-                        var reviewCount = reviewTitle.substring(startReview, endReview);
-                        var publisher = $(this).find('.publisher')[0].innerText;
-                        var price = $(this).find('.pricing-tag')[0].innerText;
-                        var averageReviewFull = $(this).find('.rating')[0].title;
-                        var averageReviewSplit = averageReviewFull.replace(" ", "").split(":");
-                        var averageReviewNumberPlus = averageReviewSplit[1].split("(");
-                        var averageReview = averageReviewNumberPlus[0].trim();
+                        function PopulateJsonArrayFromDom(vsmpExtn) {
 
-                        if (visitType == "search_VS" ||
-                            visitType == "search_VSCode") {
-                            $(vsmpDomSelector).each(function () {
-                                fullDescription = $(this).find('.description')[0].innerText;
-                                url = $(this).find('.gallery-item-card-container')[0].href;
-                            });
+                            var installCountRounded = vsmpExtn.find('.install-count')[0].innerText;
+                            var installCount = GetInstallCount(installCountRounded);
+
+                            var icon = vsmpExtn.find('.item-icon')[0].src;
+                            var itemTitle = vsmpExtn.find('.item-title')[0].innerText;
+                            var reviewTitle = vsmpExtn.find('.rating')[0].title;
+                            var startReview = reviewTitle.indexOf('(') + 1;
+                            var endReview = reviewTitle.indexOf(' ', startReview);
+                            var reviewCount = reviewTitle.substring(startReview, endReview);
+                            var publisher = vsmpExtn.find('.publisher')[0].innerText;
+                            var price = vsmpExtn.find('.pricing-tag')[0].innerText;
+                            var averageReviewFull = vsmpExtn.find('.rating')[0].title;
+                            var averageReviewSplit = averageReviewFull.replace(" ", "").split(":");
+                            var averageReviewNumberPlus = averageReviewSplit[1].split("(");
+                            var averageReview = averageReviewNumberPlus[0].trim();
+
+                            if (visitType == "search_VS" ||
+                                visitType == "search_VSCode") {
+                                $(vsmpDomSelector).each(function () {
+                                    fullDescription = vsmpExtn.find('.description')[0].innerText;
+                                    url = vsmpExtn.find('.gallery-item-card-container')[0].href;
+                                });
+                            }
+
+                            if (visitType == "browse_Root" ||
+                                visitType == "browse_VS" ||
+                                visitType == "browse_VSTS" ||
+                                visitType == "browse_VSCode" ||
+                                visitType == "search_VSTS") {
+                                $(vsmpDomSelector).each(function () {
+                                    fullDescription = vsmpExtn.find('.icon-cell')[0].title;
+                                    url = vsmpExtn.find('.gallery-item-card-container').href;
+                                });
+                            }
+
+                            var vsmpDomJsonData =
+                                    {
+                                        InstallCount: installCount,
+                                        Icon: icon,
+                                        ItemTitle: itemTitle,
+                                        ReviewCount: reviewCount,
+                                        Publisher: publisher,
+                                        Price: price,
+                                        AverageReview: averageReview,
+                                        FullDescription: fullDescription,
+                                        URL: url,
+                                    };
+
+                            vsmpDomJsonDataArray.push(vsmpDomJsonData);
                         }
-
-                        if (visitType == "browse_Root" ||
-                            visitType == "browse_VS" ||
-                            visitType == "browse_VSTS" ||
-                            visitType == "browse_VSCode" ||
-                            visitType == "search_VSTS") {
-                            $(vsmpDomSelector).each(function () {
-                                fullDescription = $(this).find('.icon-cell')[0].title;
-                                url = $(this).find('.gallery-item-card-container').href;
-                            });
-                        }
-
-                        var vsmpDomJsonData =
-                                {
-                                    InstallCount: installCount,
-                                    Icon: icon,
-                                    ItemTitle: itemTitle,
-                                    ReviewCount: reviewCount,
-                                    Publisher: publisher,
-                                    Price: price,
-                                    AverageReview: averageReview,
-                                    FullDescription: fullDescription,
-                                    URL: url,
-                                };
-
-                        vsmpDomJsonDataArray.push(vsmpDomJsonData);
 
                     };
 
