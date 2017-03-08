@@ -32,6 +32,10 @@ $(function () {
             document.getElementById('nilSearchResults').removeAttribute("hidden");
         }
         else {
+            ProcessVsmpDom();
+        }
+
+        function ProcessVsmpDom() {
 
             if (vsmpDom[0]["URL"] == "notAllowed") {
                 ShowDataUnavailableMessage();
@@ -173,10 +177,7 @@ $(function () {
 
             };
 
-        }
-
-        //function ProcessVsmpDom(){
-        //};
+        };
     }
 
     $('#DataUnavailableEmail').click(function (e) {
