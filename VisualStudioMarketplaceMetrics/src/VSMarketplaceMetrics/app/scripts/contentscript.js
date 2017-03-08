@@ -9,6 +9,7 @@ chrome.runtime.onMessage.addListener(
             var visitType = "";
             var pageUrl = window.location.href;//TODO dedupe
 
+            //001s
             switch (pageUrl) {
                 case "http://marketplace.visualstudio.com/":
                 case "https://marketplace.visualstudio.com/":
@@ -51,10 +52,12 @@ chrome.runtime.onMessage.addListener(
                     }
                     break;
             }
+            //001e
 
             var vsmpDomSelector = "";
             var vsmpDomJsonDataArray = new Array();
 
+            //002s
             if (visitType == "search_VS" ||
                 visitType == "search_VSCode" ||
                 visitType == "search_VSTS") {
@@ -68,7 +71,9 @@ chrome.runtime.onMessage.addListener(
                     vsmpDomSelector = "[class^=gallery-item-card-container]";
                 }
             }
+            //002e
 
+            //003s
             var vsmpDomParentSelector = "";
             if (visitType == "browse_Root" ||
                 visitType == "browse_VS") {
@@ -84,6 +89,7 @@ chrome.runtime.onMessage.addListener(
                     }
                 }
             }
+            //003e
 
             if (vsmpDomSelector != "") {
 
