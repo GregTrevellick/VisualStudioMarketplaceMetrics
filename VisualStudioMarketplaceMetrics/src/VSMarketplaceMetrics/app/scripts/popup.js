@@ -1,7 +1,6 @@
 //bug - go to home, then vsts, then home (so vsts tab is still selected), page action says nil data !
 //try catch 
 //email hyperlink styling
-//loading gif
 //capture console errors into pre-populated email
 
 
