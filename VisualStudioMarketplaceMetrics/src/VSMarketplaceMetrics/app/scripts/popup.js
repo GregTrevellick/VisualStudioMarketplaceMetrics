@@ -33,9 +33,7 @@ $(function () {
         }
         else {
             if (vsmpDom[0]["URL"] == "notAllowed") {
-                document.getElementById('PageUrl').innerHTML = "Page url: " + vsmpDom[0]["PageUrl"];
-                document.getElementById('UserAgent').innerHTML = "Browser version: "+ vsmpDom[0]["UserAgent"];
-                document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
+                ShowDataUnavailableForPage();
             }
             else {
                 document.getElementById('dataAvailable').removeAttribute("hidden");
@@ -145,14 +143,16 @@ $(function () {
             $(document).ready(function () {
                 $("#DetailGridTable").tablesorter();
             });
+
+            function ShowDataUnavailableForPage() {
+                document.getElementById('PageUrl').innerHTML = "Page url: " + vsmpDom[0]["PageUrl"];
+                document.getElementById('UserAgent').innerHTML = "Browser version: " + vsmpDom[0]["UserAgent"];
+                document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
+            }
         }
     }
 
     $('#DataUnavailableEmail').click(function (e) {
-        dataUnavailableEmail();
-    });
-
-    function dataUnavailableEmail() {
         var mailto = "support.vsmarketplacemetrics@gmail.com";
         var subject = "VS Marketplace Metrics Data Unavailable Page";
         var userAgent = navigator.userAgent;//TODO dedupe
@@ -161,7 +161,6 @@ $(function () {
                    "\n" + "\n" +
                    "Page url: " + pageUrl;
         var emailUrl = encodeURI("mailto:" + mailto + "?subject=" + subject + "&body=" + body);
-
         chrome.tabs.create({ url: emailUrl }, function (tab) {
             setTimeout(function () {
                 chrome.tabs.remove(tab.id);//gregt mailto tab not auto-closing
@@ -169,7 +168,7 @@ $(function () {
             , 500
            );
         });
-    }
+    });
 
     $('#VisualStudioHelpIcon').click(function (e) {
         var elem = document.getElementById('VisualStudioHelpText')
@@ -183,10 +182,7 @@ $(function () {
     });
 
     $('#CopyToClipboard').click(function (e) {
-        selectElementContents(document.getElementById('ClipboardBuffer'));
-    });
-
-    function selectElementContents(element) {
+        var element = document.getElementById('ClipboardBuffer');
 
         var body = document.body, range, sel;
 
@@ -212,5 +208,6 @@ $(function () {
         document.execCommand('copy');
 
         document.getSelection().removeAllRanges();
-    }
+    });
+
 });
