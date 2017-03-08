@@ -1,4 +1,5 @@
-//gregt try catch (extract out of popup.js single main function and contentscript.js single main function)
+//gregt bug- go to home, then vsts, then home (so vsts tab is still selected), page action says nil data !
+//gregt try catch (extract contentscript.js single main function)
 
 
 
