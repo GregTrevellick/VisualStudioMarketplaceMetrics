@@ -52,42 +52,85 @@ chrome.runtime.onMessage.addListener(
                     }
                     break;
             }
+            function xx() {
+            }
             //001e
 
-            var vsmpDomSelector = "";
+            //var vsmpDomSelector = "";
             var vsmpDomJsonDataArray = new Array();
 
             //002s
-            if (visitType == "search_VS" ||
-                visitType == "search_VSCode" ||
-                visitType == "search_VSTS") {
-                vsmpDomSelector = "[class^=grid-item]";
-            }
-            else {
-                if (visitType == "browse_Root" ||
-                    visitType == "browse_VS" ||
-                    visitType == "browse_VSTS" ||
-                    visitType == "browse_VSCode") {
-                    vsmpDomSelector = "[class^=gallery-item-card-container]";
+            //if (visitType == "search_VS" ||
+            //    visitType == "search_VSCode" ||
+            //    visitType == "search_VSTS") {
+            //    vsmpDomSelector = "[class^=grid-item]";
+            //}
+            //else {
+            //    if (visitType == "browse_Root" ||
+            //        visitType == "browse_VS" ||
+            //        visitType == "browse_VSTS" ||
+            //        visitType == "browse_VSCode") {
+            //        vsmpDomSelector = "[class^=gallery-item-card-container]";
+            //    }
+            //}
+
+            var vsmpDomSelector = GetVsmpDomSelector(visitType);
+
+            function GetVsmpDomSelector(visitType) {
+                var vsmpDomSelector = "";
+                if (visitType == "search_VS" ||
+                    visitType == "search_VSCode" ||
+                    visitType == "search_VSTS") {
+                    vsmpDomSelector = "[class^=grid-item]";
                 }
+                else {
+                    if (visitType == "browse_Root" ||
+                        visitType == "browse_VS" ||
+                        visitType == "browse_VSTS" ||
+                        visitType == "browse_VSCode") {
+                        vsmpDomSelector = "[class^=gallery-item-card-container]";
+                    }
+                }
+                return vsmpDomSelector;
             }
             //002e
 
             //003s
-            var vsmpDomParentSelector = "";
-            if (visitType == "browse_Root" ||
-                visitType == "browse_VS") {
-                vsmpDomParentSelector = "vs_";
-            }
-            else {
-                if (visitType == "browse_VSTS") {
-                    vsmpDomParentSelector = "vsts_";
+            //var vsmpDomParentSelector = "";
+            //if (visitType == "browse_Root" ||
+            //    visitType == "browse_VS") {
+            //    vsmpDomParentSelector = "vs_";
+            //}
+            //else {
+            //    if (visitType == "browse_VSTS") {
+            //        vsmpDomParentSelector = "vsts_";
+            //    }
+            //    else {
+            //        if (visitType == "browse_VSCode") {
+            //            vsmpDomParentSelector = "vscode_";
+            //        }
+            //    }
+            //}
+
+            var vsmpDomParentSelector = GetVsmpDomParentSelector(visitType);
+
+            function GetVsmpDomParentSelector(visitType) {
+                var vsmpDomParentSelector = "";
+                if (visitType == "browse_Root" ||
+                    visitType == "browse_VS") {
+                    vsmpDomParentSelector = "vs_";
                 }
                 else {
-                    if (visitType == "browse_VSCode") {
-                        vsmpDomParentSelector = "vscode_";
+                    if (visitType == "browse_VSTS") {
+                        vsmpDomParentSelector = "vsts_";
+                    }
+                    else {
+                        if (visitType == "browse_VSCode") {
+                            vsmpDomParentSelector = "vscode_";
+                        }
                     }
                 }
+                return vsmpDomParentSelector;
             }
             //003e
 
