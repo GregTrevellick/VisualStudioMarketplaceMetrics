@@ -42,7 +42,7 @@ $(function () {
             ProcessVsmpDom();
         }
 
-        document.getElementById('ajaxLoader').setAttribute("hidden", "hidden");
+        $('.ajaxLoader').hide();
 
         function ProcessVsmpDom() {
 
