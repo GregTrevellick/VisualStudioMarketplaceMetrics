@@ -1,10 +1,10 @@
 //bug - go to home, then vsts, then home (so vsts tab is still selected), page action says nil data !
 //try catch 
-//email hyperlink styling
 //capture console errors into pre-populated email
+//defer javascript loading
 
 
-
+//email hyperlink styling
 //add github issues to email link section
 //when hitting help question mark, dont scroll to the top !
 //create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
