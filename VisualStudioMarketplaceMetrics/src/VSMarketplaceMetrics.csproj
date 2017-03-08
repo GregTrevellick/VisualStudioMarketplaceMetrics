@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="VSMarketplaceMetrics\app\img\VisualStudioHelpIcon.png" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\console.image.js" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\console.image.min.js" />
     <Content Include="VSMarketplaceMetrics\app\scripts\jquery-1.10.2.js" />
     <Content Include="VSMarketplaceMetrics\app\img\icon_19x19.png" />
     <Content Include="VSMarketplaceMetrics\app\popup.html" />

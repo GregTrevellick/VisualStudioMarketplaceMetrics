@@ -1,10 +1,9 @@
-//gregt bug- go to home, then vsts, then home (so vsts tab is still selected), page action says nil data !
-//gregt try catch (extract contentscript.js single main function)
+//bug - go to home, then vsts, then home (so vsts tab is still selected), page action says nil data !
+//try catch 
 //email hyperlink styling
 //loading gif
 //capture console errors into pre-populated email
 //add github issues to email link section
-//add VSMM logo to console styling
 //when hitting help question mark, dont scroll to the top !
 
 
@@ -17,6 +16,8 @@
 
 
 $(function () {
+
+	console.image("http://i.imgur.com/oGiMR.gif"); //gregt upload my image
 
     onLoadRequestDomFromVsmp();
 
