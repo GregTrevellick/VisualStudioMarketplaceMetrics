@@ -4,105 +4,8 @@ chrome.runtime.onMessage.addListener(
 
         if (request.action === "requestDomFromVsmmPopUp") {
 
-            //TODO extract long code below into smaller functions
-
-            //var visitType = "";
             var pageUrl = window.location.href;//TODO dedupe
-
-            //001s
-            //switch (pageUrl) {
-            //    case "http://marketplace.visualstudio.com/":
-            //    case "https://marketplace.visualstudio.com/":
-            //        visitType = "browse_Root";
-            //        break;
-            //    case "http://marketplace.visualstudio.com/vs":
-            //    case "https://marketplace.visualstudio.com/vs":
-            //        visitType = "browse_VS";
-            //        break;
-            //    case "http://marketplace.visualstudio.com/vsts":
-            //    case "https://marketplace.visualstudio.com/vsts":
-            //        visitType = "browse_VSTS";
-            //        break;
-            //    case "http://marketplace.visualstudio.com/vscode":
-            //    case "https://marketplace.visualstudio.com/vscode":
-            //        visitType = "browse_VSCode";
-            //        break;
-            //    default:
-            //        if (pageUrl.indexOf("marketplace.visualstudio.com/search") != -1) {
-            //            if (pageUrl.indexOf("&target=VS&") != -1) {
-            //                visitType = "search_VS";
-            //            }
-            //            else {
-            //                if (pageUrl.indexOf("&target=VSCode&") != -1) {
-            //                    visitType = "search_VSCode";
-            //                }
-            //                else {
-            //                    if (pageUrl.indexOf("&target=VSTS&") != -1) {
-            //                        visitType = "search_VSTS";
-            //                    }
-            //                }
-            //            }
-            //        }
-            //        else {
-            //            if (pageUrl.indexOf("marketplace.visualstudio.com/manage") != -1
-            //             || pageUrl.indexOf("marketplace.visualstudio.com/subscriptions") != -1
-            //             || pageUrl.indexOf("marketplace.visualstudio.com/items?itemName=") != -1) {
-            //                visitType = "notAllowed";
-            //            }
-            //        }
-            //        break;
-            //}
-
             var visitType = GetVisitType(pageUrl);
-
-            function GetVisitType(pageUrl) {
-                var visitType = "";
-                switch (pageUrl) {
-                    case "http://marketplace.visualstudio.com/":
-                    case "https://marketplace.visualstudio.com/":
-                        visitType = "browse_Root";
-                        break;
-                    case "http://marketplace.visualstudio.com/vs":
-                    case "https://marketplace.visualstudio.com/vs":
-                        visitType = "browse_VS";
-                        break;
-                    case "http://marketplace.visualstudio.com/vsts":
-                    case "https://marketplace.visualstudio.com/vsts":
-                        visitType = "browse_VSTS";
-                        break;
-                    case "http://marketplace.visualstudio.com/vscode":
-                    case "https://marketplace.visualstudio.com/vscode":
-                        visitType = "browse_VSCode";
-                        break;
-                    default:
-                        if (pageUrl.indexOf("marketplace.visualstudio.com/search") != -1) {
-                            if (pageUrl.indexOf("&target=VS&") != -1) {
-                                visitType = "search_VS";
-                            }
-                            else {
-                                if (pageUrl.indexOf("&target=VSCode&") != -1) {
-                                    visitType = "search_VSCode";
-                                }
-                                else {
-                                    if (pageUrl.indexOf("&target=VSTS&") != -1) {
-                                        visitType = "search_VSTS";
-                                    }
-                                }
-                            }
-                        }
-                        else {
-                            if (pageUrl.indexOf("marketplace.visualstudio.com/manage") != -1
-                             || pageUrl.indexOf("marketplace.visualstudio.com/subscriptions") != -1
-                             || pageUrl.indexOf("marketplace.visualstudio.com/items?itemName=") != -1) {
-                                visitType = "notAllowed";
-                            }
-                        }
-                        break;
-                }
-                return visitType;
-            }
-            //001e
-
             var vsmpDomJsonDataArray = new Array();
             var vsmpDomSelector = GetVsmpDomSelector(visitType);
             var vsmpDomParentSelector = GetVsmpDomParentSelector(visitType);
@@ -188,6 +91,55 @@ chrome.runtime.onMessage.addListener(
             // Call the specified callback
             popUpCallBackFn(vsmpDomJsonDataArray);
 
+            function GetVisitType(pageUrl) {
+
+                var visitType = "";
+
+                switch (pageUrl) {
+                    case "http://marketplace.visualstudio.com/":
+                    case "https://marketplace.visualstudio.com/":
+                        visitType = "browse_Root";
+                        break;
+                    case "http://marketplace.visualstudio.com/vs":
+                    case "https://marketplace.visualstudio.com/vs":
+                        visitType = "browse_VS";
+                        break;
+                    case "http://marketplace.visualstudio.com/vsts":
+                    case "https://marketplace.visualstudio.com/vsts":
+                        visitType = "browse_VSTS";
+                        break;
+                    case "http://marketplace.visualstudio.com/vscode":
+                    case "https://marketplace.visualstudio.com/vscode":
+                        visitType = "browse_VSCode";
+                        break;
+                    default:
+                        if (pageUrl.indexOf("marketplace.visualstudio.com/search") != -1) {
+                            if (pageUrl.indexOf("&target=VS&") != -1) {
+                                visitType = "search_VS";
+                            }
+                            else {
+                                if (pageUrl.indexOf("&target=VSCode&") != -1) {
+                                    visitType = "search_VSCode";
+                                }
+                                else {
+                                    if (pageUrl.indexOf("&target=VSTS&") != -1) {
+                                        visitType = "search_VSTS";
+                                    }
+                                }
+                            }
+                        }
+                        else {
+                            if (pageUrl.indexOf("marketplace.visualstudio.com/manage") != -1
+                             || pageUrl.indexOf("marketplace.visualstudio.com/subscriptions") != -1
+                             || pageUrl.indexOf("marketplace.visualstudio.com/items?itemName=") != -1) {
+                                visitType = "notAllowed";
+                            }
+                        }
+                        break;
+                }
+                return visitType;
+            }
+
             function GetVsmpDomSelector(visitType) {
                 var vsmpDomSelector = "";
                 if (visitType == "search_VS" ||
@@ -224,7 +176,6 @@ chrome.runtime.onMessage.addListener(
                 }
                 return vsmpDomParentSelector;
             }
-
 
         }
 
