@@ -47,7 +47,11 @@ $(function () {
 
                 vsmpDomPageUrl = vsmpDom[0]["PageUrl"];
 
-                a = b.c;
+                //a = b.c;
+           
+                if (vsmpDom[0]["URL"] == "errorOccurred") {
+                    throw vsmpDom[0]["Error"];
+                };
 
                 if (vsmpDom[0]["URL"] == "notAllowed") {
                     ShowDataUnavailableMessage();
