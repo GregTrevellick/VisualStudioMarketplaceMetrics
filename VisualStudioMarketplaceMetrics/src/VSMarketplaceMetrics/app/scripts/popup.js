@@ -2,6 +2,7 @@
 //try catch 
 //capture console errors into pre-populated email
 //defer javascript loading
+//TODO dedupe this
 
 
 //email hyperlink styling
@@ -15,6 +16,14 @@
 
 
 $(function () {
+
+    try {
+        var a = b.c;
+    } catch (e) {
+        document.getElementById('errorOccuredPage').removeAttribute("hidden");
+        $('.ajaxLoader').hide();//TODO dedupe this
+    }
+    
 
 	console.image("http://i.imgur.com/oGiMR.gif"); //gregt upload my image
 
@@ -41,7 +50,7 @@ $(function () {
             ProcessVsmpDom();
         }
 
-        $('.ajaxLoader').hide();
+        $('.ajaxLoader').hide();//TODO dedupe this
 
         function ProcessVsmpDom() {
 
@@ -66,8 +75,6 @@ $(function () {
 
             function ShowDataTable() {
 
-                //gregt show loading gif ?
-
                 var totalInstallCount = 0;
                 var totalReviewCount = 0;
                 var numericAverageReviewSum = 0;
@@ -77,8 +84,6 @@ $(function () {
                 }
 
                 SetHeadersAndFooters();
-
-                //gregt hide loading gif ?
 
                 document.getElementById('dataAvailable').removeAttribute("hidden");
 
