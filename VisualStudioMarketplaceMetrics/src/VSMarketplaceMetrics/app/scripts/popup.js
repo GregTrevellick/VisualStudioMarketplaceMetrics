@@ -37,6 +37,7 @@ $(function () {
 
             if (vsmpDom.length == 0) {
                 document.getElementById('nilSearchResults').removeAttribute("hidden");
+                document.getElementById('notificationItems').removeAttribute("hidden");
             }
             else {
                 ProcessVsmpDom();
@@ -48,7 +49,7 @@ $(function () {
 
                 vsmpDomPageUrl = vsmpDom[0]["PageUrl"];
 
-                a = b.c;//gregt
+            //   a = b.c;//gregt
 
                 if (vsmpDom[0]["URL"] == "notAllowed") {
                     ShowDataUnavailableMessage();
@@ -63,9 +64,10 @@ $(function () {
                 });
 
                 function ShowDataUnavailableMessage() {
-                    document.getElementById('PageUrl').innerHTML = "Page url: " + vsmpDomPageUrl;
-                    document.getElementById('UserAgent').innerHTML = "Browser version: " + GetUserAgent();
+                    document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
+                    document.getElementById('UserAgent').innerHTML = GetUserAgent();
                     document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
+                    document.getElementById('notificationItems').removeAttribute("hidden");                   
                 };
 
                 function ShowDataTable() {
@@ -193,10 +195,12 @@ $(function () {
     $('#DataUnavailableEmail').click(function (e) {
         try {
             var mailto = "support.vsmarketplacemetrics@gmail.com";
-            var subject = "VS Marketplace Metrics Data Unavailable Page";
-            var body = "User agent: " + GetUserAgent() +
+            var subject = "VS Marketplace Metrics Feedback";
+            var body = GetUserAgent() +
                        "\n" + "\n" +
-                       "Page url: " + GetPageUrl();
+                       GetPageUrl() +
+                       "\n" + "\n" +
+                       GetJavascriptError();
             var emailUrl = encodeURI("mailto:" + mailto + "?subject=" + subject + "&body=" + body);
             chrome.tabs.create({ url: emailUrl }, function (tab) {
                 setTimeout(function () {
@@ -256,10 +260,11 @@ $(function () {
     });
 
     function CommonErrorHandler(e) {
-        document.getElementById('PageUrl2').innerHTML = "Page url: " + GetPageUrl();
-        document.getElementById('UserAgent2').innerHTML = "Browser version: " + GetUserAgent();
-        document.getElementById('JavaScriptErrorText2').innerHTML = e;
+        document.getElementById('PageUrl').innerHTML = GetPageUrl();
+        document.getElementById('UserAgent').innerHTML = GetUserAgent();
+        document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);////////////// e;
         document.getElementById('errorOccuredPage').removeAttribute("hidden");
+        document.getElementById('notificationItems').removeAttribute("hidden");
         HideSpinner();
     }
 
@@ -278,4 +283,13 @@ $(function () {
             return "";
         };
     }
+
+    function GetJavascriptError(e) {
+        if (e != undefined) {
+            return e;
+        } else {
+            return "";
+        };
+    }
+
 });

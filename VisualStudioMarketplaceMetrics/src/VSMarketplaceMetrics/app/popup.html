@@ -10,26 +10,29 @@
         <script type="text/javascript" src="scripts/console.image.min.js"></script>
     </head>
 <body>
-    <img src="img/ajax-loader.gif" id="ajaxLoader" class="ajaxLoader"/>
+    <img src="img/ajax-loader.gif" id="ajaxLoader" class="ajaxLoader" />
     <div id="errorOccuredPage" hidden="hidden" aria-describedby="errorOccuredPageText">
         <h2 id="errorOccuredPageText">
-            Opps, something went wrong
+            Opps, something went wrong.
         </h2>
-        Please click <a aria-label="Email author" href="#" id="DataUnavailableEmail">here</a> to notify the extension author via a pre-populated email. If you prefer to contact the author via other means please include the following:
-        <ul>
-            <li id="PageUrl2"></li>
-            <li id="UserAgent2"></li>
-            <li id="JavaScriptErrorText2"></li>
-        </ul>
+        Please
     </div>
-    <div id="dataUnavailableForPage" hidden="hidden"  aria-describedby="dataUnavailableForPageText">
+    <div id="dataUnavailableForPage" hidden="hidden" aria-describedby="dataUnavailableForPageText">
         <h2 id="dataUnavailableForPageText">
             Visual Studio Marketplace Metrics data is unfortunately not available for this page.
         </h2>
-        If you believe you are seeing this notice incorrectly click <a aria-label="Email author" href="#" id="DataUnavailableEmail">here</a> to notify the extension author via a pre-populated email. If you prefer to contact the author via other means please include the following:
+        If you suspect you are seeing this notice incorrectly please
+    </div>
+    <div id="notificationItems" hidden="hidden">
+        click
+        <a aria-label="Email author" href="#" id="DataUnavailableEmail">
+            here
+        </a>
+        to notify the extension author via a pre-populated email. If you prefer to contact the author via other means please include the following:
         <ul>
             <li id="PageUrl"></li>
             <li id="UserAgent"></li>
+            <li id="JavaScriptErrorText"></li>
         </ul>
     </div>
     <div id="nilSearchResults" hidden="hidden" aria-describedby="nilSearchResultsText">
