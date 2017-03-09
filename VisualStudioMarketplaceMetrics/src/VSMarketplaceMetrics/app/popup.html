@@ -15,24 +15,23 @@
         <h2 id="errorOccuredPageText">
             Opps, something went wrong.
         </h2>
-        Please
     </div>
     <div id="dataUnavailableForPage" hidden="hidden" aria-describedby="dataUnavailableForPageText">
         <h2 id="dataUnavailableForPageText">
             Visual Studio Marketplace Metrics data is unfortunately not available for this page.
         </h2>
-        If you suspect you are seeing this notice incorrectly please
     </div>
     <div id="notificationItems" hidden="hidden">
-        click
-        <a aria-label="Email author" href="#" id="DataUnavailableEmail">
-            here
-        </a>
-        to notify the extension author via a pre-populated email. If you prefer to contact the author via other means please include the following:
+        <div>
+            <span id="errorOccuredPagePlease" hidden="hidden">Please click </span>
+            <span id="dataUnavailableForPagePlease" hidden="hidden">If you suspect you are seeing this notice incorrectly please click </span>
+            <a aria-label="Email author" href="#" id="DataUnavailableEmail">here</a>
+            to notify the extension author via a pre-populated email. If you prefer to contact the author via other means please include the following:
+        </div>
         <ul>
             <li id="PageUrl"></li>
             <li id="UserAgent"></li>
-            <li id="JavaScriptErrorText"></li>
+            <li id="JavaScriptErrorText" hidden="hidden"></li>
         </ul>
     </div>
     <div id="nilSearchResults" hidden="hidden" aria-describedby="nilSearchResultsText">

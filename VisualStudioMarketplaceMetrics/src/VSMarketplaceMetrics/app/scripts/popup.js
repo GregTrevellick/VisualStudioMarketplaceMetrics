@@ -37,7 +37,6 @@ $(function () {
 
             if (vsmpDom.length == 0) {
                 document.getElementById('nilSearchResults').removeAttribute("hidden");
-                document.getElementById('notificationItems').removeAttribute("hidden");
             }
             else {
                 ProcessVsmpDom();
@@ -66,8 +65,8 @@ $(function () {
                 function ShowDataUnavailableMessage() {
                     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
                     document.getElementById('UserAgent').innerHTML = GetUserAgent();
-                    document.getElementById('JavaScriptErrorText').hide();//gregt
                     document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
+                    document.getElementById('dataUnavailableForPagePlease').removeAttribute("hidden");
                     document.getElementById('notificationItems').removeAttribute("hidden");                   
                 };
 
@@ -265,7 +264,9 @@ $(function () {
         document.getElementById('UserAgent').innerHTML = GetUserAgent();
         document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
         document.getElementById('errorOccuredPage').removeAttribute("hidden");
+        document.getElementById('errorOccuredPagePlease').removeAttribute("hidden");
         document.getElementById('notificationItems').removeAttribute("hidden");
+        document.getElementById('JavaScriptErrorText').removeAttribute("hidden");
         HideSpinner();
     }
 
