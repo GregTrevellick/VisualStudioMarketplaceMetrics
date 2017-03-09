@@ -4,7 +4,7 @@ chrome.runtime.onMessage.addListener(
 
         if (request.action === "requestDomFromVsmmPopUp") {
 
-            var pageUrl = window.location.href;//TODO dedupe
+            var pageUrl = window.location.href;
             var visitType = GetVisitType(pageUrl);
             var vsmpDomJsonDataArray = new Array();
             var vsmpDomSelector = GetVsmpDomSelector(visitType);
@@ -68,6 +68,7 @@ chrome.runtime.onMessage.addListener(
                                         AverageReview: averageReview,
                                         FullDescription: fullDescription,
                                         URL: url,
+                                        PageUrl: pageUrl
                                     };
 
                             vsmpDomJsonDataArray.push(vsmpDomJsonData);

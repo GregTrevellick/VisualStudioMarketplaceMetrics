@@ -1,15 +1,14 @@
-//capture console errors into opps something went wrong
 //bug - go to home, then vsts, then home (so vsts tab is still selected), page action says nil data !
 //try catch in contentscript.js (done in popup.js)
 //defer javascript loading
-//TODO dedupe this
+//use strict
+
 
 
 //add github issues to email link section
 //when hitting help question mark, dont scroll to the top !
 //create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
 //cdn for jquery, with a fallback
-//use strict
 //jslint
 
 
@@ -36,8 +35,6 @@ $(function () {
 
         try {
 
-            a = b.c;
-
             if (vsmpDom.length == 0) {
                 document.getElementById('nilSearchResults').removeAttribute("hidden");
             }
@@ -48,6 +45,10 @@ $(function () {
             HideSpinner();
 
             function ProcessVsmpDom() {
+
+                vsmpDomPageUrl = vsmpDom[0]["PageUrl"];
+
+                a = b.c;//gregt
 
                 if (vsmpDom[0]["URL"] == "notAllowed") {
                     ShowDataUnavailableMessage();
@@ -62,7 +63,7 @@ $(function () {
                 });
 
                 function ShowDataUnavailableMessage() {
-                    document.getElementById('PageUrl').innerHTML = "Page url: " + vsmpDom[0]["PageUrl"];
+                    document.getElementById('PageUrl').innerHTML = "Page url: " + vsmpDomPageUrl;
                     document.getElementById('UserAgent').innerHTML = "Browser version: " + GetUserAgent();
                     document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
                 };
@@ -271,6 +272,10 @@ $(function () {
     }
 
     function GetPageUrl() {
-        return window.location.href;
+        if (vsmpDomPageUrl != undefined) {
+            return vsmpDomPageUrl;
+        } else {
+            return "";
+        };
     }
 });
