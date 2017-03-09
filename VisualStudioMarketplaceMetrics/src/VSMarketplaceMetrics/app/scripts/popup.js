@@ -1,14 +1,14 @@
 //bug - go to home, then vsts, then home (so vsts tab is still selected), page action says nil data !
-//try catch in contentscript.js (done in popup.js)
 //defer javascript loading
 //use strict
+
 
 //upload my image to imgur.com
 //add github issues to email link section
 //when hitting help question mark, dont scroll to the top !
 //create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
 //cdn for jquery, with a fallback
-//jslint
+//minified jquery, etc 
 
 
 
