@@ -1,14 +1,14 @@
 //bug - go to home, then vsts, then home (so vsts tab is still selected), page action says nil data !
 //defer javascript loading
 //use strict
+//minified jquery
+//mailto tab not auto-closing (chrome.tabs.remove(tab.id))
 
 
+//...GOING LIVE...
 //upload my image to imgur.com
-//add github issues to email link section
-//when hitting help question mark, dont scroll to the top !
+//add github issues to email link section ?
 //create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
-//cdn for jquery, with a fallback
-//minified jquery, etc 
 
 
 
@@ -207,7 +207,7 @@ $(function () {
             var emailUrl = encodeURI("mailto:" + mailto + "?subject=" + subject + "&body=" + body);
             chrome.tabs.create({ url: emailUrl }, function (tab) {
                 setTimeout(function () {
-                    chrome.tabs.remove(tab.id);//gregt mailto tab not auto-closing
+                    chrome.tabs.remove(tab.id);
                 }
                 , 500
                );
