@@ -5,7 +5,6 @@
 //TODO dedupe this
 
 
-//email hyperlink styling
 //add github issues to email link section
 //when hitting help question mark, dont scroll to the top !
 //create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
@@ -46,7 +45,7 @@ $(function () {
                 ProcessVsmpDom();
             }
 
-            $('.ajaxLoader').hide();//TODO dedupe this
+            HideSpinner();
 
             function ProcessVsmpDom() {
 
@@ -63,9 +62,8 @@ $(function () {
                 });
 
                 function ShowDataUnavailableMessage() {
-
                     document.getElementById('PageUrl').innerHTML = "Page url: " + vsmpDom[0]["PageUrl"];
-                    document.getElementById('UserAgent').innerHTML = "Browser version: " + vsmpDom[0]["UserAgent"];
+                    document.getElementById('UserAgent').innerHTML = "Browser version: " + GetUserAgent();
                     document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
                 };
 
@@ -195,11 +193,9 @@ $(function () {
         try {
             var mailto = "support.vsmarketplacemetrics@gmail.com";
             var subject = "VS Marketplace Metrics Data Unavailable Page";
-            var userAgent = navigator.userAgent;//TODO dedupe
-            var pageUrl = window.location.href;//TODO dedupe
-            var body = "User agent: " + userAgent +
+            var body = "User agent: " + GetUserAgent() +
                        "\n" + "\n" +
-                       "Page url: " + pageUrl;
+                       "Page url: " + GetPageUrl();
             var emailUrl = encodeURI("mailto:" + mailto + "?subject=" + subject + "&body=" + body);
             chrome.tabs.create({ url: emailUrl }, function (tab) {
                 setTimeout(function () {
@@ -259,8 +255,22 @@ $(function () {
     });
 
     function CommonErrorHandler(e) {
-        document.getElementById('JavaScriptErrorText').innerHTML = e;
+        document.getElementById('PageUrl2').innerHTML = "Page url: " + GetPageUrl();
+        document.getElementById('UserAgent2').innerHTML = "Browser version: " + GetUserAgent();
+        document.getElementById('JavaScriptErrorText2').innerHTML = e;
         document.getElementById('errorOccuredPage').removeAttribute("hidden");
-        $('.ajaxLoader').hide();//TODO dedupe this
+        HideSpinner();
+    }
+
+    function HideSpinner() {
+        $('.ajaxLoader').hide();
+    }
+
+    function GetUserAgent() {
+        return navigator.userAgent;
+    }
+
+    function GetPageUrl() {
+        return window.location.href;
     }
 });

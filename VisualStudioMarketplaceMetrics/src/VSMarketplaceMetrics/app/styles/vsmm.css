@@ -13,14 +13,20 @@ td.numeric {
     text-align: right;
 }
     
-a {
+td a {
     text-decoration: none;
 }
 
-a:hover {
+td a:hover {
     text-decoration: underline;
 }
 
 .copyToClipboard {
     font-size: smaller;
+}
+
+li {
+    /*gregt font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
 }

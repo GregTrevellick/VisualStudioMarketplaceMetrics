@@ -82,8 +82,7 @@ chrome.runtime.onMessage.addListener(
                 var vsmpDomJsonData =
                     {
                         PageUrl: pageUrl,
-                        URL: "notAllowed",
-                        UserAgent: navigator.userAgent//TODO dedupe
+                        URL: "notAllowed"
                     };
                 vsmpDomJsonDataArray.push(vsmpDomJsonData);
             }
