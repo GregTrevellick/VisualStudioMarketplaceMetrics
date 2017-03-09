@@ -183,7 +183,7 @@ chrome.runtime.onMessage.addListener(
 
 chrome.runtime.sendMessage({ action: "openPopUp" });
 
-console.image("http://i.imgur.com/oGiMR.gif"); //gregt upload my image
+console.image("http://i.imgur.com/oGiMR.gif"); 
 
 function GetInstallCount(installCountRounded) {
 

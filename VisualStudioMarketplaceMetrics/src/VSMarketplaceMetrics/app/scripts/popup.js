@@ -3,8 +3,7 @@
 //defer javascript loading
 //use strict
 
-
-
+//upload my image to imgur.com
 //add github issues to email link section
 //when hitting help question mark, dont scroll to the top !
 //create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
@@ -15,7 +14,7 @@
 
 $(function () {
 
-    console.image("http://i.imgur.com/oGiMR.gif"); //gregt upload my image to imgur.com
+    console.image("http://i.imgur.com/oGiMR.gif"); 
 
     onLoadRequestDomFromVsmp();
 
@@ -48,7 +47,7 @@ $(function () {
 
                 vsmpDomPageUrl = vsmpDom[0]["PageUrl"];
 
-            //   a = b.c;//gregt
+                a = b.c;
 
                 if (vsmpDom[0]["URL"] == "notAllowed") {
                     ShowDataUnavailableMessage();
@@ -260,6 +259,7 @@ $(function () {
     });
 
     function CommonErrorHandler(e) {
+        latestError = e;
         document.getElementById('PageUrl').innerHTML = GetPageUrl();
         document.getElementById('UserAgent').innerHTML = GetUserAgent();
         document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
@@ -290,7 +290,11 @@ $(function () {
         if (e != undefined) {
             return e;
         } else {
-            return "";
+            if (latestError != undefined) {
+                return latestError;
+            } else {
+                return "Indeterminate error";
+            }
         };
     }
 
