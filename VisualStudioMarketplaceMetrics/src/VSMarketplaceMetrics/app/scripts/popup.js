@@ -25,7 +25,7 @@ $(function () {
     }
     
 
-	console.image("http://i.imgur.com/oGiMR.gif"); //gregt upload my image
+    console.image("http://i.imgur.com/oGiMR.gif"); //gregt upload my image to imgur.com
 
     onLoadRequestDomFromVsmp();
 
