@@ -66,6 +66,7 @@ $(function () {
                 function ShowDataUnavailableMessage() {
                     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
                     document.getElementById('UserAgent').innerHTML = GetUserAgent();
+                    document.getElementById('JavaScriptErrorText').hide();//gregt
                     document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
                     document.getElementById('notificationItems').removeAttribute("hidden");                   
                 };
@@ -262,7 +263,7 @@ $(function () {
     function CommonErrorHandler(e) {
         document.getElementById('PageUrl').innerHTML = GetPageUrl();
         document.getElementById('UserAgent').innerHTML = GetUserAgent();
-        document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);////////////// e;
+        document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
         document.getElementById('errorOccuredPage').removeAttribute("hidden");
         document.getElementById('notificationItems').removeAttribute("hidden");
         HideSpinner();
