@@ -26,8 +26,8 @@ chrome.runtime.onMessage.addListener(
 
                                 var installCount = 0;
                                 var domInstallCount = vsmpExtn.find('.install-count')[0];
-                                //if not zero downloads
-                                if(domInstallCount != undefined){
+                                if (domInstallCount != undefined) {
+                                    //Avoids issues if an extension has zero downloads
                                     var installCountRounded = domInstallCount.innerText;
                                     installCount = GetInstallCount(installCountRounded);
                                 }
@@ -39,6 +39,7 @@ chrome.runtime.onMessage.addListener(
                                 var endReview = reviewTitle.indexOf(' ', startReview);
                                 var reviewCount = reviewTitle.substring(startReview, endReview);
                                 var publisher = vsmpExtn.find('.publisher')[0].innerText;
+                                debugger;
                                 var price = vsmpExtn.find('.pricing-tag')[0].innerText;
                                 var averageReviewFull = vsmpExtn.find('.rating')[0].title;
                                 var averageReviewSplit = averageReviewFull.replace(" ", "").split(":");

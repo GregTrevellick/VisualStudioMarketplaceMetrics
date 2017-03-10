@@ -1,5 +1,5 @@
-//vsts tab, search for 'agile', price is unknown
-//vsts tab, search for 'appveyor', error
+//vsts tab, search for 'appveyor', price is unknown
+
 
 //defer javascript loading
 //use strict
@@ -94,7 +94,13 @@ $(function () {
 
                         var numericInstallCount = parseInt(vsmpDom[i]["InstallCount"]);
                         var numericReviewCount = parseInt(vsmpDom[i]["ReviewCount"]);
-                        var numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;
+
+                        var numericReviewsAsPercentageOfInstalls = 0;
+                        if (numericInstallCount > 0)
+                        {
+                            numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;
+                        }
+                        
                         var numericAverageReview = parseInt(vsmpDom[i]["AverageReview"]);
 
                         totalInstallCount += numericInstallCount;
@@ -154,7 +160,11 @@ $(function () {
                     function SetHeadersAndFooters() {
 
                         var totalExtensionsCount = vsmpDom.length;
-                        var totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;
+                        var totalReviewsAsPercentageOfTotalInstalls = 0;
+                        if (totalInstallCount > 0) {
+                            totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;
+                        }
+                        
                         var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);
                         var totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
 
