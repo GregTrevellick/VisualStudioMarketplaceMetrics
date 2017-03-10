@@ -1,11 +1,9 @@
-//mailto tab not auto-closing (chrome.tabs.remove(tab.id))
-
-
 //...GOING LIVE...
 //upload my image to imgur.com
 //add github issues to email link section ?
 //create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
-//use strict
+
+
 
 
 
