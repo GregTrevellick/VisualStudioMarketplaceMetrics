@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener(
             try {
 
                 //x = y.z;
-
+                debugger;
                 var visitType = GetVisitType(pageUrl);
                 var vsmpDomSelector = GetVsmpDomSelector(visitType);
                 var vsmpDomParentSelector = GetVsmpDomParentSelector(visitType);
