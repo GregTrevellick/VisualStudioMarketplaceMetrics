@@ -219,7 +219,6 @@ $(function () {
             var emailUrl = encodeURI("mailto:" + mailto + "?subject=" + subject + "&body=" + body);
             chrome.tabs.create({ url: emailUrl }, function (tab) {
                 setTimeout(function () {
-                    debugger;
                     chrome.tabs.remove(tab.id);
                 }
                 , 500
