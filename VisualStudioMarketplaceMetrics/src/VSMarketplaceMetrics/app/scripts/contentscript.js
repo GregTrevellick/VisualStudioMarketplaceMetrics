@@ -175,7 +175,23 @@ chrome.runtime.onMessage.addListener(
                                 vsmpDomParentSelector = "vscode_";
                             }
                         }
+                    }                 
+
+                    //Cater for user clicking vsts tab, then home icon (vsts tab is the highlighted tab)
+                    if ($(vsmpDomParentSelector).length == 0) {
+                        if ($("[id^=vsts_]").length) {
+                            vsmpDomParentSelector = "vsts_";
+                        }
+                        else {
+                            if ($("[id^=vscode_]").length) {
+                                vsmpDomParentSelector = "vscode_";
+                            }
+                        }
                     }
+
+                    debugger;
+                    //search, click x to clear search, button says no data
+
                     return vsmpDomParentSelector;
                 }
 
