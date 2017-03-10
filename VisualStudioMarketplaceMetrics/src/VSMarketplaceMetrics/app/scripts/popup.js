@@ -1,6 +1,3 @@
-//vsts tab, search for 'appveyor', price is unknown
-
-
 //defer javascript loading
 //use strict
 //mailto tab not auto-closing (chrome.tabs.remove(tab.id))
@@ -47,7 +44,7 @@ $(function () {
 
             function ProcessVsmpDom() {
                 vsmpDomPageUrl = vsmpDom[0]["PageUrl"];
-                //a = b.c;
+                //dummyError = b.c;
            
                 if (vsmpDom[0]["URL"] == "errorOccurred") {
                     throw vsmpDom[0]["Error"];
@@ -307,7 +304,12 @@ $(function () {
 
     function GetJavascriptError(e) {
         if (e != undefined) {
-            return e;
+            if (e.stack != undefined) {
+                return e.stack;
+            }
+            else {
+                return e;
+            }
         } else {
             if (latestError != undefined) {
                 return latestError;
