@@ -24,8 +24,13 @@ chrome.runtime.onMessage.addListener(
 
                             function PopulateJsonArrayFromDom(vsmpExtn) {
 
-                                var installCountRounded = vsmpExtn.find('.install-count')[0].innerText;
-                                var installCount = GetInstallCount(installCountRounded);
+                                var installCount = 0;
+                                var domInstallCount = vsmpExtn.find('.install-count')[0];
+                                //if not zero downloads
+                                if(domInstallCount != undefined){
+                                    var installCountRounded = domInstallCount.innerText;
+                                    installCount = GetInstallCount(installCountRounded);
+                                }
 
                                 var icon = vsmpExtn.find('.item-icon')[0].src;
                                 var itemTitle = vsmpExtn.find('.item-title')[0].innerText;
@@ -116,8 +121,6 @@ chrome.runtime.onMessage.addListener(
                             break;
                         default:
 
-                            debugger;//gregt
-
                             if (pageUrl.indexOf("marketplace.visualstudio.com/search") != -1) {
                                 if (pageUrl.indexOf("target=VS&") != -1) {
                                     visitType = "search_VS";
@@ -200,7 +203,7 @@ chrome.runtime.onMessage.addListener(
                     {
                         PageUrl: pageUrl,
                         URL: "errorOccurred",
-                        Error: e
+                        Error: e.stack
                     };
                 vsmpDomJsonDataArray.push(vsmpDomJsonData);
                 popUpCallBackFn(vsmpDomJsonDataArray);

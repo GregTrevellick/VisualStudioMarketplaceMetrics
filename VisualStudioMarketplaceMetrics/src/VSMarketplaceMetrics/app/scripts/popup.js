@@ -1,4 +1,6 @@
 //vsts tab, search for 'agile', price is unknown
+//vsts tab, search for 'appveyor', error
+
 //defer javascript loading
 //use strict
 //mailto tab not auto-closing (chrome.tabs.remove(tab.id))
