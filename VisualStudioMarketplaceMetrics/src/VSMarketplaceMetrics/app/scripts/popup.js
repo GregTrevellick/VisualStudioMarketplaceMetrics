@@ -1,8 +1,8 @@
 //bug - go to home, then vsts, then home (so vsts tab is still selected), page action says nil data !
 //defer javascript loading
 //use strict
-//minified jquery
 //mailto tab not auto-closing (chrome.tabs.remove(tab.id))
+
 
 
 //...GOING LIVE...

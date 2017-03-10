@@ -43,12 +43,12 @@
     <Content Include="VSMarketplaceMetrics\app\img\VisualStudioHelpIcon.png" />
     <Content Include="VSMarketplaceMetrics\app\scripts\console.image.js" />
     <Content Include="VSMarketplaceMetrics\app\scripts\console.image.min.js" />
-    <Content Include="VSMarketplaceMetrics\app\scripts\jquery-1.10.2.js" />
     <Content Include="VSMarketplaceMetrics\app\img\icon_19x19.png" />
     <Content Include="VSMarketplaceMetrics\app\popup.html" />
     <Content Include="VSMarketplaceMetrics\app\scripts\background.js" />
     <Content Include="VSMarketplaceMetrics\app\img\icon_128x128.png" />
     <Content Include="VSMarketplaceMetrics\app\img\icon_48x48.png" />
+    <Content Include="VSMarketplaceMetrics\app\scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="VSMarketplaceMetrics\app\scripts\tablesorter\jquery.metadata.js" />
     <Content Include="VSMarketplaceMetrics\app\scripts\tablesorter\jquery.tablesorter.js" />
     <Content Include="VSMarketplaceMetrics\app\scripts\tablesorter\jquery.tablesorter.min.js" />
