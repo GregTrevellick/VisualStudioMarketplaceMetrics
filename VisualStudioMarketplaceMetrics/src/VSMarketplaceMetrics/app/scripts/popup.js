@@ -43,7 +43,7 @@ $(function () {
 
             function ProcessVsmpDom() {
                 vsmpDomPageUrl = vsmpDom[0]["PageUrl"];
-                //dummyError = b.c;
+                dummyError = b.c;
            
                 if (vsmpDom[0]["URL"] == "errorOccurred") {
                     throw vsmpDom[0]["Error"];
@@ -218,6 +218,7 @@ $(function () {
             var emailUrl = encodeURI("mailto:" + mailto + "?subject=" + subject + "&body=" + body);
             chrome.tabs.create({ url: emailUrl }, function (tab) {
                 setTimeout(function () {
+                    debugger;
                     chrome.tabs.remove(tab.id);
                 }
                 , 500
@@ -274,7 +275,15 @@ $(function () {
     });
 
     function CommonErrorHandler(e) {
-        latestError = e;
+        if (e != undefined) {
+            if (e.stack != undefined) {
+                latestError = e.stack;
+            }
+            else {
+                latestError = e;
+            }
+        }
+
         document.getElementById('PageUrl').innerHTML = GetPageUrl();
         document.getElementById('UserAgent').innerHTML = GetUserAgent();
         document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
@@ -282,6 +291,7 @@ $(function () {
         document.getElementById('errorOccuredPagePlease').removeAttribute("hidden");
         document.getElementById('notificationItems').removeAttribute("hidden");
         document.getElementById('JavaScriptErrorText').removeAttribute("hidden");
+
         HideSpinner();
     }
 
