@@ -12,6 +12,8 @@
 
 $(function () {
 
+    latestError = "Uninitialised.";
+
     console.image("http://i.imgur.com/oGiMR.gif"); 
 
     onLoadRequestDomFromVsmp();
@@ -43,7 +45,7 @@ $(function () {
 
             function ProcessVsmpDom() {
                 vsmpDomPageUrl = vsmpDom[0]["PageUrl"];
-                dummyError = b.c;
+              //  dummyError = b.c;
            
                 if (vsmpDom[0]["URL"] == "errorOccurred") {
                     throw vsmpDom[0]["Error"];
