@@ -31,7 +31,7 @@ $(function () {
     };
 
     function popUpCallBack(vsmpDom) {
-        debugger;
+
         try {
 
             if (vsmpDom.length == 0) {
@@ -45,7 +45,7 @@ $(function () {
 
             function ProcessVsmpDom() {
                 vsmpDomPageUrl = vsmpDom[0]["PageUrl"];
-              //  dummyError = b.c;
+                //dummyError = b.c;
            
                 if (vsmpDom[0]["URL"] == "errorOccurred") {
                     throw vsmpDom[0]["Error"];
