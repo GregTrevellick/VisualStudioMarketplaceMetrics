@@ -1,5 +1,4 @@
-//vsts tab, search for 'agile', vsmm button, oops something went wrong "TypeError: Cannot read property 'toLowerCase' of undefined"
-
+//vsts tab, search for 'agile', price is unknown
 //defer javascript loading
 //use strict
 //mailto tab not auto-closing (chrome.tabs.remove(tab.id))
@@ -125,11 +124,16 @@ $(function () {
                             + vsmpDom[i]["Publisher"]
                             + "</a></td>";
 
-                        var colPriceLower = vsmpDom[i]["Price"].toLowerCase();
-                        var colPrice = "<td>"
+                        if (vsmpDom[i]["Price"] == undefined) {
+                            var colPrice = "<td>Unknown</td>";
+                        }
+                        else {
+                            var colPriceLower = vsmpDom[i]["Price"].toLowerCase();
+                            var colPrice = "<td>"
                             + colPriceLower.charAt(0).toUpperCase()
                             + colPriceLower.slice(1)
                             + "</td>";
+                        }
 
                         var colAverageReview = "<td class='numeric'>" + vsmpDom[i]["AverageReview"] + "</td>";
 
