@@ -28,3 +28,7 @@ td a:hover {
 li {
     font-family:Courier New, Courier, monospace;
 }
+
+.javaScriptErrorText {
+    color: red;   /*gregt chuck norris*/
+}

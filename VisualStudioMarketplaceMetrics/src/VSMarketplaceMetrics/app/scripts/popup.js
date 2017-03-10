@@ -1,3 +1,5 @@
+//vsts tab, search for 'agile', vsmm button, oops something went wrong "TypeError: Cannot read property 'toLowerCase' of undefined"
+
 //defer javascript loading
 //use strict
 //mailto tab not auto-closing (chrome.tabs.remove(tab.id))
@@ -30,7 +32,7 @@ $(function () {
     };
 
     function popUpCallBack(vsmpDom) {
-
+        debugger;
         try {
 
             if (vsmpDom.length == 0) {

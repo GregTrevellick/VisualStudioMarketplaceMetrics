@@ -115,16 +115,19 @@ chrome.runtime.onMessage.addListener(
                             visitType = "browse_VSCode";
                             break;
                         default:
+
+                            debugger;//gregt
+
                             if (pageUrl.indexOf("marketplace.visualstudio.com/search") != -1) {
-                                if (pageUrl.indexOf("&target=VS&") != -1) {
+                                if (pageUrl.indexOf("target=VS&") != -1) {
                                     visitType = "search_VS";
                                 }
                                 else {
-                                    if (pageUrl.indexOf("&target=VSCode&") != -1) {
+                                    if (pageUrl.indexOf("target=VSCode&") != -1) {
                                         visitType = "search_VSCode";
                                     }
                                     else {
-                                        if (pageUrl.indexOf("&target=VSTS&") != -1) {
+                                        if (pageUrl.indexOf("target=VSTS&") != -1) {
                                             visitType = "search_VSTS";
                                         }
                                     }
@@ -188,9 +191,6 @@ chrome.runtime.onMessage.addListener(
                             }
                         }
                     }
-
-                    debugger;
-                    //search, click x to clear search, button says no data
 
                     return vsmpDomParentSelector;
                 }
