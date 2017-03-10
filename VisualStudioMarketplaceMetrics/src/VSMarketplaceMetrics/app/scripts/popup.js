@@ -44,9 +44,7 @@ $(function () {
             HideSpinner();
 
             function ProcessVsmpDom() {
-
                 vsmpDomPageUrl = vsmpDom[0]["PageUrl"];
-
                 //a = b.c;
            
                 if (vsmpDom[0]["URL"] == "errorOccurred") {
