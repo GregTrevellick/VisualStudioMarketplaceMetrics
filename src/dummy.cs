@@ -1,8 +1,10 @@
 ﻿namespace dummy
 {
-    class Class1
+    class Dummy
     {
         static void Main()
-        { }
+        {
+            // Foo grasshopper !
+        }
     }
 }
