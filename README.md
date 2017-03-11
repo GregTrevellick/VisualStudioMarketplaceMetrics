@@ -30,6 +30,7 @@ Software License is available [here](/LICENSE.txt).
  - works in these pages....
  - but not these pages....
  - beholden to MS dom - so if changhes twitter me !
+ - email
 
 ## Legal
 
@@ -45,7 +46,9 @@ In no event shall [Microsoft][MicrosoftURL] or [Google][GoogleURL] be liable for
 
 ## Credits
 
-https://github.com/adriancooney/console.image
+[Table sorter](http://tablesorter.com/docs/)
+
+[Console image](https://github.com/adriancooney/console.image)
 
 [![](chart.png)][GitHubPagesURL]
 

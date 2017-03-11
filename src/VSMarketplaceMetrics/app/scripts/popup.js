@@ -2,7 +2,7 @@ $(function () {
 
     latestError = "Uninitialised.";
 
-    console.image("http://i.imgur.com/oGiMR.gif"); 
+    console.image("http://i.imgur.com/NfNVskCl.png");
 
     onLoadRequestDomFromVsmp();
 

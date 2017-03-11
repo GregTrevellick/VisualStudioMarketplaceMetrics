@@ -39,7 +39,6 @@ chrome.runtime.onMessage.addListener(
                                 var endReview = reviewTitle.indexOf(' ', startReview);
                                 var reviewCount = reviewTitle.substring(startReview, endReview);
                                 var publisher = vsmpExtn.find('.publisher')[0].innerText;
-                                debugger;
                                 var price = vsmpExtn.find('.pricing-tag')[0].innerText;
                                 var averageReviewFull = vsmpExtn.find('.rating')[0].title;
                                 var averageReviewSplit = averageReviewFull.replace(" ", "").split(":");
@@ -214,7 +213,7 @@ chrome.runtime.onMessage.addListener(
 
 chrome.runtime.sendMessage({ action: "openPopUp" });
 
-console.image("http://i.imgur.com/oGiMR.gif"); 
+console.image("http://i.imgur.com/NfNVskCl.png");
 
 function GetInstallCount(installCountRounded) {
 
