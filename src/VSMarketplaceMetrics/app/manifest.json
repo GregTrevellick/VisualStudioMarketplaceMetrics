@@ -1,9 +1,13 @@
 {
   "manifest_version":2,
   "name": "Visual Studio Marketplace Metrics",
+  "short_name": "VS Extensions Metrics",
   "version": "1.0",
   "description": "See the total install count and other metrics for all your Visual Studio Marketplace extensions with one easy click.",
-
+  "default_locale": "en",
+  "author": "Greg Trevellick",
+  "homepage_url": "https://gregtrevellick.github.io/VisualStudioMarketplaceMetrics/",
+  
   "page_action" :
   {
     "default_icon" : "img/icon_19x19.png",
