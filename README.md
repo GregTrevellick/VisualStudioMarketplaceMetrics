@@ -8,23 +8,6 @@ This [Chrome extension][ChromeExtensionURL] is officially available at the [Chro
 
 ![](src/VSMarketplaceMetrics/ReadMeAnimatedUsage.gif)
 
-
-
-
-home click
-hover grid title column
-click grid extension hyperlink
-click grid publisher hyperlink
-sort columns
-scroll to totals
-ide tab / kristensen search / click
-vsts tab / click
-vscode tab / click
-copy to clipboard / paste in excel
-
-
-
-
 If you like this ***free*** extensions, please give it a [review][ChromeExtensionReviewsUrl].
 
 Contributions to this project are welcome by raising an [Issue][GitHubRepoIssuesURL] or submitting a [Pull Request][GitHubRepoPullRequestsURL].

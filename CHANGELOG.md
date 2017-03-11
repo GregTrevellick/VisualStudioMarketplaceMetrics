@@ -9,6 +9,20 @@ These are the changes to each version that has been released in the Chrome Web S
 
 <!-- mads kristensens tweet about low nbr of reviews -->
 <!-- 
+
+animated gif
+click
+hover title column
+hover & click publisher column
+search 'docker'
+hover % column
+sort columns
+copy to clipboard / paste in excel
+vsts tab
+vscode tab
+
+
+
 gregt - add github issues to email link section ?
 gregt - remove email link ?
 gregt - create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
