@@ -24,14 +24,18 @@ Software License is available [here](/LICENSE.txt).
 
 ## Features
 
- - initial sort order is same as the MS VSMP DOM
- - hyperlink on title & publisher
- - mouseover text on title & percentages
- - works in these pages....
- - but not these pages....
- - beholden to MS dom - so if changhes twitter me !
- - email
+ - Shows total number of extensions, installs and reviews for the visible extension thumbnails on [Visual Studio Marketplace][VSMarketplaceURL]
+ - Includes number of reviews as a percentage of downloads
+ - Includes a summary grid of data per extension
+ - Works for Visual Studio IDE extensions, VSTS extensions and VS Code extensions
+ - Results initially appear in same sort order as chosen on [Visual Studio Marketplace][VSMarketplaceURL]
+ - Results grid contains hyperlinks directly to each extension and to each publisher
+ - The results grid has a 'copy to clipboard' feature to allow easy pasting into Excel, etc
+ - Various mouseover texts exist for extra information
 
+#### Note
+Data for this extension is derived from the [Visual Studio Marketplace][VSMarketplaceURL] DOM, which is of course subject to change by Microsoft at anytime, and which would cause the  extension to cease functioning correctly. If this occurs the extension will inform the user and present them with details of how to inform the extension author - although I will have already spotted this myself of course.
+ 
 ## Legal
 
 The [owner](https://github.com/GregTrevellick) of this [GitHub repository / software][GitHubRepoURL] is not affiliated, associated, authorized, endorsed by, employed by, sponsored by, or in any way officially connected with [Microsoft][MicrosoftURL] or [Google][GoogleURL] or any of its subsidiaries or its affiliates.
@@ -63,3 +67,4 @@ In no event shall [Microsoft][MicrosoftURL] or [Google][GoogleURL] be liable for
 [ChromeExtensionReviewsUrl]: https://www.google.com/extensions/VisualStudioMarketplaceMetrics/reviews
 [GoogleURL]: https://www.google.com/
 [MicrosoftURL]: https://www.microsoft.com/
+[VSMarketplaceURL]: https://marketplace.visualstudio.com/
