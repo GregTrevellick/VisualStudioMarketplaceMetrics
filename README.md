@@ -1,15 +1,8 @@
-
-https://github.com/adriancooney/console.image
-
-
-
-
 # Visual Studio Marketplace Metrics
 
 [![License](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)
-[![Build status][AppVeyorProjectBuildStatusBadgeSvg]][AppVeyorProjectUrl]
 
-A repository containing code for use in the [Visual Studio Marketplace Metrics][VisualStudioURL] Chrome browser extension, that allows the user to see the total install count and other metrics for all their Visual Studio Marketplace extensions with one easy click.
+A repository for the [Visual Studio Marketplace Metrics][ChromeExtensionURL] Chrome browser extension, that allows the user to see the total install count and other metrics for all their Visual Studio Marketplace extensions in one place.
 
 This [Chrome extension][ChromeExtensionURL] is officially available at the [Chrome webstore][ChromeExtensionURL].
 
@@ -50,16 +43,15 @@ All logos and links belong to [Microsoft][MicrosoftURL] or [Google][GoogleURL] a
 
 In no event shall [Microsoft][MicrosoftURL] or [Google][GoogleURL] be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or dealings in the software.
 
+## Credits
 
-[![](assets/chart.png)][GitHubPagesURL]
+https://github.com/adriancooney/console.image
+
+[![](chart.png)][GitHubPagesURL]
 
 
 
 
-
-
-[AppVeyorProjectUrl]: https://ci.appveyor.com/project/GregTrevellick/VisualStudioMarketplaceMetrics
-[AppVeyorProjectBuildStatusBadgeSvg]: https://ci.appveyor.com/api/projects/status/0vwmtcboontemltq?svg=true
 [GitHubPagesURL]: https://gregtrevellick.github.io/VisualStudioMarketplaceMetrics/
 [GitHubRepoURL]: https://github.com/GregTrevellick/VisualStudioMarketplaceMetrics
 [GitHubRepoIssuesURL]: https://github.com/GregTrevellick/VisualStudioMarketplaceMetrics/issues
