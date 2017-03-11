@@ -24,6 +24,4 @@ vscode tab
 
 
 gregt - add github issues to email link section ?
-gregt - create vsmarketplacemetrics@gmail.com
-gregt - test that support.vsmarketplacemetrics@gmail.com emails are received by vsmarketplacemetrics@gmail.com
 -->

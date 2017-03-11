@@ -198,7 +198,7 @@ $(function () {
 
     $('#DataUnavailableEmail').click(function (e) {
         try {
-            var mailto = "support.vsmarketplacemetrics@gmail.com";
+            var mailto = "vsmarketplacemetrics@gmail.com";
             var subject = "VS Marketplace Metrics Feedback";
             var body = GetUserAgent() +
                        "\n" + "\n" +
