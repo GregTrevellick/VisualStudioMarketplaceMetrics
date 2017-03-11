@@ -9,6 +9,7 @@ These are the changes to each version that has been released in the Chrome Web S
 
 <!-- mads kristensens tweet about low nbr of reviews -->
 <!-- 
-add github issues to email link section ?
-create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
+gregt - add github issues to email link section ?
+gregt - remove email link ?
+gregt - create DataUnavailable.VisualStudioMarketplaceMetrics@gmail.com
 -->

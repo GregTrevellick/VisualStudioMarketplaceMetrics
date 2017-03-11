@@ -158,7 +158,7 @@ $(function () {
                         if (totalExtensionsCount != 1) {
                             totalExtensionsCountSuffix = "s";
                         };
-                        document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " extension" + totalExtensionsCountSuffix;
+                        document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " extension" + totalExtensionsCountSuffix + " shown";
 
                         var totalInstallCountSuffix = "";
                         if (totalInstallCount != 1) {
