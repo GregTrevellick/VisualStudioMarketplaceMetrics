@@ -1,5 +1,5 @@
 $(function () {
-    
+   
     //GA start
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-93512771-1']);
@@ -12,9 +12,10 @@ $(function () {
     })();
     //GA end
     
-    latestError = "Uninitialised.";
-    console.log("Thank you for using Visual Studio Marketplace Metrics");
+    latestError = Get("Uninitialised");
+    console.log(Get("ThankYouForUsing"));
     console.image("http://i.imgur.com/NfNVskCl.png");
+    
     onLoadRequestDomFromVsmp();
 
     function onLoadRequestDomFromVsmp() {
@@ -132,7 +133,7 @@ $(function () {
                             + "</a></td>";
 
                         if (vsmpDom[i]["Price"] == undefined) {
-                            var colPrice = "<td>Unknown</td>";
+                            var colPrice = "<td>" + Get("Unknown") + "</td>";
                         }
                         else {
                             var colPriceLower = vsmpDom[i]["Price"].toLowerCase();
@@ -167,34 +168,36 @@ $(function () {
                         var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);
                         var totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
 
-                        var totalExtensionsCountSuffix = "";
                         if (totalExtensionsCount != 1) {
-                            totalExtensionsCountSuffix = "s";
+                            extensionIl8n = Get("Extensions");
+                        } else {
+                            extensionIl8n = Get("Extension");
                         };
-                        document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " extension" + totalExtensionsCountSuffix + " shown";
+                        document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " " + extensionIl8n + " " + Get("Shown");
 
-                        var totalInstallCountSuffix = "";
                         if (totalInstallCount != 1) {
-                            totalInstallCountSuffix = "s";
+                            installIl8n = Get("Installs");
+                        } else {
+                            installIl8n = Get("Install");
                         };
-                        document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " install" + totalInstallCountSuffix;
+                        document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " " + installIl8n;
 
-                        var reviewIl8n = Get("reviews");
-                        var totalReviewCountSuffix = "";
                         if (totalReviewCount != 1) {
-                            totalReviewCountSuffix = "s";
+                            reviewIl8n = Get("Reviews");
+                        } else {
+                            reviewIl8n = Get("Review");
                         };
-                        document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " " + reviewIl8n + totalReviewCountSuffix;
+                        document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " " + reviewIl8n;
 
                         if (totalReviewsAsPercentageOfTotalInstalls > 0) {
                             document.getElementById('TotalReviewCount').innerHTML += " ("
                             + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
-                            + "% of installations)";
+                            + Get("PercentageOfInstallations");
                         };
-                        document.getElementById('TotalReviewCount').title = totalReviewCount + " divided by " + totalInstallCount;
+                        document.getElementById('TotalReviewCount').title = totalReviewCount + " " + Get("DividedBy") + " " + totalInstallCount;
                         if (totalReviewCount > 0) {
                             document.getElementById('TotalOverallAverageReview').removeAttribute("hidden");
-                            document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview + " average review score";
+                            document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview + " " + Get("AverageReviewScoreLower");
                         };
 
                         document.getElementById('FooterGridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
@@ -213,7 +216,7 @@ $(function () {
     $('#DataUnavailableEmail').click(function (e) {
         try {
             var mailto = "vsmarketplacemetrics@gmail.com";
-            var subject = "VS Marketplace Metrics Feedback";
+            var subject = Get("FeedbackEmailSubject");
             var body = GetUserAgent() +
                        "\n" + "\n" +
                        GetPageUrl() +
@@ -289,6 +292,7 @@ $(function () {
 
         document.getElementById('PageUrl').innerHTML = GetPageUrl();
         document.getElementById('UserAgent').innerHTML = GetUserAgent();
+        document.getElementById('Language').innerHTML = GetLanguage();
         document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
         document.getElementById('errorOccuredPage').removeAttribute("hidden");
         document.getElementById('errorOccuredPagePlease').removeAttribute("hidden");
@@ -314,6 +318,17 @@ $(function () {
         };
     }
 
+    function GetLanguage() {
+        var language;
+        if (window.navigator.languages) {
+            language = window.navigator.languages[0];
+        } else {
+            language = window.navigator.userLanguage || window.navigator.language;
+        }
+        console.log("l=" + language);
+        return language;
+    }
+     
     function GetJavascriptError(e) {
         if (e != undefined) {
             if (e.stack != undefined) {
@@ -334,7 +349,7 @@ $(function () {
     function Get(textKey) {
         var result = chrome.i18n.getMessage(textKey);
         if (result == undefined || result == "") {
-            console.log("VSMM missing xlation: " + textKey);
+            console.log(Get("MissingTranslation") + ": " + textKey);
             return "###" + textKey + "###";
         } else {
             return result;
