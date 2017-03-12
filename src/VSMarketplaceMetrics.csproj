@@ -44,6 +44,11 @@
   <ItemGroup>
     <Content Include="app\img\ajax-loader.gif" />
     <Content Include="app\img\VisualStudioHelpIcon.png" />
+    <Content Include="assets\webstore_screenshot_search_docker.png" />
+    <Content Include="assets\webstore_screenshot_vsts.png" />
+    <Content Include="assets\webstore_screenshot_vscode.png" />
+    <Content Include="assets\webstore_screenshot_vside.png" />
+    <Content Include="assets\webstore_screenshot_excel.png" />
     <Content Include="assets\440x280.png" />
     <Content Include="assets\1400x560.png" />
     <Content Include="assets\920x680.png" />
