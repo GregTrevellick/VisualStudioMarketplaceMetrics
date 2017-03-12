@@ -13,7 +13,6 @@
   "IndeterminateError": { "message": "Indeterminate error" },
   "Install": { "message": "install" },
   "Installs": { "message": "installs" },
-  "MissingTransalation": { "message": "Missing VSMM translation" },
   "NilSearchResultsText": { "message": "The Visual Studio Marketplace page you are on has no search results." },
   "NoOfInstalls": { "message": "No. of installs" },
   "NoOfReviews": { "message": "No. of reviews" },

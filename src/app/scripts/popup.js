@@ -68,6 +68,7 @@ $(function () {
                 function ShowDataUnavailableMessage() {
                     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
                     document.getElementById('UserAgent').innerHTML = GetUserAgent();
+                    document.getElementById('Locale').innerHTML = GetLocale();
                     document.getElementById('Language').innerHTML = GetLanguage();
                     document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
                     document.getElementById('dataUnavailableForPagePlease').removeAttribute("hidden");
@@ -193,7 +194,8 @@ $(function () {
                         if (totalReviewsAsPercentageOfTotalInstalls > 0) {
                             document.getElementById('TotalReviewCount').innerHTML += " ("
                             + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
-                            + Get("PercentageOfInstallations");
+                            + Get("PercentageOfInstallations")
+                            + ")";
                         };
                         document.getElementById('TotalReviewCount').title = totalReviewCount + " " + Get("DividedBy") + " " + totalInstallCount;
                         if (totalReviewCount > 0) {
@@ -221,6 +223,8 @@ $(function () {
             var body = GetUserAgent() +
                        "\n" + "\n" +
                        GetPageUrl() +
+                       "\n" + "\n" +
+                       GetLocale() +
                        "\n" + "\n" +
                        GetLanguage() +
                        "\n" + "\n" +
@@ -295,6 +299,7 @@ $(function () {
 
         document.getElementById('PageUrl').innerHTML = GetPageUrl();
         document.getElementById('UserAgent').innerHTML = GetUserAgent();
+        document.getElementById('Locale').innerHTML = GetLocale();
         document.getElementById('Language').innerHTML = GetLanguage();
         document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
         document.getElementById('errorOccuredPage').removeAttribute("hidden");
@@ -319,6 +324,11 @@ $(function () {
         } else {
             return "";
         };
+    }
+
+    function GetLocale() {
+        var locale = chrome.i18n.GetLocale;
+        return locale;
     }
 
     function GetLanguage() {
@@ -351,8 +361,14 @@ $(function () {
     function Get(textKey) {
         var result = chrome.i18n.getMessage(textKey);
         if (result == undefined || result == "") {
-            console.log(Get("MissingTranslation") + ": " + textKey);
-            return "###" + textKey + "###";
+            console.log("Missing VSMM translation: " + textKey);
+            return "###" +
+                GetLocale() +
+                "_" +
+                GetLanguage() +
+                "_" +
+                textKey +
+                "###";
         } else {
             return result;
         }
