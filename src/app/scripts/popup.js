@@ -29,6 +29,7 @@ $(function () {
 
     latestError = "Uninitialised.";
 
+    console.log("Thank you for using Visual Studio Marketplace Metrics");
     console.image("http://i.imgur.com/NfNVskCl.png");
 
     onLoadRequestDomFromVsmp();
@@ -193,7 +194,7 @@ $(function () {
                         };
                         document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " install" + totalInstallCountSuffix;
 
-                        var reviewIl8n = Get("review");
+                        var reviewIl8n = Get("reviews");
 
                         var totalReviewCountSuffix = "";
                         if (totalReviewCount != 1) {
@@ -346,8 +347,14 @@ $(function () {
         };
     }
 
-    function Get(msg) {
-        return chrome.i18n.getMessage(msg);
+    function Get(textKey) {
+        var result = chrome.i18n.getMessage(textKey);
+        if (result == undefined || result == "") {
+            console.log("VSMM missing xlation: " + textKey);
+            return "###" + textKey + "###";
+        } else {
+            return result;
+        }
     }
 
 });

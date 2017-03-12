@@ -213,6 +213,7 @@ chrome.runtime.onMessage.addListener(
 
 chrome.runtime.sendMessage({ action: "openPopUp" });
 
+console.log("Thank you for using Visual Studio Marketplace Metrics");
 console.image("http://i.imgur.com/NfNVskCl.png");
 
 function GetInstallCount(installCountRounded) {
