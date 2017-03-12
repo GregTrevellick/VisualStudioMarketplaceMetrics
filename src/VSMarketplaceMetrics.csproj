@@ -36,13 +36,19 @@
     <None Include="App.config" />
     <None Include="app\manifest.json" />
     <None Include="app\_locales\en\messages.json" />
+    <None Include="app\_locales\es\messages.json" />
     <None Include="app\_locales\fr\messages.json" />
     <None Include="ref_scripts\__jquery.tablesorter.zip" />
     <None Include="unit_tests\TestCases.xlsx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="1280x800.png" />
     <Content Include="app\img\ajax-loader.gif" />
     <Content Include="app\img\VisualStudioHelpIcon.png" />
+    <Content Include="assets\440x280.png" />
+    <Content Include="assets\1400x560.png" />
+    <Content Include="assets\920x680.png" />
+    <Content Include="assets\1280x800.png" />
     <Content Include="ref_scripts\console.image.js" />
     <Content Include="app\scripts\console.image.min.js" />
     <Content Include="app\img\icon_19x19.png" />
