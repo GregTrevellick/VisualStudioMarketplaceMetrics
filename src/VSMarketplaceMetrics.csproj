@@ -71,7 +71,6 @@
     <Content Include="app\scripts\tablesorter\themes\blue\desc.gif" />
     <Content Include="app\scripts\tablesorter\themes\blue\style.css" />
     <Content Include="app\styles\vsmm.css" />
-    <Content Include="assets\ReadMeAnimatedUsage.gif" />
     <Content Include="ref_scripts\chrome-api-vsdoc.js" />
     <Content Include="ref_scripts\_references.js" />
   </ItemGroup>
