@@ -325,7 +325,6 @@ $(function () {
         } else {
             language = window.navigator.userLanguage || window.navigator.language;
         }
-        console.log("l=" + language);
         return language;
     }
      
