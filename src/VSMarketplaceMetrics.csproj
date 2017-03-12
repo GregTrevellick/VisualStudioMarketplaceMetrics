@@ -42,7 +42,6 @@
     <None Include="unit_tests\TestCases.xlsx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="1280x800.png" />
     <Content Include="app\img\ajax-loader.gif" />
     <Content Include="app\img\VisualStudioHelpIcon.png" />
     <Content Include="assets\440x280.png" />
