@@ -193,7 +193,7 @@ $(function () {
                         };
                         document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " install" + totalInstallCountSuffix;
 
-                        var reviewIl8n = chrome.i18n.getMessage("review");
+                        var reviewIl8n = Get("review");
 
                         var totalReviewCountSuffix = "";
                         if (totalReviewCount != 1) {
@@ -344,6 +344,10 @@ $(function () {
                 return "Indeterminate error";
             }
         };
+    }
+
+    function Get(msg) {
+        return chrome.i18n.getMessage(msg);
     }
 
 });
