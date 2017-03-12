@@ -1,5 +1,4 @@
 ﻿{
-  "review": {
-    "message": "review"
-  }
+  "review": { "message": "review" },
+  "VisualStudioHelpText": { "message": "This extension is wholly dependant on Microsoft's Visual Studio Marketplace DOM, which is subject to change by Microsoft at anytime, and which would cause this FREE extension to cease functioning correctly. If this occurs please help the open source eco-system by informing the extension author as soon as possible, using the contact details which will appear above when neccessary." }
 }

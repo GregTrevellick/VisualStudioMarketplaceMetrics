@@ -1,5 +1,4 @@
 ﻿{
-  "review": {
-    "message": "comentario"
-  }
+  "review": { "message": "comentario" },
+  "VisualStudioHelpText": { "message": "Esta extensión depende totalmente del DOM del mercado de Visual Studio de Microsoft, que está sujeta a cambios por parte de Microsoft en cualquier momento y que provocaría que esta extensión gratuita dejara de funcionar correctamente. Si esto ocurre, por favor ayude al ecosistema de código abierto informando al autor de la extensión tan pronto como sea posible, usando los detalles de contacto que aparecerán arriba cuando sea necesario." }
 }

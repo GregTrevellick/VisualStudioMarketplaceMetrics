@@ -1,10 +1,5 @@
 $(function () {
-
-
-
-
-
-
+    
     //GA start
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-93512771-1']);
@@ -16,22 +11,10 @@ $(function () {
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
     //GA end
-
-
-
-
-
-
-
-
-
-
-
+    
     latestError = "Uninitialised.";
-
     console.log("Thank you for using Visual Studio Marketplace Metrics");
     console.image("http://i.imgur.com/NfNVskCl.png");
-
     onLoadRequestDomFromVsmp();
 
     function onLoadRequestDomFromVsmp() {
@@ -49,6 +32,8 @@ $(function () {
     function popUpCallBack(vsmpDom) {
 
         try {
+
+            document.getElementById('VisualStudioHelpText').innerHTML = Get("VisualStudioHelpText");
 
             if (vsmpDom.length == 0) {
                 document.getElementById('nilSearchResults').removeAttribute("hidden");
