@@ -68,6 +68,7 @@ $(function () {
                 function ShowDataUnavailableMessage() {
                     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
                     document.getElementById('UserAgent').innerHTML = GetUserAgent();
+                    document.getElementById('Language').innerHTML = GetLanguage();
                     document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
                     document.getElementById('dataUnavailableForPagePlease').removeAttribute("hidden");
                     document.getElementById('notificationItems').removeAttribute("hidden");                   
@@ -220,6 +221,8 @@ $(function () {
             var body = GetUserAgent() +
                        "\n" + "\n" +
                        GetPageUrl() +
+                       "\n" + "\n" +
+                       GetLanguage() +
                        "\n" + "\n" +
                        GetJavascriptError();
             var emailUrl = encodeURI("mailto:" + mailto + "?subject=" + subject + "&body=" + body);
