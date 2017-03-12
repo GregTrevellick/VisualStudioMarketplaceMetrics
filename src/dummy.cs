@@ -10,7 +10,6 @@
             // 2. Leverage a great IDE in VS, via a parental sln file, in a joined up fashion.
             // 3. Leverage VS's git integration to permit focus on product, not admin (but what great admin to be fair).
             // ...lesson endeth bar.
-
         }
     }
 }

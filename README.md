@@ -6,7 +6,7 @@ A repository for the [Visual Studio Marketplace Metrics][ChromeExtensionURL] Chr
 
 This [Chrome extension][ChromeExtensionURL] is officially available at the [Chrome webstore][ChromeExtensionURL].
 
-![](src/VSMarketplaceMetrics/ReadMeAnimatedUsage.gif)
+![](ReadMeAnimatedUsage.gif)
 
 If you like this ***free*** extensions, please give it a [review][ChromeExtensionReviewsUrl].
 
@@ -20,7 +20,7 @@ Software License is available [here](/LICENSE.txt).
 
 ---------------------------------------
 
-![](src/VSMarketplaceMetrics/app/img/icon_128x128.png)
+![](src/app/img/icon_128x128.png)
 
 ## Features
 
@@ -28,6 +28,7 @@ Software License is available [here](/LICENSE.txt).
  - Includes number of reviews as a percentage of downloads
  - Includes a summary grid of data per extension
  - Works for Visual Studio IDE extensions, VSTS extensions and VS Code extensions
+ - Multi-lingual support (English, Spainish, French)
  - Results initially appear in same sort order as chosen on [Visual Studio Marketplace][VSMarketplaceURL]
  - Results grid contains hyperlinks directly to each extension and to each publisher
  - The results grid has a 'copy to clipboard' feature to allow easy pasting into Excel, etc

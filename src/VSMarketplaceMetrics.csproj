@@ -38,21 +38,21 @@
     <None Include="app\_locales\en\messages.json" />
     <None Include="app\_locales\es\messages.json" />
     <None Include="app\_locales\fr\messages.json" />
-    <None Include="ref_scripts\__jquery.tablesorter.zip" />
+    <None Include="reference_scripts\__jquery.tablesorter.zip" />
     <None Include="unit_tests\TestCases.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\img\ajax-loader.gif" />
     <Content Include="app\img\VisualStudioHelpIcon.png" />
-    <Content Include="assets\webstore_screenshot_search_docker.1280x800.png" />
-    <Content Include="assets\webstore_screenshot_vsts.png" />
-    <Content Include="assets\webstore_screenshot_vscode.png" />
-    <Content Include="assets\webstore_screenshot_vside.png" />
-    <Content Include="assets\webstore_screenshot_excel.1280x800.png" />
+    <Content Include="assets\webstore_screenshot_1280x800_2_IDE_WithSearch_es.png" />
+    <Content Include="assets\webstore_screenshot_1280x800_3_VSTS.png" />
+    <Content Include="assets\webstore_screenshot_1280x800_4_VSCode.png" />
+    <Content Include="assets\webstore_screenshot_1280x800_1_IDE_WithSearch_en.png" />
+    <Content Include="assets\webstore_screenshot_1280x800_5_ClipboardToExcel.png" />
     <Content Include="assets\promo_tile_440x280.png" />
     <Content Include="assets\promo_tile_1400x560.png" />
     <Content Include="assets\promo_tile_920x680.png" />
-    <Content Include="ref_scripts\console.image.js" />
+    <Content Include="reference_scripts\console.image.js" />
     <Content Include="app\scripts\console.image.min.js" />
     <Content Include="app\img\icon_19x19.png" />
     <Content Include="app\popup.html" />
@@ -70,8 +70,8 @@
     <Content Include="app\scripts\tablesorter\themes\blue\desc.gif" />
     <Content Include="app\scripts\tablesorter\themes\blue\style.css" />
     <Content Include="app\styles\vsmm.css" />
-    <Content Include="ref_scripts\chrome-api-vsdoc.js" />
-    <Content Include="ref_scripts\_references.js" />
+    <Content Include="reference_scripts\chrome-api-vsdoc.js" />
+    <Content Include="reference_scripts\_references.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dummy.cs" />
