@@ -1,3 +1,12 @@
+//convert popup.html fully to il8n
+//il8n into manifest file
+//french xlations
+//spanish xlations
+//convert contentScript.js to il8n
+//2nd tab 66, 3rd tab 24 - but is 3rd tab showing 66 again ?
+//test GA when live
+
+
 $(function () {
    
     //GA start
@@ -69,7 +78,6 @@ $(function () {
                     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
                     document.getElementById('UserAgent').innerHTML = GetUserAgent();
                     document.getElementById('Locale').innerHTML = GetLocale();
-                    document.getElementById('Language').innerHTML = GetLanguage();
                     document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
                     document.getElementById('dataUnavailableForPagePlease').removeAttribute("hidden");
                     document.getElementById('notificationItems').removeAttribute("hidden");                   
@@ -226,8 +234,6 @@ $(function () {
                        "\n" + "\n" +
                        GetLocale() +
                        "\n" + "\n" +
-                       GetLanguage() +
-                       "\n" + "\n" +
                        GetJavascriptError();
             var emailUrl = encodeURI("mailto:" + mailto + "?subject=" + subject + "&body=" + body);
             chrome.tabs.create({ url: emailUrl }, function (tab) {
@@ -300,7 +306,6 @@ $(function () {
         document.getElementById('PageUrl').innerHTML = GetPageUrl();
         document.getElementById('UserAgent').innerHTML = GetUserAgent();
         document.getElementById('Locale').innerHTML = GetLocale();
-        document.getElementById('Language').innerHTML = GetLanguage();
         document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
         document.getElementById('errorOccuredPage').removeAttribute("hidden");
         document.getElementById('errorOccuredPagePlease').removeAttribute("hidden");
@@ -327,20 +332,10 @@ $(function () {
     }
 
     function GetLocale() {
-        var locale = chrome.i18n.GetLocale;
+        var locale = chrome.i18n.getMessage("@@ui_locale");
         return locale;
     }
 
-    function GetLanguage() {
-        var language;
-        if (window.navigator.languages) {
-            language = window.navigator.languages[0];
-        } else {
-            language = window.navigator.userLanguage || window.navigator.language;
-        }
-        return language;
-    }
-     
     function GetJavascriptError(e) {
         if (e != undefined) {
             if (e.stack != undefined) {
@@ -362,13 +357,11 @@ $(function () {
         var result = chrome.i18n.getMessage(textKey);
         if (result == undefined || result == "") {
             console.log("Missing VSMM translation: " + textKey);
-            return "###" +
+            return "###_" +
                 GetLocale() +
                 "_" +
-                GetLanguage() +
-                "_" +
                 textKey +
-                "###";
+                "_###";
         } else {
             return result;
         }
