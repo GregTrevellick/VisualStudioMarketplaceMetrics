@@ -35,6 +35,8 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="app\manifest.json" />
+    <None Include="app\_locales\en\messages.json" />
+    <None Include="app\_locales\fr\messages.json" />
     <None Include="ref_scripts\__jquery.tablesorter.zip" />
     <None Include="unit_tests\TestCases.xlsx" />
   </ItemGroup>

@@ -193,11 +193,13 @@ $(function () {
                         };
                         document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " install" + totalInstallCountSuffix;
 
+                        var reviewIl8n = chrome.i18n.getMessage("review");
+
                         var totalReviewCountSuffix = "";
                         if (totalReviewCount != 1) {
                             totalReviewCountSuffix = "s";
                         };
-                        document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " review" + totalReviewCountSuffix;
+                        document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " " + reviewIl8n + totalReviewCountSuffix;
 
                         if (totalReviewsAsPercentageOfTotalInstalls > 0) {
                             document.getElementById('TotalReviewCount').innerHTML += " ("
