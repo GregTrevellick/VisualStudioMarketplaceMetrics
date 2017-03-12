@@ -195,7 +195,6 @@ $(function () {
                         document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " install" + totalInstallCountSuffix;
 
                         var reviewIl8n = Get("reviews");
-
                         var totalReviewCountSuffix = "";
                         if (totalReviewCount != 1) {
                             totalReviewCountSuffix = "s";
