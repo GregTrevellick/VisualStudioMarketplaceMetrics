@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Visual Studio Marketplace Metrics</title>
+    <title id="PopUpTitle">Visual Studio Marketplace Metrics</title>
     <link href="styles/vsmm.css" rel="stylesheet" />
     <link rel="stylesheet" href="scripts/tablesorter/themes/blue/style.css" />
     <script type="text/javascript" src="scripts/jquery-3.1.1.slim.min.js"></script>
@@ -13,20 +13,20 @@
     <img src="img/ajax-loader.gif" id="ajaxLoader" class="ajaxLoader" />
     <div id="errorOccuredPage" hidden="hidden" aria-describedby="errorOccuredPageText">
         <h2 id="errorOccuredPageText">
-            Opps, something went wrong.
+            <span id="errorOccuredPageTextInner">Opps, something went wrong.</span>
         </h2>
     </div>
     <div id="dataUnavailableForPage" hidden="hidden" aria-describedby="dataUnavailableForPageText">
         <h2 id="dataUnavailableForPageText">
-            Visual Studio Marketplace Metrics data is unfortunately not available for this page.
+            <span id="dataUnavailableForPageTextInner">Visual Studio Marketplace Metrics data is unfortunately not available for this page.</span>
         </h2>
     </div>
     <div id="notificationItems" hidden="hidden">
         <div>
-            <span id="errorOccuredPagePlease" hidden="hidden">Please click </span>
-            <span id="dataUnavailableForPagePlease" hidden="hidden">If you suspect you are seeing this notice incorrectly please click </span>
+            <span id="errorOccuredPagePlease" hidden="hidden">Please click</span>
+            <span id="dataUnavailableForPagePlease" hidden="hidden">If you suspect you are seeing this notice incorrectly please click</span>
             <a aria-label="Email author" href="#" id="DataUnavailableEmail">here</a>
-            to notify the extension author via a pre-populated email. If you prefer to contact the author via other means please include the following:
+            <span id="toNotifyAuthor">to notify the extension author via a pre-populated email. If you prefer to contact the author via other means please include the following</span>
         </div>
         <ul>
             <li id="PageUrl"></li>
@@ -37,9 +37,9 @@
     </div>
     <div id="nilSearchResults" hidden="hidden" aria-describedby="nilSearchResultsText">
         <h2 id="nilSearchResultsText">
-            The Visual Studio Marketplace page you are on has no search results.
+            <span id="NilSearchResultsInner">The Visual Studio Marketplace page you are on has no search results.</span>
         </h2>
-        On slower connections it is possible to trigger the Metrics button before the Marketplace page itself has fully loaded. If you suspect that this is the case wait a few seconds and try the Metrics button again.
+        <span id="SlowerConnections">On slower connections it is possible to trigger the Metrics button before the Marketplace page itself has fully loaded. If you suspect that this is the case wait a few seconds and try the Metrics button again.</span>
     </div>
     <div id="dataAvailable" hidden="hidden">
         <h2>
@@ -48,18 +48,18 @@
             <span id="TotalReviewCount"></span><br />
             <span id="TotalOverallAverageReview" hidden="hidden"></span>
         </h2>
-        <a aria-label="Copy table to clipboard" href="#" id="CopyToClipboard" class="copyToClipboard">Copy table to clipboard</a>
+        <a aria-label="Copy table to clipboard" href="#" id="CopyToClipboard" class="copyToClipboard"></a>
         <div id="ClipboardBuffer">
             <table id="DetailGridTable" class="tablesorter">
                 <thead>
                     <tr>
-                        <th>No. of installs</th>
-                        <th>Title</th>
-                        <th>No. of reviews</th>
-                        <th>Reviews as % of installs<p></th>
-                        <th>Publisher</th>
-                        <th>Price</th>
-                        <th>Average review score</th>
+                        <th id="GridHeaderNoOfInstalls"></th>
+                        <th id="GridHeaderTitle"></th>
+                        <th id="GridHeaderNoOfReviews"></th>
+                        <th id="GridHeaderReviewsAsPercentageOfInstalls"><p><p></th>
+                        <th id="GridHeaderPublisher"></th>
+                        <th id="GridHeaderPrice"></th>
+                        <th id="GridHeaderAverageReviewScore"></th>
                     </tr>
                 </thead>
                 <tbody id="DetailGridTableBody"></tbody>

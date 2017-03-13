@@ -1,7 +1,6 @@
+//FULLSTOP SEMICOLON SPACE
 //convert popup.html fully to il8n
 //il8n into manifest file
-//french xlations
-//spanish xlations
 //convert contentScript.js to il8n
 //2nd tab 66, 3rd tab 24 - but is 3rd tab showing 66 again ?
 //test GA when live
@@ -13,18 +12,15 @@ $(function () {
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-93512771-1']);
     _gaq.push(['_trackPageview']);
-
     (function () {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
         ga.src = 'https://ssl.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
     //GA end
-    
     latestError = GetTranslation("VsmmUninitialised");
     console.log(GetTranslation("VsmmThankYouForUsing"));
     console.image("http://i.imgur.com/NfNVskCl.png");
-    
     onLoadRequestDomFromVsmp();
 
     function onLoadRequestDomFromVsmp() {
@@ -168,6 +164,18 @@ $(function () {
                     };
 
                     function SetHeadersAndFooters() {
+
+                        //document.getElementById('nilSearchResultsText').innerHTML = GetTranslation("VsmmNilSearchResultsText");
+                        document.getElementById('CopyToClipboard').innerHTML = GetTranslation("VsmmCopyToClipboard");
+                        document.getElementById('GridHeaderNoOfInstalls').innerHTML = GetTranslation("VsmmNoOfInstalls");
+                        document.getElementById('GridHeaderTitle').innerHTML = GetTranslation("VsmmTitle_Grid");
+                        document.getElementById('GridHeaderNoOfReviews').innerHTML = GetTranslation("VsmmNoOfReviews");
+                        document.getElementById('GridHeaderReviewsAsPercentageOfInstalls').innerHTML = GetTranslation("VsmmReviewsAsPercentageOfInstalls");
+                        document.getElementById('GridHeaderPublisher').innerHTML = GetTranslation("VsmmPublisher");
+                        document.getElementById('GridHeaderPrice').innerHTML = GetTranslation("VsmmPrice");
+                        document.getElementById('GridHeaderAverageReviewScore').innerHTML = GetTranslation("VsmmAverageReviewScore");
+
+
 
                         var totalExtensionsCount = vsmpDom.length;
                         var totalReviewsAsPercentageOfTotalInstalls = 0;

@@ -9,7 +9,7 @@
   "VsmmExtensions": { "message": "extensions" },
   "VsmmFeedbackEmailsubject": { "message": "VS Marketplace Metrics Feedback" },
   "VsmmHere": { "message": "here" },
-  "VsmmIfYouSuspectSeeingIncorrectlyText": { "message": "If you suspect you are seeing this notice incorrectly please click " },
+  "VsmmIfYouSuspectSeeingIncorrectlyText": { "message": "If you suspect you are seeing this notice incorrectly please click SPACE" },
   "VsmmIndeterminateError": { "message": "Indeterminate error" },
   "VsmmInstall": { "message": "install" },
   "VsmmInstalls": { "message": "installs" },
