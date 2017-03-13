@@ -72,6 +72,7 @@ $(function () {
                 });
 
                 function ShowDataUnavailableMessage() {
+                    document.getElementById('dataUnavailableForPageTextInner').innerHTML = GetTranslation("VsmmDataUnavailableForPageText");
                     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
                     document.getElementById('UserAgent').innerHTML = GetUserAgent();
                     document.getElementById('Locale').innerHTML = GetLocale();
@@ -312,6 +313,7 @@ $(function () {
             }
         }
 
+        document.getElementById('errorOccuredPageTextInner').innerHTML = GetTranslation("VsmmErrorOccuredPageText");
         document.getElementById('PageUrl').innerHTML = GetPageUrl();
         document.getElementById('UserAgent').innerHTML = GetUserAgent();
         document.getElementById('Locale').innerHTML = GetLocale();
