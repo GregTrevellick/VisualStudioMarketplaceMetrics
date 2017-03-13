@@ -2,7 +2,7 @@
 "VsmmAverageReviewScore": {"message": "Puntuación media de la revisión"},
 "VsmmAverageReviewScore_Lower": {"message": "puntaje promedio de la revisión"},
 "VsmmCopyTableToClipboard": {"mensaje": "Copiar tabla al portapapeles"},
-"VsmmDataUnavailableForPageText": {"message": "Los datos de Visual Studio Marketplace Metrics no están disponibles para esta página FULLSTOP"},
+"VsmmDataUnavailableForPageText": {"message": "Los datos de Visual Studio Marketplace Metrics no están disponibles para esta página"},
 "VsmmDividedBy": {"mensaje": "dividido por"},
 "VsmmErrorOccuredPageText": {"message": "Opps, algo falló"},
 "VsmmExtension": {"message": "extension"},
@@ -13,7 +13,7 @@
 "VsmmIndeterminateError": {"mensaje": "Error indeterminado"},
 "VsmmInstall": {"message": "install"},
 "VsmmInstalls": {"mensaje": "instala"},
-"VsmmNilSearchResultsText": {"message": "La página de Visual Studio Marketplace en la que se encuentra no tiene resultados de búsqueda FULLSTOP"},
+"VsmmNilSearchResultsText": {"message": "La página de Visual Studio Marketplace en la que se encuentra no tiene resultados de búsqueda"},
 "VsmmNoOfInstalls": {"message": "Número de instalaciones"},
 "VsmmNoOfReviews": {"message": "Número de reseñas"},
   "VsmmOnSlowerConnectionsText": {

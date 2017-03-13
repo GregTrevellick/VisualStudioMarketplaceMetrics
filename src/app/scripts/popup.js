@@ -46,7 +46,7 @@ $(function () {
             document.getElementById('VisualStudioHelpText').innerHTML = GetTranslation("VsmmVisualStudioHelpText");
 
             if (vsmpDom.length == 0) {
-                document.getElementById('NilSearchResultsInner').innerHTML = GetTranslation("VsmmNilSearchResultsText");
+                document.getElementById('NilSearchResultsInner').innerHTML = GetTranslation("VsmmNilSearchResultsText") + ".";
                 document.getElementById('SlowerConnections').innerHTML = GetTranslation("VsmmOnSlowerConnectionsText");
                 document.getElementById('nilSearchResults').removeAttribute("hidden");
             }
@@ -85,7 +85,7 @@ $(function () {
                     document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthor");
                     //
 
-                    document.getElementById('dataUnavailableForPageTextInner').innerHTML = GetTranslation("VsmmDataUnavailableForPageText");
+                    document.getElementById('dataUnavailableForPageTextInner').innerHTML = GetTranslation("VsmmDataUnavailableForPageText") + ".";
                     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
                     document.getElementById('UserAgent').innerHTML = GetUserAgent();
                     document.getElementById('Locale').innerHTML = GetLocale();
