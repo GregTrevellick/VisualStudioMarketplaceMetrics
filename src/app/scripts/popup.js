@@ -80,7 +80,7 @@ $(function () {
 
                     //gregt dedupe
                     document.getElementById('errorOccuredPagePlease').innerHTML = GetTranslation("VsmmPleaseClick");
-                    document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspect");
+                    document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspectSeeingIncorrectlyText") + " ";
                     document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
                     document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthor");
                     //
@@ -326,11 +326,11 @@ $(function () {
 
             //gregt dedupe
             document.getElementById('errorOccuredPagePlease').innerHTML = GetTranslation("VsmmPleaseClick");
-            document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspect");
+            document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspectSeeingIncorrectlyText") + " ";
             document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
             document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthor");
             //
-            document.getElementById('errorOccuredPageTextInner').innerHTML = GetTranslation("VsmmErrorOccuredPageText");
+            document.getElementById('errorOccuredPageTextInner').innerHTML = GetTranslation("VsmmErrorOccuredPageText") + ".";
             document.getElementById('PageUrl').innerHTML = GetPageUrl();
             document.getElementById('UserAgent').innerHTML = GetUserAgent();
             document.getElementById('Locale').innerHTML = GetLocale();

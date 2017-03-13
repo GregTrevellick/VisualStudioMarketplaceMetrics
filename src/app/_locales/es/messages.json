@@ -4,7 +4,7 @@
 "VsmmCopyTableToClipboard": {"mensaje": "Copiar tabla al portapapeles"},
 "VsmmDataUnavailableForPageText": {"message": "Los datos de Visual Studio Marketplace Metrics no están disponibles para esta página FULLSTOP"},
 "VsmmDividedBy": {"mensaje": "dividido por"},
-"VsmmErrorOccuredPageText": {"message": "Opps, algo falló FULLSTOP"},
+"VsmmErrorOccuredPageText": {"message": "Opps, algo falló"},
 "VsmmExtension": {"message": "extension"},
 "VsmmExtensions": {"message": "extensions"},
 "VsmmFeedbackEmailsubject": {"message": "VS Marketplace Metrics Feedback"},
