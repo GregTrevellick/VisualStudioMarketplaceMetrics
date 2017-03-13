@@ -17,7 +17,7 @@
 "VsmmNoOfInstalls": {"message": "Número de instalaciones"},
 "VsmmNoOfReviews": {"message": "Número de reseñas"},
   "VsmmOnSlowerConnectionsText": {
-    "message": "En conexiones más lentas es posible activar el botón de métricas antes de que la propia página del Marketplace se haya cargado completamente.Si sospecha que este es el caso, espere unos segundos y pruebe de nuevo el botón Metrics FULLSTOP"
+    "message": "En conexiones más lentas es posible activar el botón de métricas antes de que la propia página del Marketplace se haya cargado completamente.Si sospecha que este es el caso, espere unos segundos y pruebe de nuevo el botón Metrics"
   },
     "VsmmPercentageOfInstallations": { "message": "% de instalaciones" },
     "VsmmPleaseClick": { "message": "Por favor, haga clic en" },
@@ -30,10 +30,10 @@
     "VsmmThankYouForUsing": { "message": "Gracias por usar Visual Studio Marketplace Metrics" },
     "VsmmTitle_Grid": { "mensaje": "Título" },
     "VsmmTitle_Page": { "message": "Visual Studio Marketplace Métricas" },
-    "VsmmToNotifyAuthorText": { "message": "para notificar al autor de la extensión a través de un correo electrónico pre-poblado. Si prefiere ponerse en contacto con el autor por otros medios, por favor incluya la siguiente SEMICOLON" },
+    "VsmmToNotifyAuthorText": { "message": "para notificar al autor de la extensión a través de un correo electrónico pre-poblado. Si prefiere ponerse en contacto con el autor por otros medios, por favor incluya la siguiente" },
     "VsmmUninitialised": { "message": "Uninitialised" },
     "VsmmUnknown": { "message": "Unknown" },
-    "VsmmVisualStudioHelpText": { "message": "Esta extensión depende totalmente del DOM del mercado de Visual Studio de Microsoft, que está sujeta a cambios por parte de Microsoft en cualquier momento y que haría que esta extensión gratuita deje de funcionar correctamente. Open source eco-system informando al autor de la extensión tan pronto como sea posible, usando los detalles de contacto que aparecerán arriba cuando sea necesario FULLSTOP " },
+    "VsmmVisualStudioHelpText": { "message": "Esta extensión depende totalmente del DOM del mercado de Visual Studio de Microsoft, que está sujeta a cambios por parte de Microsoft en cualquier momento y que haría que esta extensión gratuita deje de funcionar correctamente. Open source eco-system informando al autor de la extensión tan pronto como sea posible, usando los detalles de contacto que aparecerán arriba cuando sea necesario" },
   "VsmmManifestDefaultTitle": {"message": "Visual Studio Marketplace Métricas"},
 "VsmmManifestName": {"message": "Visual Studio Marketplace Métricas"},
 "VsmmManifestShortName": {"message": "VS Extensions Metrics"},

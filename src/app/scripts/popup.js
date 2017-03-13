@@ -1,4 +1,3 @@
-//FULLSTOP SEMICOLON SPACE
 //add german, mexican, etc
 //2nd tab 66, 3rd tab 24 - but is 3rd tab showing 66 again ?
 
@@ -43,11 +42,11 @@ $(function () {
 
         try {
 
-            document.getElementById('VisualStudioHelpText').innerHTML = GetTranslation("VsmmVisualStudioHelpText");
+            document.getElementById('VisualStudioHelpText').innerHTML = GetTranslation("VsmmVisualStudioHelpText") + ".";
 
             if (vsmpDom.length == 0) {
                 document.getElementById('NilSearchResultsInner').innerHTML = GetTranslation("VsmmNilSearchResultsText") + ".";
-                document.getElementById('SlowerConnections').innerHTML = GetTranslation("VsmmOnSlowerConnectionsText");
+                document.getElementById('SlowerConnections').innerHTML = GetTranslation("VsmmOnSlowerConnectionsText") + ".";
                 document.getElementById('nilSearchResults').removeAttribute("hidden");
             }
             else {
@@ -82,7 +81,7 @@ $(function () {
                     document.getElementById('errorOccuredPagePlease').innerHTML = GetTranslation("VsmmPleaseClick");
                     document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspectSeeingIncorrectlyText") + " ";
                     document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
-                    document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthor");
+                    document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthorText") + ":";
                     //
 
                     document.getElementById('dataUnavailableForPageTextInner').innerHTML = GetTranslation("VsmmDataUnavailableForPageText") + ".";
