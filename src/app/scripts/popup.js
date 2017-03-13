@@ -1,4 +1,3 @@
-//convert popup.html to il8n
 //convert manifest.json to il8n
 //convert contentScript.js to il8n
 //FULLSTOP SEMICOLON SPACE
@@ -19,9 +18,15 @@ $(function () {
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
     //GA end
+
     latestError = GetTranslation("VsmmUninitialised");
-    console.log(GetTranslation("VsmmThankYouForUsing"));
-    console.image("http://i.imgur.com/NfNVskCl.png");
+    try {
+        console.log(GetTranslation("VsmmThankYouForUsing"));
+        console.image("http://i.imgur.com/NfNVskCl.png");
+    } catch (e) {
+        //Doesn't matter if it failed
+    }
+    document.getElementById('PopUpTitle').innerHTML = GetTranslation("VsmmTitle_Page");
     onLoadRequestDomFromVsmp();
 
     function onLoadRequestDomFromVsmp() {
@@ -43,6 +48,8 @@ $(function () {
             document.getElementById('VisualStudioHelpText').innerHTML = GetTranslation("VsmmVisualStudioHelpText");
 
             if (vsmpDom.length == 0) {
+                document.getElementById('NilSearchResultsInner').innerHTML = GetTranslation("VsmmNilSearchResultsText");
+                document.getElementById('SlowerConnections').innerHTML = GetTranslation("VsmmOnSlowerConnectionsText");
                 document.getElementById('nilSearchResults').removeAttribute("hidden");
             }
             else {
@@ -72,6 +79,14 @@ $(function () {
                 });
 
                 function ShowDataUnavailableMessage() {
+
+                    //gregt dedupe
+                    document.getElementById('errorOccuredPagePlease').innerHTML = GetTranslation("VsmmPleaseClick");
+                    document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspect");
+                    document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
+                    document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthor");
+                    //
+
                     document.getElementById('dataUnavailableForPageTextInner').innerHTML = GetTranslation("VsmmDataUnavailableForPageText");
                     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
                     document.getElementById('UserAgent').innerHTML = GetUserAgent();
@@ -167,7 +182,6 @@ $(function () {
 
                     function SetHeadersAndFooters() {
 
-                        //document.getElementById('nilSearchResultsText').innerHTML = GetTranslation("VsmmNilSearchResultsText");
                         document.getElementById('CopyToClipboard').innerHTML = GetTranslation("VsmmCopyToClipboard");
                         document.getElementById('GridHeaderNoOfInstalls').innerHTML = GetTranslation("VsmmNoOfInstalls");
                         document.getElementById('GridHeaderTitle').innerHTML = GetTranslation("VsmmTitle_Grid");
@@ -176,8 +190,6 @@ $(function () {
                         document.getElementById('GridHeaderPublisher').innerHTML = GetTranslation("VsmmPublisher");
                         document.getElementById('GridHeaderPrice').innerHTML = GetTranslation("VsmmPrice");
                         document.getElementById('GridHeaderAverageReviewScore').innerHTML = GetTranslation("VsmmAverageReviewScore");
-
-
 
                         var totalExtensionsCount = vsmpDom.length;
                         var totalReviewsAsPercentageOfTotalInstalls = 0;
@@ -313,6 +325,12 @@ $(function () {
             }
         }
 
+        //gregt dedupe
+        document.getElementById('errorOccuredPagePlease').innerHTML = GetTranslation("VsmmPleaseClick");
+        document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspect");
+        document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
+        document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthor");
+        //
         document.getElementById('errorOccuredPageTextInner').innerHTML = GetTranslation("VsmmErrorOccuredPageText");
         document.getElementById('PageUrl').innerHTML = GetPageUrl();
         document.getElementById('UserAgent').innerHTML = GetUserAgent();
