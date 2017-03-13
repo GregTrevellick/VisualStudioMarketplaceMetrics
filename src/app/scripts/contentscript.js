@@ -149,6 +149,7 @@ chrome.runtime.onMessage.addListener(
                 }
 
                 function GetVsmpDomSelector(visitType) {
+
                     var vsmpDomSelector = "";
                     if (visitType == "search_VS" ||
                         visitType == "search_VSCode" ||
@@ -167,6 +168,7 @@ chrome.runtime.onMessage.addListener(
                 }
 
                 function GetVsmpDomParentSelector(visitType) {
+
                     var vsmpDomParentSelector = "";
                     if (visitType == "browse_Root" ||
                         visitType == "browse_VS") {
@@ -183,13 +185,15 @@ chrome.runtime.onMessage.addListener(
                         }
                     }                 
 
-                    //Cater for user clicking vsts tab, then home icon (vsts tab is the highlighted tab)
+                    //Cater for user clicking vsts tab, then home icon (vsts tab is the highlighted tab) or vsts tab, then vscode tab
                     if ($(vsmpDomParentSelector).length == 0) {
-                        if ($("[id^=vsts_]").length) {
+                        if ($("[id^=vsts_]").length &&
+                            visitType == "browse_VSTS") {
                             vsmpDomParentSelector = "vsts_";
                         }
                         else {
-                            if ($("[id^=vscode_]").length) {
+                            if ($("[id^=vscode_]").length &&
+                                visitType == "browse_VSCode") {
                                 vsmpDomParentSelector = "vscode_";
                             }
                         }

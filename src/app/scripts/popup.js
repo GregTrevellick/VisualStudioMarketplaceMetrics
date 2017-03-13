@@ -174,7 +174,7 @@ $(function () {
 
                     function SetHeadersAndFooters() {
 
-                        document.getElementById('CopyToClipboard').innerHTML = GetTranslation("VsmmCopyToClipboard");
+                        document.getElementById('CopyToClipboard').innerHTML = GetTranslation("VsmmCopyTableToClipboard");
                         document.getElementById('GridHeaderNoOfInstalls').innerHTML = GetTranslation("VsmmNoOfInstalls");
                         document.getElementById('GridHeaderTitle').innerHTML = GetTranslation("VsmmTitle_Grid");
                         document.getElementById('GridHeaderNoOfReviews').innerHTML = GetTranslation("VsmmNoOfReviews");
@@ -222,7 +222,7 @@ $(function () {
                         document.getElementById('TotalReviewCount').title = totalReviewCount + " " + GetTranslation("VsmmDividedBy") + " " + totalInstallCount;
                         if (totalReviewCount > 0) {
                             document.getElementById('TotalOverallAverageReview').removeAttribute("hidden");
-                            document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview + " " + GetTranslation("VsmmAverageReviewScoreLower");
+                            document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview + " " + GetTranslation("VsmmAverageReviewScore_Lower");
                         };
 
                         document.getElementById('FooterGridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
