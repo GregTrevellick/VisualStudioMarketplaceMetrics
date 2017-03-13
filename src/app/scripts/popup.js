@@ -1,9 +1,10 @@
-//FULLSTOP SEMICOLON SPACE
-//convert popup.html fully to il8n
-//il8n into manifest file
+//convert popup.html to il8n
+//convert manifest.json to il8n
 //convert contentScript.js to il8n
+//FULLSTOP SEMICOLON SPACE
+//add german, mexican, etc
 //2nd tab 66, 3rd tab 24 - but is 3rd tab showing 66 again ?
-//test GA when live
+
 
 
 $(function () {
