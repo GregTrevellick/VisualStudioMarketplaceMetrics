@@ -21,8 +21,8 @@ $(function () {
     })();
     //GA end
     
-    latestError = Get("Uninitialised");
-    console.log(Get("ThankYouForUsing"));
+    latestError = GetTranslation("VsmmUninitialised");
+    console.log(GetTranslation("VsmmThankYouForUsing"));
     console.image("http://i.imgur.com/NfNVskCl.png");
     
     onLoadRequestDomFromVsmp();
@@ -43,7 +43,7 @@ $(function () {
 
         try {
 
-            document.getElementById('VisualStudioHelpText').innerHTML = Get("VisualStudioHelpText");
+            document.getElementById('VisualStudioHelpText').innerHTML = GetTranslation("VsmmVisualStudioHelpText");
 
             if (vsmpDom.length == 0) {
                 document.getElementById('nilSearchResults').removeAttribute("hidden");
@@ -143,7 +143,7 @@ $(function () {
                             + "</a></td>";
 
                         if (vsmpDom[i]["Price"] == undefined) {
-                            var colPrice = "<td>" + Get("Unknown") + "</td>";
+                            var colPrice = "<td>" + GetTranslation("VsmmUnknown") + "</td>";
                         }
                         else {
                             var colPriceLower = vsmpDom[i]["Price"].toLowerCase();
@@ -179,36 +179,36 @@ $(function () {
                         var totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
 
                         if (totalExtensionsCount != 1) {
-                            extensionIl8n = Get("Extensions");
+                            extensionIl8n = GetTranslation("VsmmExtensions");
                         } else {
-                            extensionIl8n = Get("Extension");
+                            extensionIl8n = GetTranslation("VsmmExtension");
                         };
-                        document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " " + extensionIl8n + " " + Get("Shown");
+                        document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " " + extensionIl8n + " " + GetTranslation("VsmmShown");
 
                         if (totalInstallCount != 1) {
-                            installIl8n = Get("Installs");
+                            installIl8n = GetTranslation("VsmmInstalls");
                         } else {
-                            installIl8n = Get("Install");
+                            installIl8n = GetTranslation("VsmmInstall");
                         };
                         document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " " + installIl8n;
 
                         if (totalReviewCount != 1) {
-                            reviewIl8n = Get("Reviews");
+                            reviewIl8n = GetTranslation("VsmmReviews");
                         } else {
-                            reviewIl8n = Get("Review");
+                            reviewIl8n = GetTranslation("VsmmReview");
                         };
                         document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " " + reviewIl8n;
 
                         if (totalReviewsAsPercentageOfTotalInstalls > 0) {
                             document.getElementById('TotalReviewCount').innerHTML += " ("
                             + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
-                            + Get("PercentageOfInstallations")
+                            + GetTranslation("VsmmPercentageOfInstallations")
                             + ")";
                         };
-                        document.getElementById('TotalReviewCount').title = totalReviewCount + " " + Get("DividedBy") + " " + totalInstallCount;
+                        document.getElementById('TotalReviewCount').title = totalReviewCount + " " + GetTranslation("VsmmDividedBy") + " " + totalInstallCount;
                         if (totalReviewCount > 0) {
                             document.getElementById('TotalOverallAverageReview').removeAttribute("hidden");
-                            document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview + " " + Get("AverageReviewScoreLower");
+                            document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview + " " + GetTranslation("VsmmAverageReviewScoreLower");
                         };
 
                         document.getElementById('FooterGridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
@@ -227,7 +227,7 @@ $(function () {
     $('#DataUnavailableEmail').click(function (e) {
         try {
             var mailto = "vsmarketplacemetrics@gmail.com";
-            var subject = Get("FeedbackEmailSubject");
+            var subject = GetTranslation("VsmmFeedbackEmailSubject");
             var body = GetUserAgent() +
                        "\n" + "\n" +
                        GetPageUrl() +
@@ -353,7 +353,7 @@ $(function () {
         };
     }
 
-    function Get(textKey) {
+    function GetTranslation(textKey) {
         var result = chrome.i18n.getMessage(textKey);
         if (result == undefined || result == "") {
             console.log("Missing VSMM translation: " + textKey);
