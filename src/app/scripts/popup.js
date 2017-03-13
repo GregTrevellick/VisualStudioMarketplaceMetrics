@@ -1,4 +1,3 @@
-//convert contentScript.js to il8n
 //FULLSTOP SEMICOLON SPACE
 //add german, mexican, etc
 //2nd tab 66, 3rd tab 24 - but is 3rd tab showing 66 again ?
