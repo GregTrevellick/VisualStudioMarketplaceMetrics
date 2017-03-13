@@ -31,5 +31,9 @@
   "VsmmToNotifyAuthorText": { "message": "to notify the extension author via a pre-populated email. If you prefer to contact the author via other means please include the following SEMICOLON" },
   "VsmmUninitialised": { "message": "Uninitialised" },
   "VsmmUnknown": { "message": "Unknown" },
-  "VsmmVisualStudioHelpText": { "message": "This extension is wholly dependant on Microsoft's Visual Studio Marketplace DOM, which is subject to change by Microsoft at anytime, and which would cause this FREE extension to cease functioning correctly. If this occurs please help the open source eco-system by informing the extension author as soon as possible, using the contact details which will appear above when neccessary FULLSTOP" }
+  "VsmmVisualStudioHelpText": { "message": "This extension is wholly dependant on Microsoft's Visual Studio Marketplace DOM, which is subject to change by Microsoft at anytime, and which would cause this FREE extension to cease functioning correctly. If this occurs please help the open source eco-system by informing the extension author as soon as possible, using the contact details which will appear above when neccessary FULLSTOP" },
+  "VsmmManifestDefaultTitle": { "message": "Visual Studio Marketplace Metrics" },
+  "VsmmManifestName": { "message": "Visual Studio Marketplace Metrics" },
+  "VsmmManifestShortName": { "message": "VS Extensions Metrics" },
+  "VsmmManifestDescription": { "message": "See the total install count and other metrics for all your Visual Studio Marketplace extensions with just one click" }
 }

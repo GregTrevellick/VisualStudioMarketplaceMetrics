@@ -1,4 +1,3 @@
-//convert manifest.json to il8n
 //convert contentScript.js to il8n
 //FULLSTOP SEMICOLON SPACE
 //add german, mexican, etc
@@ -316,32 +315,36 @@ $(function () {
     });
 
     function CommonErrorHandler(e) {
-        if (e != undefined) {
-            if (e.stack != undefined) {
-                latestError = e.stack;
+        try {
+            if (e != undefined) {
+                if (e.stack != undefined) {
+                    latestError = e.stack;
+                }
+                else {
+                    latestError = e;
+                }
             }
-            else {
-                latestError = e;
-            }
+
+            //gregt dedupe
+            document.getElementById('errorOccuredPagePlease').innerHTML = GetTranslation("VsmmPleaseClick");
+            document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspect");
+            document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
+            document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthor");
+            //
+            document.getElementById('errorOccuredPageTextInner').innerHTML = GetTranslation("VsmmErrorOccuredPageText");
+            document.getElementById('PageUrl').innerHTML = GetPageUrl();
+            document.getElementById('UserAgent').innerHTML = GetUserAgent();
+            document.getElementById('Locale').innerHTML = GetLocale();
+            document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
+            document.getElementById('errorOccuredPage').removeAttribute("hidden");
+            document.getElementById('errorOccuredPagePlease').removeAttribute("hidden");
+            document.getElementById('notificationItems').removeAttribute("hidden");
+            document.getElementById('JavaScriptErrorText').removeAttribute("hidden");
+
+            HideSpinner();
+        } catch (e) {
+            Console.Log("A serious error occured within the Visual Studio Marketplace Metrics extension. Please re-try at your convenience.");
         }
-
-        //gregt dedupe
-        document.getElementById('errorOccuredPagePlease').innerHTML = GetTranslation("VsmmPleaseClick");
-        document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspect");
-        document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
-        document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthor");
-        //
-        document.getElementById('errorOccuredPageTextInner').innerHTML = GetTranslation("VsmmErrorOccuredPageText");
-        document.getElementById('PageUrl').innerHTML = GetPageUrl();
-        document.getElementById('UserAgent').innerHTML = GetUserAgent();
-        document.getElementById('Locale').innerHTML = GetLocale();
-        document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
-        document.getElementById('errorOccuredPage').removeAttribute("hidden");
-        document.getElementById('errorOccuredPagePlease').removeAttribute("hidden");
-        document.getElementById('notificationItems').removeAttribute("hidden");
-        document.getElementById('JavaScriptErrorText').removeAttribute("hidden");
-
-        HideSpinner();
     }
 
     function HideSpinner() {
