@@ -387,12 +387,8 @@ $(function () {
     function GetTranslation(textKey) {
         var result = chrome.i18n.getMessage(textKey);
         if (result == undefined || result == "") {
-            console.log("Missing VSMM translation: " + textKey);
-            return "###_" +
-                GetLocale() +
-                "_" +
-                textKey +
-                "_###";
+            console.log("Missing VSMM translation=" + textKey + " Locale=" + GetLocale());
+            return "###" + textKey + "###";
         } else {
             return result;
         }
