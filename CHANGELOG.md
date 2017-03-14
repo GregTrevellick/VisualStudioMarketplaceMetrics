@@ -15,38 +15,4 @@ test google analytics
 add github issues to email link section ? 
 mads kristensens tweet about low nbr of reviews
 
-Arabic
-Bulgarian
-Catalan
-Chinese
-Dutch
-English
-Esperanto
-German
-Hindi
-indian
-iranian
-iraqi
-Irish
-Italian
-Japanese
-Korean
-Latin
-Latvian
-Lithuanian
-Luxembourgish
-mexican
-Pashto
-Persian
-Polish
-Portuguese
-Punjabi
-Romanian
-Swedish
-Tamil
-Thai
-Ukrainian
-Urdu
-Welsh
-
 -->
