@@ -47,7 +47,7 @@
     <None Include="app\_locales\ca\messages.json" />
     <None Include="app\_locales\esperanto\messages.json" />
     <None Include="app\_locales\welsh\messages.json" />
-    <None Include="app\_locales\z_it\messages.json" />
+    <None Include="app\_locales\it\messages.json" />
     <None Include="app\_locales\irish\messages.json" />
     <None Include="app\_locales\en\messages.json" />
     <None Include="app\_locales\es\messages.json" />
