@@ -28,7 +28,20 @@ Software License is available [here](/LICENSE.txt).
  - Includes number of reviews as a percentage of downloads
  - Includes a summary grid of data per extension
  - Works for Visual Studio IDE extensions, VSTS extensions and VS Code extensions
- - Multi-lingual support (English, Spainish, French)
+ - Multi-lingual support 
+   - Bulgarian
+   - Catalan
+   - Dutch
+   - English
+   - French
+   - German
+   - Italian
+   - Polish
+   - Portuguese
+   - Romanian
+   - Spainish
+   - Swedish
+   - Ukranian
  - Results initially appear in same sort order as chosen on [Visual Studio Marketplace][VSMarketplaceURL]
  - Results grid contains hyperlinks directly to each extension and to each publisher
  - The results grid has a 'copy to clipboard' feature to allow easy pasting into Excel, etc
