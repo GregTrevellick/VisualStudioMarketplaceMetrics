@@ -10,6 +10,9 @@ These are the changes to each version that has been released in the Chrome Web S
 
 <!-- gregt 
 
+add flags for supported locales in readme.md
+
+
 POST LIVE
 test google analytics
 add github issues to email link section ? 
