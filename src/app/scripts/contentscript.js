@@ -185,15 +185,15 @@ chrome.runtime.onMessage.addListener(
                         }
                     }                 
 
-                    //Cater for user clicking vsts tab, then home icon (vsts tab is the highlighted tab) or vsts tab, then vscode tab
+                    //Cater for user clicks vsts tab, then vscode tab or user clicks vsts tab, then home icon (vsts tab is the highlighted tab)
                     if ($(vsmpDomParentSelector).length == 0) {
                         if ($("[id^=vsts_]").length &&
-                            visitType == "browse_VSTS") {
+                            (visitType == "browse_VSTS" || visitType == "browse_Root")) {
                             vsmpDomParentSelector = "vsts_";
                         }
                         else {
                             if ($("[id^=vscode_]").length &&
-                                visitType == "browse_VSCode") {
+                                (visitType == "browse_VSCode" || visitType == "browse_Root")) {
                                 vsmpDomParentSelector = "vscode_";
                             }
                         }
