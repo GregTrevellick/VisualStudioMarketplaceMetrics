@@ -37,4 +37,4 @@
     "VsmmManifestName": { "message": "Visual Studio Marketplace Metrics" },
     "VsmmManifestShortName": { "message": "VS Extensions Metrics" },
     "VsmmManifestDescription": { "message": "Sehen Sie die Gesamtinstallationszählung und andere Metriken für alle Ihre Visual Studio Marketplace-Erweiterungen mit nur einem Klick" }
-  } 
+    }     }
