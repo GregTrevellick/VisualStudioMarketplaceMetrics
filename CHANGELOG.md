@@ -12,6 +12,7 @@ These are the changes to each version that has been released in the Chrome Web S
 
 add flags for supported locales in readme.md
 
+if (typeof browserRefresh != "undefined")
 
 POST LIVE
 test google analytics
