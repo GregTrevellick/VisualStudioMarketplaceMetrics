@@ -374,7 +374,7 @@ $(function () {
     }
 
     function GetTranslation(textKey) {
-
+        
         var result = "";
         var useChrome = false;
         var locale = "en";//GREG-TODO var locale = GetLocale();
@@ -399,6 +399,7 @@ $(function () {
         }
 
         function GetTranslationForLocale(textKey, locale) {
+               
             var messages;
             var result;
             var userHasChosenNewLanguage = false;//GREG-TODO check when user has switched languages in UI
@@ -407,11 +408,18 @@ $(function () {
                 $.ajax({
                     url: "/_locales/" + locale + "/messages.json",
                     success: function (data) {
+                        //console.log("success");
                         messages = JSON.parse(data);
-                        result = messages.textKey;
+                        //console.log("data=" + data);
+                        //console.log("messages=" + messages);
+                        //console.log("textKey=" + textKey);
+                        //console.log("messages.textKey=" + messages.textKey);
+                        //console.log("messages.textKey.message=" + messages.textKey.message);
+                        console.log(" messages[textKey]=" + messages[textKey]);
+                        result = messages[textKey].message;
+                        //result = messages[textKey][message];
                     },
-                    //error: GREG-TODO
-                    //result = "ajax error";in caller check for this & show opps message
+                    //error: GREG-TODO e.g. result = "ajax error";in caller check for this & show opps message
                 });
             }
             
