@@ -377,7 +377,7 @@ $(function () {
         
         var result = "";
         var useChrome = false;
-        var locale = "en";//GREG-TODO var locale = GetLocale();
+        var locale = GetLocaleBySource(useChrome);
 
         if (useChrome == true) {
             result = GetTranslationFromChrome(textKey);
@@ -420,8 +420,16 @@ $(function () {
         }
     }
 
-    function GetLocale() {
-        //GREGT-TODO get via chrome or via UI selected language
+    function GetLocaleBySource(useChrome) {
+        if (useChrome) {
+            return GetLocale();
+        }
+        else {
+            return "fr";
+        }
+    }
+
+    function GetLocale() { // gregt rename to GetChromeLocale
         var locale = chrome.i18n.getMessage("@@ui_locale");
         return locale;
     }
