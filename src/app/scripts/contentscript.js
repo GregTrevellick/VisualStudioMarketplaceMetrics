@@ -26,7 +26,8 @@ chrome.runtime.onMessage.addListener(
 
                                 var installCount = 0;
                                 var domInstallCount = vsmpExtn.find('.install-count')[0];
-                                if (domInstallCount != undefined) {
+                                //gregt if (domInstallCount != undefined) {
+                                if (typeof domInstallCount != "undefined") {
                                     //Avoids issues if an extension has zero downloads
                                     var installCountRounded = domInstallCount.innerText;
                                     installCount = GetInstallCount(installCountRounded);

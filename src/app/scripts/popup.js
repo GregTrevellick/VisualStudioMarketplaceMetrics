@@ -357,6 +357,7 @@ $(function () {
     }
 
     function GetLocale() {
+        //GREGT TODO - via chrome or via UI selected language
         var locale = chrome.i18n.getMessage("@@ui_locale");
         return locale;
     }
@@ -379,11 +380,46 @@ $(function () {
     }
 
     function GetTranslation(textKey) {
-        var result = chrome.i18n.getMessage(textKey);
-        if (result == undefined || result == "") {
-            console.log("Missing VSMM translation=" + textKey + " Locale=" + GetLocale());
+
+        var result = "";
+        var useChrome = false;
+        var locale = GetLocale();
+
+        if (useChrome == true) {
+            result = GetTranslationFromChrome(textKey);
+        }
+        else {
+            result = GetTranslationForLocale(textKey, locale);
+        }
+
+        if (typeof result == "undefined" || result == "") {
+            console.log("Missing VSMM translation=" + textKey + " Locale=" + locale + "UseChrome=" + useChrome);
             return "###" + textKey + "###";
         } else {
+            return result;
+        }
+
+        function GetTranslationFromChrome(textKey) {
+            var result = chrome.i18n.getMessage(textKey);
+            return result;
+        }
+
+        function GetTranslationForLocale(textKey, locale) {
+            var messages;
+            var result;
+            var userHasChosenNewLanguage = false;//gregt TODO
+            if (typeof messages == "undefined" ||
+                userHasChosenNewLanguage) {
+                $.ajax({
+                    url: "/_locales/" + locale + "/messages.json",
+                    success: function (data) {
+                        messages = JSON.parse(data);
+                        result = messages.textKey;
+                    },
+                    //error: GREGTTODO
+                });
+            }
+            
             return result;
         }
     }
