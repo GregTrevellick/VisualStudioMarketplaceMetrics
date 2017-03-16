@@ -356,12 +356,6 @@ $(function () {
         };
     }
 
-    function GetLocale() {
-        //GREGT TODO - via chrome or via UI selected language
-        var locale = chrome.i18n.getMessage("@@ui_locale");
-        return locale;
-    }
-
     function GetJavascriptError(e) {
         if (e != undefined) {
             if (e.stack != undefined) {
@@ -383,7 +377,7 @@ $(function () {
 
         var result = "";
         var useChrome = false;
-        var locale = GetLocale();
+        var locale = "en";//GREG-TODO var locale = GetLocale();
 
         if (useChrome == true) {
             result = GetTranslationFromChrome(textKey);
@@ -407,7 +401,7 @@ $(function () {
         function GetTranslationForLocale(textKey, locale) {
             var messages;
             var result;
-            var userHasChosenNewLanguage = false;//gregt TODO
+            var userHasChosenNewLanguage = false;//GREG-TODO check when user has switched languages in UI
             if (typeof messages == "undefined" ||
                 userHasChosenNewLanguage) {
                 $.ajax({
@@ -416,7 +410,8 @@ $(function () {
                         messages = JSON.parse(data);
                         result = messages.textKey;
                     },
-                    //error: GREGTTODO
+                    //error: GREG-TODO
+                    //result = "ajax error";in caller check for this & show opps message
                 });
             }
             
@@ -424,4 +419,9 @@ $(function () {
         }
     }
 
+    function GetLocale() {
+        //GREGT-TODO get via chrome or via UI selected language
+        var locale = chrome.i18n.getMessage("@@ui_locale");
+        return locale;
+    }
 });
