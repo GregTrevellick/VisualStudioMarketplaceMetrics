@@ -11,6 +11,7 @@ $(function () {
     })();
     //GA end
 
+    var useChrome = false;
     latestError = GetTranslation("VsmmUninitialised");
     try {
         console.log(GetTranslation("VsmmThankYouForUsing"));
@@ -376,8 +377,7 @@ $(function () {
     function GetTranslation(textKey) {
         
         var result = "";
-        var useChrome = false;
-        var locale = GetLocaleBySource(useChrome);
+        var locale = GetLocaleBySource();
 
         if (useChrome == true) {
             result = GetTranslationFromChrome(textKey);
@@ -420,12 +420,12 @@ $(function () {
         }
     }
 
-    function GetLocaleBySource(useChrome) {
+    function GetLocaleBySource() {
         if (useChrome) {
             return GetLocale();
         }
         else {
-            return "fr";
+            return "de";
         }
     }
 

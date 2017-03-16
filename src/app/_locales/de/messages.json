@@ -8,7 +8,7 @@
    "VsmmExtension": {"message": "extension"},
    "VsmmExtensions": {"message": "extensions"},
    "VsmmFeedbackEmailsubject": {"message": "VS Marketplace Metrics Feedback"},
-   "VsmmHere": {"Nachricht": "hier"},
+   "VsmmHere": {"message": "hier"},
    "VsmmIfYouSuspectSeeingIncorrectlyText": {"message": "Wenn Sie vermuten, dass Sie diesen Hinweis falsch sehen, klicken Sie bitte auf"},
    "VsmmIndeterminateError": {"message": "Unbestimmter Fehler"},
    "VsmmInstall": {"message": "install"},
@@ -17,17 +17,18 @@
    "VsmmNoOfInstalls": {"message": "Anzahl der Installationen"},
    "VsmmNoOfReviews": {"message": "Anzahl der Bewertungen"},
   "VsmmOnSlowerConnectionsText": {
-    "message": "Bei langsameren Verbindungen ist es möglich, die Metrics-Taste auszulösen, bevor die Marketplace-Seite voll geladen ist. Wenn Sie vermuten, dass dies der Fall ist, warten Sie einige Sekunden und versuchen Sie erneut die Metrics-Taste",
+    "message": "Bei langsameren Verbindungen ist es möglich, die Metrics-Taste auszulösen, bevor die Marketplace-Seite voll geladen ist. Wenn Sie vermuten, dass dies der Fall ist, warten Sie einige Sekunden und versuchen Sie erneut die Metrics-Taste"
+  },
     "VsmmPercentageOfInstallations": { "message": "% der Installationen" },
     "VsmmPleaseClick": { "message": "Bitte klicken" },
-    "VsmmPrice": { "Nachricht": "Preis" },
+    "VsmmPrice": { "message": "Preis" },
     "VsmmPublisher": { "message": "Publisher" },
-    "VsmmReview": { "Nachricht": "Überprüfung" },
-    "VsmmReviews": { "Nachricht": "Bewertungen" },
+    "VsmmReview": { "message": "Überprüfung" },
+    "VsmmReviews": { "message": "Bewertungen" },
     "VsmmReviewsAsPercentageOfInstalls": { "message": "Bewertungen als% der Installationen" },
     "VsmmShown": { "message": "gezeigt" },
     "VsmmThankYouForUsing": { "message": "Danke für die Verwendung von Visual Studio Marketplace Metrics" },
-    "VsmmTitle_Grid": { "Nachricht": "Titel" },
+    "VsmmTitle_Grid": { "message": "Titel" },
     "VsmmTitle_Page": { "message": "Visual Studio Marketplace Metrics" },
     "VsmmToNotifyAuthorText": { "message": "um den Erweiterungsautor über eine vorbesetzte E-Mail zu benachrichtigen.Wenn Sie es vorziehen, den Autor über andere Mittel zu kontaktieren, geben Sie bitte die folgenden" },
     "VsmmUninitialisiert": { "message": "Uninitialisiert" },
@@ -37,4 +38,4 @@
     "VsmmManifestName": { "message": "Visual Studio Marketplace Metrics" },
     "VsmmManifestShortName": { "message": "VS Extensions Metrics" },
     "VsmmManifestDescription": { "message": "Sehen Sie die Gesamtinstallationszählung und andere Metriken für alle Ihre Visual Studio Marketplace-Erweiterungen mit nur einem Klick" }
-    }     }
+    }     
