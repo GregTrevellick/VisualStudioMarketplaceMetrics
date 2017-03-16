@@ -12,7 +12,7 @@ $(function () {
     //GA end
 
     var useChrome = false;
-    var userLanguageSelected = "en";
+    var userLanguageSelected = "en";//gregt change this default from "en" to the prefferd lingo defined in the browser options
     latestError = GetTranslation("VsmmUninitialised");
     try {
         console.log(GetTranslation("VsmmThankYouForUsing"));
