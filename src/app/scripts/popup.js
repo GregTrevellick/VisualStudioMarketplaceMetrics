@@ -387,7 +387,7 @@ $(function () {
         }
 
         if (typeof result == "undefined" || result == "") {
-            console.log("Missing VSMM translation=" + textKey + " Locale=" + locale + "UseChrome=" + useChrome);
+            console.log("Missing VSMM translation=" + textKey + " Locale=" + locale + " UseChrome=" + useChrome);
             return "###" + textKey + "###";
         } else {
             return result;
@@ -408,16 +408,8 @@ $(function () {
                 $.ajax({
                     url: "/_locales/" + locale + "/messages.json",
                     success: function (data) {
-                        //console.log("success");
                         messages = JSON.parse(data);
-                        //console.log("data=" + data);
-                        //console.log("messages=" + messages);
-                        //console.log("textKey=" + textKey);
-                        //console.log("messages.textKey=" + messages.textKey);
-                        //console.log("messages.textKey.message=" + messages.textKey.message);
-                        console.log(" messages[textKey]=" + messages[textKey]);
                         result = messages[textKey].message;
-                        //result = messages[textKey][message];
                     },
                     //error: GREG-TODO e.g. result = "ajax error";in caller check for this & show opps message
                 });

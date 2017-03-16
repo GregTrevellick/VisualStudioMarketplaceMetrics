@@ -54,6 +54,7 @@
   <ItemGroup>
     <Content Include="app\img\ajax-loader.gif" />
     <Content Include="app\img\VisualStudioHelpIcon.png" />
+    <Content Include="app\scripts\jquery-3.1.1.min.js" />
     <Content Include="assets\webstore_screenshot_1280x800_2_IDE_WithSearch_es.png" />
     <Content Include="assets\webstore_screenshot_1280x800_3_VSTS.png" />
     <Content Include="assets\webstore_screenshot_1280x800_4_VSCode.png" />
@@ -69,7 +70,6 @@
     <Content Include="app\scripts\background.js" />
     <Content Include="app\img\icon_128x128.png" />
     <Content Include="app\img\icon_48x48.png" />
-    <Content Include="app\scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="app\scripts\tablesorter\jquery.metadata.js" />
     <Content Include="app\scripts\tablesorter\jquery.tablesorter.js" />
     <Content Include="app\scripts\tablesorter\jquery.tablesorter.min.js" />
