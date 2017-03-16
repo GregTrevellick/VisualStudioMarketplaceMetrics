@@ -407,11 +407,12 @@ $(function () {
                 userHasChosenNewLanguage) {
                 $.ajax({
                     url: "/_locales/" + locale + "/messages.json",
+                    async: false,
                     success: function (data) {
                         messages = JSON.parse(data);
                         result = messages[textKey].message;
-                    },
-                    //error: GREG-TODO e.g. result = "ajax error";in caller check for this & show opps message
+                    }
+                    //,error: GREG-TODO e.g. result = "ajax error";in caller check for this & show opps message
                 });
             }
             
