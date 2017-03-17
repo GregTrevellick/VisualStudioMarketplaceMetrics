@@ -1,4 +1,5 @@
 ﻿{
+  "VsmmTestingTesting123": { "message": "this is a test" },
   "VsmmAverageReviewScore": { "message": "Average review score" },
   "VsmmAverageReviewScore_Lower": { "message": "average review score" },
   "VsmmCopyTableToClipboard": { "message": "Copy table to clipboard" },
