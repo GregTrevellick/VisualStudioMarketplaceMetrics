@@ -25,7 +25,12 @@
   [
     {
       "matches": [ "http://marketplace.visualstudio.com/*", "https://marketplace.visualstudio.com/*" ],
-      "js": [ "scripts/jquery-3.1.1.min.js", "scripts/console.image.min.js", "scripts/contentscript.js" ]
+      "js": [
+        "scripts/jquery-3.1.1.min.js",
+        "scripts/console.image.min.js",
+        "scripts/contentscript.js",
+        "scripts/angular.min.js"
+      ]
     }
   ],
 

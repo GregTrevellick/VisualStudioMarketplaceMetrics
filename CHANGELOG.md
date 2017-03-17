@@ -11,6 +11,7 @@ These are the changes to each version that has been released in the Chrome Web S
 <!-- gregt 
 
 add flags for supported locales in readme.md
+add logo to copy to clipboard
 
 
 POST LIVE

@@ -2,8 +2,11 @@
 <html>
 <head>
     <title id="PopUpTitle"></title>
-    <link href="styles/vsmm.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/vsmm.css" />
     <link rel="stylesheet" href="scripts/tablesorter/themes/blue/style.css" />
+    <script type="text/javascript" src="scripts/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/myJscontroller.js"></script>
     <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="scripts/tablesorter/jquery.tablesorter.min.js"></script>
     <script type="text/javascript" src="scripts/console.image.min.js"></script>
@@ -14,14 +17,30 @@
 
 
 
+
+
+
+
+
+
+    <div ng-app="myApp">
+        <div ng-controller="VsmmController as vsmmc">
+            <strong>prop1:</strong> {{vsmmc.modelProp1}}<br />
+            <br />
+            <label>type some stuff<input type="text" ng-model="vsmmc.modelProp1" /></label><br />
+        </div>
+    </div>
+
+
+
+
+
+
     <select id="UserLanguageSelection">
-    <option value="en">en</option>
-    <option value="de">de</option>
-    <option value="fr">fr</option>
+        <option value="en">en</option>
+        <option value="de">de</option>
+        <option value="fr">fr</option>
     </select>
-
-
-
 
     <div id="errorOccuredPage" hidden="hidden" aria-describedby="errorOccuredPageText">
         <h2 id="errorOccuredPageText">

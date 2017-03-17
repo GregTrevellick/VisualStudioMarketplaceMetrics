@@ -54,7 +54,10 @@
   <ItemGroup>
     <Content Include="app\img\ajax-loader.gif" />
     <Content Include="app\img\VisualStudioHelpIcon.png" />
+    <Content Include="app\scripts\angular.min.js" />
+    <Content Include="app\scripts\app.js" />
     <Content Include="app\scripts\jquery-3.1.1.min.js" />
+    <Content Include="app\scripts\myJscontroller.js" />
     <Content Include="assets\webstore_screenshot_1280x800_2_IDE_WithSearch_es.png" />
     <Content Include="assets\webstore_screenshot_1280x800_3_VSTS.png" />
     <Content Include="assets\webstore_screenshot_1280x800_4_VSCode.png" />
