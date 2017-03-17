@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="scripts/tablesorter/themes/blue/style.css" />
     <script type="text/javascript" src="scripts/angular.min.js"></script>
     <script type="text/javascript" src="scripts/app.js"></script>
-    <script type="text/javascript" src="scripts/myJscontroller.js"></script>
+    <script type="text/javascript" src="scripts/VsmmController.js"></script>
     <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="scripts/tablesorter/jquery.tablesorter.min.js"></script>
     <script type="text/javascript" src="scripts/console.image.min.js"></script>
@@ -14,13 +14,6 @@
 </head>
 <body>
     <img src="img/ajax-loader.gif" id="ajaxLoader" class="ajaxLoader" />
-
-
-
-
-
-
-
 
 
     <div ng-app="myApp">
@@ -32,15 +25,17 @@
     </div>
 
 
-
-
-
-
     <select id="UserLanguageSelection">
         <option value="en">en</option>
         <option value="de">de</option>
         <option value="fr">fr</option>
     </select>
+
+
+
+
+
+
 
     <div id="errorOccuredPage" hidden="hidden" aria-describedby="errorOccuredPageText">
         <h2 id="errorOccuredPageText">
