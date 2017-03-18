@@ -19,18 +19,21 @@
 
 
     <div ng-app="myApp">
-        <div ng-controller="VsmmController">    
-            <select id="UserLanguageSelection" ng-model="orderByField"  ng-change="ddlChangedFn(orderByField)">
+        <div ng-controller="VsmmController">
+            <select id="UserLanguageSelection" ng-model="orderByField" ng-change="ddlChangedFn(orderByField)">
                 <option value="en">en</option>
                 <option value="de">de</option>
                 <option value="fr">fr</option>
             </select>
             {{TestingTesting123}}
+            <div id="dataUnavailableForPage" hidden="hidden" aria-describedby="dataUnavailableForPageText">
+                <h2 id="dataUnavailableForPageText">
+                    <span id="dataUnavailableForPageTextInner"></span>
+                    {{ngdataUnavailableForPageTextInner}}
+                </h2>
+            </div>
         </div>
     </div>
-
-
-
 
 
 
@@ -39,11 +42,7 @@
             <span id="errorOccuredPageTextInner"></span>
         </h2>
     </div>
-    <div id="dataUnavailableForPage" hidden="hidden" aria-describedby="dataUnavailableForPageText">
-        <h2 id="dataUnavailableForPageText">
-            <span id="dataUnavailableForPageTextInner"></span>
-        </h2>
-    </div>
+
     <div id="notificationItems" hidden="hidden">
         <div>
             <span id="errorOccuredPagePlease" hidden="hidden"></span>

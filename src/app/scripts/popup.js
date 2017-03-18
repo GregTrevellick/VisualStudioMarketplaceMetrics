@@ -1,4 +1,4 @@
-$(function () {
+//$(function () {
    
     //GA start
     var _gaq = _gaq || [];
@@ -13,6 +13,11 @@ $(function () {
 
     var useChrome = false;
     var userLanguageSelected = "en";//gregt change this default from "en" to the prefferd lingo defined in the browser options
+    //var userLanguageSelection = document.getElementById("UserLanguageSelection");
+    //var userLanguageSelected = userLanguageSelection.options[userLanguageSelection.selectedIndex].value;
+
+
+
     latestError = GetTranslation("VsmmUninitialised");
     try {
         console.log(GetTranslation("VsmmThankYouForUsing"));
@@ -385,67 +390,80 @@ $(function () {
         };
     }
 
-    function GetTranslation(textKey) {
-        
-        var result = "";
-        var locale = GetLocaleBySource();
 
-        if (useChrome == true) {
-            result = GetTranslationFromChrome(textKey);
-        }
-        else {
-            result = GetTranslationForLocale(textKey, locale);
-        }
 
-        if (typeof result == "undefined" || result == "") {
-            console.log("Missing VSMM translation=" + textKey + " Locale=" + locale + " UseChrome=" + useChrome);
-            return "###" + textKey + "###";
-        } else {
-            return result;
-        }
+//});
 
-        function GetTranslationFromChrome(textKey) {
-            var result = chrome.i18n.getMessage(textKey);
-            return result;
-        }
 
-        function GetTranslationForLocale(textKey, locale) {
-               
-            var messages;
-            var result;
-            var userHasChosenNewLanguage = false;//GREG-TODO check when user has switched languages in UI
+
+
+
+
+
+
+
+
+function GetLocaleBySource() {
+    if (useChrome) {
+        return GetLocale();
+    }
+    else {
+        // return "de";
+        //  var userlanguageSelected = document.getElementById("UserLanguageSelection");
+        //  var locale = userLanguageSelected.options[userLanguageSelected.selectedIndex].value;
+        //   return locale;
+        return userLanguageSelected;
+    }
+}
+
+function GetLocale() { // gregt rename to GetChromeLocale
+    var locale = chrome.i18n.getMessage("@@ui_locale");
+    return locale;
+}
+
+
+
+function GetTranslation(textKey) {
+
+    var result = "";
+    var locale = GetLocaleBySource();
+
+    if (useChrome == true) {
+        result = GetTranslationFromChrome(textKey);
+    }
+    else {
+        result = GetTranslationForLocale(textKey, locale);
+    }
+
+    if (typeof result == "undefined" || result == "") {
+        console.log("Missing VSMM translation=" + textKey + " Locale=" + locale + " UseChrome=" + useChrome);
+        return "###" + textKey + "###";
+    } else {
+        return result;
+    }
+
+    function GetTranslationFromChrome(textKey) {
+        var result = chrome.i18n.getMessage(textKey);
+        return result;
+    }
+
+    function GetTranslationForLocale(textKey, locale) {
+        console.log("log=" + locale);
+        var messages;
+        var result;
+        var userHasChosenNewLanguage = false;//GREG-TODO check when user has switched languages in UI
         //    if (typeof messages == "undefined" || userHasChosenNewLanguage) {
-                $.ajax({
-                    url: "/_locales/" + locale + "/messages.json",
-                    async: false,
-                    success: function (data) {
-                        messages = JSON.parse(data);
-                        result = messages[textKey].message;
-                    }
-                    //,error: GREG-TODO e.g. result = "ajax error";in caller check for this & show opps message
-                });
+        $.ajax({
+            url: "/_locales/" + locale + "/messages.json",
+            async: false,
+            success: function (data) {
+                messages = JSON.parse(data);
+                result = messages[textKey].message;
+            }
+            //,error: GREG-TODO e.g. result = "ajax error";in caller check for this & show opps message
+        });
         //    }
-            
-            return result;
-        }
-    }
 
-    function GetLocaleBySource() {
-        if (useChrome) {
-            return GetLocale();
-        }
-        else {
-            // return "de";
-          //  var userlanguageSelected = document.getElementById("UserLanguageSelection");
-          //  var locale = userLanguageSelected.options[userLanguageSelected.selectedIndex].value;
-            //   return locale;
-            return userLanguageSelected;
-        }
+        return result;
     }
-
-    function GetLocale() { // gregt rename to GetChromeLocale
-        var locale = chrome.i18n.getMessage("@@ui_locale");
-        return locale;
-    }
-});
-
+}
