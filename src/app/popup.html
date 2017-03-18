@@ -16,21 +16,18 @@
     <img src="img/ajax-loader.gif" id="ajaxLoader" class="ajaxLoader" />
 
 
+
+
     <div ng-app="myApp">
-        <div ng-controller="VsmmController as vsmmc">
-            <strong>stuff:</strong> {{vsmmc.TestingTesting123}}<br />
-            <br />
-            <label>type some stuff<input type="text" ng-model="vsmmc.TestingTesting123" /></label><br />
+        <div ng-controller="VsmmController">    
+            <select id="UserLanguageSelection" ng-model="orderByField"  ng-change="ddlChangedFn(orderByField)">
+                <option value="en">en</option>
+                <option value="de">de</option>
+                <option value="fr">fr</option>
+            </select>
+            {{TestingTesting123}}
         </div>
     </div>
-
-
-    <select id="UserLanguageSelection">
-        <option value="en">en</option>
-        <option value="de">de</option>
-        <option value="fr">fr</option>
-    </select>
-
 
 
 
