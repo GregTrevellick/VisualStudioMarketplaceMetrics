@@ -13,10 +13,8 @@
 
     var useChrome = false;
     var userLanguageSelected = "en";//gregt change this default from "en" to the prefferd lingo defined in the browser options
-    //var userLanguageSelection = document.getElementById("UserLanguageSelection");
-    //var userLanguageSelected = userLanguageSelection.options[userLanguageSelection.selectedIndex].value;
-
-
+    /////////////////////////////////////////////////////////////////////////////////////var userLanguageSelection = document.getElementById("UserLanguageSelection");
+    /////////////////////////////////////////////////////////////////////////////////////var userLanguageSelected = userLanguageSelection.options[userLanguageSelection.selectedIndex].value;
 
     latestError = GetTranslation("VsmmUninitialised");
     try {
@@ -390,28 +388,16 @@
         };
     }
 
-
-
 //});
-
-
-
-
-
-
-
-
-
 
 function GetLocaleBySource() {
     if (useChrome) {
         return GetLocale();
     }
     else {
-        // return "de";
-        //  var userlanguageSelected = document.getElementById("UserLanguageSelection");
-        //  var locale = userLanguageSelected.options[userLanguageSelected.selectedIndex].value;
-        //   return locale;
+        /////////////////////////////////////////////////////////////////////////////////////var userlanguageSelected = document.getElementById("UserLanguageSelection");
+        /////////////////////////////////////////////////////////////////////////////////////var locale = userLanguageSelected.options[userLanguageSelected.selectedIndex].value;
+        /////////////////////////////////////////////////////////////////////////////////////return locale;
         return userLanguageSelected;
     }
 }
@@ -420,8 +406,6 @@ function GetLocale() { // gregt rename to GetChromeLocale
     var locale = chrome.i18n.getMessage("@@ui_locale");
     return locale;
 }
-
-
 
 function GetTranslation(textKey) {
 
@@ -451,8 +435,8 @@ function GetTranslation(textKey) {
         console.log("log=" + locale);
         var messages;
         var result;
-        var userHasChosenNewLanguage = false;//GREG-TODO check when user has switched languages in UI
-        //    if (typeof messages == "undefined" || userHasChosenNewLanguage) {
+        /////////////////////////////////////////////////////////////////////////////////////var userHasChosenNewLanguage = false;//GREG-TODO check when user has switched languages in UI
+        /////////////////////////////////////////////////////////////////////////////////////if (typeof messages == "undefined" || userHasChosenNewLanguage) {
         $.ajax({
             url: "/_locales/" + locale + "/messages.json",
             async: false,
@@ -462,7 +446,7 @@ function GetTranslation(textKey) {
             }
             //,error: GREG-TODO e.g. result = "ajax error";in caller check for this & show opps message
         });
-        //    }
+        /////////////////////////////////////////////////////////////////////////////////////}
 
         return result;
     }

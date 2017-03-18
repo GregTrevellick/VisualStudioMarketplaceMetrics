@@ -5,21 +5,21 @@
       this.ngerrorOccuredPageTextInner = "xyz";
 
 
-      $scope.ddlChangedFn = function (orderByField) {
+      $scope.ddlChangedFn = function (angUserLanguageSelected) {
 
-          if (orderByField == "en") {
-              $scope.TestingTesting123 = "english";
-          }
-          else {
-              if (orderByField == "fr") {
-                  $scope.TestingTesting123 = "francais";
-              }
-              else {
-                  $scope.TestingTesting123 = "deutsch";
-              }
-          }
+          //if (angUserLanguageSelected == "en") {
+          //    $scope.TestingTesting123 = "english";
+          //}
+          //else {
+          //    if (angUserLanguageSelected == "fr") {
+          //        $scope.TestingTesting123 = "francais";
+          //    }
+          //    else {
+          //        $scope.TestingTesting123 = "deutsch";
+          //    }
+          //}
 
-          userLanguageSelected = orderByField;
+          userLanguageSelected = angUserLanguageSelected;
 
           $scope.ngdataUnavailableForPageTextInner = GetTranslation("VsmmDataUnavailableForPageText") + ".";
 
