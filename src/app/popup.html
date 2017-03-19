@@ -16,9 +16,7 @@
 <body>
     <div ng-app="myApp">
         <div ng-controller="VsmmController">
-
             <img src="img/ajax-loader.gif" id="ajaxLoader" class="ajaxLoader" />
-
             <select id="UserLanguageSelection" ng-model="uiLanguageSelected" ng-change="UiLanguageSelectionChanged(uiLanguageSelected)">
                 <option value="en">en</option>
                 <option value="de" selected="selected">de</option>
@@ -29,14 +27,11 @@
                     {{VsmmDataUnavailableForPageText}}
                 </h2>
             </div>
-
             <div id="errorOccuredPage" hidden="hidden" aria-describedby="errorOccuredPageText">
                 <h2 id="errorOccuredPageText">
-                    <!--<span id="errorOccuredPageTextInner"></span>-->
                     {{VsmmErrorOccuredPageText}}
                 </h2>
             </div>
-
             <div id="notificationItems" hidden="hidden">
                 <div>
                     <span id="errorOccuredPagePlease" hidden="hidden"></span>
@@ -97,12 +92,13 @@
                 </div>
             </div>
             <div class="VSMarketplaceMetricsHelp" aria-describedby="VisualStudioHelpText">
-                <a aria-label="Help" href="#" id="VisualStudioHelpIcon">
+                <a aria-label="Help" href="#" ng-click="showHelp = !showHelp">
                     <img src="img/VisualStudioHelpIcon.png">
                 </a>
-                <div id="VisualStudioHelpText" hidden="hidden"></div>
+                <span ng-show="showHelp">
+                    {{VsmmVisualStudioHelpText}}
+                </span>
             </div>
-
         </div>
     </div>
 </body>

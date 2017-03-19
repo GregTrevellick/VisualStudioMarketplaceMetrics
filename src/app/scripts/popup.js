@@ -40,7 +40,7 @@
 
         try {
 
-            document.getElementById('VisualStudioHelpText').innerHTML = GetTranslation("VsmmVisualStudioHelpText") + ".";
+            //document.getElementById('VisualStudioHelpText').innerHTML = GetTranslation("VsmmVisualStudioHelpText") + ".";
 
             if (vsmpDom.length == 0) {
                 document.getElementById('nilSearchResults').removeAttribute("hidden");
@@ -52,8 +52,10 @@
             HideSpinner();
 
             function ProcessVsmpDom() {
+
                 vsmpDomPageUrl = vsmpDom[0]["PageUrl"];
-                //dummyError = b.c;
+
+                //dummyError = b.gregt;
            
                 if (vsmpDom[0]["URL"] == "errorOccurred") {
                     throw vsmpDom[0]["Error"];
@@ -254,21 +256,6 @@
         }
     });
 
-    $('#VisualStudioHelpIcon').click(function (e) {
-        try {
-            var elem = document.getElementById('VisualStudioHelpText')
-            var hdn = elem.getAttribute("hidden");
-            if (hdn == null) {
-                elem.setAttribute("hidden", "hidden");
-            }
-            else {
-                elem.removeAttribute("hidden");
-            };
-        } catch (e) {
-            CommonErrorHandler(e);
-        }
-    });
-
     $('#CopyToClipboard').click(function (e) {
 
         try {
@@ -316,7 +303,6 @@
             document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
             document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthor");
             //
-            document.getElementById('errorOccuredPageTextInner').innerHTML = GetTranslation("VsmmErrorOccuredPageText") + ".";
             document.getElementById('PageUrl').innerHTML = GetPageUrl();
             document.getElementById('UserAgent').innerHTML = GetUserAgent();
             document.getElementById('Locale').innerHTML = GetLocaleBySource();
