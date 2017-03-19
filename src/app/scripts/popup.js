@@ -43,8 +43,6 @@
             document.getElementById('VisualStudioHelpText').innerHTML = GetTranslation("VsmmVisualStudioHelpText") + ".";
 
             if (vsmpDom.length == 0) {
-                document.getElementById('NilSearchResultsInner').innerHTML = GetTranslation("VsmmNilSearchResultsText") + ".";
-                document.getElementById('SlowerConnections').innerHTML = GetTranslation("VsmmOnSlowerConnectionsText") + ".";
                 document.getElementById('nilSearchResults').removeAttribute("hidden");
             }
             else {

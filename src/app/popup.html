@@ -19,7 +19,7 @@
 
             <img src="img/ajax-loader.gif" id="ajaxLoader" class="ajaxLoader" />
 
-            <select id="UserLanguageSelection" ng-model="uiLanguageSelected" ng-change="ddlChangedFn(uiLanguageSelected)">
+            <select id="UserLanguageSelection" ng-model="uiLanguageSelected" ng-change="UiLanguageSelectionChanged(uiLanguageSelected)">
                 <option value="en">en</option>
                 <option value="de" selected="selected">de</option>
                 <option value="fr">fr</option>
@@ -53,9 +53,9 @@
             </div>
             <div id="nilSearchResults" hidden="hidden" aria-describedby="nilSearchResultsText">
                 <h2 id="nilSearchResultsText">
-                    <span id="NilSearchResultsInner"></span>
+                    {{VsmmNilSearchResultsText}}
                 </h2>
-                <span id="SlowerConnections"></span>
+                {{VsmmOnSlowerConnectionsText}}
             </div>
             <div id="dataAvailable" hidden="hidden">
                 <h2>
