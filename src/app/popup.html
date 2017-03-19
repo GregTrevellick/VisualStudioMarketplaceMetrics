@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
 <head>
-    <title id="PopUpTitle"></title>
+    <!--<title id="PopUpTitle"></title>-->
+    <title>{{VsmmTitle_Page}}</title>
     <link rel="stylesheet" href="styles/vsmm.css" />
     <link rel="stylesheet" href="scripts/tablesorter/themes/blue/style.css" />
     <script type="text/javascript" src="scripts/angular.min.js"></script>
@@ -20,90 +21,99 @@
 
     <div ng-app="myApp">
         <div ng-controller="VsmmController">
-            <select id="UserLanguageSelection" ng-model="angUserLanguageSelected" ng-change="ddlChangedFn(angUserLanguageSelected)">
+            <!--<select id="UserLanguageSelection" ng-model="uiLanguageSelected" ng-change="ddlChangedFn(uiLanguageSelected)">-->
+            <select id="UserLanguageSelection" ng-model="uiLanguageSelected" ng-change="ddlChangedFn(uiLanguageSelected)">
                 <option value="en">en</option>
-                <option value="de">de</option>
+                <option value="de" selected="selected">de</option>
                 <option value="fr">fr</option>
             </select>
-            <!--{ {TestingTesting123}}-->
             <div id="dataUnavailableForPage" hidden="hidden" aria-describedby="dataUnavailableForPageText">
                 <h2 id="dataUnavailableForPageText">
-                    <span id="dataUnavailableForPageTextInner"></span>
-                    {{ngdataUnavailableForPageTextInner}}
+                    <!--<span id="dataUnavailableForPageTextInner"></span>-->
+                    <!--{ {dataUnavailableForPageTextInner}}-->
+                    {{VsmmDataUnavailableForPageText}}
                 </h2>
             </div>
+
+
+
+
+            <div id="errorOccuredPage" hidden="hidden" aria-describedby="errorOccuredPageText">
+                <h2 id="errorOccuredPageText">
+                    <!--<span id="errorOccuredPageTextInner"></span>-->
+                    {{VsmmErrorOccuredPageText}}
+                </h2>
+            </div>
+
+            <div id="notificationItems" hidden="hidden">
+                <div>
+                    <span id="errorOccuredPagePlease" hidden="hidden"></span>
+                    <span id="dataUnavailableForPagePlease" hidden="hidden"></span>
+                    <a aria-label="Email author" href="#" id="DataUnavailableEmail"></a>
+                    <span id="toNotifyAuthor"></span>
+                </div>
+                <ul>
+                    <li id="PageUrl"></li>
+                    <li id="UserAgent"></li>
+                    <li id="Locale"></li>
+                    <li id="JavaScriptErrorText" hidden="hidden" class="javaScriptErrorText"></li>
+                </ul>
+            </div>
+            <div id="nilSearchResults" hidden="hidden" aria-describedby="nilSearchResultsText">
+                <h2 id="nilSearchResultsText">
+                    <span id="NilSearchResultsInner"></span>
+                </h2>
+                <span id="SlowerConnections"></span>
+            </div>
+            <div id="dataAvailable" hidden="hidden">
+                <h2>
+                    <span id="TotalExtensionsCount"></span>
+                    <br />
+                    <span id="TotalInstallCount"></span>
+                    <br />
+                    <span id="TotalReviewCount"></span>
+                    <br />
+                    <span id="TotalOverallAverageReview" hidden="hidden"></span>
+                </h2>
+                <a aria-label="Copy table to clipboard" href="#" id="CopyToClipboard" class="copyToClipboard"></a>
+                <div id="ClipboardBuffer">
+                    <table id="DetailGridTable" class="tablesorter">
+                        <thead>
+                            <tr>
+                                <!--<th id="GridHeaderNoOfInstalls"></th>-->
+                                <th>{{VsmmNoOfInstalls}}</th>
+                                <th id="GridHeaderTitle"></th>
+                                <th id="GridHeaderNoOfReviews"></th>
+                                <th id="GridHeaderReviewsAsPercentageOfInstalls"><p><p></th>
+                                <th id="GridHeaderPublisher"></th>
+                                <th id="GridHeaderPrice"></th>
+                                <th id="GridHeaderAverageReviewScore"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="DetailGridTableBody"></tbody>
+                        <tfoot>
+                            <tr>
+                                <td class='numeric' id="FooterGridTotalInstallCount"></td>
+                                <td></td>
+                                <td class='numeric' id="FooterGridTotalReviewCount"></td>
+                                <td class='numeric' id="FooterReviewsAsPercentageOfInstalls"></td>
+                                <td></td>
+                                <td></td>
+                                <td class='numeric' id="FooterOverallAverageReview"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="VSMarketplaceMetricsHelp" aria-describedby="VisualStudioHelpText">
+                <a aria-label="Help" href="#" id="VisualStudioHelpIcon">
+                    <img src="img/VisualStudioHelpIcon.png">
+                </a>
+                <div id="VisualStudioHelpText" hidden="hidden"></div>
+            </div>
+
         </div>
     </div>
 
-
-
-    <div id="errorOccuredPage" hidden="hidden" aria-describedby="errorOccuredPageText">
-        <h2 id="errorOccuredPageText">
-            <span id="errorOccuredPageTextInner"></span>
-        </h2>
-    </div>
-
-    <div id="notificationItems" hidden="hidden">
-        <div>
-            <span id="errorOccuredPagePlease" hidden="hidden"></span>
-            <span id="dataUnavailableForPagePlease" hidden="hidden"></span>
-            <a aria-label="Email author" href="#" id="DataUnavailableEmail"></a>
-            <span id="toNotifyAuthor"></span>
-        </div>
-        <ul>
-            <li id="PageUrl"></li>
-            <li id="UserAgent"></li>
-            <li id="Locale"></li>
-            <li id="JavaScriptErrorText" hidden="hidden" class="javaScriptErrorText"></li>
-        </ul>
-    </div>
-    <div id="nilSearchResults" hidden="hidden" aria-describedby="nilSearchResultsText">
-        <h2 id="nilSearchResultsText">
-            <span id="NilSearchResultsInner"></span>
-        </h2>
-        <span id="SlowerConnections"></span>
-    </div>
-    <div id="dataAvailable" hidden="hidden">
-        <h2>
-            <span id="TotalExtensionsCount"></span><br />
-            <span id="TotalInstallCount"></span><br />
-            <span id="TotalReviewCount"></span><br />
-            <span id="TotalOverallAverageReview" hidden="hidden"></span>
-        </h2>
-        <a aria-label="Copy table to clipboard" href="#" id="CopyToClipboard" class="copyToClipboard"></a>
-        <div id="ClipboardBuffer">
-            <table id="DetailGridTable" class="tablesorter">
-                <thead>
-                    <tr>
-                        <th id="GridHeaderNoOfInstalls"></th>
-                        <th id="GridHeaderTitle"></th>
-                        <th id="GridHeaderNoOfReviews"></th>
-                        <th id="GridHeaderReviewsAsPercentageOfInstalls"><p><p></th>
-                        <th id="GridHeaderPublisher"></th>
-                        <th id="GridHeaderPrice"></th>
-                        <th id="GridHeaderAverageReviewScore"></th>
-                    </tr>
-                </thead>
-                <tbody id="DetailGridTableBody"></tbody>
-                <tfoot>
-                    <tr>
-                        <td class='numeric' id="FooterGridTotalInstallCount"></td>
-                        <td></td>
-                        <td class='numeric' id="FooterGridTotalReviewCount"></td>
-                        <td class='numeric' id="FooterReviewsAsPercentageOfInstalls"></td>
-                        <td></td>
-                        <td></td>
-                        <td class='numeric' id="FooterOverallAverageReview"></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-    </div>
-    <div class="VSMarketplaceMetricsHelp" aria-describedby="VisualStudioHelpText">
-        <a aria-label="Help" href="#" id="VisualStudioHelpIcon">
-            <img src="img/VisualStudioHelpIcon.png">
-        </a>
-        <div id="VisualStudioHelpText" hidden="hidden"></div>
-    </div>
 </body>
 </html>

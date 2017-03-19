@@ -1,18 +1,10 @@
 //$(function () {
    
-    //GA start
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-93512771-1']);
-    _gaq.push(['_trackPageview']);
-    (function () {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = 'https://ssl.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    //GA end
-
+    InitialiseGoogleAnalytics();
     var useChrome = false;
-    var userLanguageSelected = "en";//gregt change this default from "en" to the prefferd lingo defined in the browser options
+    var userLanguageSelected = GetLocaleBySource(); //"en";//gregt change this default from "en" to the prefferd lingo defined in the browser options
+///console.log("userLanguageSelected=" + userLanguageSelected);
+    //gregt to be deleted
     /////////////////////////////////////////////////////////////////////////////////////var userLanguageSelection = document.getElementById("UserLanguageSelection");
     /////////////////////////////////////////////////////////////////////////////////////var userLanguageSelected = userLanguageSelection.options[userLanguageSelection.selectedIndex].value;
 
@@ -21,10 +13,21 @@
         console.log(GetTranslation("VsmmThankYouForUsing"));
         console.image("http://i.imgur.com/NfNVskCl.png");
     } catch (e) {
-        //Doesn't matter if it failed
+        //Do nothing - doesn't matter if it failed
     }
-    document.getElementById('PopUpTitle').innerHTML = GetTranslation("VsmmTitle_Page");
+    ////document.getElementById('PopUpTitle').innerHTML = GetTranslation("VsmmTitle_Page");
     onLoadRequestDomFromVsmp();
+
+    function InitialiseGoogleAnalytics() {
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-93512771-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = 'https://ssl.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    }
 
     function onLoadRequestDomFromVsmp() {
         chrome.tabs.query(
@@ -84,10 +87,10 @@
                     document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthorText") + ":";
                     //
 
-                    document.getElementById('dataUnavailableForPageTextInner').innerHTML = GetTranslation("VsmmDataUnavailableForPageText") + ".";
+                    //////document.getElementById('dataUnavailableForPageTextInner').innerHTML = GetTranslation("VsmmDataUnavailableForPageText") + ".";
                     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
                     document.getElementById('UserAgent').innerHTML = GetUserAgent();
-                    document.getElementById('Locale').innerHTML = GetLocale();
+                    document.getElementById('Locale').innerHTML = GetChromeLocale();
                     document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
                     document.getElementById('dataUnavailableForPagePlease').removeAttribute("hidden");
                     document.getElementById('notificationItems').removeAttribute("hidden");                   
@@ -180,7 +183,7 @@
                     function SetHeadersAndFooters() {
 
                         document.getElementById('CopyToClipboard').innerHTML = GetTranslation("VsmmCopyTableToClipboard");
-                        document.getElementById('GridHeaderNoOfInstalls').innerHTML = GetTranslation("VsmmNoOfInstalls");
+                        //////document.getElementById('GridHeaderNoOfInstalls').innerHTML = GetTranslation("VsmmNoOfInstalls");
                         document.getElementById('GridHeaderTitle').innerHTML = GetTranslation("VsmmTitle_Grid");
                         document.getElementById('GridHeaderNoOfReviews').innerHTML = GetTranslation("VsmmNoOfReviews");
                         document.getElementById('GridHeaderReviewsAsPercentageOfInstalls').innerHTML = GetTranslation("VsmmReviewsAsPercentageOfInstalls");
@@ -251,7 +254,7 @@
                        "\n" + "\n" +
                        GetPageUrl() +
                        "\n" + "\n" +
-                       GetLocale() +
+                       GetChromeLocale() +
                        "\n" + "\n" +
                        GetJavascriptError();
             var emailUrl = encodeURI("mailto:" + mailto + "?subject=" + subject + "&body=" + body);
@@ -312,15 +315,17 @@
         }
     });
 
-    $('#UserLanguageSelection').change(function (e) {
-        try {
-            var element = document.getElementById("UserLanguageSelection");
-            userLanguageSelected = element.options[element.selectedIndex].value;
-            // GREGT RELOAD THE SCREEN (or labels at least)
-        } catch (e) {
-            CommonErrorHandler(e);
-        }
-    });
+    //gregt to be deleted
+    ////gregt eliminate this function & the '#UserLanguageSelection' id too ?
+    //$('#UserLanguageSelection').change(function (e) {
+    //    try {
+    //        var element = document.getElementById("UserLanguageSelection");
+    //        userLanguageSelected = element.options[element.selectedIndex].value;
+    //        // GREGT RELOAD THE SCREEN (or labels at least)
+    //    } catch (e) {
+    //        CommonErrorHandler(e);
+    //    }
+    //});
 
     function CommonErrorHandler(e) {
         try {
@@ -342,7 +347,7 @@
             document.getElementById('errorOccuredPageTextInner').innerHTML = GetTranslation("VsmmErrorOccuredPageText") + ".";
             document.getElementById('PageUrl').innerHTML = GetPageUrl();
             document.getElementById('UserAgent').innerHTML = GetUserAgent();
-            document.getElementById('Locale').innerHTML = GetLocale();
+            document.getElementById('Locale').innerHTML = GetChromeLocale();
             document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
             document.getElementById('errorOccuredPage').removeAttribute("hidden");
             document.getElementById('errorOccuredPagePlease').removeAttribute("hidden");
@@ -351,7 +356,8 @@
 
             HideSpinner();
         } catch (e) {
-            Console.Log("A serious error occured within the Visual Studio Marketplace Metrics extension. Please re-try at your convenience.");
+            console.log(e);
+            console.log("A serious error occured within the Visual Studio Marketplace Metrics extension. Please re-try at your convenience.");
         }
     }
 
@@ -392,20 +398,39 @@
 
 function GetLocaleBySource() {
     if (useChrome) {
-        return GetLocale();
+        return GetChromeLocale();
     }
     else {
-        /////////////////////////////////////////////////////////////////////////////////////var userlanguageSelected = document.getElementById("UserLanguageSelection");
-        /////////////////////////////////////////////////////////////////////////////////////var locale = userLanguageSelected.options[userLanguageSelected.selectedIndex].value;
-        /////////////////////////////////////////////////////////////////////////////////////return locale;
-        return userLanguageSelected;
+        return GetUiSelectedLocale();
     }
 }
 
-function GetLocale() { // gregt rename to GetChromeLocale
+function GetChromeLocale() { //gregt move inside 'GetLocaleBySource'
     var locale = chrome.i18n.getMessage("@@ui_locale");
     return locale;
 }
+
+function GetUiSelectedLocale() {//gregt move inside 'GetLocaleBySource'
+    //gregt to be deleted
+    //var uiDDL = document.getElementById("UserLanguageSelection");
+    //if (uiDDL == null) { //gregt todo handle this scenario
+    //    return "de";
+    //}
+    //else {
+    //    var locale = uiDDL.options[uiDDL.selectedIndex].value;
+    //    return locale;
+    //}
+
+    if (typeof userLanguageSelected == "undefined") { //gregt todo handle this scenario
+        return "de";
+    }
+    else {
+        return userLanguageSelected;
+    }
+
+    //return userLanguageSelected;
+}
+
 
 function GetTranslation(textKey) {
 
@@ -413,10 +438,10 @@ function GetTranslation(textKey) {
     var locale = GetLocaleBySource();
 
     if (useChrome == true) {
-        result = GetTranslationFromChrome(textKey);
+        result = GetTranslationForChromeLocale(textKey);
     }
     else {
-        result = GetTranslationForLocale(textKey, locale);
+        result = GetTranslationForUiSelectedLocale(textKey, locale);
     }
 
     if (typeof result == "undefined" || result == "") {
@@ -426,27 +451,26 @@ function GetTranslation(textKey) {
         return result;
     }
 
-    function GetTranslationFromChrome(textKey) {
+    function GetTranslationForChromeLocale(textKey) {
         var result = chrome.i18n.getMessage(textKey);
         return result;
     }
 
-    function GetTranslationForLocale(textKey, locale) {
-        console.log("log=" + locale);
+    function GetTranslationForUiSelectedLocale(textKey, locale) {
+
         var messages;
         var result;
-        /////////////////////////////////////////////////////////////////////////////////////var userHasChosenNewLanguage = false;//GREG-TODO check when user has switched languages in UI
-        /////////////////////////////////////////////////////////////////////////////////////if (typeof messages == "undefined" || userHasChosenNewLanguage) {
-        $.ajax({
-            url: "/_locales/" + locale + "/messages.json",
-            async: false,
-            success: function (data) {
-                messages = JSON.parse(data);
-                result = messages[textKey].message;
-            }
-            //,error: GREG-TODO e.g. result = "ajax error";in caller check for this & show opps message
-        });
-        /////////////////////////////////////////////////////////////////////////////////////}
+        if (typeof messages == "undefined") {
+            $.ajax({
+                url: "/_locales/" + locale + "/messages.json",
+                async: false,
+                success: function (data) {
+                    messages = JSON.parse(data);
+                    result = messages[textKey].message;
+                }
+                //,error: GREG-TODO e.g. result = "ajax error";in caller check for this & show opps message
+            });
+        }
 
         return result;
     }
