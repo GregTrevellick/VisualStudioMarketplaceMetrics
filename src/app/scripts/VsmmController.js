@@ -1,18 +1,17 @@
 ﻿myApp.controller('VsmmController',
   function VsmmController($scope) {
 
-      SetTranslations();
+      GetTranslations();
 
       $scope.ddlChangedFn = function (uiLanguageSelected) {
 
           userLanguageSelected = uiLanguageSelected;
-          SetTranslations();
+          GetTranslations();
       };
 
-      function SetTranslations() {
+      function GetTranslations() {
 
-          console.log("SetTranslations called");
-
+          //gregt sort alphabetically
           $scope.VsmmDataUnavailableForPageText = GetTranslation("VsmmDataUnavailableForPageText") + ".";
 
           $scope.VsmmAverageReviewScore = GetTranslation("VsmmAverageReviewScore");

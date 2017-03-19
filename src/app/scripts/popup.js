@@ -178,13 +178,13 @@
                     function SetHeadersAndFooters() {
 
                         document.getElementById('CopyToClipboard').innerHTML = GetTranslation("VsmmCopyTableToClipboard");
-                        //////document.getElementById('GridHeaderNoOfInstalls').innerHTML = GetTranslation("VsmmNoOfInstalls");
-                        document.getElementById('GridHeaderTitle').innerHTML = GetTranslation("VsmmTitle_Grid");
-                        document.getElementById('GridHeaderNoOfReviews').innerHTML = GetTranslation("VsmmNoOfReviews");
-                        document.getElementById('GridHeaderReviewsAsPercentageOfInstalls').innerHTML = GetTranslation("VsmmReviewsAsPercentageOfInstalls");
-                        document.getElementById('GridHeaderPublisher').innerHTML = GetTranslation("VsmmPublisher");
-                        document.getElementById('GridHeaderPrice').innerHTML = GetTranslation("VsmmPrice");
-                        document.getElementById('GridHeaderAverageReviewScore').innerHTML = GetTranslation("VsmmAverageReviewScore");
+                        //////////////////////document.getElementById('GridHeaderNoOfInstalls').innerHTML = GetTranslation("VsmmNoOfInstalls");
+                        //////////////////document.getElementById('GridHeaderTitle').innerHTML = GetTranslation("VsmmTitle_Grid");
+                        //////////////////document.getElementById('GridHeaderNoOfReviews').innerHTML = GetTranslation("VsmmNoOfReviews");
+                        //////////////////document.getElementById('GridHeaderReviewsAsPercentageOfInstalls').innerHTML = GetTranslation("VsmmReviewsAsPercentageOfInstalls");
+                        //////////////////document.getElementById('GridHeaderPublisher').innerHTML = GetTranslation("VsmmPublisher");
+                        //////////////////document.getElementById('GridHeaderPrice').innerHTML = GetTranslation("VsmmPrice");
+                        //////////////////document.getElementById('GridHeaderAverageReviewScore').innerHTML = GetTranslation("VsmmAverageReviewScore");
 
                         var totalExtensionsCount = vsmpDom.length;
                         var totalReviewsAsPercentageOfTotalInstalls = 0;
@@ -316,7 +316,7 @@
     //    try {
     //        var element = document.getElementById("UserLanguageSelection");
     //        userLanguageSelected = element.options[element.selectedIndex].value;
-    //        // GREGT RELOAD THE SCREEN (or labels at least)
+    //        //  RELOAD THE SCREEN (or labels at least)
     //    } catch (e) {
     //        CommonErrorHandler(e);
     //    }
@@ -400,9 +400,8 @@ function GetLocaleBySource() {
     }
 
     function GetUiSelectedLocale() {
-        //gregt to be deleted
-
-        if (typeof userLanguageSelected == "undefined") { //gregt todo handle this scenario
+        if (typeof userLanguageSelected == "undefined") {
+            //gregt todo handle this scenario i.e. first time into the popup the DDL value hasn't been picked, so default the DDL to the browser prefered language, and then this "if" clause should not be required, but retain it just-in-case (albeit it returning "en" not "de")
             return "de";
         }
         else {
@@ -415,9 +414,6 @@ function GetChromeLocale() { //gregt move inside 'GetLocaleBySource'
     var locale = chrome.i18n.getMessage("@@ui_locale");
     return locale;
 }
-
-
-
 
 function GetTranslation(textKey) {
 
