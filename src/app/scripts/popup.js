@@ -1,7 +1,7 @@
 //$(function () {
    
     InitialiseGoogleAnalytics();
-    var useChrome = false;
+    var useChromeLocale = false;
     var userLanguageSelected = GetLocaleBySource(); 
     latestError = GetTranslation("VsmmUninitialised");
     try {
@@ -81,11 +81,9 @@
                     document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
                     document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthorText") + ":";
                     //
-
-                    //////document.getElementById('dataUnavailableForPageTextInner').innerHTML = GetTranslation("VsmmDataUnavailableForPageText") + ".";
                     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
                     document.getElementById('UserAgent').innerHTML = GetUserAgent();
-                    document.getElementById('Locale').innerHTML = GetChromeLocale();
+                    document.getElementById('Locale').innerHTML = GetLocaleBySource();
                     document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
                     document.getElementById('dataUnavailableForPagePlease').removeAttribute("hidden");
                     document.getElementById('notificationItems').removeAttribute("hidden");                   
@@ -178,13 +176,6 @@
                     function SetHeadersAndFooters() {
 
                         document.getElementById('CopyToClipboard').innerHTML = GetTranslation("VsmmCopyTableToClipboard");
-                        //////////////////////document.getElementById('GridHeaderNoOfInstalls').innerHTML = GetTranslation("VsmmNoOfInstalls");
-                        //////////////////document.getElementById('GridHeaderTitle').innerHTML = GetTranslation("VsmmTitle_Grid");
-                        //////////////////document.getElementById('GridHeaderNoOfReviews').innerHTML = GetTranslation("VsmmNoOfReviews");
-                        //////////////////document.getElementById('GridHeaderReviewsAsPercentageOfInstalls').innerHTML = GetTranslation("VsmmReviewsAsPercentageOfInstalls");
-                        //////////////////document.getElementById('GridHeaderPublisher').innerHTML = GetTranslation("VsmmPublisher");
-                        //////////////////document.getElementById('GridHeaderPrice').innerHTML = GetTranslation("VsmmPrice");
-                        //////////////////document.getElementById('GridHeaderAverageReviewScore').innerHTML = GetTranslation("VsmmAverageReviewScore");
 
                         var totalExtensionsCount = vsmpDom.length;
                         var totalReviewsAsPercentageOfTotalInstalls = 0;
@@ -249,7 +240,7 @@
                        "\n" + "\n" +
                        GetPageUrl() +
                        "\n" + "\n" +
-                       GetChromeLocale() +
+                       GetLocaleBySource() +
                        "\n" + "\n" +
                        GetJavascriptError();
             var emailUrl = encodeURI("mailto:" + mailto + "?subject=" + subject + "&body=" + body);
@@ -310,18 +301,6 @@
         }
     });
 
-    //gregt to be deleted
-    ////gregt eliminate this function & the '#UserLanguageSelection' id too ?
-    //$('#UserLanguageSelection').change(function (e) {
-    //    try {
-    //        var element = document.getElementById("UserLanguageSelection");
-    //        userLanguageSelected = element.options[element.selectedIndex].value;
-    //        //  RELOAD THE SCREEN (or labels at least)
-    //    } catch (e) {
-    //        CommonErrorHandler(e);
-    //    }
-    //});
-
     function CommonErrorHandler(e) {
         try {
             if (e != undefined) {
@@ -342,7 +321,7 @@
             document.getElementById('errorOccuredPageTextInner').innerHTML = GetTranslation("VsmmErrorOccuredPageText") + ".";
             document.getElementById('PageUrl').innerHTML = GetPageUrl();
             document.getElementById('UserAgent').innerHTML = GetUserAgent();
-            document.getElementById('Locale').innerHTML = GetChromeLocale();
+            document.getElementById('Locale').innerHTML = GetLocaleBySource();
             document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
             document.getElementById('errorOccuredPage').removeAttribute("hidden");
             document.getElementById('errorOccuredPagePlease').removeAttribute("hidden");
@@ -392,11 +371,16 @@
 //});
 
 function GetLocaleBySource() {
-    if (useChrome) {
+    if (useChromeLocale) {
         return GetChromeLocale();
     }
     else {
         return GetUiSelectedLocale();
+    }
+
+    function GetChromeLocale() { 
+        var locale = chrome.i18n.getMessage("@@ui_locale");
+        return locale;
     }
 
     function GetUiSelectedLocale() {
@@ -410,17 +394,12 @@ function GetLocaleBySource() {
     }
 }
 
-function GetChromeLocale() { //gregt move inside 'GetLocaleBySource'
-    var locale = chrome.i18n.getMessage("@@ui_locale");
-    return locale;
-}
-
 function GetTranslation(textKey) {
 
     var result = "";
     var locale = GetLocaleBySource();
 
-    if (useChrome == true) {
+    if (useChromeLocale) {
         result = GetTranslationForChromeLocale(textKey);
     }
     else {
@@ -428,7 +407,7 @@ function GetTranslation(textKey) {
     }
 
     if (typeof result == "undefined" || result == "") {
-        console.log("Missing VSMM translation=" + textKey + " Locale=" + locale + " UseChrome=" + useChrome);
+        console.log("Missing VSMM translation=" + textKey + " Locale=" + locale + " UseChromeLocale=" + useChromeLocale);
         return "###" + textKey + "###";
     } else {
         return result;

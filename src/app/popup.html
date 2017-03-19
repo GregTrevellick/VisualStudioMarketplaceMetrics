@@ -14,13 +14,11 @@
     <script type="text/javascript" src="scripts/popup.js"></script>
 </head>
 <body>
-    <img src="img/ajax-loader.gif" id="ajaxLoader" class="ajaxLoader" />
-
-
-
-
     <div ng-app="myApp">
         <div ng-controller="VsmmController">
+
+            <img src="img/ajax-loader.gif" id="ajaxLoader" class="ajaxLoader" />
+
             <select id="UserLanguageSelection" ng-model="uiLanguageSelected" ng-change="ddlChangedFn(uiLanguageSelected)">
                 <option value="en">en</option>
                 <option value="de" selected="selected">de</option>
@@ -75,12 +73,6 @@
                         <thead>
                             <tr>
                                 <th>{{VsmmNoOfInstalls}}</th>
-                                <!--<th id="GridHeaderTitle"></th>
-                                <th id="GridHeaderNoOfReviews"></th>
-                                <th id="GridHeaderReviewsAsPercentageOfInstalls"><p><p></th>
-                                <th id="GridHeaderPublisher"></th>
-                                <th id="GridHeaderPrice"></th>
-                                <th id="GridHeaderAverageReviewScore"></th>-->
                                 <th>{{VsmmTitle_Grid}}</th>
                                 <th>{{VsmmNoOfReviews}}</th>
                                 <th>{{VsmmReviewsAsPercentageOfInstalls}}<p><p></th>
@@ -113,6 +105,5 @@
 
         </div>
     </div>
-
 </body>
 </html>
