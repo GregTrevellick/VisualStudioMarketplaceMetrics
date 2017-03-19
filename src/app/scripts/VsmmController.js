@@ -13,7 +13,6 @@
 
           console.log("SetTranslations called");
 
-          //////$scope.dataUnavailableForPageTextInner = GetTranslation("VsmmDataUnavailableForPageText") + ".";
           $scope.VsmmDataUnavailableForPageText = GetTranslation("VsmmDataUnavailableForPageText") + ".";
 
           $scope.VsmmAverageReviewScore = GetTranslation("VsmmAverageReviewScore");

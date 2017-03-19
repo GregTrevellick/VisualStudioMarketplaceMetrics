@@ -21,7 +21,6 @@
 
     <div ng-app="myApp">
         <div ng-controller="VsmmController">
-            <!--<select id="UserLanguageSelection" ng-model="uiLanguageSelected" ng-change="ddlChangedFn(uiLanguageSelected)">-->
             <select id="UserLanguageSelection" ng-model="uiLanguageSelected" ng-change="ddlChangedFn(uiLanguageSelected)">
                 <option value="en">en</option>
                 <option value="de" selected="selected">de</option>
@@ -29,14 +28,9 @@
             </select>
             <div id="dataUnavailableForPage" hidden="hidden" aria-describedby="dataUnavailableForPageText">
                 <h2 id="dataUnavailableForPageText">
-                    <!--<span id="dataUnavailableForPageTextInner"></span>-->
-                    <!--{ {dataUnavailableForPageTextInner}}-->
                     {{VsmmDataUnavailableForPageText}}
                 </h2>
             </div>
-
-
-
 
             <div id="errorOccuredPage" hidden="hidden" aria-describedby="errorOccuredPageText">
                 <h2 id="errorOccuredPageText">
@@ -80,7 +74,6 @@
                     <table id="DetailGridTable" class="tablesorter">
                         <thead>
                             <tr>
-                                <!--<th id="GridHeaderNoOfInstalls"></th>-->
                                 <th>{{VsmmNoOfInstalls}}</th>
                                 <th id="GridHeaderTitle"></th>
                                 <th id="GridHeaderNoOfReviews"></th>

@@ -2,12 +2,7 @@
    
     InitialiseGoogleAnalytics();
     var useChrome = false;
-    var userLanguageSelected = GetLocaleBySource(); //"en";//gregt change this default from "en" to the prefferd lingo defined in the browser options
-///console.log("userLanguageSelected=" + userLanguageSelected);
-    //gregt to be deleted
-    /////////////////////////////////////////////////////////////////////////////////////var userLanguageSelection = document.getElementById("UserLanguageSelection");
-    /////////////////////////////////////////////////////////////////////////////////////var userLanguageSelected = userLanguageSelection.options[userLanguageSelection.selectedIndex].value;
-
+    var userLanguageSelected = GetLocaleBySource(); 
     latestError = GetTranslation("VsmmUninitialised");
     try {
         console.log(GetTranslation("VsmmThankYouForUsing"));
@@ -15,7 +10,7 @@
     } catch (e) {
         //Do nothing - doesn't matter if it failed
     }
-    ////document.getElementById('PopUpTitle').innerHTML = GetTranslation("VsmmTitle_Page");
+    //////document.getElementById('PopUpTitle').innerHTML = GetTranslation("VsmmTitle_Page");
     onLoadRequestDomFromVsmp();
 
     function InitialiseGoogleAnalytics() {
@@ -403,6 +398,17 @@ function GetLocaleBySource() {
     else {
         return GetUiSelectedLocale();
     }
+
+    function GetUiSelectedLocale() {
+        //gregt to be deleted
+
+        if (typeof userLanguageSelected == "undefined") { //gregt todo handle this scenario
+            return "de";
+        }
+        else {
+            return userLanguageSelected;
+        }
+    }
 }
 
 function GetChromeLocale() { //gregt move inside 'GetLocaleBySource'
@@ -410,26 +416,7 @@ function GetChromeLocale() { //gregt move inside 'GetLocaleBySource'
     return locale;
 }
 
-function GetUiSelectedLocale() {//gregt move inside 'GetLocaleBySource'
-    //gregt to be deleted
-    //var uiDDL = document.getElementById("UserLanguageSelection");
-    //if (uiDDL == null) { //gregt todo handle this scenario
-    //    return "de";
-    //}
-    //else {
-    //    var locale = uiDDL.options[uiDDL.selectedIndex].value;
-    //    return locale;
-    //}
 
-    if (typeof userLanguageSelected == "undefined") { //gregt todo handle this scenario
-        return "de";
-    }
-    else {
-        return userLanguageSelected;
-    }
-
-    //return userLanguageSelected;
-}
 
 
 function GetTranslation(textKey) {
