@@ -1,76 +1,21 @@
-﻿//myApp.controller('VsmmController', function ($scope, $http, BaseURL, $routeParams, permitNotesService) {
-//myApp.controller('VsmmController', ["$filter", "$scope", "$http", "$location", "permitService", function($filter, $scope, $http, $location, $permitService){
+﻿myApp.controller('VsmmController', ['$scope', '$window', '$rootScope', function VsmmController($scope, $window, $rootScope) {
 
-//myApp.service("permitNotesService", function () {
-//    //console.log("myAppfred in the service =" + myApp.fred);
-//    //var testing = "123";
-//    return {
-//        foo: "bar",
-//        hello: "world",
-//    }
-//});
-
-
-
-
-
-
-    
-
-//myApp.controller('VsmmController', function VsmmController() {
-//myApp.controller('VsmmController', ['$scope', 'permitNotesService', function VsmmController($scope, permitNotesService) {
-//myApp.controller('VsmmController', ['$scope', 'clientId', function VsmmController($scope, clientId) {
-myApp.controller('VsmmController', ['$scope', '$window', '$rootScope', function VsmmController($scope, $window, $rootScope) {
-
-    //console.log("myAppfred in the ctlr =" + myApp.fred);
-    //console.log("service's foo in the ctlr =" + permitNotesService.foo);this works
-    //console.log("service's hello in the ctlr =" + permitNotesService.hello);this works
-    //var testingCtrl = "abc";
-    //console.log("testingCtrl=" + testingCtrl);
-
-
-
-    //var initWatch = function ($scope, $window) {
-    //    $scope.$watch(function (scope) { console.log("newValue="); return $window.globalVar1 },
-    //        function (newValue) {
-    //            //$scope.updateDisplayedVar(newValue);
-    //            console.log("newValue=" + newValue);
-    //        });
-    //}
-
-    //console.log("here3");
-    //this.clientId = clientId;
-    //console.log("here4");
-
-    //console.log("root scope city=" + $rootScope.city);
-    //console.log("here3window=" + $window.globalVar1);
-    $scope.globalVar1 = $window.globalVar1;
-    console.log("here4scope=" + $scope.globalVar1);
-    //$rootScope.TriggerMePlease = function() {
-    //    console.log("triggered");
-    //};
-
-
-
-
-
+    if (typeof $window.globalvsmpDom != "undefined") {
+        var totalExtensionsCount = $window.globalvsmpDom.length;
+        var overallAverageReview = (100 / totalExtensionsCount);//gregt 100 should be numericAverageReviewSum
+        $scope.totalOverallAverageReview2 = overallAverageReview.toFixed(2).toLocaleString();
+    }
 
     GetTranslations();
 
-    $scope.totalOverallAverageReview2 = 110;
-
     $scope.UiLanguageSelectionChanged = function (uiLanguageSelected) {
-        console.log("here4scope=" + $scope.globalVar1);
         userLanguageSelected = uiLanguageSelected;
         GetTranslations();
     };
 
     $scope.ShowTotalOverallAverageReview = function () {
         // try {
-        //  var elem = document.getElementById('TotalOverallAverageReview');
-        // var hdn = elem.getAttribute("hidden");
-        //     if (hdn = "hidden") {
-        if ($scope.totalOverallAverageReview2 > 0) {
+        if ($scope.totalOverallAverageReview > 0 || $scope.totalOverallAverageReview2 > 0) {//GREGT eliminate one side of the || clause
             return true;
         }
         else {
@@ -122,22 +67,5 @@ myApp.controller('VsmmController', ['$scope', '$window', '$rootScope', function 
         $scope.VsmmUnknown = GetTranslation("VsmmUnknown");
         $scope.VsmmVisualStudioHelpText = GetTranslation("VsmmVisualStudioHelpText") + ".";
     };
-    
-//});
+
 }]);
-
-//}]).factory('permitNotesService', function () {
-//    //console.log("myAppfred in the service =" + myApp.fred);
-//    var testingPermitNotesService = "123";
-//    return {
-//        foo: "bar",
-//        hello: "world",
-//    }
-//});
-
-
-
-
-function popUpCallBack2(vsmpDom) {
-    console.log("yep");
-};
