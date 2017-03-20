@@ -1,9 +1,19 @@
 ﻿myApp.controller('VsmmController', ['$scope', '$window', '$rootScope', function VsmmController($scope, $window, $rootScope) {
 
     if (typeof $window.globalvsmpDom != "undefined") {
+
+        var numericAverageReviewSum = 0;
+        for (var i = 0; i < $window.globalvsmpDom.length; i++) {
+            AddRowsToTable(i);
+        }
         var totalExtensionsCount = $window.globalvsmpDom.length;
         var overallAverageReview = (100 / totalExtensionsCount);//gregt 100 should be numericAverageReviewSum
-        $scope.totalOverallAverageReview2 = overallAverageReview.toFixed(2).toLocaleString();
+        $scope.totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
+
+        function AddRowsToTable(i) {
+            var numericAverageReview = parseInt($window.globalvsmpDom[i]["AverageReview"]);
+            numericAverageReviewSum += numericAverageReview;
+        };
     }
 
     GetTranslations();
@@ -15,7 +25,7 @@
 
     $scope.ShowTotalOverallAverageReview = function () {
         // try {
-        if ($scope.totalOverallAverageReview > 0 || $scope.totalOverallAverageReview2 > 0) {//GREGT eliminate one side of the || clause
+        if ($scope.totalOverallAverageReview > 0) {
             return true;
         }
         else {

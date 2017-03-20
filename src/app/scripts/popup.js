@@ -42,9 +42,6 @@ function popUpCallBack(vsmpDom) {
     globalvsmpDom = vsmpDom;
 
     try {
-
-            //document.getElementById('VisualStudioHelpText').innerHTML = GetTranslation("VsmmVisualStudioHelpText") + ".";
-
             if (vsmpDom.length == 0) {
                 document.getElementById('nilSearchResults').removeAttribute("hidden");
             }
@@ -203,11 +200,11 @@ function popUpCallBack(vsmpDom) {
                         };
                         document.getElementById('TotalReviewCount').title = totalReviewCount + " " + GetTranslation("VsmmDividedBy") + " " + totalInstallCount;
                         showVsmmAverageReviewScore_Lower = false;
-                        if (totalReviewCount > 0) {
-                            document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview;
-                            //+ " ";/////////////////////////////////////////////////////////////////////////////////////////// + GetTranslation("VsmmAverageReviewScore_Lower");
-                            document.getElementById('TotalOverallAverageReview').removeAttribute("hidden");
-                        };
+                        //if (totalReviewCount > 0) {
+                        //    document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview;
+                        //    //+ " ";/////////////////////////////////////////////////////////////////////////////////////////// + GetTranslation("VsmmAverageReviewScore_Lower");
+                        //    document.getElementById('TotalOverallAverageReview').removeAttribute("hidden");
+                        //};
 
                         document.getElementById('FooterGridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
                         document.getElementById('FooterGridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
