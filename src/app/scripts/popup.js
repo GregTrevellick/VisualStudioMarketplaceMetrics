@@ -37,6 +37,8 @@ function onLoadRequestDomFromVsmp() {
             });
     };
 
+console.log("here1");
+globalVar1 = "yoa";
 function popUpCallBack(vsmpDom) {
 
     //popUpCallBack2(vsmpDom);this works
@@ -48,11 +50,27 @@ function popUpCallBack(vsmpDom) {
     //console.log(myApp.permitNotesService.fred);
 
     //window.globalVar1 = "yo";
-
-
-    console.log("here1");
-    myApp.value('clientId', 'a12345654321x');
     console.log("here2");
+    globalVar1 = "yo5";
+    
+    //http://stackoverflow.com/questions/37019375/set-scope-variable-from-outside-controller-in-angular
+    //var elem = angular.element(document.querySelector('[ng-app="myApp"]'));
+    //console.log("here1"+elem);
+    //var injector = elem.injector();
+    //console.log("here1"+injector);
+    //var $rootScope = injector.get('$rootScope');
+    //console.log("here1"+$rootScope);
+    //$rootScope.$apply(function () {
+    //    console.log("here1settingA");
+    //    $rootScope.city = "orlando";
+    //    console.log("here1settingB");
+    //    $rootScope.TriggerMePlease;
+    //    console.log("here1settingC");
+    //});
+
+    //console.log("here1");
+    //myApp.value('clientId', 'a12345654321x');
+    //console.log("here2");
 
     ////http://stackoverflow.com/questions/17656244/how-to-change-angularjs-data-outside-the-scope
     //var appElement = document.querySelector('[ng-app="myApp"]');

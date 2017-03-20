@@ -19,8 +19,8 @@
 
 //myApp.controller('VsmmController', function VsmmController() {
 //myApp.controller('VsmmController', ['$scope', 'permitNotesService', function VsmmController($scope, permitNotesService) {
-myApp.controller('VsmmController', ['$scope', 'clientId', function VsmmController($scope, clientId) {
-
+//myApp.controller('VsmmController', ['$scope', 'clientId', function VsmmController($scope, clientId) {
+myApp.controller('VsmmController', ['$scope', '$window', '$rootScope', function VsmmController($scope, $window, $rootScope) {
 
     //console.log("myAppfred in the ctlr =" + myApp.fred);
     //console.log("service's foo in the ctlr =" + permitNotesService.foo);this works
@@ -38,15 +38,29 @@ myApp.controller('VsmmController', ['$scope', 'clientId', function VsmmControlle
     //        });
     //}
 
-    console.log("here3");
-    this.clientId = clientId;
-    console.log("here4");
+    //console.log("here3");
+    //this.clientId = clientId;
+    //console.log("here4");
+
+    //console.log("root scope city=" + $rootScope.city);
+    //console.log("here3window=" + $window.globalVar1);
+    $scope.globalVar1 = $window.globalVar1;
+    console.log("here4scope=" + $scope.globalVar1);
+    //$rootScope.TriggerMePlease = function() {
+    //    console.log("triggered");
+    //};
+
+
+
+
+
 
     GetTranslations();
 
     $scope.totalOverallAverageReview2 = 110;
 
     $scope.UiLanguageSelectionChanged = function (uiLanguageSelected) {
+        console.log("here4scope=" + $scope.globalVar1);
         userLanguageSelected = uiLanguageSelected;
         GetTranslations();
     };
