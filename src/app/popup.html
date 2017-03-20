@@ -61,6 +61,12 @@
                     <span id="TotalReviewCount"></span>
                     <br />
                     <span id="TotalOverallAverageReview" hidden="hidden"></span>
+                    <span ng-show="ShowTotalOverallAverageReview()">
+                        <br />
+                        <br />
+                        <br />
+                        {{totalOverallAverageReview2}}&nbsp;{{VsmmAverageReviewScore_Lower}}
+                    </span>
                 </h2>
                 <a aria-label="Copy table to clipboard" href="#" id="CopyToClipboard" class="copyToClipboard"></a>
                 <div id="ClipboardBuffer">

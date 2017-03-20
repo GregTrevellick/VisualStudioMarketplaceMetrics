@@ -1,19 +1,20 @@
-//$(function () {
-   
-    InitialiseGoogleAnalytics();
-    var useChromeLocale = false;
-    var userLanguageSelected = GetLocaleBySource(); 
-    latestError = GetTranslation("VsmmUninitialised");
-    try {
+/// <reference path="VsmmController.js" />
+
+
+InitialiseGoogleAnalytics();
+var useChromeLocale = false;
+var userLanguageSelected = GetLocaleBySource(); 
+latestError = GetTranslation("VsmmUninitialised");
+try {
         console.log(GetTranslation("VsmmThankYouForUsing"));
-        console.image("http://i.imgur.com/NfNVskCl.png");
+        //gregt reinstate later on   console.image("http://i.imgur.com/NfNVskCl.png");
     } catch (e) {
         //Do nothing - doesn't matter if it failed
-    }
-    //////document.getElementById('PopUpTitle').innerHTML = GetTranslation("VsmmTitle_Page");
-    onLoadRequestDomFromVsmp();
+}
+//////document.getElementById('PopUpTitle').innerHTML = GetTranslation("VsmmTitle_Page");
+onLoadRequestDomFromVsmp();
 
-    function InitialiseGoogleAnalytics() {
+function InitialiseGoogleAnalytics() {
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-93512771-1']);
         _gaq.push(['_trackPageview']);
@@ -24,7 +25,7 @@
         })();
     }
 
-    function onLoadRequestDomFromVsmp() {
+function onLoadRequestDomFromVsmp() {
         chrome.tabs.query(
             { active: true, currentWindow: true },
             function (tabs) {
@@ -36,9 +37,38 @@
             });
     };
 
-    function popUpCallBack(vsmpDom) {
+function popUpCallBack(vsmpDom) {
 
-        try {
+    //popUpCallBack2(vsmpDom);this works
+    //myApp.fred = "freddie";
+    //console.log(myApp);//a javascript object
+    //myApp.service["permitNotesService"].testing = "abc";
+    //console.log(myApp.permitNotesService);//undefined
+    //myApp.permitNotesService.fred = "freddie2";
+    //console.log(myApp.permitNotesService.fred);
+
+    //window.globalVar1 = "yo";
+
+
+    console.log("here1");
+    myApp.value('clientId', 'a12345654321x');
+    console.log("here2");
+
+    ////http://stackoverflow.com/questions/17656244/how-to-change-angularjs-data-outside-the-scope
+    //var appElement = document.querySelector('[ng-app="myApp"]');
+    //var $scope = angular.element(appElement).scope();
+    //$scope.$apply(function () {
+    //    //$scope.data.age = 20;
+    //    console.log("setting it");
+    //    console.log("$scope.totalOverallAverageReview2=" + $scope.totalOverallAverageReview2);//undefined
+    //});
+
+
+
+
+
+
+    try {
 
             //document.getElementById('VisualStudioHelpText').innerHTML = GetTranslation("VsmmVisualStudioHelpText") + ".";
 
@@ -73,21 +103,6 @@
                     $("#DetailGridTable").tablesorter();
                 });
 
-                function ShowDataUnavailableMessage() {
-
-                    //gregt dedupe
-                    document.getElementById('errorOccuredPagePlease').innerHTML = GetTranslation("VsmmPleaseClick");
-                    document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspectSeeingIncorrectlyText") + " ";
-                    document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
-                    document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthorText") + ":";
-                    //
-                    document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
-                    document.getElementById('UserAgent').innerHTML = GetUserAgent();
-                    document.getElementById('Locale').innerHTML = GetLocaleBySource();
-                    document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
-                    document.getElementById('dataUnavailableForPagePlease').removeAttribute("hidden");
-                    document.getElementById('notificationItems').removeAttribute("hidden");                   
-                };
 
                 function ShowDataTable() {
 
@@ -214,9 +229,11 @@
                             + ")";
                         };
                         document.getElementById('TotalReviewCount').title = totalReviewCount + " " + GetTranslation("VsmmDividedBy") + " " + totalInstallCount;
+                        showVsmmAverageReviewScore_Lower = false;
                         if (totalReviewCount > 0) {
+                            document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview;
+                            //+ " ";/////////////////////////////////////////////////////////////////////////////////////////// + GetTranslation("VsmmAverageReviewScore_Lower");
                             document.getElementById('TotalOverallAverageReview').removeAttribute("hidden");
-                            document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview + " " + GetTranslation("VsmmAverageReviewScore_Lower");
                         };
 
                         document.getElementById('FooterGridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
@@ -232,7 +249,7 @@
         }
     };
 
-    $('#DataUnavailableEmail').click(function (e) {
+$('#DataUnavailableEmail').click(function (e) {
         try {
             var mailto = "vsmarketplacemetrics@gmail.com";
             var subject = GetTranslation("VsmmFeedbackEmailSubject");
@@ -256,7 +273,7 @@
         }
     });
 
-    $('#CopyToClipboard').click(function (e) {
+$('#CopyToClipboard').click(function (e) {
 
         try {
             var element = document.getElementById('ClipboardBuffer');
@@ -286,7 +303,7 @@
         }
     });
 
-    function CommonErrorHandler(e) {
+function CommonErrorHandler(e) {
         try {
             if (e != undefined) {
                 if (e.stack != undefined) {
@@ -319,15 +336,15 @@
         }
     }
 
-    function HideSpinner() {
+function HideSpinner() {
         $('.ajaxLoader').hide();
     }
 
-    function GetUserAgent() {
+function GetUserAgent() {
         return navigator.userAgent;
     }
 
-    function GetPageUrl() {
+function GetPageUrl() {
         if (vsmpDomPageUrl != undefined) {
             return vsmpDomPageUrl;
         } else {
@@ -335,7 +352,7 @@
         };
     }
 
-    function GetJavascriptError(e) {
+function GetJavascriptError(e) {
         if (e != undefined) {
             if (e.stack != undefined) {
                 return e.stack;
@@ -350,9 +367,8 @@
                 return "Indeterminate error";
             }
         };
-    }
+    };
 
-//});
 
 function GetLocaleBySource() {
     if (useChromeLocale) {
@@ -370,7 +386,7 @@ function GetLocaleBySource() {
     function GetUiSelectedLocale() {
         if (typeof userLanguageSelected == "undefined") {
             //gregt todo handle this scenario i.e. first time into the popup the DDL value hasn't been picked, so default the DDL to the browser prefered language, and then this "if" clause should not be required, but retain it just-in-case (albeit it returning "en" not "de")
-            return "de";
+            return "en";
         }
         else {
             return userLanguageSelected;
@@ -421,3 +437,19 @@ function GetTranslation(textKey) {
         return result;
     }
 }
+
+function ShowDataUnavailableMessage() {
+
+    //gregt dedupe
+    document.getElementById('errorOccuredPagePlease').innerHTML = GetTranslation("VsmmPleaseClick");
+    document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspectSeeingIncorrectlyText") + " ";
+    document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
+    document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthorText") + ":";
+    //
+    document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
+    document.getElementById('UserAgent').innerHTML = GetUserAgent();
+    document.getElementById('Locale').innerHTML = GetLocaleBySource();
+    document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
+    document.getElementById('dataUnavailableForPagePlease').removeAttribute("hidden");
+    document.getElementById('notificationItems').removeAttribute("hidden");
+};
