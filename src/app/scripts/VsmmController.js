@@ -16,9 +16,10 @@
 
         var totalExtensionsCount = newVal.vdom.length;
         var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);
-        $scope.totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
+        $scope.totalExtensionsCount = totalExtensionsCount;
         $scope.TotalInstallCount = totalInstallCount;
         $scope.TotalReviewCount = totalReviewCount;
+        $scope.totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
         $scope.$apply();
 
         function AddRowsToTable(i) {
