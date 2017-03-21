@@ -10,6 +10,7 @@
         var totalInstallCount = 0;
         var totalReviewCount = 0;
         var numericAverageReviewSum = 0;
+        var DaRows = [];
         for (var i = 0; i < newVal.vdom.length; i++) {
             AddRowsToTable(i);
         }
@@ -20,9 +21,11 @@
         $scope.TotalInstallCount = totalInstallCount;
         $scope.TotalReviewCount = totalReviewCount;
         $scope.totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
+        $scope.DaRows = DaRows;
         $scope.$apply();
 
         function AddRowsToTable(i) {
+
             var numericAverageReview = parseInt(newVal.vdom[i]["AverageReview"]);
             numericAverageReviewSum += numericAverageReview;
 
@@ -32,11 +35,76 @@
             var numericReviewCount = parseInt(newVal.vdom[i]["ReviewCount"]);
             totalReviewCount += numericReviewCount;
 
-            //TODO
-            //var numericReviewsAsPercentageOfInstalls = 0;
-            //if (numericInstallCount > 0) {
-            //    numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;
-            //}
+            var numericReviewsAsPercentageOfInstalls = 0;
+            if (numericInstallCount > 0) {
+                numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;
+            }
+
+            //var colItemTitle = "<td>"
+            //    + "<div title=\"" + newVal.vdom[i]["FullDescription"] + "\">"
+            //    + "<a href=\"" + newVal.vdom[i]["URL"] + "\" target=\"_blank\">"
+            //    + "<img src=\"" + newVal.vdom[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
+            //    + "&nbsp;"
+            //    + newVal.vdom[i]["ItemTitle"]
+            //    + "</a></div></td>";
+            var colItemTitle = 
+                 "<div title=\"" + newVal.vdom[i]["FullDescription"] + "\">"
+                + "<a href=\"" + newVal.vdom[i]["URL"] + "\" target=\"_blank\">"
+                + "<img src=\"" + newVal.vdom[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
+                + "&nbsp;"
+                + newVal.vdom[i]["ItemTitle"]
+                + "</a></div>";
+
+            var colReviewsAsPercentageOfInstalls = "<td class='numeric'><div title=\""
+               + numericReviewsAsPercentageOfInstalls.toFixed(9) + "\">"
+               + numericReviewsAsPercentageOfInstalls.toFixed(2) + "</div></td>";
+            
+            //var colPublisher = "<td>"
+            //    + "<a href=\""
+            //    + "https://marketplace.visualstudio.com/search?term=publisher%3A%22"
+            //    + newVal.vdom[i]["Publisher"]
+            //    + "%22&target=VS&sortBy=Relevance"
+            //    + "\" target=\"_blank\">"
+            //    + newVal.vdom[i]["Publisher"]
+            //    + "</a></td>";
+            var colPublisher = 
+               + "<a href=\""
+               + "https://marketplace.visualstudio.com/search?term=publisher%3A%22"
+               + newVal.vdom[i]["Publisher"]
+               + "%22&target=VS&sortBy=Relevance"
+               + "\" target=\"_blank\">"
+               + newVal.vdom[i]["Publisher"]
+               + "</a>";
+
+            if (newVal.vdom[i]["Price"] == undefined) {
+                var colPrice = GetTranslation("VsmmUnknown");
+            }
+            else {
+                var colPriceLower = newVal.vdom[i]["Price"].toLowerCase();
+                var colPrice = colPriceLower.charAt(0).toUpperCase() + colPriceLower.slice(1);
+            }
+
+            //var daRow = //rowOpen +
+            //                colInstallCount +
+            //                colItemTitle +
+            //                colReviewCount +
+            //                colReviewsAsPercentageOfInstalls +
+            //                colPublisher +
+            //                colPrice +
+            //                colAverageReview;// +
+            //// rowClose;
+            var daRow = {};
+            daRow.NoOfInstalls = numericInstallCount;
+            daRow.Title_Grid = colItemTitle;
+            daRow.NoOfReviews = numericReviewCount;
+            daRow.ReviewsAsPercentageOfInstalls="4";
+            daRow.Publisher = colPublisher;
+            daRow.Price = colPrice;
+            daRow.AverageReviewScore = newVal.vdom[i]["AverageReview"];
+
+            DaRows.push(daRow);
+
+            console.log(DaRows);
         };
     });
     // Unbind the listener when the scope is destroyed

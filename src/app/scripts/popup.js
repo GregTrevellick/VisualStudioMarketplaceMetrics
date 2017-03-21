@@ -113,79 +113,67 @@ function popUpCallBack(vsmpDom) {
 
                     function AddRowsToTable(i) {
 
-                        var rowOpen = "<tr>";
-                        var rowClose = "</tr>";
-
-                        //var numericInstallCount = parseInt(vsmpDom[i]["InstallCount"]);
-                        //var numericReviewCount = parseInt(vsmpDom[i]["ReviewCount"]);
-
-                        //var numericReviewsAsPercentageOfInstalls = 0;
-                        //if (numericInstallCount > 0)
-                        //{
-                        //    numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;
-                        //}
+                        //var rowOpen = "<tr>";
+                        //var rowClose = "</tr>";
                         
-                        var numericAverageReview = parseInt(vsmpDom[i]["AverageReview"]);
+                       // var numericAverageReview = parseInt(vsmpDom[i]["AverageReview"]);
 
-                        //totalInstallCount += numericInstallCount;
-                        //totalReviewCount += numericReviewCount;
-                        numericAverageReviewSum += numericAverageReview;
+                     //   numericAverageReviewSum += numericAverageReview;
 
-                        //DONT DELETE YET var colInstallCount = "<td class='numeric'>" + numericInstallCount + "</td>";
+                        ////DONT DELETE YET var colInstallCount = "<td class='numeric'>" + numericInstallCount + "</td>";
 
-                        var colItemTitle = "<td>"
-                            + "<div title=\"" + vsmpDom[i]["FullDescription"] + "\">"
-                            + "<a href=\"" + vsmpDom[i]["URL"] + "\" target=\"_blank\">"
-                            + "<img src=\"" + vsmpDom[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
-                            + "&nbsp;"
-                            + vsmpDom[i]["ItemTitle"]
-                            + "</a></div></td>";
+                        //var colItemTitle = "<td>"
+                        //    + "<div title=\"" + vsmpDom[i]["FullDescription"] + "\">"
+                        //    + "<a href=\"" + vsmpDom[i]["URL"] + "\" target=\"_blank\">"
+                        //    + "<img src=\"" + vsmpDom[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
+                        //    + "&nbsp;"
+                        //    + vsmpDom[i]["ItemTitle"]
+                        //    + "</a></div></td>";
 
-                        //DONT DELETE YET var colReviewCount = "<td class='numeric'>" + numericReviewCount + "</td>";
+                        ////DONT DELETE YET var colReviewCount = "<td class='numeric'>" + numericReviewCount + "</td>";
 
-                        //DONT DELETE YET var colReviewsAsPercentageOfInstalls = "<td class='numeric'><div title=\""
-                        //DONT DELETE YET    + numericReviewsAsPercentageOfInstalls.toFixed(9) + "\">"
-                        //DONT DELETE YET    + numericReviewsAsPercentageOfInstalls.toFixed(2) + "</div></td>";
+                        ////DONT DELETE YET var colReviewsAsPercentageOfInstalls = "<td class='numeric'><div title=\""
+                        ////DONT DELETE YET    + numericReviewsAsPercentageOfInstalls.toFixed(9) + "\">"
+                        ////DONT DELETE YET    + numericReviewsAsPercentageOfInstalls.toFixed(2) + "</div></td>";
 
-                        var colPublisher = "<td>"
-                            + "<a href=\""
-                            + "https://marketplace.visualstudio.com/search?term=publisher%3A%22"
-                            + vsmpDom[i]["Publisher"]
-                            + "%22&target=VS&sortBy=Relevance"
-                            + "\" target=\"_blank\">"
-                            + vsmpDom[i]["Publisher"]
-                            + "</a></td>";
+                        //var colPublisher = "<td>"
+                        //    + "<a href=\""
+                        //    + "https://marketplace.visualstudio.com/search?term=publisher%3A%22"
+                        //    + vsmpDom[i]["Publisher"]
+                        //    + "%22&target=VS&sortBy=Relevance"
+                        //    + "\" target=\"_blank\">"
+                        //    + vsmpDom[i]["Publisher"]
+                        //    + "</a></td>";
 
-                        if (vsmpDom[i]["Price"] == undefined) {
-                            var colPrice = "<td>" + GetTranslation("VsmmUnknown") + "</td>";
-                        }
-                        else {
-                            var colPriceLower = vsmpDom[i]["Price"].toLowerCase();
-                            var colPrice = "<td>"
-                            + colPriceLower.charAt(0).toUpperCase()
-                            + colPriceLower.slice(1)
-                            + "</td>";
-                        }
+                        //if (vsmpDom[i]["Price"] == undefined) {
+                        //    var colPrice = "<td>" + GetTranslation("VsmmUnknown") + "</td>";
+                        //}
+                        //else {
+                        //    var colPriceLower = vsmpDom[i]["Price"].toLowerCase();
+                        //    var colPrice = "<td>"
+                        //    + colPriceLower.charAt(0).toUpperCase()
+                        //    + colPriceLower.slice(1)
+                        //    + "</td>";
+                        //}
 
-                        var colAverageReview = "<td class='numeric'>" + vsmpDom[i]["AverageReview"] + "</td>";
+                        //var colAverageReview = "<td class='numeric'>" + vsmpDom[i]["AverageReview"] + "</td>";
 
-                        $("#DetailGridTableBody").append(
-                            rowOpen +
-                            "<td>colInstallCount</td>" +
-                            colItemTitle +
-                            "<td>colReviewCount</td>" +
-                            "<td>colReviewsAsPercentageOfInstalls</td>" +
-                            colPublisher +
-                            colPrice +
-                            colAverageReview +
-                            rowClose);
+                        //$("#DetailGridTableBody").append(
+                        //    rowOpen +
+                        //    "<td>colInstallCount</td>" +
+                        //    colItemTitle +
+                        //    "<td>colReviewCount</td>" +
+                        //    "<td>colReviewsAsPercentageOfInstalls</td>" +
+                        //    colPublisher +
+                        //    colPrice +
+                        //    colAverageReview +
+                        //    rowClose);
                     };
 
                     function SetHeadersAndFooters() {
 
                         document.getElementById('CopyToClipboard').innerHTML = GetTranslation("VsmmCopyTableToClipboard");
 
-                        //var totalExtensionsCount = vsmpDom.length;
                         var totalReviewsAsPercentageOfTotalInstalls = 0;
                         //DONT DELETE YET if (totalInstallCount > 0) {
                         //DONT DELETE YET     totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;
@@ -194,32 +182,12 @@ function popUpCallBack(vsmpDom) {
                         //DONT DELETE YET var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);
                         //DONT DELETE YET var totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
 
-                        //if (totalExtensionsCount != 1) {
-                        //    extensionIl8n = GetTranslation("VsmmExtensions");
-                        //} else {
-                        //    extensionIl8n = GetTranslation("VsmmExtension");
-                        //};
-                        //document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " " + extensionIl8n + " " + GetTranslation("VsmmShown");
-                        //if (totalInstallCount != 1) {
-                        //    installIl8n = GetTranslation("VsmmInstalls");
-                        //} else {
-                        //    installIl8n = GetTranslation("VsmmInstall");
-                        //};
-                        //document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " " + installIl8n;
-                        //if (totalReviewCount != 1) {
-                        //    reviewIl8n = GetTranslation("VsmmReviews");
-                        //} else {
-                        //    reviewIl8n = GetTranslation("VsmmReview");
-                        //};
-                        //document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " " + reviewIl8n;
-
                         if (totalReviewsAsPercentageOfTotalInstalls > 0) {
                             document.getElementById('TotalReviewCount').innerHTML += " ("
                             + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
                             + GetTranslation("VsmmPercentageOfInstallations")
                             + ")";
                         };
-                        //document.getElementById('TotalReviewCount').title = totalReviewCount + " " + GetTranslation("VsmmDividedBy") + " " + totalInstallCount;
                         showVsmmAverageReviewScore_Lower = false;
 
                         //DONT DELETE YET document.getElementById('FooterGridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
