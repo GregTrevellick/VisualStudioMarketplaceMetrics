@@ -1,35 +1,40 @@
 ﻿myApp.controller('VsmmController', ['$scope', '$window', '$rootScope', function VsmmController($scope, $window, $rootScope) {
 
-    //$scope.TotalInstallCount = 123456;
-    console.log("here_vsmmControlerJs_1");
 
-    if (typeof $window.globalvsmpDom != "undefined") {
 
-        console.log("here_vsmmControlerJs_2");
-        console.log("$window.globalvsmpDom=" + $window.globalvsmpDom);
+
+
+
+
+
+
+    var unbind = myVarWatch.watch(function (newVal) {
+
+        //console.log("the value changed!", newVal);
 
         var totalInstallCount = 0;
         var totalReviewCount = 0;
         var numericAverageReviewSum = 0;
-        for (var i = 0; i < $window.globalvsmpDom.length; i++) {
+        for (var i = 0; i < newVal.vdom.length; i++) {
             AddRowsToTable(i);
         }
 
-        var totalExtensionsCount = $window.globalvsmpDom.length;
-        var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount); 
+        var totalExtensionsCount = newVal.vdom.length;
+        var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);
         $scope.totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
-     //   $scope.TotalInstallCount = 123;// totalInstallCount;
-     //   $scope.TotalReviewCount = 456;
+        $scope.TotalInstallCount = totalInstallCount;
+        $scope.TotalReviewCount = totalReviewCount;
+        $scope.$apply();
 
         function AddRowsToTable(i) {
-            var numericAverageReview = parseInt($window.globalvsmpDom[i]["AverageReview"]);
+            var numericAverageReview = parseInt(newVal.vdom[i]["AverageReview"]);
             numericAverageReviewSum += numericAverageReview;
 
-         //   var numericInstallCount = parseInt($window.globalvsmpDom[i]["InstallCount"]);
-        //    totalInstallCount += numericInstallCount;
+            var numericInstallCount = parseInt(newVal.vdom[i]["InstallCount"]);
+            totalInstallCount += numericInstallCount;
 
-       //     var numericReviewCount = parseInt($window.globalvsmpDom[i]["ReviewCount"]);
-         //   totalReviewCount += numericReviewCount;
+            var numericReviewCount = parseInt(newVal.vdom[i]["ReviewCount"]);
+            totalReviewCount += numericReviewCount;
 
             //TODO
             //var numericReviewsAsPercentageOfInstalls = 0;
@@ -37,9 +42,79 @@
             //    numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;
             //}
         };
-    }
+    });
+    // Unbind the listener when the scope is destroyed
+    $scope.$on('$destroy', unbind);
 
-    console.log("here_vsmmControlerJs_3");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////$scope.$watch(
+    ////////////////////////////////////////////////////////////////////////////////////////    function () {
+    ////////////////////////////////////////////////////////////////////////////////////////        return $window.globalvsmpDom
+    ////////////////////////////////////////////////////////////////////////////////////////    }, function (n, o) {
+    ////////////////////////////////////////////////////////////////////////////////////////        console.log("globalvsmpDom changed ", n);
+    ////////////////////////////////////////////////////////////////////////////////////////        console.log("$window.globalvsmpDom=" + $window.globalvsmpDom);
+    ////////////////////////////////////////////////////////////////////////////////////////    }
+    ////////////////////////////////////////////////////////////////////////////////////////);
+
+
+
+
+    ////////////////////////////////////////////////////////////////////////////////$scope.TotalInstallCount = 123456;
+    //////////////////////////////////////////////////////////////////////////////console.log("vsmmControlerJs_entry point");
+    
+    ////////////////////////////////////////////////////////////////////////////////if (typeof $window.globalvsmpDom != "undefined") {
+
+    ////////////////////////////////////////////////////////////////////////////////    console.log("vsmmControlerJs_globalvsmpDom IS defined");
+    ////////////////////////////////////////////////////////////////////////////////    console.log("$window.globalvsmpDom=" + $window.globalvsmpDom);
+
+    ////////////////////////////////////////////////////////////////////////////////    var totalInstallCount = 0;
+    ////////////////////////////////////////////////////////////////////////////////    var totalReviewCount = 0;
+    ////////////////////////////////////////////////////////////////////////////////    var numericAverageReviewSum = 0;
+    ////////////////////////////////////////////////////////////////////////////////    for (var i = 0; i < $window.globalvsmpDom.length; i++) {
+    ////////////////////////////////////////////////////////////////////////////////        AddRowsToTable(i);
+    ////////////////////////////////////////////////////////////////////////////////    }
+
+    ////////////////////////////////////////////////////////////////////////////////    var totalExtensionsCount = $window.globalvsmpDom.length;
+    ////////////////////////////////////////////////////////////////////////////////    var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount); 
+    ////////////////////////////////////////////////////////////////////////////////    $scope.totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
+    ////////////////////////////////////////////////////////////////////////////////    //$scope.TotalInstallCount = 123;// totalInstallCount;
+    ////////////////////////////////////////////////////////////////////////////////    //$scope.TotalReviewCount = 456;
+
+    ////////////////////////////////////////////////////////////////////////////////    function AddRowsToTable(i) {
+    ////////////////////////////////////////////////////////////////////////////////        var numericAverageReview = parseInt($window.globalvsmpDom[i]["AverageReview"]);
+    ////////////////////////////////////////////////////////////////////////////////        numericAverageReviewSum += numericAverageReview;
+
+    ////////////////////////////////////////////////////////////////////////////////     //   var numericInstallCount = parseInt($window.globalvsmpDom[i]["InstallCount"]);
+    ////////////////////////////////////////////////////////////////////////////////    //    totalInstallCount += numericInstallCount;
+
+    ////////////////////////////////////////////////////////////////////////////////   //     var numericReviewCount = parseInt($window.globalvsmpDom[i]["ReviewCount"]);
+    ////////////////////////////////////////////////////////////////////////////////     //   totalReviewCount += numericReviewCount;
+
+    ////////////////////////////////////////////////////////////////////////////////        //TODO
+    ////////////////////////////////////////////////////////////////////////////////        //var numericReviewsAsPercentageOfInstalls = 0;
+    ////////////////////////////////////////////////////////////////////////////////        //if (numericInstallCount > 0) {
+    ////////////////////////////////////////////////////////////////////////////////        //    numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;
+    ////////////////////////////////////////////////////////////////////////////////        //}
+    ////////////////////////////////////////////////////////////////////////////////    };
+    ////////////////////////////////////////////////////////////////////////////////}
+
+    //////////////////////////////////////////////////////////////////////////////console.log("vsmmControlerJs_just about to do xlations");
+
+
     GetTranslations();
 
     $scope.UiLanguageSelectionChanged = function (uiLanguageSelected) {
@@ -61,7 +136,7 @@
     };
 
     function GetTranslations() {
-        console.log("here_vsmmControlerJs_GetTranslations");
+        console.log("vsmmControlerJs_doing xlations");
         $scope.VsmmAverageReviewScore = GetTranslation("VsmmAverageReviewScore");
         $scope.VsmmAverageReviewScore_Lower = GetTranslation("VsmmAverageReviewScore_Lower");
         $scope.VsmmCopyTableToClipboard = GetTranslation("VsmmCopyTableToClipboard");

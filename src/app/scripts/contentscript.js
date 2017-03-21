@@ -1,11 +1,12 @@
-//var globalvsmpDom;
-
 chrome.runtime.onMessage.addListener(
 
     function (request, sender, popUpCallBackFn) {
+
+        //////////////////////console.log("contentScriptJs_entry point");
+
         if (request.action === "requestDomFromVsmmPopUp") {
 
-            console.log("ContentScript1");
+            ///////////////////////////console.log("contentScriptJs_request action is requestDomFromVsmmPopUp");
 
             var vsmpDomJsonDataArray = new Array();
             var pageUrl = window.location.href;
@@ -100,8 +101,8 @@ chrome.runtime.onMessage.addListener(
                 }
 
                 // Call the specified callback
-                console.log("ContentScript2");
-                //globalvsmpDom = vsmpDom;
+                //////////////////console.log("contentScriptJs_about to call pop up call back function");
+                ////////////globalvsmpDom = vsmpDom;
 
                 popUpCallBackFn(vsmpDomJsonDataArray);
 

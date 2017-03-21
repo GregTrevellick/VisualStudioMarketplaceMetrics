@@ -1,6 +1,6 @@
 /// <reference path="VsmmController.js" />
 
-console.log("here_popUpJs_A");
+console.log("popUpJs_entry point");
 
 InitialiseGoogleAnalytics();
 var useChromeLocale = false;
@@ -14,7 +14,76 @@ try {
 }
 //////document.getElementById('PopUpTitle').innerHTML = GetTranslation("VsmmTitle_Page");
 onLoadRequestDomFromVsmp();
-var globalvsmpDom;
+
+
+
+
+
+window.globalvsmpDom = { vdom: "value1" };
+var myVarWatch = (function () {
+    var watches = {};
+    return {
+        watch: function (callback) {
+            var id = Math.random().toString();
+            watches[id] = callback;
+            // Return a function that removes the listener
+            return function () {
+                watches[id] = null;
+                delete watches[id];
+            }
+        },
+        trigger: function () {
+            for (var k in watches) {
+                watches[k](window.globalvsmpDom);
+            }
+        }
+    }
+})();
+//////////////////////////////////////////////////setTimeout(function () {
+//////////////////////////////////////////////////    window.globalvsmpDom.vdom = "new value";
+//////////////////////////////////////////////////    myVarWatch.trigger();
+//////////////////////////////////////////////////}, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////// In legacy code when changing stuff    
+////////////////////////////////////////$('.angular-component').each(function () {
+////////////////////////////////////////    $(this).scope().$broadcast('changed');
+////////////////////////////////////////});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function InitialiseGoogleAnalytics() {
         var _gaq = _gaq || [];
@@ -28,23 +97,28 @@ function InitialiseGoogleAnalytics() {
     }
 
 function onLoadRequestDomFromVsmp() {
-    console.log("here_popUpJs_B");
-        chrome.tabs.query(
-            { active: true, currentWindow: true },
-            function (tabs) {
-                chrome.tabs.sendMessage(
-                    tabs[0].id,
-                    { action: "requestDomFromVsmmPopUp" },
-                    popUpCallBack
-                    );
-            });
-    };
+    console.log("popUpJs_onLoadRequest entry point");
+    chrome.tabs.query(
+        {
+            active: true,
+            currentWindow: true
+        },
+        function (tabs) {
+            chrome.tabs.sendMessage(
+                tabs[0].id,
+                { action: "requestDomFromVsmmPopUp" },
+                popUpCallBack
+            );
+        });
+};
 
 function popUpCallBack(vsmpDom) {
 
-    console.log("here_popUpJs_C");
-    globalvsmpDom = vsmpDom;
-    console.log("here_popUpJs_D");
+    //console.log("popUpJs_call back function about to populate globalvsmpDom from vsmpDom");
+    //window.globalvsmpDom = vsmpDom;
+    window.globalvsmpDom.vdom = vsmpDom;
+    myVarWatch.trigger();
+    //console.log("popUpJs_call back function finished populating globalvsmpDom from vsmpDom");
 
     try {
             if (vsmpDom.length == 0) {
