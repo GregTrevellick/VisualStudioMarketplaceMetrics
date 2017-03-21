@@ -99,76 +99,76 @@ function popUpCallBack(vsmpDom) {
 
                 function ShowDataTable() {
 
-                    //var totalInstallCount = 0;
-                    //var totalReviewCount = 0;
-                    var numericAverageReviewSum = 0;
+                    ////////////////////////////////////////////////var totalInstallCount = 0;
+                    ////////////////////////////////////////////////var totalReviewCount = 0;
+                    //////////////////////////////////////////////var numericAverageReviewSum = 0;
 
-                    for (var i = 0; i < vsmpDom.length; i++) {
-                        AddRowsToTable(i);
-                    }
+                    //////////////////////////////////////////////for (var i = 0; i < vsmpDom.length; i++) {
+                    //////////////////////////////////////////////    AddRowsToTable(i);
+                    //////////////////////////////////////////////}
 
                     SetHeadersAndFooters();
 
                     document.getElementById('dataAvailable').removeAttribute("hidden");
 
-                    function AddRowsToTable(i) {
+                    ////////////////////////////////////////////////function AddRowsToTable(i) {
 
-                        //var rowOpen = "<tr>";
-                        //var rowClose = "</tr>";
+                    ////////////////////////////////////////////////    //var rowOpen = "<tr>";
+                    ////////////////////////////////////////////////    //var rowClose = "</tr>";
                         
-                       // var numericAverageReview = parseInt(vsmpDom[i]["AverageReview"]);
+                    ////////////////////////////////////////////////   // var numericAverageReview = parseInt(vsmpDom[i]["AverageReview"]);
 
-                     //   numericAverageReviewSum += numericAverageReview;
+                    //////////////////////////////////////////////// //   numericAverageReviewSum += numericAverageReview;
 
-                        ////DONT DELETE YET var colInstallCount = "<td class='numeric'>" + numericInstallCount + "</td>";
+                    ////////////////////////////////////////////////    ////DONT DELETE YET var colInstallCount = "<td class='numeric'>" + numericInstallCount + "</td>";
 
-                        //var colItemTitle = "<td>"
-                        //    + "<div title=\"" + vsmpDom[i]["FullDescription"] + "\">"
-                        //    + "<a href=\"" + vsmpDom[i]["URL"] + "\" target=\"_blank\">"
-                        //    + "<img src=\"" + vsmpDom[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
-                        //    + "&nbsp;"
-                        //    + vsmpDom[i]["ItemTitle"]
-                        //    + "</a></div></td>";
+                    ////////////////////////////////////////////////    //var colItemTitle = "<td>"
+                    ////////////////////////////////////////////////    //    + "<div title=\"" + vsmpDom[i]["FullDescription"] + "\">"
+                    ////////////////////////////////////////////////    //    + "<a href=\"" + vsmpDom[i]["URL"] + "\" target=\"_blank\">"
+                    ////////////////////////////////////////////////    //    + "<img src=\"" + vsmpDom[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
+                    ////////////////////////////////////////////////    //    + "&nbsp;"
+                    ////////////////////////////////////////////////    //    + vsmpDom[i]["ItemTitle"]
+                    ////////////////////////////////////////////////    //    + "</a></div></td>";
 
-                        ////DONT DELETE YET var colReviewCount = "<td class='numeric'>" + numericReviewCount + "</td>";
+                    ////////////////////////////////////////////////    ////DONT DELETE YET var colReviewCount = "<td class='numeric'>" + numericReviewCount + "</td>";
 
-                        ////DONT DELETE YET var colReviewsAsPercentageOfInstalls = "<td class='numeric'><div title=\""
-                        ////DONT DELETE YET    + numericReviewsAsPercentageOfInstalls.toFixed(9) + "\">"
-                        ////DONT DELETE YET    + numericReviewsAsPercentageOfInstalls.toFixed(2) + "</div></td>";
+                    ////////////////////////////////////////////////    ////DONT DELETE YET var colReviewsAsPercentageOfInstalls = "<td class='numeric'><div title=\""
+                    ////////////////////////////////////////////////    ////DONT DELETE YET    + numericReviewsAsPercentageOfInstalls.toFixed(9) + "\">"
+                    ////////////////////////////////////////////////    ////DONT DELETE YET    + numericReviewsAsPercentageOfInstalls.toFixed(2) + "</div></td>";
 
-                        //var colPublisher = "<td>"
-                        //    + "<a href=\""
-                        //    + "https://marketplace.visualstudio.com/search?term=publisher%3A%22"
-                        //    + vsmpDom[i]["Publisher"]
-                        //    + "%22&target=VS&sortBy=Relevance"
-                        //    + "\" target=\"_blank\">"
-                        //    + vsmpDom[i]["Publisher"]
-                        //    + "</a></td>";
+                    ////////////////////////////////////////////////    //var colPublisher = "<td>"
+                    ////////////////////////////////////////////////    //    + "<a href=\""
+                    ////////////////////////////////////////////////    //    + "https://marketplace.visualstudio.com/search?term=publisher%3A%22"
+                    ////////////////////////////////////////////////    //    + vsmpDom[i]["Publisher"]
+                    ////////////////////////////////////////////////    //    + "%22&target=VS&sortBy=Relevance"
+                    ////////////////////////////////////////////////    //    + "\" target=\"_blank\">"
+                    ////////////////////////////////////////////////    //    + vsmpDom[i]["Publisher"]
+                    ////////////////////////////////////////////////    //    + "</a></td>";
 
-                        //if (vsmpDom[i]["Price"] == undefined) {
-                        //    var colPrice = "<td>" + GetTranslation("VsmmUnknown") + "</td>";
-                        //}
-                        //else {
-                        //    var colPriceLower = vsmpDom[i]["Price"].toLowerCase();
-                        //    var colPrice = "<td>"
-                        //    + colPriceLower.charAt(0).toUpperCase()
-                        //    + colPriceLower.slice(1)
-                        //    + "</td>";
-                        //}
+                    ////////////////////////////////////////////////    //if (vsmpDom[i]["Price"] == undefined) {
+                    ////////////////////////////////////////////////    //    var colPrice = "<td>" + GetTranslation("VsmmUnknown") + "</td>";
+                    ////////////////////////////////////////////////    //}
+                    ////////////////////////////////////////////////    //else {
+                    ////////////////////////////////////////////////    //    var colPriceLower = vsmpDom[i]["Price"].toLowerCase();
+                    ////////////////////////////////////////////////    //    var colPrice = "<td>"
+                    ////////////////////////////////////////////////    //    + colPriceLower.charAt(0).toUpperCase()
+                    ////////////////////////////////////////////////    //    + colPriceLower.slice(1)
+                    ////////////////////////////////////////////////    //    + "</td>";
+                    ////////////////////////////////////////////////    //}
 
-                        //var colAverageReview = "<td class='numeric'>" + vsmpDom[i]["AverageReview"] + "</td>";
+                    ////////////////////////////////////////////////    //var colAverageReview = "<td class='numeric'>" + vsmpDom[i]["AverageReview"] + "</td>";
 
-                        //$("#DetailGridTableBody").append(
-                        //    rowOpen +
-                        //    "<td>colInstallCount</td>" +
-                        //    colItemTitle +
-                        //    "<td>colReviewCount</td>" +
-                        //    "<td>colReviewsAsPercentageOfInstalls</td>" +
-                        //    colPublisher +
-                        //    colPrice +
-                        //    colAverageReview +
-                        //    rowClose);
-                    };
+                    ////////////////////////////////////////////////    //$("#DetailGridTableBody").append(
+                    ////////////////////////////////////////////////    //    rowOpen +
+                    ////////////////////////////////////////////////    //    "<td>colInstallCount</td>" +
+                    ////////////////////////////////////////////////    //    colItemTitle +
+                    ////////////////////////////////////////////////    //    "<td>colReviewCount</td>" +
+                    ////////////////////////////////////////////////    //    "<td>colReviewsAsPercentageOfInstalls</td>" +
+                    ////////////////////////////////////////////////    //    colPublisher +
+                    ////////////////////////////////////////////////    //    colPrice +
+                    ////////////////////////////////////////////////    //    colAverageReview +
+                    ////////////////////////////////////////////////    //    rowClose);
+                    ////////////////////////////////////////////////};
 
                     function SetHeadersAndFooters() {
 

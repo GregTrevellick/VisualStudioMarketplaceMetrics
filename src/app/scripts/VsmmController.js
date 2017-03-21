@@ -1,9 +1,5 @@
 ﻿myApp.controller('VsmmController', ['$scope', '$window', '$rootScope', function VsmmController($scope, $window, $rootScope) {
-
-
-
-
-
+    
     var unbind = myVarWatch.watch(function (newVal) {
 
         console.log("the value changed!", newVal);
@@ -84,20 +80,11 @@
                 var colPrice = colPriceLower.charAt(0).toUpperCase() + colPriceLower.slice(1);
             }
 
-            //var daRow = //rowOpen +
-            //                colInstallCount +
-            //                colItemTitle +
-            //                colReviewCount +
-            //                colReviewsAsPercentageOfInstalls +
-            //                colPublisher +
-            //                colPrice +
-            //                colAverageReview;// +
-            //// rowClose;
             var daRow = {};
             daRow.NoOfInstalls = numericInstallCount;
             daRow.Title_Grid = colItemTitle;
             daRow.NoOfReviews = numericReviewCount;
-            daRow.ReviewsAsPercentageOfInstalls="4";
+            daRow.ReviewsAsPercentageOfInstalls = "4";//colReviewsAsPercentageOfInstalls
             daRow.Publisher = colPublisher;
             daRow.Price = colPrice;
             daRow.AverageReviewScore = newVal.vdom[i]["AverageReview"];
@@ -110,9 +97,7 @@
     // Unbind the listener when the scope is destroyed
     $scope.$on('$destroy', unbind);
 
-
-
-
+    
 
 
     GetTranslations();
