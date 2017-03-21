@@ -1,7 +1,5 @@
 /// <reference path="VsmmController.js" />
 
-console.log("popUpJs_entry point");
-
 InitialiseGoogleAnalytics();
 var useChromeLocale = false;
 var userLanguageSelected = GetLocaleBySource(); 
@@ -14,10 +12,6 @@ try {
 }
 //////document.getElementById('PopUpTitle').innerHTML = GetTranslation("VsmmTitle_Page");
 onLoadRequestDomFromVsmp();
-
-
-
-
 window.globalvsmpDom = { vdom: "" };
 var myVarWatch = (function () {
     var watches = {};
@@ -38,12 +32,6 @@ var myVarWatch = (function () {
         }
     }
 })();
-
-
-
-
-
-
 
 function InitialiseGoogleAnalytics() {
         var _gaq = _gaq || [];
@@ -212,14 +200,12 @@ function popUpCallBack(vsmpDom) {
                         //    extensionIl8n = GetTranslation("VsmmExtension");
                         //};
                         //document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " " + extensionIl8n + " " + GetTranslation("VsmmShown");
-
                         //if (totalInstallCount != 1) {
                         //    installIl8n = GetTranslation("VsmmInstalls");
                         //} else {
                         //    installIl8n = GetTranslation("VsmmInstall");
                         //};
                         //document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " " + installIl8n;
-
                         //if (totalReviewCount != 1) {
                         //    reviewIl8n = GetTranslation("VsmmReviews");
                         //} else {
