@@ -1,5 +1,7 @@
 /// <reference path="VsmmController.js" />
 
+console.log("here_popUpJs_A");
+
 InitialiseGoogleAnalytics();
 var useChromeLocale = false;
 var userLanguageSelected = GetLocaleBySource(); 
@@ -26,6 +28,7 @@ function InitialiseGoogleAnalytics() {
     }
 
 function onLoadRequestDomFromVsmp() {
+    console.log("here_popUpJs_B");
         chrome.tabs.query(
             { active: true, currentWindow: true },
             function (tabs) {
@@ -39,7 +42,9 @@ function onLoadRequestDomFromVsmp() {
 
 function popUpCallBack(vsmpDom) {
 
+    console.log("here_popUpJs_C");
     globalvsmpDom = vsmpDom;
+    console.log("here_popUpJs_D");
 
     try {
             if (vsmpDom.length == 0) {
@@ -76,8 +81,8 @@ function popUpCallBack(vsmpDom) {
 
                 function ShowDataTable() {
 
-                    var totalInstallCount = 0;
-                    var totalReviewCount = 0;
+                    //var totalInstallCount = 0;
+                    //var totalReviewCount = 0;
                     var numericAverageReviewSum = 0;
 
                     for (var i = 0; i < vsmpDom.length; i++) {
@@ -93,22 +98,22 @@ function popUpCallBack(vsmpDom) {
                         var rowOpen = "<tr>";
                         var rowClose = "</tr>";
 
-                        var numericInstallCount = parseInt(vsmpDom[i]["InstallCount"]);
-                        var numericReviewCount = parseInt(vsmpDom[i]["ReviewCount"]);
+                        //var numericInstallCount = parseInt(vsmpDom[i]["InstallCount"]);
+                        //var numericReviewCount = parseInt(vsmpDom[i]["ReviewCount"]);
 
-                        var numericReviewsAsPercentageOfInstalls = 0;
-                        if (numericInstallCount > 0)
-                        {
-                            numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;
-                        }
+                        //var numericReviewsAsPercentageOfInstalls = 0;
+                        //if (numericInstallCount > 0)
+                        //{
+                        //    numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;
+                        //}
                         
                         var numericAverageReview = parseInt(vsmpDom[i]["AverageReview"]);
 
-                        totalInstallCount += numericInstallCount;
-                        totalReviewCount += numericReviewCount;
+                        //totalInstallCount += numericInstallCount;
+                        //totalReviewCount += numericReviewCount;
                         numericAverageReviewSum += numericAverageReview;
 
-                        var colInstallCount = "<td class='numeric'>" + numericInstallCount + "</td>";
+                        //DONT DELETE YET var colInstallCount = "<td class='numeric'>" + numericInstallCount + "</td>";
 
                         var colItemTitle = "<td>"
                             + "<div title=\"" + vsmpDom[i]["FullDescription"] + "\">"
@@ -118,11 +123,11 @@ function popUpCallBack(vsmpDom) {
                             + vsmpDom[i]["ItemTitle"]
                             + "</a></div></td>";
 
-                        var colReviewCount = "<td class='numeric'>" + numericReviewCount + "</td>";
+                        //DONT DELETE YET var colReviewCount = "<td class='numeric'>" + numericReviewCount + "</td>";
 
-                        var colReviewsAsPercentageOfInstalls = "<td class='numeric'><div title=\""
-                           + numericReviewsAsPercentageOfInstalls.toFixed(9) + "\">"
-                           + numericReviewsAsPercentageOfInstalls.toFixed(2) + "</div></td>";
+                        //DONT DELETE YET var colReviewsAsPercentageOfInstalls = "<td class='numeric'><div title=\""
+                        //DONT DELETE YET    + numericReviewsAsPercentageOfInstalls.toFixed(9) + "\">"
+                        //DONT DELETE YET    + numericReviewsAsPercentageOfInstalls.toFixed(2) + "</div></td>";
 
                         var colPublisher = "<td>"
                             + "<a href=\""
@@ -148,10 +153,10 @@ function popUpCallBack(vsmpDom) {
 
                         $("#DetailGridTableBody").append(
                             rowOpen +
-                            colInstallCount +
+                            "<td>colInstallCount</td>" +
                             colItemTitle +
-                            colReviewCount +
-                            colReviewsAsPercentageOfInstalls +
+                            "<td>colReviewCount</td>" +
+                            "<td>colReviewsAsPercentageOfInstalls</td>" +
                             colPublisher +
                             colPrice +
                             colAverageReview +
@@ -162,35 +167,35 @@ function popUpCallBack(vsmpDom) {
 
                         document.getElementById('CopyToClipboard').innerHTML = GetTranslation("VsmmCopyTableToClipboard");
 
-                        var totalExtensionsCount = vsmpDom.length;
+                        //var totalExtensionsCount = vsmpDom.length;
                         var totalReviewsAsPercentageOfTotalInstalls = 0;
-                        if (totalInstallCount > 0) {
-                            totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;
-                        }
+                        //DONT DELETE YET if (totalInstallCount > 0) {
+                        //DONT DELETE YET     totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;
+                        //DONT DELETE YET }
                         
-                        var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);
-                        var totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
+                        //DONT DELETE YET var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);
+                        //DONT DELETE YET var totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
 
-                        if (totalExtensionsCount != 1) {
-                            extensionIl8n = GetTranslation("VsmmExtensions");
-                        } else {
-                            extensionIl8n = GetTranslation("VsmmExtension");
-                        };
-                        document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " " + extensionIl8n + " " + GetTranslation("VsmmShown");
+                        //if (totalExtensionsCount != 1) {
+                        //    extensionIl8n = GetTranslation("VsmmExtensions");
+                        //} else {
+                        //    extensionIl8n = GetTranslation("VsmmExtension");
+                        //};
+                        //document.getElementById('TotalExtensionsCount').innerHTML = totalExtensionsCount.toLocaleString() + " " + extensionIl8n + " " + GetTranslation("VsmmShown");
 
-                        if (totalInstallCount != 1) {
-                            installIl8n = GetTranslation("VsmmInstalls");
-                        } else {
-                            installIl8n = GetTranslation("VsmmInstall");
-                        };
-                        document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " " + installIl8n;
+                        //if (totalInstallCount != 1) {
+                        //    installIl8n = GetTranslation("VsmmInstalls");
+                        //} else {
+                        //    installIl8n = GetTranslation("VsmmInstall");
+                        //};
+                        //document.getElementById('TotalInstallCount').innerHTML = totalInstallCount.toLocaleString() + " " + installIl8n;
 
-                        if (totalReviewCount != 1) {
-                            reviewIl8n = GetTranslation("VsmmReviews");
-                        } else {
-                            reviewIl8n = GetTranslation("VsmmReview");
-                        };
-                        document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " " + reviewIl8n;
+                        //if (totalReviewCount != 1) {
+                        //    reviewIl8n = GetTranslation("VsmmReviews");
+                        //} else {
+                        //    reviewIl8n = GetTranslation("VsmmReview");
+                        //};
+                        //document.getElementById('TotalReviewCount').innerHTML = totalReviewCount.toLocaleString() + " " + reviewIl8n;
 
                         if (totalReviewsAsPercentageOfTotalInstalls > 0) {
                             document.getElementById('TotalReviewCount').innerHTML += " ("
@@ -198,18 +203,13 @@ function popUpCallBack(vsmpDom) {
                             + GetTranslation("VsmmPercentageOfInstallations")
                             + ")";
                         };
-                        document.getElementById('TotalReviewCount').title = totalReviewCount + " " + GetTranslation("VsmmDividedBy") + " " + totalInstallCount;
+                        //document.getElementById('TotalReviewCount').title = totalReviewCount + " " + GetTranslation("VsmmDividedBy") + " " + totalInstallCount;
                         showVsmmAverageReviewScore_Lower = false;
-                        //if (totalReviewCount > 0) {
-                        //    document.getElementById('TotalOverallAverageReview').innerHTML = totalOverallAverageReview;
-                        //    //+ " ";/////////////////////////////////////////////////////////////////////////////////////////// + GetTranslation("VsmmAverageReviewScore_Lower");
-                        //    document.getElementById('TotalOverallAverageReview').removeAttribute("hidden");
-                        //};
 
-                        document.getElementById('FooterGridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
-                        document.getElementById('FooterGridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
+                        //DONT DELETE YET document.getElementById('FooterGridTotalInstallCount').innerHTML = totalInstallCount.toLocaleString();
+                        //DONT DELETE YET document.getElementById('FooterGridTotalReviewCount').innerHTML = totalReviewCount.toLocaleString();
                         document.getElementById('FooterReviewsAsPercentageOfInstalls').innerHTML = totalReviewsAsPercentageOfTotalInstalls.toFixed(2).toLocaleString();
-                        document.getElementById('FooterOverallAverageReview').innerHTML = totalOverallAverageReview;
+                        //DONT DELETE YET document.getElementById('FooterOverallAverageReview').innerHTML = totalOverallAverageReview;
                     };
 
                 };

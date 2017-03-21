@@ -1,7 +1,11 @@
+//var globalvsmpDom;
+
 chrome.runtime.onMessage.addListener(
 
     function (request, sender, popUpCallBackFn) {
         if (request.action === "requestDomFromVsmmPopUp") {
+
+            console.log("ContentScript1");
 
             var vsmpDomJsonDataArray = new Array();
             var pageUrl = window.location.href;
@@ -96,6 +100,9 @@ chrome.runtime.onMessage.addListener(
                 }
 
                 // Call the specified callback
+                console.log("ContentScript2");
+                //globalvsmpDom = vsmpDom;
+
                 popUpCallBackFn(vsmpDomJsonDataArray);
 
                 function GetVisitType(pageUrl) {

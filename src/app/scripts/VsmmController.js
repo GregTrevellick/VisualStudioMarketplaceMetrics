@@ -1,21 +1,45 @@
 ﻿myApp.controller('VsmmController', ['$scope', '$window', '$rootScope', function VsmmController($scope, $window, $rootScope) {
 
+    //$scope.TotalInstallCount = 123456;
+    console.log("here_vsmmControlerJs_1");
+
     if (typeof $window.globalvsmpDom != "undefined") {
 
+        console.log("here_vsmmControlerJs_2");
+        console.log("$window.globalvsmpDom=" + $window.globalvsmpDom);
+
+        var totalInstallCount = 0;
+        var totalReviewCount = 0;
         var numericAverageReviewSum = 0;
         for (var i = 0; i < $window.globalvsmpDom.length; i++) {
             AddRowsToTable(i);
         }
+
         var totalExtensionsCount = $window.globalvsmpDom.length;
-        var overallAverageReview = (100 / totalExtensionsCount);//gregt 100 should be numericAverageReviewSum
+        var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount); 
         $scope.totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
+     //   $scope.TotalInstallCount = 123;// totalInstallCount;
+     //   $scope.TotalReviewCount = 456;
 
         function AddRowsToTable(i) {
             var numericAverageReview = parseInt($window.globalvsmpDom[i]["AverageReview"]);
             numericAverageReviewSum += numericAverageReview;
+
+         //   var numericInstallCount = parseInt($window.globalvsmpDom[i]["InstallCount"]);
+        //    totalInstallCount += numericInstallCount;
+
+       //     var numericReviewCount = parseInt($window.globalvsmpDom[i]["ReviewCount"]);
+         //   totalReviewCount += numericReviewCount;
+
+            //TODO
+            //var numericReviewsAsPercentageOfInstalls = 0;
+            //if (numericInstallCount > 0) {
+            //    numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;
+            //}
         };
     }
 
+    console.log("here_vsmmControlerJs_3");
     GetTranslations();
 
     $scope.UiLanguageSelectionChanged = function (uiLanguageSelected) {
@@ -37,7 +61,7 @@
     };
 
     function GetTranslations() {
-
+        console.log("here_vsmmControlerJs_GetTranslations");
         $scope.VsmmAverageReviewScore = GetTranslation("VsmmAverageReviewScore");
         $scope.VsmmAverageReviewScore_Lower = GetTranslation("VsmmAverageReviewScore_Lower");
         $scope.VsmmCopyTableToClipboard = GetTranslation("VsmmCopyTableToClipboard");
