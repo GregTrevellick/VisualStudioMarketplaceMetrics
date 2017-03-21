@@ -18,8 +18,7 @@ onLoadRequestDomFromVsmp();
 
 
 
-
-window.globalvsmpDom = { vdom: "value1" };
+window.globalvsmpDom = { vdom: "" };
 var myVarWatch = (function () {
     var watches = {};
     return {
@@ -39,45 +38,6 @@ var myVarWatch = (function () {
         }
     }
 })();
-//////////////////////////////////////////////////setTimeout(function () {
-//////////////////////////////////////////////////    window.globalvsmpDom.vdom = "new value";
-//////////////////////////////////////////////////    myVarWatch.trigger();
-//////////////////////////////////////////////////}, 1000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-////////////////////////////////////////// In legacy code when changing stuff    
-////////////////////////////////////////$('.angular-component').each(function () {
-////////////////////////////////////////    $(this).scope().$broadcast('changed');
-////////////////////////////////////////});
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -97,7 +57,6 @@ function InitialiseGoogleAnalytics() {
     }
 
 function onLoadRequestDomFromVsmp() {
-    console.log("popUpJs_onLoadRequest entry point");
     chrome.tabs.query(
         {
             active: true,
@@ -114,11 +73,8 @@ function onLoadRequestDomFromVsmp() {
 
 function popUpCallBack(vsmpDom) {
 
-    //console.log("popUpJs_call back function about to populate globalvsmpDom from vsmpDom");
-    //window.globalvsmpDom = vsmpDom;
     window.globalvsmpDom.vdom = vsmpDom;
     myVarWatch.trigger();
-    //console.log("popUpJs_call back function finished populating globalvsmpDom from vsmpDom");
 
     try {
             if (vsmpDom.length == 0) {
