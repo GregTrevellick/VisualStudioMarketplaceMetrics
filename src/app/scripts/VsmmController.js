@@ -123,7 +123,7 @@
         GetTranslations();
     };
 
-    $scope.ShowTotalOverallAverageReview = function () {
+    $scope.ShowTotalOverallAverageReview = function () { //gregt is this used ? if so reinstate try/catch ?
         // try {
         if ($scope.totalOverallAverageReview > 0) {
             return true;
