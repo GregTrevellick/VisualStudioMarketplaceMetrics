@@ -107,10 +107,9 @@
     // Unbind the listener when the scope is destroyed
     $scope.$on('$destroy', unbind);
 
-    GetTranslations();
 
     $scope.uiLanguageModel = {
-        selectedLang: null,
+        selectedLang: 'en', //gregt source this starting selection from the browser
         availableOptions: [
           { id: 'en', name: 'enlish' },
           { id: 'fr', name: 'french' },
@@ -118,8 +117,9 @@
         ]
     };
 
+    GetTranslations();
+
     $scope.UiLanguageSelectionChanged = function (uiLanguageModel) {
-        userLanguageSelected = uiLanguageModel.selectedLang;
         GetTranslations();
     };
 
@@ -137,6 +137,7 @@
     };
 
     function GetTranslations() {
+        userLanguageSelected = $scope.uiLanguageModel.selectedLang;
         $scope.VsmmAverageReviewScore = GetTranslation("VsmmAverageReviewScore");
         $scope.VsmmAverageReviewScore_Lower = GetTranslation("VsmmAverageReviewScore_Lower");
         $scope.VsmmCopyTableToClipboard = GetTranslation("VsmmCopyTableToClipboard");
