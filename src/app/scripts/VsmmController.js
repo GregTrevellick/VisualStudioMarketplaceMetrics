@@ -109,6 +109,16 @@
 
     GetTranslations();
 
+    //gregt rename $scope.uiLanguageSelected to $scope.uiLanguageModel
+    $scope.uiLanguageSelected = {
+        selectedLang: null,
+        availableOptions: [
+          { id: 'en', name: 'enlish' },
+          { id: 'fr', name: 'french' },
+          { id: 'de', name: 'german' }
+        ]
+    };
+
     $scope.UiLanguageSelectionChanged = function (uiLanguageSelected) {
         userLanguageSelected = uiLanguageSelected.selectedLang;
         GetTranslations();
