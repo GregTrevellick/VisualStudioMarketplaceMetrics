@@ -2,7 +2,7 @@
     
     var unbind = myVarWatch.watch(function (newVal) {
 
-        console.log("the value changed!", newVal);
+        //console.log("the value changed!", newVal);
         var totalExtensionsCount = newVal.vdom.length;
 
         var totalInstallCount = 0;
@@ -110,10 +110,10 @@
 
     $scope.uiLanguageModel = {
         selectedLang: 'en', //gregt source this starting selection from the browser
-        availableOptions: [
-          { id: 'en', name: 'enlish' },
-          { id: 'fr', name: 'french' },
-          { id: 'de', name: 'german' }
+        availableOptions: [ //gregt dedupe
+            { id: 'en', name: GetTranslation("VsmmEnglish") },
+            { id: 'fr', name: GetTranslation("VsmmFrench") },
+            { id: 'de', name: GetTranslation("VsmmGerman") }
         ]
     };
 
@@ -138,6 +138,13 @@
 
     function GetTranslations() {
         userLanguageSelected = $scope.uiLanguageModel.selectedLang;
+        
+        $scope.uiLanguageModel.availableOptions = [ //gregt dedupe
+                { id: 'en', name: GetTranslation("VsmmEnglish") },
+                { id: 'fr', name: GetTranslation("VsmmFrench") },
+                { id: 'de', name: GetTranslation("VsmmGerman") }
+        ];
+
         $scope.VsmmAverageReviewScore = GetTranslation("VsmmAverageReviewScore");
         $scope.VsmmAverageReviewScore_Lower = GetTranslation("VsmmAverageReviewScore_Lower");
         $scope.VsmmCopyTableToClipboard = GetTranslation("VsmmCopyTableToClipboard");
