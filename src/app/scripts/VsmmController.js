@@ -123,17 +123,17 @@
         GetTranslations();
     };
 
-    $scope.ShowTotalOverallAverageReview = function () { //gregt is this used ? if so reinstate try/catch ?
-        // try {
-        if ($scope.totalOverallAverageReview > 0) {
-            return true;
+    $scope.ShowTotalOverallAverageReview = function () { 
+        try {
+            if ($scope.totalOverallAverageReview > 0) {
+                return true;
+            }
+            else {
+                return false;
+            };
+        } catch (e) {
+            CommonErrorHandler(e);
         }
-        else {
-            return false;
-        };
-        //  } catch (e) {
-        //     CommonErrorHandler(e);
-        //  }
     };
 
     function GetTranslations() {
