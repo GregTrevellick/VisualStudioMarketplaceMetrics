@@ -17,11 +17,17 @@
     <div ng-app="myApp">
         <div ng-controller="VsmmController">
             <img src="img/ajax-loader.gif" id="ajaxLoader" class="ajaxLoader" />
-            <select id="UserLanguageSelection" ng-model="uiLanguageSelected" ng-change="UiLanguageSelectionChanged(uiLanguageSelected)">
+            <select id="UserLanguageSelection" ng-model="uiLanguageSelected.selectedLang" ng-change="UiLanguageSelectionChanged(uiLanguageSelected)">
                 <option value="en">en</option>
-                <option value="de" selected="selected">de</option>
+                <option value="de">de</option>
                 <option value="fr">fr</option>
+                <!--<option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>-->
             </select>
+
+            <!--<select name="repeatSelect" id="repeatSelect" ng-model="data.model">
+                <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+            </select>-->
+
             <div id="dataUnavailableForPage" hidden="hidden" aria-describedby="dataUnavailableForPageText">
                 <h2 id="dataUnavailableForPageText">
                     {{VsmmDataUnavailableForPageText}}

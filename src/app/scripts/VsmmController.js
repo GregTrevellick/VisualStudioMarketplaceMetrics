@@ -110,7 +110,7 @@
     GetTranslations();
 
     $scope.UiLanguageSelectionChanged = function (uiLanguageSelected) {
-        userLanguageSelected = uiLanguageSelected;
+        userLanguageSelected = uiLanguageSelected.selectedLang;
         GetTranslations();
     };
 
