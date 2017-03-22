@@ -109,13 +109,9 @@
 
 
     $scope.uiLanguageModel = {
-        selectedLang: 'en', //gregt source this starting selection from the browser
-        availableOptions: [ //gregt dedupe
-            { id: 'en', name: GetTranslation("VsmmEnglish") },
-            { id: 'fr', name: GetTranslation("VsmmFrench") },
-            { id: 'de', name: GetTranslation("VsmmGerman") }
-        ]
+        selectedLang: 'en'
     };
+    SetAvailableOptions();
 
     GetTranslations();
 
@@ -139,11 +135,7 @@
     function GetTranslations() {
         userLanguageSelected = $scope.uiLanguageModel.selectedLang;
         
-        $scope.uiLanguageModel.availableOptions = [ //gregt dedupe
-                { id: 'en', name: GetTranslation("VsmmEnglish") },
-                { id: 'fr', name: GetTranslation("VsmmFrench") },
-                { id: 'de', name: GetTranslation("VsmmGerman") }
-        ];
+        SetAvailableOptions();
 
         $scope.VsmmAverageReviewScore = GetTranslation("VsmmAverageReviewScore");
         $scope.VsmmAverageReviewScore_Lower = GetTranslation("VsmmAverageReviewScore_Lower");
@@ -183,6 +175,15 @@
         $scope.VsmmUninitialised = GetTranslation("VsmmUninitialised");
         $scope.VsmmUnknown = GetTranslation("VsmmUnknown");
         $scope.VsmmVisualStudioHelpText = GetTranslation("VsmmVisualStudioHelpText") + ".";
+    };
+
+    function SetAvailableOptions() {
+        $scope.uiLanguageModel.availableOptions =
+        [ 
+            { id: 'en', name: GetTranslation("VsmmEnglish") },
+            { id: 'fr', name: GetTranslation("VsmmFrench") },
+            { id: 'de', name: GetTranslation("VsmmGerman") }
+        ];
     };
 
 }]);
