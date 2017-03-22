@@ -64,7 +64,9 @@
                           {{totalOverallAverageReview}}&nbsp;{{VsmmAverageReviewScore_Lower}}
                     </span>
                 </h2>
-                <a aria-label="Copy table to clipboard" href="#" id="CopyToClipboard" class="copyToClipboard"></a>
+                <a aria-label="Copy table to clipboard" href="#" id="CopyToClipboard" class="copyToClipboard">
+                    {{VsmmCopyTableToClipboard}}
+                </a>
                 <div id="ClipboardBuffer">
                     <table id="DetailGridTable" class="tablesorter">
                         <thead>
@@ -80,24 +82,53 @@
                         </thead>
                         <tbody id="DetailGridTableBody">
                             <tr ng-repeat="daRow in DaRows">
-                                <td class='numeric'>{{daRow.NoOfInstalls}}</td>
-                                <td>{{daRow.Title_Grid}}</td>
-                                <td class='numeric'>{{daRow.NoOfReviews}}</td>
-                                <td class='numeric'>{{daRow.ReviewsAsPercentageOfInstalls}}</td>
-                                <td>{{daRow.Publisher}}</td>
-                                <td>{{daRow.Price}}</td>
-                                <td class='numeric'>{{daRow.AverageReviewScore}}</td>
+                                <td class='numeric'>
+                                    {{daRow.NoOfInstalls}}
+                                </td>
+                                <td>
+                                    <div title="{{daRow.ExtnDescriptionFull}}">
+                                        <a href="{{daRow.ExtnUrl}}" target="_blank">
+                                            <img src="{{daRow.ExtnIconUrl}}" style="width: 18%; height: 18%;">
+                                            &nbsp;{{daRow.ExtnNameShort}}
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class='numeric'>
+                                    {{daRow.NoOfReviews}}
+                                </td>
+                                <td class='numeric' title="{{daRow.ReviewsAsPercentageOfInstallsTitle}}">
+                                    {{daRow.ReviewsAsPercentageOfInstalls}}
+                                </td>
+                                <td>
+                                    <a href="{{daRow.PublisherUrl}}" target="_blank">
+                                        {{daRow.Publisher}}
+                                    </a>
+                                </td>
+                                <td>
+                                    {{daRow.Price}}
+                                </td>
+                                <td class='numeric'>
+                                    {{daRow.AverageReviewScore}}
+                                </td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td class='numeric' id="FooterGridTotalInstallCount"></td>
+                                <td class='numeric'>
+                                    {{FooterGridTotalInstallCount}}
+                                </td>
                                 <td></td>
-                                <td class='numeric' id="FooterGridTotalReviewCount"></td>
-                                <td class='numeric' id="FooterReviewsAsPercentageOfInstalls"></td>
+                                <td class='numeric'>
+                                    {{FooterGridTotalReviewCount}}
+                                </td>
+                                <td class='numeric'>
+                                    {{FooterReviewsAsPercentageOfInstalls}}
+                                </td>
                                 <td></td>
                                 <td></td>
-                                <td class='numeric' id="FooterOverallAverageReview"></td>
+                                <td class='numeric'>
+                                    {{FooterOverallAverageReview}}
+                                </td>
                             </tr>
                         </tfoot>
                     </table>

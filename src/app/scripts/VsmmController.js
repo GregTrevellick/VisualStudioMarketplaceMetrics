@@ -3,21 +3,37 @@
     var unbind = myVarWatch.watch(function (newVal) {
 
         console.log("the value changed!", newVal);
+        var totalExtensionsCount = newVal.vdom.length;
+
         var totalInstallCount = 0;
         var totalReviewCount = 0;
         var numericAverageReviewSum = 0;
+        var totalReviewsAsPercentageOfTotalInstalls = 0;
+        var totalOverallAverageReview = 0;
+
         var DaRows = [];
         for (var i = 0; i < newVal.vdom.length; i++) {
             AddRowsToTable(i);
         }
-
-        var totalExtensionsCount = newVal.vdom.length;
         var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);
+        SetHeaders();
         $scope.totalExtensionsCount = totalExtensionsCount;
         $scope.TotalInstallCount = totalInstallCount;
         $scope.TotalReviewCount = totalReviewCount;
         $scope.totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
+
         $scope.DaRows = DaRows;
+
+        var FooterGridTotalInstallCount = "";
+        var FooterGridTotalReviewCount = "";
+        var FooterReviewsAsPercentageOfInstalls = "";
+        var FooterOverallAverageReview = "";
+        SetFooters();
+        $scope.FooterGridTotalInstallCount = FooterGridTotalInstallCount;
+        $scope.FooterGridTotalReviewCount = FooterGridTotalReviewCount;
+        $scope.FooterReviewsAsPercentageOfInstalls = FooterReviewsAsPercentageOfInstalls;
+        $scope.FooterOverallAverageReview = FooterOverallAverageReview;
+
         $scope.$apply();
 
         function AddRowsToTable(i) {
@@ -35,43 +51,7 @@
             if (numericInstallCount > 0) {
                 numericReviewsAsPercentageOfInstalls = (numericReviewCount / numericInstallCount) * 100;
             }
-
-            //var colItemTitle = "<td>"
-            //    + "<div title=\"" + newVal.vdom[i]["FullDescription"] + "\">"
-            //    + "<a href=\"" + newVal.vdom[i]["URL"] + "\" target=\"_blank\">"
-            //    + "<img src=\"" + newVal.vdom[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
-            //    + "&nbsp;"
-            //    + newVal.vdom[i]["ItemTitle"]
-            //    + "</a></div></td>";
-            var colItemTitle = 
-                 "<div title=\"" + newVal.vdom[i]["FullDescription"] + "\">"
-                + "<a href=\"" + newVal.vdom[i]["URL"] + "\" target=\"_blank\">"
-                + "<img src=\"" + newVal.vdom[i]["Icon"] + "\" style=\"width: 18%; height: 18%;\">"
-                + "&nbsp;"
-                + newVal.vdom[i]["ItemTitle"]
-                + "</a></div>";
-
-            var colReviewsAsPercentageOfInstalls = "<td class='numeric'><div title=\""
-               + numericReviewsAsPercentageOfInstalls.toFixed(9) + "\">"
-               + numericReviewsAsPercentageOfInstalls.toFixed(2) + "</div></td>";
             
-            //var colPublisher = "<td>"
-            //    + "<a href=\""
-            //    + "https://marketplace.visualstudio.com/search?term=publisher%3A%22"
-            //    + newVal.vdom[i]["Publisher"]
-            //    + "%22&target=VS&sortBy=Relevance"
-            //    + "\" target=\"_blank\">"
-            //    + newVal.vdom[i]["Publisher"]
-            //    + "</a></td>";
-            var colPublisher = 
-               + "<a href=\""
-               + "https://marketplace.visualstudio.com/search?term=publisher%3A%22"
-               + newVal.vdom[i]["Publisher"]
-               + "%22&target=VS&sortBy=Relevance"
-               + "\" target=\"_blank\">"
-               + newVal.vdom[i]["Publisher"]
-               + "</a>";
-
             if (newVal.vdom[i]["Price"] == undefined) {
                 var colPrice = GetTranslation("VsmmUnknown");
             }
@@ -82,10 +62,15 @@
 
             var daRow = {};
             daRow.NoOfInstalls = numericInstallCount;
-            daRow.Title_Grid = colItemTitle;
+            daRow.ExtnDescriptionFull = newVal.vdom[i]["FullDescription"];
+            daRow.ExtnUrl = newVal.vdom[i]["URL"];
+            daRow.ExtnIconUrl = newVal.vdom[i]["Icon"];
+            daRow.ExtnNameShort = newVal.vdom[i]["ItemTitle"];
             daRow.NoOfReviews = numericReviewCount;
-            daRow.ReviewsAsPercentageOfInstalls = "4";//colReviewsAsPercentageOfInstalls
-            daRow.Publisher = colPublisher;
+            daRow.ReviewsAsPercentageOfInstalls = numericReviewsAsPercentageOfInstalls.toFixed(2);
+            daRow.ReviewsAsPercentageOfInstallsTitle = numericReviewsAsPercentageOfInstalls.toFixed(9);
+            daRow.Publisher = newVal.vdom[i]["Publisher"];
+            daRow.PublisherUrl = "https://marketplace.visualstudio.com/search?term=publisher%3A%22" + newVal.vdom[i]["Publisher"] + "%22&target=VS&sortBy=Relevance";
             daRow.Price = colPrice;
             daRow.AverageReviewScore = newVal.vdom[i]["AverageReview"];
 
@@ -93,12 +78,34 @@
 
             console.log(DaRows);
         };
+
+        function SetHeaders() {
+
+            if (totalInstallCount > 0) {
+                totalReviewsAsPercentageOfTotalInstalls = (totalReviewCount / totalInstallCount) * 100;
+            }
+
+            var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);
+            totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
+
+            //if (totalReviewsAsPercentageOfTotalInstalls > 0) {
+            //    document.getElementById('TotalReviewCount').innerHTML += " ("
+            //    + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
+            //    + GetTranslation("VsmmPercentageOfInstallations")
+            //    + ")";
+            //};
+            showVsmmAverageReviewScore_Lower = false;
+        };
+
+        function SetFooters() {
+            FooterGridTotalInstallCount = totalInstallCount.toLocaleString();
+            FooterGridTotalReviewCount = totalReviewCount.toLocaleString();
+            FooterReviewsAsPercentageOfInstalls = totalReviewsAsPercentageOfTotalInstalls.toFixed(2).toLocaleString();
+            FooterOverallAverageReview = totalOverallAverageReview;
+        };
     });
     // Unbind the listener when the scope is destroyed
     $scope.$on('$destroy', unbind);
-
-    
-
 
     GetTranslations();
 
