@@ -321,13 +321,15 @@ function ShowDataUnavailableMessage() {
 (function ($) {
     $(function () {
         var isoCountries = [
-            { id: 'FR', text: 'France' },
-            { id: 'DE', text: 'Germany' },
-            { id: 'GB', text: 'United Kingdom' }
+            { id: 'GB', text: GetTranslation("VsmmEnglish") },
+            { id: 'FR', text: GetTranslation("VsmmFrench") },
+            { id: 'DE', text: GetTranslation("VsmmGerman") }
         ];
 
         function formatCountry(country) {
-            if (!country.id) { return country.text; }
+            if (!country.id) {
+                return country.text;
+            }
             var $country = $(
               '<span class="flag-icon flag-icon-' + country.id.toLowerCase() + ' flag-icon-squared"></span>' +
               '<span class="flag-text">' + country.text + "</span>"
@@ -335,13 +337,7 @@ function ShowDataUnavailableMessage() {
             return $country;
         };
 
-        //$("[name='country2']").select2({
-        //    placeholder: "Select a country",
-        //    templateResult: formatCountry,
-        //    data: isoCountries
-        //});
-
-        $("[name='country3']").select2({
+        $("[name='languageCountry']").select2({
             placeholder: "Select a country",
             templateResult: formatCountry,
             data: isoCountries

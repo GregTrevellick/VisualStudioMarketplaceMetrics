@@ -20,28 +20,14 @@
     <script type="text/javascript" src="scripts/popup.js"></script>
 </head>
 <body>
-
-
-
-
-
-
-
-
-    <!--<select name="country2"></select>-->
-    
-
-
-
-
-
-
-
-
     <div ng-app="myApp">
         <div ng-controller="VsmmController">
             <img src="img/ajax-loader.gif" id="ajaxLoader" class="ajaxLoader" />
-            <select name="country3" id="UserLanguageSelection" ng-model="uiLanguageModel.selectedLang" ng-change="UiLanguageSelectionChanged(uiLanguageModel)" style="float: right;">
+            <select name="languageCountry" 
+                    id="UserLanguageSelection" 
+                    ng-model="uiLanguageModel.selectedLang" 
+                    ng-change="UiLanguageSelectionChanged(uiLanguageModel)" 
+                    style="float: right;">
                 <option ng-repeat="option in uiLanguageModel.availableOptions" value="{{option.id}}">
                     {{option.name}}
                 </option>

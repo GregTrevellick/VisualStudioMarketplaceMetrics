@@ -177,12 +177,13 @@
     };
 
     function SetAvailableOptions() {
-        $scope.uiLanguageModel.availableOptions =
-        [ 
-            { id: 'en', name: GetTranslation("VsmmEnglish") },
-            { id: 'fr', name: GetTranslation("VsmmFrench") },
-            { id: 'de', name: GetTranslation("VsmmGerman") }
-        ];
+        //gregt to be handled
+        //$scope.uiLanguageModel.availableOptions =
+        //[ 
+        //    { id: 'en', name: GetTranslation("VsmmEnglish") },
+        //    { id: 'fr', name: GetTranslation("VsmmFrench") },
+        //    { id: 'de', name: GetTranslation("VsmmGerman") }
+        //];
     };
 
 }]);
