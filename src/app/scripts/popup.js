@@ -335,8 +335,13 @@ function ShowDataUnavailableMessage() {
             return $country;
         };
 
-        //Assuming you have a select element with name country /////////////////////////////e.g. <select name="name"></select>
-        $("[name='country']").select2({
+        //$("[name='country2']").select2({
+        //    placeholder: "Select a country",
+        //    templateResult: formatCountry,
+        //    data: isoCountries
+        //});
+
+        $("[name='country3']").select2({
             placeholder: "Select a country",
             templateResult: formatCountry,
             data: isoCountries

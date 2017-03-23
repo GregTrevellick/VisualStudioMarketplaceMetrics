@@ -14,6 +14,8 @@ add flags for supported locales in readme.md
 add logo to copy to clipboard
 credits: //http://jsfiddle.net/Starx/sgb4888k/2/
 add welsh , catalan etc
+remove unwelcome flags to save space ?
+
 
 POST LIVE
 test google analytics
