@@ -110,7 +110,7 @@
         selectedLang: 'en'
     };
 
-    SetAvailableOptions();
+    //////////SetAvailableOptions();
 
     GetTranslations();
 
@@ -134,7 +134,7 @@
     function GetTranslations() {
         userLanguageSelected = $scope.uiLanguageModel.selectedLang;
         
-        SetAvailableOptions();
+        /////////////////////SetAvailableOptions();
 
         $scope.VsmmAverageReviewScore = GetTranslation("VsmmAverageReviewScore");
         $scope.VsmmAverageReviewScore_Lower = GetTranslation("VsmmAverageReviewScore_Lower");
@@ -176,14 +176,14 @@
         $scope.VsmmVisualStudioHelpText = GetTranslation("VsmmVisualStudioHelpText") + ".";
     };
 
-    function SetAvailableOptions() {
-        //gregt to be handled
-        //$scope.uiLanguageModel.availableOptions =
-        //[ 
-        //    { id: 'en', name: GetTranslation("VsmmEnglish") },
-        //    { id: 'fr', name: GetTranslation("VsmmFrench") },
-        //    { id: 'de', name: GetTranslation("VsmmGerman") }
-        //];
-    };
+    //function SetAvailableOptions() {
+    //    //gregt to be handled
+    //    //$scope.uiLanguageModel.availableOptions =
+    //    //[ 
+    //    //    { id: 'en', name: GetTranslation("VsmmEnglish") },
+    //    //    { id: 'fr', name: GetTranslation("VsmmFrench") },
+    //    //    { id: 'de', name: GetTranslation("VsmmGerman") }
+    //    //];
+    //};
 
 }]);
