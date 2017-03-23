@@ -75,8 +75,6 @@
             daRow.AverageReviewScore = newVal.vdom[i]["AverageReview"];
 
             DaRows.push(daRow);
-
-            console.log(DaRows);
         };
 
         function SetHeaders() {
@@ -104,13 +102,14 @@
             FooterOverallAverageReview = totalOverallAverageReview;
         };
     });
+
     // Unbind the listener when the scope is destroyed
     $scope.$on('$destroy', unbind);
-
 
     $scope.uiLanguageModel = {
         selectedLang: 'en'
     };
+
     SetAvailableOptions();
 
     GetTranslations();
