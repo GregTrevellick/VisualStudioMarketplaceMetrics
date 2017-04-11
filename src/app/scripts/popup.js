@@ -227,7 +227,6 @@ function GetLocaleBySource() {
 
     function GetUiSelectedLocale() {
         if (typeof userLanguageSelected == "undefined") {
-            //gregt todo handle this scenario i.e. first time into the popup the DDL value hasn't been picked, so default the DDL to the browser prefered language, and then this "if" clause should not be required, but retain it just-in-case (albeit it returning "en" not "de")
             return "en";
         }
         else {
