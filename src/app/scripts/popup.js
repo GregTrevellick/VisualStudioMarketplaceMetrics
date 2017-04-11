@@ -174,14 +174,14 @@ function CommonErrorHandler(e) {
             document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspectSeeingIncorrectlyText") + " ";
             document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
             document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthor");
-            //
             document.getElementById('PageUrl').innerHTML = GetPageUrl();
             document.getElementById('UserAgent').innerHTML = GetUserAgent();
             document.getElementById('Locale').innerHTML = GetLocaleBySource();
+            document.getElementById('notificationItems').removeAttribute("hidden");
+            //
             document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
             document.getElementById('errorOccuredPage').removeAttribute("hidden");
             document.getElementById('errorOccuredPagePlease').removeAttribute("hidden");
-            document.getElementById('notificationItems').removeAttribute("hidden");
             document.getElementById('JavaScriptErrorText').removeAttribute("hidden");
 
             HideSpinner();
@@ -299,11 +299,12 @@ function ShowDataUnavailableMessage() {
     document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspectSeeingIncorrectlyText") + " ";
     document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
     document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthorText") + ":";
-    //
     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
     document.getElementById('UserAgent').innerHTML = GetUserAgent();
     document.getElementById('Locale').innerHTML = GetLocaleBySource();
+    document.getElementById('notificationItems').removeAttribute("hidden");
+    //
     document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
     document.getElementById('dataUnavailableForPagePlease').removeAttribute("hidden");
-    document.getElementById('notificationItems').removeAttribute("hidden");
+    
 };
