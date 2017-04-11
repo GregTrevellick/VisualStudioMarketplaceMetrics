@@ -221,7 +221,8 @@ function GetLocaleBySource() {
     }
 
     function GetChromeLocale() { 
-        var locale = chrome.i18n.getMessage("@@ui_locale");
+        var locale = chrome.i18n.getMessage("@@ui_locale").substring(0, 2);
+
         return locale;
     }
 

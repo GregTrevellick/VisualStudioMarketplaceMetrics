@@ -40,7 +40,7 @@
     <None Include="app\_locales\uk\messages.json" />
     <None Include="app\_locales\de\messages.json" />
     <None Include="app\_locales\sv\messages.json" />
-    <None Include="app\_locales\pt_PT\messages.json" />
+    <None Include="app\_locales\pt\messages.json" />
     <None Include="app\_locales\pl\messages.json" />
     <None Include="app\_locales\nl\messages.json" />
     <None Include="app\_locales\ca\messages.json" />

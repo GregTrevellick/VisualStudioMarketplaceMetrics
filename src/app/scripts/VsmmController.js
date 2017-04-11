@@ -114,8 +114,11 @@
                 { id: 'de', name: GetTranslation("VsmmGerman") }
     ];
 
+
+    var browserLanguage = chrome.i18n.getMessage("@@ui_locale").substring(0, 2);
+
     $scope.uiLanguageModel = {
-        selectedLang: 'en', //gregt source this initial lang from the browser settings
+        selectedLang: browserLanguage, 
         availableOptions: masterAvailableOptions
     };
 
