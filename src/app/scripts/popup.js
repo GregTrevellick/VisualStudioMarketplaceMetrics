@@ -5,15 +5,12 @@ var useChromeLocale = false;
 var userLanguageSelected = GetLocaleBySource(); 
 latestError = GetTranslation("VsmmUninitialised");
 try {
-        console.log(GetTranslation("VsmmThankYouForUsing"));
-        console.image("http://i.imgur.com/NfNVskCl.png");
-    } catch (e) {
-        //Do nothing - doesn't matter if it failed
-    }
-
-//gregt - what is this comment ? a todo or a to be deleted ?
-//////document.getElementById('PopUpTitle').innerHTML = GetTranslation("VsmmTitle_Page");
-
+    console.log(GetTranslation("VsmmThankYouForUsing"));
+    console.image("http://i.imgur.com/NfNVskCl.png");
+} catch (e) {
+    //Do nothing - doesn't matter if it failed
+}
+document.getElementById('PopUpTitle').innerHTML = GetTranslation("VsmmTitle_Page");
 onLoadRequestDomFromVsmp();
 window.globalvsmpDom = { vdom: "" };
 var myVarWatch = (function () {
@@ -275,7 +272,7 @@ function GetTranslation(textKey) {
                     messages = JSON.parse(data);
                     result = messages[textKey].message;
                 }
-                //,error: GREG-TODO e.g. result = "ajax error";in caller check for this & show opps message
+                //,error: GREGt-TODO e.g. result = "ajax error";in caller check for this & show opps message
             });
         }
 
