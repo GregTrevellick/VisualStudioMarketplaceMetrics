@@ -5,32 +5,20 @@
     <title>{{VsmmTitle_Page}}</title>
     <link rel="stylesheet" href="styles/vsmm.css" />
     <link rel="stylesheet" href="scripts/tablesorter/themes/blue/style.css" />
-    <!--jquery et al-->
     <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="scripts/tablesorter/jquery.tablesorter.min.js"></script>
     <script type="text/javascript" src="scripts/console.image.min.js"></script>
-    <!--flags-->
-    <link href="img/flags/select2.min.css" rel="stylesheet" />
-    <link href="img/flags/flag-icon.min.css" rel="stylesheet" />
-    <script src="img/flags/select2.min.js"></script>
-    <!--extension app-->
     <script type="text/javascript" src="scripts/angular.min.js"></script>
     <script type="text/javascript" src="scripts/app.js"></script>
     <script type="text/javascript" src="scripts/VsmmController.js" defer></script>
     <script type="text/javascript" src="scripts/popup.js"></script>
 </head>
-<body> 
+<body>
     <div ng-app="myApp">
         <div ng-controller="VsmmController">
             <img src="img/ajax-loader.gif" id="ajaxLoader" class="ajaxLoader" />
-            <select name="languageCountry" 
-                    id="UserLanguageSelection" 
-                    ng-model="uiLanguageModel.selectedLang" 
-                    ng-change="UiLanguageSelectionChanged(uiLanguageModel)" 
-                    style="float: right;">
-                <!--<option ng-repeat="option in uiLanguageModel.availableOptions" value="{ {option.id}}">
-                    { {option.name}}
-                </option>-->
+            <select id="UserLanguageSelection" ng-model="uiLanguageModel.selectedLang" ng-change="UiLanguageSelectionChanged(uiLanguageModel)" style="float: right;">
+                <option ng-repeat="option in uiLanguageModel.availableOptions" value="{{option.id}}">{{option.name}}</option>
             </select>
             <div id="dataUnavailableForPage" hidden="hidden" aria-describedby="dataUnavailableForPageText">
                 <h2 id="dataUnavailableForPageText">

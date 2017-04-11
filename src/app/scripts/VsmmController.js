@@ -75,6 +75,8 @@
             daRow.AverageReviewScore = newVal.vdom[i]["AverageReview"];
 
             DaRows.push(daRow);
+
+            console.log(DaRows);
         };
 
         function SetHeaders() {
@@ -102,15 +104,18 @@
             FooterOverallAverageReview = totalOverallAverageReview;
         };
     });
-
     // Unbind the listener when the scope is destroyed
     $scope.$on('$destroy', unbind);
 
-    $scope.uiLanguageModel = {
-        selectedLang: 'en'
-    };
 
-    //////////SetAvailableOptions();
+    $scope.uiLanguageModel = {
+        selectedLang: 'en', //gregt source this starting selection from the browser
+        availableOptions: [ //gregt dedupe
+            { id: 'en', name: GetTranslation("VsmmEnglish") },
+            { id: 'fr', name: GetTranslation("VsmmFrench") },
+            { id: 'de', name: GetTranslation("VsmmGerman") }
+        ]
+    };
 
     GetTranslations();
 
@@ -134,7 +139,11 @@
     function GetTranslations() {
         userLanguageSelected = $scope.uiLanguageModel.selectedLang;
         
-        /////////////////////SetAvailableOptions();
+        $scope.uiLanguageModel.availableOptions = [ //gregt dedupe
+                { id: 'en', name: GetTranslation("VsmmEnglish") },
+                { id: 'fr', name: GetTranslation("VsmmFrench") },
+                { id: 'de', name: GetTranslation("VsmmGerman") }
+        ];
 
         $scope.VsmmAverageReviewScore = GetTranslation("VsmmAverageReviewScore");
         $scope.VsmmAverageReviewScore_Lower = GetTranslation("VsmmAverageReviewScore_Lower");
@@ -175,15 +184,5 @@
         $scope.VsmmUnknown = GetTranslation("VsmmUnknown");
         $scope.VsmmVisualStudioHelpText = GetTranslation("VsmmVisualStudioHelpText") + ".";
     };
-
-    //function SetAvailableOptions() {
-    //    //gregt to be handled
-    //    //$scope.uiLanguageModel.availableOptions =
-    //    //[ 
-    //    //    { id: 'en', name: GetTranslation("VsmmEnglish") },
-    //    //    { id: 'fr', name: GetTranslation("VsmmFrench") },
-    //    //    { id: 'de', name: GetTranslation("VsmmGerman") }
-    //    //];
-    //};
 
 }]);
