@@ -107,13 +107,15 @@
     $scope.$on('$destroy', unbind);
 
 
+    var masterAvailableOptions = [
+                { id: 'en', name: GetTranslation("VsmmEnglish") },
+                { id: 'fr', name: GetTranslation("VsmmFrench") },
+                { id: 'de', name: GetTranslation("VsmmGerman") }
+    ];
+
     $scope.uiLanguageModel = {
         selectedLang: 'en', //gregt source this initial lang from the browser settings
-        availableOptions: [ //gregt dedupe
-            { id: 'en', name: GetTranslation("VsmmEnglish") },
-            { id: 'fr', name: GetTranslation("VsmmFrench") },
-            { id: 'de', name: GetTranslation("VsmmGerman") }
-        ]
+        availableOptions: masterAvailableOptions
     };
 
     GetTranslations();
@@ -137,12 +139,8 @@
 
     function GetTranslations() {
         userLanguageSelected = $scope.uiLanguageModel.selectedLang;
-        
-        $scope.uiLanguageModel.availableOptions = [ //gregt dedupe
-                { id: 'en', name: GetTranslation("VsmmEnglish") },
-                { id: 'fr', name: GetTranslation("VsmmFrench") },
-                { id: 'de', name: GetTranslation("VsmmGerman") }
-        ];
+
+        $scope.uiLanguageModel.availableOptions = masterAvailableOptions;
 
         $scope.VsmmAverageReviewScore = GetTranslation("VsmmAverageReviewScore");
         $scope.VsmmAverageReviewScore_Lower = GetTranslation("VsmmAverageReviewScore_Lower");
