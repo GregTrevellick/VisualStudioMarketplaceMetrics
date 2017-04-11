@@ -86,13 +86,14 @@
             var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);
             totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
 
-            //gregt - what is this commented out bit ? a todo or something to be deleted ?
-            //if (totalReviewsAsPercentageOfTotalInstalls > 0) {
-            //    document.getElementById('TotalReviewCount').innerHTML += " ("
-            //    + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
-            //    + GetTranslation("VsmmPercentageOfInstallations")
-            //    + ")";
-            //};
+            //////////////////////////////////////if (totalReviewsAsPercentageOfTotalInstalls > 0) {
+            //////////////////////////////////////    document.getElementById('TotalReviewCount').innerHTML += " ("
+            //////////////////////////////////////    + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
+            //////////////////////////////////////    + GetTranslation("VsmmPercentageOfInstallations")
+            //////////////////////////////////////    + ")";
+            //////////////////////////////////////};
+            //gregt:  remove VsmmPercentageOfInstallations from the .json files
+
             showVsmmAverageReviewScore_Lower = false;
         };
 
