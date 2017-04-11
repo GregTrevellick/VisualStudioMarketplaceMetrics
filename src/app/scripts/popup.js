@@ -81,7 +81,7 @@ function popUpCallBack(vsmpDom) {
 
                 vsmpDomPageUrl = vsmpDom[0]["PageUrl"];
 
-                //dummyError = b.gregt;
+                //dummyError = b.c;
            
                 if (vsmpDom[0]["URL"] == "errorOccurred") {
                     throw vsmpDom[0]["Error"];
