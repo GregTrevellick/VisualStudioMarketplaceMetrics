@@ -112,6 +112,13 @@
                 { id: 'en', name: GetTranslation("VsmmEnglish") },
                 { id: 'fr', name: GetTranslation("VsmmFrench") },
                 { id: 'de', name: GetTranslation("VsmmGerman") }
+//gregt   bg ca es it nl pl pt ro sv uk
+//gregt   catalan latin welsh esperanto irish
+
+
+
+
+
     ];
 
 
