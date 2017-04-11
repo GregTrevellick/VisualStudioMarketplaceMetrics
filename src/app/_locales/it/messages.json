@@ -8,7 +8,7 @@
    "VsmmExtension": { "message": "estensione"},
    "VsmmExtensions": { "message": "estensioni"},
   "VsmmFeedbackEmailsubject": { "message": "VS Marketplace Metriche Feedback" },
-  "VsmmHere": { "Messaggio": "qui" } ,
+  "VsmmHere": { "message": "qui" } ,
    "VsmmIfYouSuspectSeeingIncorrectlyText": { "message": "Se si sospetta che si sta vedendo questo avviso erroneamente clicca"},
    "VsmmIndeterminateError": { "message": "Errore indeterminato"},
   "VsmmInstall": { "message": "install" },
