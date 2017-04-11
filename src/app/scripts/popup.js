@@ -6,11 +6,14 @@ var userLanguageSelected = GetLocaleBySource();
 latestError = GetTranslation("VsmmUninitialised");
 try {
         console.log(GetTranslation("VsmmThankYouForUsing"));
-        //gregt reinstate later on   console.image("http://i.imgur.com/NfNVskCl.png");
+        console.image("http://i.imgur.com/NfNVskCl.png");
     } catch (e) {
         //Do nothing - doesn't matter if it failed
-}
+    }
+
+//gregt - what is this comment ? a todo or a to be deleted ?
 //////document.getElementById('PopUpTitle').innerHTML = GetTranslation("VsmmTitle_Page");
+
 onLoadRequestDomFromVsmp();
 window.globalvsmpDom = { vdom: "" };
 var myVarWatch = (function () {
@@ -221,7 +224,6 @@ function GetJavascriptError(e) {
         };
     };
 
-
 function GetLocaleBySource() {
     if (useChromeLocale) {
         return GetChromeLocale();
@@ -305,42 +307,3 @@ function ShowDataUnavailableMessage() {
     document.getElementById('dataUnavailableForPagePlease').removeAttribute("hidden");
     document.getElementById('notificationItems').removeAttribute("hidden");
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-(function ($) {
-    $(function () {
-        var isoCountries = [
-            { id: 'GB', text: GetTranslation("VsmmEnglish") },
-            { id: 'FR', text: GetTranslation("VsmmFrench") },
-            { id: 'DE', text: GetTranslation("VsmmGerman") }
-        ];
-
-        function formatCountry(country) {
-            if (!country.id) {
-                return country.text;
-            }
-            var $country = $(
-              '<span class="flag-icon flag-icon-' + country.id.toLowerCase() + ' flag-icon-squared"></span>' +
-              '<span class="flag-text">' + country.text + "</span>"
-            );
-            return $country;
-        };
-
-        $("[name='languageCountry']").select2({
-            placeholder: "Select a country",
-            templateResult: formatCountry,
-            data: isoCountries
-        });
-    });
-})(jQuery);

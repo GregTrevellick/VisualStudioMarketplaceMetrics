@@ -75,8 +75,6 @@
             daRow.AverageReviewScore = newVal.vdom[i]["AverageReview"];
 
             DaRows.push(daRow);
-
-            console.log(DaRows);
         };
 
         function SetHeaders() {
@@ -88,6 +86,7 @@
             var overallAverageReview = (numericAverageReviewSum / totalExtensionsCount);
             totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
 
+            //gregt - what is this commented out bit ? a todo or something to be deleted ?
             //if (totalReviewsAsPercentageOfTotalInstalls > 0) {
             //    document.getElementById('TotalReviewCount').innerHTML += " ("
             //    + totalReviewsAsPercentageOfTotalInstalls.toFixed(3).toLocaleString()
@@ -109,7 +108,7 @@
 
 
     $scope.uiLanguageModel = {
-        selectedLang: 'en', //gregt source this starting selection from the browser
+        selectedLang: 'en', //gregt source this initial lang from the browser settings
         availableOptions: [ //gregt dedupe
             { id: 'en', name: GetTranslation("VsmmEnglish") },
             { id: 'fr', name: GetTranslation("VsmmFrench") },
