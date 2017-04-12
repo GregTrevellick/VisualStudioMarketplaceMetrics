@@ -51,11 +51,11 @@
             </div>
             <div id="dataAvailable" hidden="hidden">
                 <h2>
-                    {{totalExtensionsCount}}&nbsp;{{VsmmShown}}
+                    {{totalExtensionsCount | number}}&nbsp;{{VsmmShown}}
                     <br />
-                    {{TotalInstallCount}}&nbsp;{{VsmmInstalls}}
+                    {{TotalInstallCount | number}}&nbsp;{{VsmmInstalls}}
                     <br />
-                    {{TotalReviewCount}}&nbsp;{{VsmmReviews}}
+                    {{TotalReviewCount | number}}&nbsp;{{VsmmReviews}}
                     <br />
                     <span ng-show="ShowTotalOverallAverageReview()">
                           {{totalOverallAverageReview}}&nbsp;{{VsmmAverageReviewScore_Lower}}
