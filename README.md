@@ -24,10 +24,10 @@ Software License is available [here](/LICENSE.txt).
 
 ## Features
 
+ - Works for Visual Studio IDE extensions, VSTS extensions and VS Code extensions
  - Shows total number of extensions, installs and reviews for the visible extension thumbnails on [Visual Studio Marketplace][VSMarketplaceURL]
  - Includes number of reviews as a percentage of downloads
  - Includes a summary grid of data per extension
- - Works for Visual Studio IDE extensions, VSTS extensions and VS Code extensions
  - Multi-lingual support 
    - Bulgarian
    - Catalan
