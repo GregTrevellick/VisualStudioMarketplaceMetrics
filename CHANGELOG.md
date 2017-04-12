@@ -13,7 +13,7 @@ These are the changes to each version that has been released in the Chrome Web S
 add flags for supported locales in readme.md
 add logo to copy to clipboard
 credits: //http://jsfiddle.net/Starx/sgb4888k/2/
-
+add languages latin welsh esperanto irish hindi
 
 POST LIVE
 test google analytics

@@ -1,7 +1,7 @@
 ﻿{
-    "VsmmEnglish": { "message": "Englisch" },
-  "VsmmFrench": { "message": "Französisch" },
-  "VsmmGerman": { "message": "Deutsche" },
+    "VsmmLangEnglish": { "message": "Englisch" },
+  "VsmmLangFrench": { "message": "Französisch" },
+  "VsmmLangGerman": { "message": "Deutsche" },
   "VsmmAverageReviewScore": { "message": "Durchschnittliche Bewertung" },
   "VsmmAverageReviewScore_Lower": { "message": "durchschnittliche Bewertung" },
   "VsmmCopyTableToClipboard": { "message": "Tabelle in die Zwischenablage kopieren" },
