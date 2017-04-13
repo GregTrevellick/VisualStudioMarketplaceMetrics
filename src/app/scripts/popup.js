@@ -127,7 +127,6 @@ $('#DataUnavailableEmail').click(function (e) {
 
 $('#CopyToClipboard').click(function (e) {
     try {
-        console.log("2");
         var element = document.getElementById('ClipboardBuffer');
         var body = document.body, range, sel;
         if (document.createRange && window.getSelection) {
