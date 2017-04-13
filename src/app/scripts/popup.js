@@ -283,14 +283,12 @@ function GetTranslation(textKey) {
 function ShowDataUnavailableMessage() {
     PopulateDataUnavailableElements();
     document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
-    document.getElementById('dataUnavailableForPagePlease').removeAttribute("hidden");    
+    //document.getElementById('dataUnavailableForPagePlease').removeAttribute("hidden");    
 };
 
 function PopulateDataUnavailableElements() {
     document.getElementById('errorOccuredPagePlease').innerHTML = GetTranslation("VsmmPleaseClick");
-    document.getElementById('dataUnavailableForPagePlease').innerHTML = GetTranslation("VsmmIfYouSuspectSeeingIncorrectlyText") + " ";
     document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
-    document.getElementById('toNotifyAuthor').innerHTML = GetTranslation("VsmmToNotifyAuthorText") + ":";
     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
     document.getElementById('UserAgent').innerHTML = GetUserAgent();
     document.getElementById('Locale').innerHTML = GetLocaleBySource();
