@@ -282,13 +282,10 @@ function GetTranslation(textKey) {
 
 function ShowDataUnavailableMessage() {
     PopulateDataUnavailableElements();
-    document.getElementById('dataUnavailableForPage').removeAttribute("hidden");
-    //document.getElementById('dataUnavailableForPagePlease').removeAttribute("hidden");    
+    document.getElementById('dataUnavailableForPage').removeAttribute("hidden");//TODO convert to ng-show
 };
 
 function PopulateDataUnavailableElements() {
-    document.getElementById('errorOccuredPagePlease').innerHTML = GetTranslation("VsmmPleaseClick");
-    document.getElementById('DataUnavailableEmail').innerHTML = GetTranslation("VsmmHere");
     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
     document.getElementById('UserAgent').innerHTML = GetUserAgent();
     document.getElementById('Locale').innerHTML = GetLocaleBySource();
