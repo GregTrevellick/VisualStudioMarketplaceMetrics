@@ -101,7 +101,7 @@ function popUpCallBack(vsmpDom) {
     }
 };
 
-$('#DataUnavailableEmail').click(function (e) {
+$(document).on('click', '#DataUnavailableEmail', function () {
     try {
         var mailto = "vsmarketplacemetrics@gmail.com";
         var subject = GetTranslation("VsmmFeedbackEmailSubject");
@@ -125,7 +125,7 @@ $('#DataUnavailableEmail').click(function (e) {
     }
 });
 
-$('#CopyToClipboard').click(function (e) {
+$(document).on('click', '#CopyToClipboard', function () {
     try {
         var element = document.getElementById('ClipboardBuffer');
         var body = document.body, range, sel;
