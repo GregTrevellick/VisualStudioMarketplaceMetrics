@@ -2,8 +2,8 @@
 
 These are the changes to each version that has been released in the Chrome Web Store.
 
-## 1.x.x 
-**2017-MM-DD** 
+## 1.0.0 
+**2017-04-13** 
 - [x] Initial release
 
 
@@ -11,7 +11,7 @@ These are the changes to each version that has been released in the Chrome Web S
 <!-- gregt todos
 
 add logo to copy to clipboard
-credits: //http://jsfiddle.net/Starx/sgb4888k/2/
+//http://jsfiddle.net/Starx/sgb4888k/2/
 add languages latin welsh esperanto irish hindi
 
 POST LIVE
