@@ -109,7 +109,7 @@
 
 
     var masterAvailableOptions = [
-        { id: 'bg', name: GetTranslation("VsmmLangBulrgarian") },
+        { id: 'bg', name: GetTranslation("VsmmLangBulgarian") },
         { id: 'ca', name: GetTranslation("VsmmLangCatalan") },
         { id: 'de', name: GetTranslation("VsmmLangGerman") },
         { id: 'en', name: GetTranslation("VsmmLangEnglish") },
