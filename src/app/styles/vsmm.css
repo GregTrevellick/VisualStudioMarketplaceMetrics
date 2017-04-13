@@ -13,7 +13,7 @@ td.numeric {
     text-align: right;
 }
     
-td a {
+td a, .helpIcon {
     text-decoration: none;
 }
 
