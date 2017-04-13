@@ -6,7 +6,7 @@ var userLanguageSelected = GetLocaleBySource();
 latestError = GetTranslation("VsmmUninitialised");
 try {
     console.log(GetTranslation("VsmmThankYouForUsing"));
-    console.image("http://i.imgur.com/NfNVskCl.png");
+    console.image("http://i.imgur.com/dxwfqUF.png");
 } catch (e) {
     //Do nothing - doesn't matter if it failed
 }
