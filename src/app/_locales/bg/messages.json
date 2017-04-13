@@ -31,7 +31,7 @@
   "VsmmToNotifyAuthorText": { "message": ". Да уведомява автора на разширение чрез предварително попълнени имейл Ако предпочитате да се свържете с автора чрез други средства, моля да включва следната" },
   "VsmmUninitialised": { "message": "Uninitialised" },
   "VsmmUnknown": { "message": "Unknown" },
-  "VsmmVisualStudioHelpText": { "message": "Това разширение е изцяло зависима от Visual Studio Marketplace DOM на Microsoft, която подлежи на промяна от Microsoft по всяко време, и която може да предизвика този FREE разширение да престане да функционира правилно, ако това се случи, моля помогнете на. отворен код еко-система, като информира автора на разширение възможно най-скоро, използвайки данните за контакт, които ще се появят по-горе, когато създадат необходимата " },
+  "VsmmVisualStudioHelpText": { "message": "Това разширение е изцяло зависима от Visual Studio Marketplace DOM на Microsoft, която подлежи на промяна от Microsoft по всяко време, и която може да предизвика този FREE разширение да престане да функционира правилно, ако това се случи, моля помогнете на. отворен код еко-система, като информира автора на разширение възможно най-скоро, използвайки данните за контакт, които ще се появят по-горе, когато създадат необходимата" },
   "VsmmManifestDefaultTitle": { "message": "Visual Studio Marketplace Metrics" },
   "VsmmManifestName": { "message": "Visual Studio Marketplace Metrics" },
   "VsmmManifestShortName": { "message": "VS показателите за разширенията" },

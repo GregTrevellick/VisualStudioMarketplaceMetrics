@@ -31,7 +31,7 @@
    "VsmmToNotifyAuthorText": { "message": ". Notificare l'autore di estensione tramite una e-mail pre-popolato Se si preferisce contattare l'autore tramite altri mezzi si prega di includere le seguenti"},
 "VsmmUninitialised": { "message": "Non inizializzato"} ,
 "VsmmUnknown": { "message": "Sconosciuto"} ,
-   "VsmmVisualStudioHelpText": { "message": "Questa estensione è totalmente dipendente da Visual Studio Marketplace DOM di Microsoft, che è soggetto a modifiche da parte di Microsoft in qualsiasi momento, e che causerebbe questa estensione gratuita per cessare di funzionare correttamente In questo caso si prega di aiuto il. open source eco-sistema, informando l'autore estensione nel più breve tempo possibile, utilizzando i recapiti ch:e appariranno sopra quando neccessary "},
+   "VsmmVisualStudioHelpText": { "message": "Questa estensione è totalmente dipendente da Visual Studio Marketplace DOM di Microsoft, che è soggetto a modifiche da parte di Microsoft in qualsiasi momento, e che causerebbe questa estensione gratuita per cessare di funzionare correttamente In questo caso si prega di aiuto il. open source eco-sistema, informando l'autore estensione nel più breve tempo possibile, utilizzando i recapiti ch:e appariranno sopra quando neccessary"},
  "VsmmManifestDefaultTitle": { "message": "Visual Studio Marketplace Metriche"},
 "VsmmManifestName": { "message": "Visual Studio Marketplace Metriche"} ,
    "VsmmManifestShortName": { "message": "VS Estensioni Metriche"},

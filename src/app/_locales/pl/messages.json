@@ -31,7 +31,7 @@
    "VsmmToNotifyAuthorText": { "message": ". Zawiadomi twórcy rozszerzenia za pomocą wstępnie wypełnione email Jeśli wolisz, aby skontaktować się z autorem za pośrednictwem innych środków należy zaliczyć"},
    "VsmmUninitialised": { "message": "zainicjalizowana"},
    "VsmmUnknown": { "message": "nieznane"},
-   "VsmmVisualStudioHelpText": { "message": "To rozszerzenie jest całkowicie zależne od Microsoft Visual Studio Giełda DOM, które mogą ulec zmianie przez Microsoft w każdej chwili, a co spowodowałoby to darmowe rozszerzenie, aby przestały działać prawidłowo, jeżeli nastąpiło to proszę o pomoc. źródło ekosystem otwarty informując autor wewnętrzny jak najszybciej, korzystając z danych kontaktowych, które pojawią się wyżej, gdy neccessary "},
+   "VsmmVisualStudioHelpText": { "message": "To rozszerzenie jest całkowicie zależne od Microsoft Visual Studio Giełda DOM, które mogą ulec zmianie przez Microsoft w każdej chwili, a co spowodowałoby to darmowe rozszerzenie, aby przestały działać prawidłowo, jeżeli nastąpiło to proszę o pomoc. źródło ekosystem otwarty informując autor wewnętrzny jak najszybciej, korzystając z danych kontaktowych, które pojawią się wyżej, gdy neccessary"},
    "VsmmManifestDefaultTitle": { "message": "Visual Studio Zlecenia Metrics"},
    "VsmmManifestName": { "message": "Visual Studio Zlecenia Metrics"},
    "VsmmManifestShortName": { "message": "VS Przedłużanie Metrics"},

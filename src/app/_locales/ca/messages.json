@@ -31,7 +31,7 @@
      "VsmmToNotifyAuthorText": { "message": ". Notificar a l'autor d'extensió a través d'un correu electrònic pre-poblada Si prefereix posar-se en contacte amb l'autor a través d'altres mitjans per favor, següent" },
      "VsmmUninitialised": { "message": "no inicialitzat" },
      "VsmmUnknown": { "message": "Desconegut" },
-     "VsmmVisualStudioHelpText": { "message": "Aquesta extensió és totalment dependent de Visual Studio DOM mercat de Microsoft, que està subjecta a canvis per part de Microsoft en qualsevol moment, i el que faria que aquesta extensió gratis deixi de funcionar quan passi això, ajudar al. Open Source eco-sistema, informant a l'autor extensió tan aviat com sigui possible, utilitzant les dades de contacte que apareixen més amunt, quan ho necessiti " },
+     "VsmmVisualStudioHelpText": { "message": "Aquesta extensió és totalment dependent de Visual Studio DOM mercat de Microsoft, que està subjecta a canvis per part de Microsoft en qualsevol moment, i el que faria que aquesta extensió gratis deixi de funcionar quan passi això, ajudar al. Open Source eco-sistema, informant a l'autor extensió tan aviat com sigui possible, utilitzant les dades de contacte que apareixen més amunt, quan ho necessiti" },
      "VsmmManifestDefaultTitle": { "message": "Visual Studio mètriques del mercat" },
      "VsmmManifestName": { "message": "Visual Studio mètriques del mercat" },
      "VsmmManifestShortName": { "message": "Extensions VS mesuraments" },

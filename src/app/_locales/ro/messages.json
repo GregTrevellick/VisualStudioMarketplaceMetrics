@@ -31,7 +31,7 @@
    "VsmmToNotifyAuthorText": { "message": ". Pentru a informa autorul extensiei printr-un e-mail de pre-populate Dacă preferați să contactați autorul prin alte mijloace, vă rugăm să includă următoarele"},
    "VsmmUninitialised": { "message": "Uninitialised"},
    "VsmmUnknown": { "message": "Necunoscut"},
-   "VsmmVisualStudioHelpText": { "message": "Această extensie este dependentă în întregime de Microsoft Visual Studio Marketplace DOM, care pot fi modificate de către Microsoft în orice moment, și care ar provoca această prelungire GRATUIT să nu mai funcționeze corect Dacă se întâmplă acest lucru, vă rugăm Ajuta-l. eco-sistem open source prin informarea autorului de extindere cât mai curând posibil, folosind datele de contact care vor apărea mai sus atunci când necesar pe "},
+   "VsmmVisualStudioHelpText": { "message": "Această extensie este dependentă în întregime de Microsoft Visual Studio Marketplace DOM, care pot fi modificate de către Microsoft în orice moment, și care ar provoca această prelungire GRATUIT să nu mai funcționeze corect Dacă se întâmplă acest lucru, vă rugăm Ajuta-l. eco-sistem open source prin informarea autorului de extindere cât mai curând posibil, folosind datele de contact care vor apărea mai sus atunci când necesar pe"},
    "VsmmManifestDefaultTitle": { "message": "Visual Studio Marketplace Metrics"},
    "VsmmManifestName": { "message": "Visual Studio Marketplace Metrics"},
    "VsmmManifestShortName": { "message": "VS Extensii Metrics"},

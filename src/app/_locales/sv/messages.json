@@ -31,7 +31,7 @@
    "VsmmToNotifyAuthorText": { "message": ". Meddela förlängnings författare via en förifylld e Om du föredrar att kontakta författaren via andra medel vänligen inkludera följande"},
    "VsmmUninitialised": { "message": "Uninitialised"},
    "VsmmUnknown": { "message": "Unknown"},
-   "VsmmVisualStudioHelpText": { "message": "Denna utvidgning är helt beroende av Microsofts Visual Studio Marketplace DOM, som kan ändras av Microsoft när som helst, och som skulle orsaka detta GRATIS förlängning slutar fungera korrekt om detta inträffar snälla hjälp. öppen källkod ekosystem genom att informera förlängnings författare så snart som möjligt, med hjälp av kontaktuppgifterna som kommer att visas ovan när är nödvändiga "},
+   "VsmmVisualStudioHelpText": { "message": "Denna utvidgning är helt beroende av Microsofts Visual Studio Marketplace DOM, som kan ändras av Microsoft när som helst, och som skulle orsaka detta GRATIS förlängning slutar fungera korrekt om detta inträffar snälla hjälp. öppen källkod ekosystem genom att informera förlängnings författare så snart som möjligt, med hjälp av kontaktuppgifterna som kommer att visas ovan när är nödvändiga"},
    "VsmmManifestDefaultTitle": { "message": "Visual Studio Marknads Metrics"},
    "VsmmManifestName": { "message": "Visual Studio Marknads Metrics"},
    "VsmmManifestShortName": { "message": "VS Extensions Metrics"},

@@ -36,7 +36,7 @@
   "VsmmToNotifyAuthorText": { "message": "um den Erweiterungsautor über eine vorbesetzte E-Mail zu benachrichtigen.Wenn Sie es vorziehen, den Autor über andere Mittel zu kontaktieren, geben Sie bitte die folgenden" },
   "VsmmUninitialised": { "message": "Uninitialisiert" },
   "VsmmUnknown": { "message": "Unknown" },
-  "VsmmVisualStudioHelpText": { "message": "Diese Erweiterung hängt vollständig von Microsoft Visual Studio Marketplace DOM ab, das jederzeit von Microsoft geändert werden kann und die dazu führen würde, dass diese FREE-Erweiterung nicht mehr ordnungsgemäß funktioniert Open-Source-Ökosystem, indem sie den Erweiterungsautor so bald wie möglich informiert, indem er die Kontaktdaten verwendet, die oben erscheinen werden, wenn nötig " },
+  "VsmmVisualStudioHelpText": { "message": "Diese Erweiterung hängt vollständig von Microsoft Visual Studio Marketplace DOM ab, das jederzeit von Microsoft geändert werden kann und die dazu führen würde, dass diese FREE-Erweiterung nicht mehr ordnungsgemäß funktioniert Open-Source-Ökosystem, indem sie den Erweiterungsautor so bald wie möglich informiert, indem er die Kontaktdaten verwendet, die oben erscheinen werden, wenn nötig" },
   "VsmmManifestDefaultTitle": { "message": "Visual Studio Marketplace Metrics" },
   "VsmmManifestName": { "message": "Visual Studio Marketplace Metrics" },
   "VsmmManifestShortName": { "message": "VS Extensions Metrics" },

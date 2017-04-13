@@ -31,7 +31,7 @@
    "VsmmToNotifyAuthorText": { "message": ". Om de uitbreiding afzender op de hoogte via een pre-bevolkte e-mail Als u liever contact op met de auteur via een andere manier kunt u onder meer de volgende"},
    "VsmmUninitialised": { "message": "ongeinitialiseerde"},
    "VsmmUnknown": { "message": "Onbekend"},
-   "VsmmVisualStudioHelpText": { "message": "Deze uitbreiding is geheel afhankelijk van Microsoft's Visual Studio Marketplace DOM, die aan verandering onderhevig is door Microsoft op elk moment en die zou leiden tot deze gratis extensie te staken goed functioneert als dit gebeurt please help het. open source ecosysteem door het informeren van de extensie auteur zo snel mogelijk, via de contactgegevens die boven zal verschijnen wanneer benodigde "},
+   "VsmmVisualStudioHelpText": { "message": "Deze uitbreiding is geheel afhankelijk van Microsoft's Visual Studio Marketplace DOM, die aan verandering onderhevig is door Microsoft op elk moment en die zou leiden tot deze gratis extensie te staken goed functioneert als dit gebeurt please help het. open source ecosysteem door het informeren van de extensie auteur zo snel mogelijk, via de contactgegevens die boven zal verschijnen wanneer benodigde"},
    "VsmmManifestDefaultTitle": { "message": "Visual Studio Marketplace Metrics"},
    "VsmmManifestName": { "message": "Visual Studio Marketplace Metrics"},
    "VsmmManifestShortName": { "message": "VS Extensions Metrics"},

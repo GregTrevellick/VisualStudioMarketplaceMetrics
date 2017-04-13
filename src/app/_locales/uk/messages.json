@@ -31,7 +31,7 @@
   "VsmmToNotifyAuthorText": { "message": "önceden doldurulmuş bir e-postayla uzantı yazarını haberdar etmek için. Başka yollarla yazar ile bağlantı kurmayı tercih ederseniz lütfen" },
    "VsmmUnitialized": {"message": "Başlatılmamış"},
    "VsmmUnknown": {"message": "Bilinmiyor"},
-    "VsmmVisualStudioHelpText": { "message": "Bu uzantı tamamen Microsoft'un Visual Studio Marketplace DOM'ına bağımlıdır ve bu DOM, istediğiniz zaman Microsoft tarafından değiştirilebilir ve bu BEDAVE uzatmanın düzgün şekilde çalışmasını durduracaktır. Açık kaynaklı eko-sistemi oluşturmak için gerekli olan durumlarda yukarıdaki iletişim bilgilerini kullanarak uzatma yazarını en kısa sürede bilgilendirerek," },
+    "VsmmVisualStudioHelpText": { "message": "Bu uzantı tamamen Microsoft'un Visual Studio Marketplace DOM'ına bağımlıdır ve bu DOM, istediğiniz zaman Microsoft tarafından değiştirilebilir ve bu BEDAVE uzatmanın düzgün şekilde çalışmasını durduracaktır. Açık kaynaklı eko-sistemi oluşturmak için gerekli olan durumlarda yukarıdaki iletişim bilgilerini kullanarak uzatma yazarını en kısa sürede bilgilendirerek" },
    "VsmmManifestDefaultTitle": {"message": "Visual Studio Marketplace Metrics"},
    "VsmmManifestName": {"message": "Visual Studio Marketplace Metrics"},
    "VsmmManifestShortName": {"message": "VS Uzantıları Metrikleri"},
