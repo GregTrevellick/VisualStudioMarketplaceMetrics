@@ -261,6 +261,8 @@ function GetTranslation(textKey) {
 
     function GetTranslationForUiSelectedLocale(textKey, locale) {
 
+        debugger;
+
         var messages;
         var result;
         if (typeof messages == "undefined") {
@@ -270,8 +272,10 @@ function GetTranslation(textKey) {
                 success: function (data) {
                     messages = JSON.parse(data);
                     result = messages[textKey].message;
+                },
+                error: function () {
+                    result = "A very rare ajax error has occured. Please inform vsmarketplacemetrics@gmail.com.";
                 }
-                //,error: GREGt-TODO e.g. result = "ajax error";in caller check for this & show opps message
             });
         }
 
