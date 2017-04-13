@@ -156,61 +156,61 @@ $('#CopyToClipboard').click(function (e) {
 });
 
 function CommonErrorHandler(e) {
-        try {
-            if (e != undefined) {
-                if (e.stack != undefined) {
-                    latestError = e.stack;
-                }
-                else {
-                    latestError = e;
-                }
-            }
-
-            PopulateDataUnavailableElements();
-            document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
-            document.getElementById('errorOccuredPage').removeAttribute("hidden");
-            document.getElementById('errorOccuredPagePlease').removeAttribute("hidden");
-            document.getElementById('JavaScriptErrorText').removeAttribute("hidden");
-
-            HideSpinner();
-        } catch (e) {
-            console.log(e);
-            console.log("A serious error occured within the Visual Studio Marketplace Metrics extension. Please re-try at your convenience.");
-        }
-    }
-
-function HideSpinner() {
-        $('.ajaxLoader').hide();
-    }
-
-function GetUserAgent() {
-        return navigator.userAgent;
-    }
-
-function GetPageUrl() {
-        if (vsmpDomPageUrl != undefined) {
-            return vsmpDomPageUrl;
-        } else {
-            return "";
-        };
-    }
-
-function GetJavascriptError(e) {
+    try {
         if (e != undefined) {
             if (e.stack != undefined) {
-                return e.stack;
+                latestError = e.stack;
             }
             else {
-                return e;
+                latestError = e;
             }
-        } else {
-            if (latestError != undefined) {
-                return latestError;
-            } else {
-                return "Indeterminate error";
-            }
-        };
+        }
+
+        PopulateDataUnavailableElements();
+        document.getElementById('JavaScriptErrorText').innerHTML = GetJavascriptError(e);
+        document.getElementById('errorOccuredPage').removeAttribute("hidden");
+        document.getElementById('errorOccuredPagePlease').removeAttribute("hidden");
+        document.getElementById('JavaScriptErrorText').removeAttribute("hidden");
+
+        HideSpinner();
+    } catch (e) {
+        console.log(e);
+        console.log("A serious error occured within the Visual Studio Marketplace Metrics extension. Please re-try at your convenience.");
+    }
+}
+
+function HideSpinner() {
+    $('.ajaxLoader').hide();
+}
+
+function GetUserAgent() {
+    return navigator.userAgent;
+}
+
+function GetPageUrl() {
+    if (vsmpDomPageUrl != undefined) {
+        return vsmpDomPageUrl;
+    } else {
+        return "";
     };
+}
+
+function GetJavascriptError(e) {
+    if (e != undefined) {
+        if (e.stack != undefined) {
+            return e.stack;
+        }
+        else {
+            return e;
+        }
+    } else {
+        if (latestError != undefined) {
+            return latestError;
+        } else {
+            return "Indeterminate error";
+        }
+    };
+};
 
 function GetLocaleBySource() {
     if (useChromeLocale) {
