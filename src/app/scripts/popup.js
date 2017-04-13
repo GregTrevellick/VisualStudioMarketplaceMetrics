@@ -102,57 +102,58 @@ function popUpCallBack(vsmpDom) {
     };
 
 $('#DataUnavailableEmail').click(function (e) {
-        try {
-            var mailto = "vsmarketplacemetrics@gmail.com";
-            var subject = GetTranslation("VsmmFeedbackEmailSubject");
-            var body = GetUserAgent() +
-                       "\n" + "\n" +
-                       GetPageUrl() +
-                       "\n" + "\n" +
-                       GetLocaleBySource() +
-                       "\n" + "\n" +
-                       GetJavascriptError();
-            var emailUrl = encodeURI("mailto:" + mailto + "?subject=" + subject + "&body=" + body);
-            chrome.tabs.create({ url: emailUrl }, function (tab) {
-                setTimeout(function () {
-                    chrome.tabs.remove(tab.id);
-                }
-                , 500
-               );
-            });
-        } catch (e) {
-            CommonErrorHandler(e);
-        }
-    });
+    try {
+        var mailto = "vsmarketplacemetrics@gmail.com";
+        var subject = GetTranslation("VsmmFeedbackEmailSubject");
+        var body = GetUserAgent() +
+                    "\n" + "\n" +
+                    GetPageUrl() +
+                    "\n" + "\n" +
+                    GetLocaleBySource() +
+                    "\n" + "\n" +
+                    GetJavascriptError();
+        var emailUrl = encodeURI("mailto:" + mailto + "?subject=" + subject + "&body=" + body);
+        chrome.tabs.create({ url: emailUrl }, function (tab) {
+            setTimeout(function () {
+                chrome.tabs.remove(tab.id);
+            }
+            , 500
+            );
+        });
+    } catch (e) {
+        CommonErrorHandler(e);
+    }
+});
 
 $('#CopyToClipboard').click(function (e) {
-        try {
-            var element = document.getElementById('ClipboardBuffer');
-            var body = document.body, range, sel;
-            if (document.createRange && window.getSelection) {
-                range = document.createRange();
-                sel = window.getSelection();
-                sel.removeAllRanges();
-                try {
-                    range.selectNodeContents(element);
-                    sel.addRange(range);
-                } catch (e) {
-                    range.selectNode(element);
-                    sel.addRange(range);
-                }
-            } else {
-                if (body.createTextRange) {
-                    range = body.createTextRange();
-                    range.moveToElementText(element);
-                    range.select();
-                }
-            };
-            document.execCommand('copy');
-            document.getSelection().removeAllRanges();
-        } catch (e) {
-            CommonErrorHandler(e);
-        }
-    });
+    try {
+        console.log("2");
+        var element = document.getElementById('ClipboardBuffer');
+        var body = document.body, range, sel;
+        if (document.createRange && window.getSelection) {
+            range = document.createRange();
+            sel = window.getSelection();
+            sel.removeAllRanges();
+            try {
+                range.selectNodeContents(element);
+                sel.addRange(range);
+            } catch (e) {
+                range.selectNode(element);
+                sel.addRange(range);
+            }
+        } else {
+            if (body.createTextRange) {
+                range = body.createTextRange();
+                range.moveToElementText(element);
+                range.select();
+            }
+        };
+        document.execCommand('copy');
+        document.getSelection().removeAllRanges();
+    } catch (e) {
+        CommonErrorHandler(e);
+    }
+});
 
 function CommonErrorHandler(e) {
         try {
