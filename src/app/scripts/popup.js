@@ -260,9 +260,6 @@ function GetTranslation(textKey) {
     }
 
     function GetTranslationForUiSelectedLocale(textKey, locale) {
-
-        debugger;
-
         var messages;
         var result;
         if (typeof messages == "undefined") {
