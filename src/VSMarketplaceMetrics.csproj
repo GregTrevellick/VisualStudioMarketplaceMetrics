@@ -59,13 +59,7 @@
     <Content Include="app\scripts\app.js" />
     <Content Include="app\scripts\jquery-3.1.1.min.js" />
     <Content Include="app\scripts\VsmmController.js" />
-    <Content Include="assets\webstore_screenshot_1280x800_2_IDE_WithSearch_es.png" />
-    <Content Include="assets\webstore_screenshot_1280x800_3_VSTS.png" />
-    <Content Include="assets\webstore_screenshot_1280x800_4_VSCode.png" />
-    <Content Include="assets\webstore_screenshot_1280x800_1_IDE_WithSearch_en.png" />
-    <Content Include="assets\zwebstore_screenshot_1280x800_5_ClipboardToExcel.png" />
-    <Content Include="assets\promo_tile_440x280.png" />
-    <Content Include="assets\zpromo_tile_1400x560.png" />
+    <Content Include="assets\webstore_screenshot_1280x800.png" />
     <Content Include="assets\promo_tile_920x680.png" />
     <Content Include="reference_scripts\console.image.js" />
     <Content Include="app\scripts\console.image.min.js" />
