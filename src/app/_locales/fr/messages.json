@@ -10,7 +10,7 @@
   "VsmmErrorOccuredPageText": { "message": "Opps, quelque chose s'est mal" },
   "VsmmExtension": { "message": "extension" },
   "VsmmExtensions": { "message": "extensions" },
-  "VsmmFeedbackEmailsubject": { "message": "VS Marketplace Metrics Feedback" },
+  "VsmmFeedbackEmailSubject": { "message": "VS Marketplace Metrics Feedback" },
   "VsmmHere": { "message": "ici" },
   "VsmmIfYouSuspectSeeingIncorrectlyText": { "message": "Si vous pensez que vous voyez cet avis incorrectement, cliquez sur" },
   "VsmmIndeterminateError": { "message": "Erreur indéterminée" },

@@ -7,7 +7,7 @@
 "VsmmErrorOccuredPageText": {"message": "Opps, algo falló"},
 "VsmmExtension": {"message": "extension"},
 "VsmmExtensions": {"message": "extensions"},
-"VsmmFeedbackEmailsubject": {"message": "VS Marketplace Metrics Feedback"},
+"VsmmFeedbackEmailSubject": {"message": "VS Marketplace Metrics Feedback"},
 "VsmmHere": {"message": "aquí"},
 "VsmmIfYouSuspectSeeingIncorrectlyText": {"message": "Si sospecha que está viendo este aviso incorrectamente, haga clic en"},
 "VsmmIndeterminateError": {"message": "Error indeterminado"},

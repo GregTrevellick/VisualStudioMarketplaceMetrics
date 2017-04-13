@@ -7,7 +7,7 @@
    "VsmmErrorOccuredPageText": { "message": "Oeps, iets fout gegaan"},
    "VsmmExtension": { "message": "uitbreiding"},
    "VsmmExtensions": { "message": "extensions"},
-   "VsmmFeedbackEmailsubject": { "message": "VS Marketplace Metrics feedback"},
+   "VsmmFeedbackEmailSubject": { "message": "VS Marketplace Metrics feedback"},
    "VsmmHere": { "message": "hier"},
    "VsmmIfYouSuspectSeeingIncorrectlyText": { "message": "Als u vermoedt dat u ten onrechte het zien van dit bericht klikt u op"},
    "VsmmIndeterminateError": { "message": "Indeterminate error"},

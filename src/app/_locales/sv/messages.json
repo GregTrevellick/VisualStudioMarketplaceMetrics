@@ -7,7 +7,7 @@
    "VsmmErrorOccuredPageText": { "message": "Opps, gick något fel"},
    "VsmmExtension": { "message": "förlängning"},
    "VsmmExtensions": { "message": "extensions"},
-   "VsmmFeedbackEmailsubject": { "message": "VS Marknads Metrics Feedback"},
+   "VsmmFeedbackEmailSubject": { "message": "VS Marknads Metrics Feedback"},
    "VsmmHere": { "message": "här"},
    "VsmmIfYouSuspectSeeingIncorrectlyText": { "message": "Om du misstänker att du ser detta meddelande felaktigt klicka på"},
    "VsmmIndeterminateError": { "message": "Obestämd fel"},

@@ -7,7 +7,7 @@
    "VsmmErrorOccuredPageText": { "message": "Hopa, ceva a mers prost"},
    "VsmmExtension": { "message": "extensia"},
    "VsmmExtensions": { "message": "Extensii"},
-   "VsmmFeedbackEmailsubject": { "message": "VS Marketplace Metrics feedback"},
+   "VsmmFeedbackEmailSubject": { "message": "VS Marketplace Metrics feedback"},
    "VsmmHere": { "message": "aici"},
    "VsmmIfYouSuspectSeeingIncorrectlyText": { "message": "Dacă credeți că vedeți acest anunț de incorect vă rugăm să faceți clic pe"},
    "VsmmIndeterminateError": { "message": "eroare nedeterminate"},

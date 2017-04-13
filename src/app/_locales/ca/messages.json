@@ -7,7 +7,7 @@
      "VsmmErrorOccuredPageText": { "message": "Opps, alguna cosa va sortir malament" },
      "VsmmExtension": { "message": "extensió" },
      "VsmmExtensions": { "message": "Extensions" },
-     "VsmmFeedbackEmailsubject": { "message": "VS mètriques del mercat de vots" },
+     "VsmmFeedbackEmailSubject": { "message": "VS mètriques del mercat de vots" },
      "VsmmHere": { "message": "aquí" },
      "VsmmIfYouSuspectSeeingIncorrectlyText": { "message": "Si vostè sospita que vostè està veient aquest avís incorrectament, feu clic a" },
      "VsmmIndeterminateError": { "message": "error indeterminat" },

@@ -164,7 +164,7 @@
         $scope.VsmmErrorOccuredPageText = GetTranslation("VsmmErrorOccuredPageText") + ".";
         $scope.VsmmExtension = GetTranslation("VsmmExtension");
         $scope.VsmmExtensions = GetTranslation("VsmmExtensions");
-        $scope.VsmmFeedbackEmailsubject = GetTranslation("VsmmFeedbackEmailsubject");
+        $scope.VsmmFeedbackEmailSubject = GetTranslation("VsmmFeedbackEmailSubject");
         $scope.VsmmHere = GetTranslation("VsmmHere");
         $scope.VsmmIfYouSuspectSeeingIncorrectlyText = GetTranslation("VsmmIfYouSuspectSeeingIncorrectlyText") + " ";
         $scope.VsmmIndeterminateError = GetTranslation("VsmmIndeterminateError");

@@ -7,7 +7,7 @@
   "VsmmErrorOccuredPageText": { "message": "Ами сега, нещо се обърка" },
   "VsmmExtension": { "message": "разширение" },
   "VsmmExtensions": { "message": "разширенията" },
-  "VsmmFeedbackEmailsubject": { "message": "VS Marketplace Metrics Обратна връзка" },
+  "VsmmFeedbackEmailSubject": { "message": "VS Marketplace Metrics Обратна връзка" },
   "VsmmHere": { "message": "тук" },
   "VsmmIfYouSuspectSeeingIncorrectlyText": { "message": "Ако подозирате, че виждате това съобщение неправилно моля натиснете" },
   "VsmmIndeterminateError": { "message": "Неопределен грешка" },

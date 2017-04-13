@@ -7,7 +7,7 @@
    "VsmmErrorOccuredPageText": {"message": "İşlemler, bir şeyler ters gitti"},
    "VsmmExtension": {"message": "uzantı"},
    "VsmmExtensions": {"message": "uzantılar"},
-   "VsmmFeedbackEmailsubject": {"message": "VS Marketplace Metrics Feedback"},
+   "VsmmFeedbackEmailSubject": {"message": "VS Marketplace Metrics Feedback"},
    "VsmmHere": {"message": "here"},
    "VsmmIfYouSuspectSeeingIncorrectlyText": {"message": "Bu uyarıyı yanlış gördüğünüzden şüpheleniyorsanız lütfen tıklayın"},
    "VsmmIndeterminateError": {"message": "Hatalı hata"},

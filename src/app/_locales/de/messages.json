@@ -10,7 +10,7 @@
   "VsmmErrorOccuredPageText": { "message": "Opps, etwas ist schief gelaufen" },
   "VsmmExtension": { "message": "extension" },
   "VsmmExtensions": { "message": "extensions" },
-  "VsmmFeedbackEmailsubject": { "message": "VS Marketplace Metrics Feedback" },
+  "VsmmFeedbackEmailSubject": { "message": "VS Marketplace Metrics Feedback" },
   "VsmmHere": { "message": "hier" },
   "VsmmIfYouSuspectSeeingIncorrectlyText": { "message": "Wenn Sie vermuten, dass Sie diesen Hinweis falsch sehen, klicken Sie bitte auf" },
   "VsmmIndeterminateError": { "message": "Unbestimmter Fehler" },

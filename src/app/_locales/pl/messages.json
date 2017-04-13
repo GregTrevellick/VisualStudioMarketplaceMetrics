@@ -7,7 +7,7 @@
    "VsmmErrorOccuredPageText": { "message": "Ups, coś poszło nie tak"},
    "VsmmExtension": { "message": "rozszerzenie"},
    "VsmmExtensions": { "message": "extensions"},
-   "VsmmFeedbackEmailsubject": { "message": "VS Zlecenia Metrics Odpowiedź"},
+   "VsmmFeedbackEmailSubject": { "message": "VS Zlecenia Metrics Odpowiedź"},
    "VsmmHere": { "message": "tu"},
    "VsmmIfYouSuspectSeeingIncorrectlyText": { "message": "Jeśli podejrzewasz, że widzisz ten anons nieprawidłowo kliknij"},
    "VsmmIndeterminateError": { "message": "Nieokreślony błąd"},
