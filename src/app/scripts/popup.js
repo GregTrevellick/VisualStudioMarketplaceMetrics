@@ -65,41 +65,41 @@ function popUpCallBack(vsmpDom) {
     myVarWatch.trigger();
 
     try {
-            if (vsmpDom.length == 0) {
-                document.getElementById('nilSearchResults').removeAttribute("hidden");
+        if (vsmpDom.length == 0) {
+            document.getElementById('nilSearchResults').removeAttribute("hidden");
+        }
+        else {
+            ProcessVsmpDom();
+        }
+
+        HideSpinner();
+
+        function ProcessVsmpDom() {
+
+            vsmpDomPageUrl = vsmpDom[0]["PageUrl"];
+
+            //dummyError = b.c;
+           
+            if (vsmpDom[0]["URL"] == "errorOccurred") {
+                throw vsmpDom[0]["Error"];
+            };
+
+            if (vsmpDom[0]["URL"] == "notAllowed") {
+                ShowDataUnavailableMessage();
             }
             else {
-                ProcessVsmpDom();
+                document.getElementById('dataAvailable').removeAttribute("hidden");
             }
 
-            HideSpinner();
-
-            function ProcessVsmpDom() {
-
-                vsmpDomPageUrl = vsmpDom[0]["PageUrl"];
-
-                //dummyError = b.c;
-           
-                if (vsmpDom[0]["URL"] == "errorOccurred") {
-                    throw vsmpDom[0]["Error"];
-                };
-
-                if (vsmpDom[0]["URL"] == "notAllowed") {
-                    ShowDataUnavailableMessage();
-                }
-                else {
-                    document.getElementById('dataAvailable').removeAttribute("hidden");
-                }
-
-                //Enable table sorting
-                $(document).ready(function () {
-                    $("#DetailGridTable").tablesorter();
-                });
-            }
-        } catch (e) {
-            CommonErrorHandler(e);
+            //Enable table sorting
+            $(document).ready(function () {
+                $("#DetailGridTable").tablesorter();
+            });
         }
-    };
+    } catch (e) {
+        CommonErrorHandler(e);
+    }
+};
 
 $('#DataUnavailableEmail').click(function (e) {
     try {
