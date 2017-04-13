@@ -2,7 +2,7 @@
      "VsmmAverageReviewScore": { "message": "Avaluació mitjana" },
      "VsmmAverageReviewScore_Lower": { "message": "puntuació mitjana crítica" },
      "VsmmCopyTableToClipboard": { "message": "taula Copiar al portapapers" },
-     "VsmmDataUnavailableForPageText": { "message": "dades de Visual Studio mètriques del mercat és per desgràcia no està disponible per aquesta pàgina" },
+     "VsmmDataUnavailableForPageText": { "message": "Dades de Visual Studio mètriques del mercat és per desgràcia no està disponible per aquesta pàgina" },
      "VsmmDividedBy": { "message": "dividit per" },
      "VsmmErrorOccuredPageText": { "message": "Opps, alguna cosa va sortir malament" },
      "VsmmExtension": { "message": "extensió" },
