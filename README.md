@@ -77,8 +77,8 @@ In no event shall [Microsoft][MicrosoftURL] or [Google][GoogleURL] be liable for
 [GitHubRepoURL]: https://github.com/GregTrevellick/VisualStudioMarketplaceMetrics
 [GitHubRepoIssuesURL]: https://github.com/GregTrevellick/VisualStudioMarketplaceMetrics/issues
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/VisualStudioMarketplaceMetrics/pulls
-[ChromeExtensionURL]: https://www.google.com/extensions/VisualStudioMarketplaceMetrics
-[ChromeExtensionReviewsUrl]: https://www.google.com/extensions/VisualStudioMarketplaceMetrics/reviews
+[ChromeExtensionURL]: https://chrome.google.com/webstore/detail/visual-studio-marketplace/fifncokofckhanlhmdacdnkbempmopbo
+[ChromeExtensionReviewsUrl]: https://chrome.google.com/webstore/detail/visual-studio-marketplace/fifncokofckhanlhmdacdnkbempmopbo/reviews
 [GoogleURL]: https://www.google.com/
 [MicrosoftURL]: https://www.microsoft.com/
 [VSMarketplaceURL]: https://marketplace.visualstudio.com/
