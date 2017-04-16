@@ -2,6 +2,10 @@
 
 These are the changes to each version that has been released in the Chrome Web Store.
 
+## 1.0.1 
+**2017-04-16** 
+- [x] Flag as available offline in manifest
+
 ## 1.0.0 
 **2017-04-13** 
 - [x] Initial release
