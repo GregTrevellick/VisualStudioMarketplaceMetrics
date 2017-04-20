@@ -155,7 +155,8 @@ chrome.runtime.onMessage.addListener(
                     if (visitType == "search_VS" ||
                         visitType == "search_VSCode" ||
                         visitType == "search_VSTS") {
-                        vsmpDomSelector = "[class^=grid-item]";
+                        //vsmpDomSelector = "[class^=grid-item]";
+                        vsmpDomSelector = "[class^=row-item]";
                     }
                     else {
                         if (visitType == "browse_Root" ||
