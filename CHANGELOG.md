@@ -2,6 +2,10 @@
 
 These are the changes to each version that has been released in the Chrome Web Store.
 
+## 1.0.2
+**2017-04-20** 
+- [x] [Bug](https://github.com/GregTrevellick/VisualStudioMarketplaceMetrics/issues/2) fix following change in Microsoft DOM
+ 
 ## 1.0.1 
 **2017-04-16** 
 - [x] Flag as available offline in manifest
