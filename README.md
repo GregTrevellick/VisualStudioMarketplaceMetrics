@@ -8,6 +8,7 @@ This [Chrome extension][ChromeExtensionURL] is officially available at the [Chro
 
 ![](ReadMeAnimatedUsage.gif)
 
+Watch on YouTube !
 [![YouTube demo](https://img.youtube.com/vi/cOaZLc0udZw/0.jpg)](https://www.youtube.com/watch?v=cOaZLc0udZw)
 
 If you like this ***free*** extension, please give it a [review][ChromeExtensionReviewsUrl].
