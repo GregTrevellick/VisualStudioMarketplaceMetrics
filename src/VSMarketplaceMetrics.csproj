@@ -59,9 +59,14 @@
     <Content Include="app\scripts\app.js" />
     <Content Include="app\scripts\jquery-3.1.1.min.js" />
     <Content Include="app\scripts\VsmmController.js" />
+    <Content Include="assets\0.jpg_withYouTubeLogo.jpg" />
+    <Content Include="assets\0.jpg" />
+    <Content Include="assets\0.jpg.txt" />
     <Content Include="assets\imgur.com.png" />
     <Content Include="assets\webstore_screenshot_1280x800.png" />
     <Content Include="assets\promo_tile_920x680.png" />
+    <Content Include="assets\webstore_screenshot_640x400.png" />
+    <Content Include="assets\YouTube-logo-full_color.png" />
     <Content Include="reference_scripts\console.image.js" />
     <Content Include="app\scripts\console.image.min.js" />
     <Content Include="app\img\icon_19x19.png" />
