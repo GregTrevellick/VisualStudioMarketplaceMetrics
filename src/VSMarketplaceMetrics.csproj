@@ -48,6 +48,28 @@
     <None Include="app\_locales\en\messages.json" />
     <None Include="app\_locales\es\messages.json" />
     <None Include="app\_locales\fr\messages.json" />
+    <None Include="Connected Services\VsIdeExtensionService\Extension.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\VsIdeExtensionService\Extension1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\VsIdeExtensionService\Extension2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\VsIdeExtensionService\Extension3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\VsIdeExtensionService\Extension4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\VsIdeExtensionService\Project1.VsIdeExtensionService.IdeCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VsIdeExtensionService\Project1.VsIdeExtensionService.ReleaseQueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VsIdeExtensionService\VsIdeExtensionService.wsdl" />
     <None Include="reference_scripts\flag-icon-css-master.zip" />
     <None Include="reference_scripts\__jquery.tablesorter.zip" />
     <None Include="unit_tests\TestCases.xlsx" />
@@ -68,6 +90,13 @@
     <Content Include="assets\webstore_screenshot_640x400.png" />
     <Content Include="assets\YouTube-logo-full_color.png" />
     <Content Include="assets\zReadMeAnimatedUsage.gif" />
+    <None Include="Connected Services\VsIdeExtensionService\Extension.disco" />
+    <None Include="Connected Services\VsIdeExtensionService\configuration91.svcinfo" />
+    <None Include="Connected Services\VsIdeExtensionService\configuration.svcinfo" />
+    <None Include="Connected Services\VsIdeExtensionService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="reference_scripts\console.image.js" />
     <Content Include="app\scripts\console.image.min.js" />
     <Content Include="app\img\icon_19x19.png" />
@@ -89,16 +118,30 @@
     <Content Include="reference_scripts\_references.js" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VsmpGateway.cs" />
+    <Compile Include="Connected Services\VsIdeExtensionService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="dummy.cs" />
     <Content Include="unit_tests\contentScriptTests.js" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\VsIdeExtensionService\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
