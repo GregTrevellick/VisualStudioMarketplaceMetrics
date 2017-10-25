@@ -1,5 +1,4 @@
 ﻿using Project1.VsIdeExtensionService;
-using System.Collections.Generic;
 
 namespace Project1
 {
@@ -9,11 +8,13 @@ namespace Project1
         {
             var client = new VsIdeServiceClient();
 
-            var vsixIds = new string[] { "OpeninXamarinStudio", "WhackWhackTerminal", "ArduinoIDEforVisualStudio" };
-            var requestContext = new Dictionary<string, string>();
-            var currentVersionsForVsixList = client.GetCurrentVersionsForVsixList(vsixIds, requestContext);
+            //var vsixIds = new string[] { "OpeninXamarinStudio", "WhackWhackTerminal", "ArduinoIDEforVisualStudio" };
+            //var requestContext = new Dictionary<string, string>();
+            //var currentVersionsForVsixList = client.GetCurrentVersionsForVsixList(vsixIds, requestContext);
 
-            // Always close the client.
+            var currentVersionsForVsixList = client.GetRootCategories("en-GB");
+
+            //ALWAYS close the client
             client.Close();
         }
     }
