@@ -118,7 +118,7 @@
     <Content Include="reference_scripts\_references.js" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VsmpGateway.cs" />
+    <Compile Include="zVsmpGateway.cs" />
     <Compile Include="Connected Services\VsIdeExtensionService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
