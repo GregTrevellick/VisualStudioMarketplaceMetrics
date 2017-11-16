@@ -8,10 +8,119 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Project1.VsIdeExtensionService {
+namespace Project1.VsIdeServiceClient {
     using System.Runtime.Serialization;
     using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdeCategory", Namespace="http://schemas.datacontract.org/2004/07/Galleries.Domain.Model")]
+    [System.SerializableAttribute()]
+    public partial class IdeCategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Project1.VsIdeServiceClient.IdeCategory[] ChildrenField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool HasMoreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Project1.VsIdeServiceClient.IdeCategory ParentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Project1.VsIdeServiceClient.IdeCategory[] Children {
+            get {
+                return this.ChildrenField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChildrenField, value) != true)) {
+                    this.ChildrenField = value;
+                    this.RaisePropertyChanged("Children");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool HasMore {
+            get {
+                return this.HasMoreField;
+            }
+            set {
+                if ((this.HasMoreField.Equals(value) != true)) {
+                    this.HasMoreField = value;
+                    this.RaisePropertyChanged("HasMore");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Project1.VsIdeServiceClient.IdeCategory Parent {
+            get {
+                return this.ParentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ParentField, value) != true)) {
+                    this.ParentField = value;
+                    this.RaisePropertyChanged("Parent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -23,7 +132,7 @@ namespace Project1.VsIdeExtensionService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Project1.VsIdeExtensionService.Release[] ReleasesField;
+        private Project1.VsIdeServiceClient.Release[] ReleasesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TotalCountField;
@@ -39,7 +148,7 @@ namespace Project1.VsIdeExtensionService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Project1.VsIdeExtensionService.Release[] Releases {
+        public Project1.VsIdeServiceClient.Release[] Releases {
             get {
                 return this.ReleasesField;
             }
@@ -90,7 +199,7 @@ namespace Project1.VsIdeExtensionService {
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Project1.VsIdeExtensionService.ReleaseFile[] FilesField;
+        private Project1.VsIdeServiceClient.ReleaseFile[] FilesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
@@ -108,7 +217,7 @@ namespace Project1.VsIdeExtensionService {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Project1.VsIdeExtensionService.Project ProjectField;
+        private Project1.VsIdeServiceClient.Project ProjectField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double RatingField;
@@ -156,7 +265,7 @@ namespace Project1.VsIdeExtensionService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Project1.VsIdeExtensionService.ReleaseFile[] Files {
+        public Project1.VsIdeServiceClient.ReleaseFile[] Files {
             get {
                 return this.FilesField;
             }
@@ -234,7 +343,7 @@ namespace Project1.VsIdeExtensionService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Project1.VsIdeExtensionService.Project Project {
+        public Project1.VsIdeServiceClient.Project Project {
             get {
                 return this.ProjectField;
             }
@@ -308,13 +417,13 @@ namespace Project1.VsIdeExtensionService {
         private int AffiliateIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Project1.VsIdeExtensionService.Category[] CategoriesField;
+        private Project1.VsIdeServiceClient.Category[] CategoriesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreatedDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Project1.VsIdeExtensionService.Release CurrentReleaseField;
+        private Project1.VsIdeServiceClient.Release CurrentReleaseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
@@ -344,7 +453,7 @@ namespace Project1.VsIdeExtensionService {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Project1.VsIdeExtensionService.Release[] ReleasesField;
+        private Project1.VsIdeServiceClient.Release[] ReleasesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool SourceCodeBrowsingEnabledField;
@@ -382,7 +491,7 @@ namespace Project1.VsIdeExtensionService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Project1.VsIdeExtensionService.Category[] Categories {
+        public Project1.VsIdeServiceClient.Category[] Categories {
             get {
                 return this.CategoriesField;
             }
@@ -408,7 +517,7 @@ namespace Project1.VsIdeExtensionService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Project1.VsIdeExtensionService.Release CurrentRelease {
+        public Project1.VsIdeServiceClient.Release CurrentRelease {
             get {
                 return this.CurrentReleaseField;
             }
@@ -538,7 +647,7 @@ namespace Project1.VsIdeExtensionService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Project1.VsIdeExtensionService.Release[] Releases {
+        public Project1.VsIdeServiceClient.Release[] Releases {
             get {
                 return this.ReleasesField;
             }
@@ -622,7 +731,7 @@ namespace Project1.VsIdeExtensionService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Project1.VsIdeExtensionService.FileAttachment AttachmentField;
+        private Project1.VsIdeServiceClient.FileAttachment AttachmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
@@ -637,10 +746,10 @@ namespace Project1.VsIdeExtensionService {
         private System.Collections.Generic.Dictionary<string, string> MetadataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Project1.VsIdeExtensionService.Release ParentField;
+        private Project1.VsIdeServiceClient.Release ParentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Project1.VsIdeExtensionService.ReleaseFileType TypeField;
+        private Project1.VsIdeServiceClient.ReleaseFileType TypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -653,7 +762,7 @@ namespace Project1.VsIdeExtensionService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Project1.VsIdeExtensionService.FileAttachment Attachment {
+        public Project1.VsIdeServiceClient.FileAttachment Attachment {
             get {
                 return this.AttachmentField;
             }
@@ -718,7 +827,7 @@ namespace Project1.VsIdeExtensionService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Project1.VsIdeExtensionService.Release Parent {
+        public Project1.VsIdeServiceClient.Release Parent {
             get {
                 return this.ParentField;
             }
@@ -731,7 +840,7 @@ namespace Project1.VsIdeExtensionService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Project1.VsIdeExtensionService.ReleaseFileType Type {
+        public Project1.VsIdeServiceClient.ReleaseFileType Type {
             get {
                 return this.TypeField;
             }
@@ -901,13 +1010,13 @@ namespace Project1.VsIdeExtensionService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Project1.VsIdeExtensionService.Category[] ChildrenField;
+        private Project1.VsIdeServiceClient.Category[] ChildrenField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Project1.VsIdeExtensionService.Category ParentField;
+        private Project1.VsIdeServiceClient.Category ParentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TitleField;
@@ -923,7 +1032,7 @@ namespace Project1.VsIdeExtensionService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Project1.VsIdeExtensionService.Category[] Children {
+        public Project1.VsIdeServiceClient.Category[] Children {
             get {
                 return this.ChildrenField;
             }
@@ -949,116 +1058,7 @@ namespace Project1.VsIdeExtensionService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Project1.VsIdeExtensionService.Category Parent {
-            get {
-                return this.ParentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ParentField, value) != true)) {
-                    this.ParentField = value;
-                    this.RaisePropertyChanged("Parent");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Title {
-            get {
-                return this.TitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
-                    this.TitleField = value;
-                    this.RaisePropertyChanged("Title");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IdeCategory", Namespace="http://schemas.datacontract.org/2004/07/Galleries.Domain.Model")]
-    [System.SerializableAttribute()]
-    public partial class IdeCategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Project1.VsIdeExtensionService.IdeCategory[] ChildrenField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool HasMoreField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Project1.VsIdeExtensionService.IdeCategory ParentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TitleField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Project1.VsIdeExtensionService.IdeCategory[] Children {
-            get {
-                return this.ChildrenField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChildrenField, value) != true)) {
-                    this.ChildrenField = value;
-                    this.RaisePropertyChanged("Children");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool HasMore {
-            get {
-                return this.HasMoreField;
-            }
-            set {
-                if ((this.HasMoreField.Equals(value) != true)) {
-                    this.HasMoreField = value;
-                    this.RaisePropertyChanged("HasMore");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Project1.VsIdeExtensionService.IdeCategory Parent {
+        public Project1.VsIdeServiceClient.Category Parent {
             get {
                 return this.ParentField;
             }
@@ -1094,22 +1094,50 @@ namespace Project1.VsIdeExtensionService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="VsIdeExtensionService.IVsIdeService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="VsIdeServiceClient.IVsIdeService")]
     public interface IVsIdeService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/SearchReleases", ReplyAction="http://tempuri.org/IVsIdeService/SearchReleasesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetCategoryTree", ReplyAction="http://tempuri.org/IVsIdeService/GetCategoryTreeResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(System.Guid), Action="http://galleries.msdn.microsoft.com/faults/generic", Name="guid", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
-        Project1.VsIdeExtensionService.ReleaseQueryResult SearchReleases(string searchText, string whereClause, string orderByClause, System.Nullable<int> locale, System.Nullable<int> skip, System.Nullable<int> take);
+        Project1.VsIdeServiceClient.IdeCategory GetCategoryTree(System.Guid categoryId, int level, string projectType, string templateType, string[] skus, string[] subSkus, int[] templateGroupIds, int[] vsVersions, string cultureName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetCategoryTree", ReplyAction="http://tempuri.org/IVsIdeService/GetCategoryTreeResponse")]
+        System.Threading.Tasks.Task<Project1.VsIdeServiceClient.IdeCategory> GetCategoryTreeAsync(System.Guid categoryId, int level, string projectType, string templateType, string[] skus, string[] subSkus, int[] templateGroupIds, int[] vsVersions, string cultureName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetRootCategories", ReplyAction="http://tempuri.org/IVsIdeService/GetRootCategoriesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Guid), Action="http://galleries.msdn.microsoft.com/faults/generic", Name="guid", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        Project1.VsIdeServiceClient.IdeCategory[] GetRootCategories(string cultureName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetRootCategories", ReplyAction="http://tempuri.org/IVsIdeService/GetRootCategoriesResponse")]
+        System.Threading.Tasks.Task<Project1.VsIdeServiceClient.IdeCategory[]> GetRootCategoriesAsync(string cultureName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/SearchReleases", ReplyAction="http://tempuri.org/IVsIdeService/SearchReleasesResponse")]
-        System.Threading.Tasks.Task<Project1.VsIdeExtensionService.ReleaseQueryResult> SearchReleasesAsync(string searchText, string whereClause, string orderByClause, System.Nullable<int> locale, System.Nullable<int> skip, System.Nullable<int> take);
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Guid), Action="http://galleries.msdn.microsoft.com/faults/generic", Name="guid", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        Project1.VsIdeServiceClient.ReleaseQueryResult SearchReleases(string searchText, string whereClause, string orderByClause, System.Nullable<int> locale, System.Nullable<int> skip, System.Nullable<int> take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/SearchReleases", ReplyAction="http://tempuri.org/IVsIdeService/SearchReleasesResponse")]
+        System.Threading.Tasks.Task<Project1.VsIdeServiceClient.ReleaseQueryResult> SearchReleasesAsync(string searchText, string whereClause, string orderByClause, System.Nullable<int> locale, System.Nullable<int> skip, System.Nullable<int> take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetRootCategories2", ReplyAction="http://tempuri.org/IVsIdeService/GetRootCategories2Response")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Guid), Action="http://galleries.msdn.microsoft.com/faults/generic", Name="guid", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        Project1.VsIdeServiceClient.IdeCategory[] GetRootCategories2(System.Collections.Generic.Dictionary<string, string> requestContext);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetRootCategories2", ReplyAction="http://tempuri.org/IVsIdeService/GetRootCategories2Response")]
+        System.Threading.Tasks.Task<Project1.VsIdeServiceClient.IdeCategory[]> GetRootCategories2Async(System.Collections.Generic.Dictionary<string, string> requestContext);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetCategoryTree2", ReplyAction="http://tempuri.org/IVsIdeService/GetCategoryTree2Response")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Guid), Action="http://galleries.msdn.microsoft.com/faults/generic", Name="guid", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        Project1.VsIdeServiceClient.IdeCategory GetCategoryTree2(System.Guid categoryId, int level, System.Collections.Generic.Dictionary<string, string> requestContext);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetCategoryTree2", ReplyAction="http://tempuri.org/IVsIdeService/GetCategoryTree2Response")]
+        System.Threading.Tasks.Task<Project1.VsIdeServiceClient.IdeCategory> GetCategoryTree2Async(System.Guid categoryId, int level, System.Collections.Generic.Dictionary<string, string> requestContext);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/SearchReleases2", ReplyAction="http://tempuri.org/IVsIdeService/SearchReleases2Response")]
         [System.ServiceModel.FaultContractAttribute(typeof(System.Guid), Action="http://galleries.msdn.microsoft.com/faults/generic", Name="guid", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
-        Project1.VsIdeExtensionService.ReleaseQueryResult SearchReleases2(string searchText, string whereClause, string orderByClause, System.Nullable<int> skip, System.Nullable<int> take, System.Collections.Generic.Dictionary<string, string> requestContext);
+        Project1.VsIdeServiceClient.ReleaseQueryResult SearchReleases2(string searchText, string whereClause, string orderByClause, System.Nullable<int> skip, System.Nullable<int> take, System.Collections.Generic.Dictionary<string, string> requestContext);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/SearchReleases2", ReplyAction="http://tempuri.org/IVsIdeService/SearchReleases2Response")]
-        System.Threading.Tasks.Task<Project1.VsIdeExtensionService.ReleaseQueryResult> SearchReleases2Async(string searchText, string whereClause, string orderByClause, System.Nullable<int> skip, System.Nullable<int> take, System.Collections.Generic.Dictionary<string, string> requestContext);
+        System.Threading.Tasks.Task<Project1.VsIdeServiceClient.ReleaseQueryResult> SearchReleases2Async(string searchText, string whereClause, string orderByClause, System.Nullable<int> skip, System.Nullable<int> take, System.Collections.Generic.Dictionary<string, string> requestContext);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetCurrentVersionsForVsixList", ReplyAction="http://tempuri.org/IVsIdeService/GetCurrentVersionsForVsixListResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(System.Guid), Action="http://galleries.msdn.microsoft.com/faults/generic", Name="guid", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
@@ -1117,43 +1145,15 @@ namespace Project1.VsIdeExtensionService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetCurrentVersionsForVsixList", ReplyAction="http://tempuri.org/IVsIdeService/GetCurrentVersionsForVsixListResponse")]
         System.Threading.Tasks.Task<string[]> GetCurrentVersionsForVsixListAsync(string[] vsixIds, System.Collections.Generic.Dictionary<string, string> requestContext);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetCategoryTree", ReplyAction="http://tempuri.org/IVsIdeService/GetCategoryTreeResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Guid), Action="http://galleries.msdn.microsoft.com/faults/generic", Name="guid", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
-        Project1.VsIdeExtensionService.IdeCategory GetCategoryTree(System.Guid categoryId, int level, string projectType, string templateType, string[] skus, string[] subSkus, int[] templateGroupIds, int[] vsVersions, string cultureName);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetCategoryTree", ReplyAction="http://tempuri.org/IVsIdeService/GetCategoryTreeResponse")]
-        System.Threading.Tasks.Task<Project1.VsIdeExtensionService.IdeCategory> GetCategoryTreeAsync(System.Guid categoryId, int level, string projectType, string templateType, string[] skus, string[] subSkus, int[] templateGroupIds, int[] vsVersions, string cultureName);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetRootCategories", ReplyAction="http://tempuri.org/IVsIdeService/GetRootCategoriesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Guid), Action="http://galleries.msdn.microsoft.com/faults/generic", Name="guid", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
-        Project1.VsIdeExtensionService.IdeCategory[] GetRootCategories(string cultureName);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetRootCategories", ReplyAction="http://tempuri.org/IVsIdeService/GetRootCategoriesResponse")]
-        System.Threading.Tasks.Task<Project1.VsIdeExtensionService.IdeCategory[]> GetRootCategoriesAsync(string cultureName);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetRootCategories2", ReplyAction="http://tempuri.org/IVsIdeService/GetRootCategories2Response")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Guid), Action="http://galleries.msdn.microsoft.com/faults/generic", Name="guid", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
-        Project1.VsIdeExtensionService.IdeCategory[] GetRootCategories2(System.Collections.Generic.Dictionary<string, string> requestContext);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetRootCategories2", ReplyAction="http://tempuri.org/IVsIdeService/GetRootCategories2Response")]
-        System.Threading.Tasks.Task<Project1.VsIdeExtensionService.IdeCategory[]> GetRootCategories2Async(System.Collections.Generic.Dictionary<string, string> requestContext);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetCategoryTree2", ReplyAction="http://tempuri.org/IVsIdeService/GetCategoryTree2Response")]
-        [System.ServiceModel.FaultContractAttribute(typeof(System.Guid), Action="http://galleries.msdn.microsoft.com/faults/generic", Name="guid", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
-        Project1.VsIdeExtensionService.IdeCategory GetCategoryTree2(System.Guid categoryId, int level, System.Collections.Generic.Dictionary<string, string> requestContext);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVsIdeService/GetCategoryTree2", ReplyAction="http://tempuri.org/IVsIdeService/GetCategoryTree2Response")]
-        System.Threading.Tasks.Task<Project1.VsIdeExtensionService.IdeCategory> GetCategoryTree2Async(System.Guid categoryId, int level, System.Collections.Generic.Dictionary<string, string> requestContext);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IVsIdeServiceChannel : Project1.VsIdeExtensionService.IVsIdeService, System.ServiceModel.IClientChannel {
+    public interface IVsIdeServiceChannel : Project1.VsIdeServiceClient.IVsIdeService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class VsIdeServiceClient : System.ServiceModel.ClientBase<Project1.VsIdeExtensionService.IVsIdeService>, Project1.VsIdeExtensionService.IVsIdeService {
+    public partial class VsIdeServiceClient : System.ServiceModel.ClientBase<Project1.VsIdeServiceClient.IVsIdeService>, Project1.VsIdeServiceClient.IVsIdeService {
         
         public VsIdeServiceClient() {
         }
@@ -1174,19 +1174,51 @@ namespace Project1.VsIdeExtensionService {
                 base(binding, remoteAddress) {
         }
         
-        public Project1.VsIdeExtensionService.ReleaseQueryResult SearchReleases(string searchText, string whereClause, string orderByClause, System.Nullable<int> locale, System.Nullable<int> skip, System.Nullable<int> take) {
+        public Project1.VsIdeServiceClient.IdeCategory GetCategoryTree(System.Guid categoryId, int level, string projectType, string templateType, string[] skus, string[] subSkus, int[] templateGroupIds, int[] vsVersions, string cultureName) {
+            return base.Channel.GetCategoryTree(categoryId, level, projectType, templateType, skus, subSkus, templateGroupIds, vsVersions, cultureName);
+        }
+        
+        public System.Threading.Tasks.Task<Project1.VsIdeServiceClient.IdeCategory> GetCategoryTreeAsync(System.Guid categoryId, int level, string projectType, string templateType, string[] skus, string[] subSkus, int[] templateGroupIds, int[] vsVersions, string cultureName) {
+            return base.Channel.GetCategoryTreeAsync(categoryId, level, projectType, templateType, skus, subSkus, templateGroupIds, vsVersions, cultureName);
+        }
+        
+        public Project1.VsIdeServiceClient.IdeCategory[] GetRootCategories(string cultureName) {
+            return base.Channel.GetRootCategories(cultureName);
+        }
+        
+        public System.Threading.Tasks.Task<Project1.VsIdeServiceClient.IdeCategory[]> GetRootCategoriesAsync(string cultureName) {
+            return base.Channel.GetRootCategoriesAsync(cultureName);
+        }
+        
+        public Project1.VsIdeServiceClient.ReleaseQueryResult SearchReleases(string searchText, string whereClause, string orderByClause, System.Nullable<int> locale, System.Nullable<int> skip, System.Nullable<int> take) {
             return base.Channel.SearchReleases(searchText, whereClause, orderByClause, locale, skip, take);
         }
         
-        public System.Threading.Tasks.Task<Project1.VsIdeExtensionService.ReleaseQueryResult> SearchReleasesAsync(string searchText, string whereClause, string orderByClause, System.Nullable<int> locale, System.Nullable<int> skip, System.Nullable<int> take) {
+        public System.Threading.Tasks.Task<Project1.VsIdeServiceClient.ReleaseQueryResult> SearchReleasesAsync(string searchText, string whereClause, string orderByClause, System.Nullable<int> locale, System.Nullable<int> skip, System.Nullable<int> take) {
             return base.Channel.SearchReleasesAsync(searchText, whereClause, orderByClause, locale, skip, take);
         }
         
-        public Project1.VsIdeExtensionService.ReleaseQueryResult SearchReleases2(string searchText, string whereClause, string orderByClause, System.Nullable<int> skip, System.Nullable<int> take, System.Collections.Generic.Dictionary<string, string> requestContext) {
+        public Project1.VsIdeServiceClient.IdeCategory[] GetRootCategories2(System.Collections.Generic.Dictionary<string, string> requestContext) {
+            return base.Channel.GetRootCategories2(requestContext);
+        }
+        
+        public System.Threading.Tasks.Task<Project1.VsIdeServiceClient.IdeCategory[]> GetRootCategories2Async(System.Collections.Generic.Dictionary<string, string> requestContext) {
+            return base.Channel.GetRootCategories2Async(requestContext);
+        }
+        
+        public Project1.VsIdeServiceClient.IdeCategory GetCategoryTree2(System.Guid categoryId, int level, System.Collections.Generic.Dictionary<string, string> requestContext) {
+            return base.Channel.GetCategoryTree2(categoryId, level, requestContext);
+        }
+        
+        public System.Threading.Tasks.Task<Project1.VsIdeServiceClient.IdeCategory> GetCategoryTree2Async(System.Guid categoryId, int level, System.Collections.Generic.Dictionary<string, string> requestContext) {
+            return base.Channel.GetCategoryTree2Async(categoryId, level, requestContext);
+        }
+        
+        public Project1.VsIdeServiceClient.ReleaseQueryResult SearchReleases2(string searchText, string whereClause, string orderByClause, System.Nullable<int> skip, System.Nullable<int> take, System.Collections.Generic.Dictionary<string, string> requestContext) {
             return base.Channel.SearchReleases2(searchText, whereClause, orderByClause, skip, take, requestContext);
         }
         
-        public System.Threading.Tasks.Task<Project1.VsIdeExtensionService.ReleaseQueryResult> SearchReleases2Async(string searchText, string whereClause, string orderByClause, System.Nullable<int> skip, System.Nullable<int> take, System.Collections.Generic.Dictionary<string, string> requestContext) {
+        public System.Threading.Tasks.Task<Project1.VsIdeServiceClient.ReleaseQueryResult> SearchReleases2Async(string searchText, string whereClause, string orderByClause, System.Nullable<int> skip, System.Nullable<int> take, System.Collections.Generic.Dictionary<string, string> requestContext) {
             return base.Channel.SearchReleases2Async(searchText, whereClause, orderByClause, skip, take, requestContext);
         }
         
@@ -1196,38 +1228,6 @@ namespace Project1.VsIdeExtensionService {
         
         public System.Threading.Tasks.Task<string[]> GetCurrentVersionsForVsixListAsync(string[] vsixIds, System.Collections.Generic.Dictionary<string, string> requestContext) {
             return base.Channel.GetCurrentVersionsForVsixListAsync(vsixIds, requestContext);
-        }
-        
-        public Project1.VsIdeExtensionService.IdeCategory GetCategoryTree(System.Guid categoryId, int level, string projectType, string templateType, string[] skus, string[] subSkus, int[] templateGroupIds, int[] vsVersions, string cultureName) {
-            return base.Channel.GetCategoryTree(categoryId, level, projectType, templateType, skus, subSkus, templateGroupIds, vsVersions, cultureName);
-        }
-        
-        public System.Threading.Tasks.Task<Project1.VsIdeExtensionService.IdeCategory> GetCategoryTreeAsync(System.Guid categoryId, int level, string projectType, string templateType, string[] skus, string[] subSkus, int[] templateGroupIds, int[] vsVersions, string cultureName) {
-            return base.Channel.GetCategoryTreeAsync(categoryId, level, projectType, templateType, skus, subSkus, templateGroupIds, vsVersions, cultureName);
-        }
-        
-        public Project1.VsIdeExtensionService.IdeCategory[] GetRootCategories(string cultureName) {
-            return base.Channel.GetRootCategories(cultureName);
-        }
-        
-        public System.Threading.Tasks.Task<Project1.VsIdeExtensionService.IdeCategory[]> GetRootCategoriesAsync(string cultureName) {
-            return base.Channel.GetRootCategoriesAsync(cultureName);
-        }
-        
-        public Project1.VsIdeExtensionService.IdeCategory[] GetRootCategories2(System.Collections.Generic.Dictionary<string, string> requestContext) {
-            return base.Channel.GetRootCategories2(requestContext);
-        }
-        
-        public System.Threading.Tasks.Task<Project1.VsIdeExtensionService.IdeCategory[]> GetRootCategories2Async(System.Collections.Generic.Dictionary<string, string> requestContext) {
-            return base.Channel.GetRootCategories2Async(requestContext);
-        }
-        
-        public Project1.VsIdeExtensionService.IdeCategory GetCategoryTree2(System.Guid categoryId, int level, System.Collections.Generic.Dictionary<string, string> requestContext) {
-            return base.Channel.GetCategoryTree2(categoryId, level, requestContext);
-        }
-        
-        public System.Threading.Tasks.Task<Project1.VsIdeExtensionService.IdeCategory> GetCategoryTree2Async(System.Guid categoryId, int level, System.Collections.Generic.Dictionary<string, string> requestContext) {
-            return base.Channel.GetCategoryTree2Async(categoryId, level, requestContext);
         }
     }
 }
