@@ -50,28 +50,6 @@
     <None Include="app\_locales\en\messages.json" />
     <None Include="app\_locales\es\messages.json" />
     <None Include="app\_locales\fr\messages.json" />
-    <None Include="Connected Services\VsIdeServiceClient\Extension.wsdl" />
-    <None Include="Connected Services\VsIdeServiceClient\Extension.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\VsIdeServiceClient\Extension1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\VsIdeServiceClient\Extension2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\VsIdeServiceClient\Extension3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\VsIdeServiceClient\Extension4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\VsIdeServiceClient\Project1.VsIdeServiceClient.IdeCategory.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\VsIdeServiceClient\Project1.VsIdeServiceClient.ReleaseQueryResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="reference_scripts\flag-icon-css-master.zip" />
     <None Include="reference_scripts\__jquery.tablesorter.zip" />
     <None Include="unit_tests\TestCases.xlsx" />
@@ -92,13 +70,6 @@
     <Content Include="assets\webstore_screenshot_640x400.png" />
     <Content Include="assets\YouTube-logo-full_color.png" />
     <Content Include="assets\zReadMeAnimatedUsage.gif" />
-    <None Include="Connected Services\VsIdeServiceClient\Extension.disco" />
-    <None Include="Connected Services\VsIdeServiceClient\configuration91.svcinfo" />
-    <None Include="Connected Services\VsIdeServiceClient\configuration.svcinfo" />
-    <None Include="Connected Services\VsIdeServiceClient\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="reference_scripts\console.image.js" />
     <Content Include="app\scripts\console.image.min.js" />
     <Content Include="app\img\icon_19x19.png" />
@@ -120,13 +91,6 @@
     <Content Include="reference_scripts\_references.js" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\VsIdeServiceClient\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="vsmpGateway_v1.cs" />
-    <Compile Include="vsmpGateway_v2.cs" />
     <Compile Include="Dummy.cs" />
     <Content Include="unit_tests\contentScriptTests.js" />
   </ItemGroup>
@@ -138,12 +102,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\VsIdeServiceClient\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
