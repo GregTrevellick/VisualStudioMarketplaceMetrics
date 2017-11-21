@@ -125,8 +125,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="VsmpGateway.cs" />
-    <Compile Include="dummy.cs" />
+    <Compile Include="vsmpGateway_v1.cs" />
+    <Compile Include="vsmpGateway_v2.cs" />
+    <Compile Include="Dummy.cs" />
     <Content Include="unit_tests\contentScriptTests.js" />
   </ItemGroup>
   <ItemGroup>
