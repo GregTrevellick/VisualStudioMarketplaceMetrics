@@ -59,6 +59,8 @@
     <Content Include="app\img\VisualStudioHelpIcon.png" />
     <Content Include="app\scripts\angular.min.js" />
     <Content Include="app\scripts\app.js" />
+    <Content Include="app\scripts\VsmmChart.js" />
+    <Content Include="app\scripts\Chart.min.js" />
     <Content Include="app\scripts\jquery-3.1.1.min.js" />
     <Content Include="app\scripts\VsmmController.js" />
     <Content Include="assets\0.jpg_withYouTubeLogo.jpg" />
