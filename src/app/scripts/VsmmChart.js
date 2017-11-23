@@ -1,11 +1,11 @@
 var ctx = document.getElementById("myChart").getContext('2d');
 
 var myChart = new Chart(ctx, {
-type: 'bar',
+    type: 'bar',
     data: {
-labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
         datasets: [{
-label: '# of Votes',
+            label: '# of Votes',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -27,10 +27,10 @@ label: '# of Votes',
         }]
     },
     options: {
-scales: {
-yAxes: [{
-ticks: {
-beginAtZero: true
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
                 }
             }]
         }
