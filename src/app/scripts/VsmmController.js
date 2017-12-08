@@ -12,6 +12,7 @@
         var totalOverallAverageReview = 0;
 
         var DaRows = [];
+        var DaRowsLabels = [];
         var DaRowsNoOfInstalls = [];
         for (var i = 0; i < newVal.vdom.length; i++) {
             AddRowsToTable(i);
@@ -24,6 +25,7 @@
         $scope.totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
 
         $scope.DaRows = DaRows;
+        $scope.DaRowsLabels = DaRowsLabels;
         $scope.DaRowsNoOfInstalls = DaRowsNoOfInstalls;
 
         var FooterGridTotalInstallCount = "";
@@ -36,7 +38,7 @@
         $scope.FooterReviewsAsPercentageOfInstalls = FooterReviewsAsPercentageOfInstalls;
         $scope.FooterOverallAverageReview = FooterOverallAverageReview;
 
-        PopulateChart(DaRowsNoOfInstalls);
+        PopulateChart(DaRowsNoOfInstalls, DaRowsLabels);
 
         $scope.$apply();
 
@@ -79,6 +81,7 @@
             daRow.AverageReviewScore = newVal.vdom[i]["AverageReview"];
 
             DaRows.push(daRow);
+            DaRowsLabels.push(daRow.ExtnNameShort);
             DaRowsNoOfInstalls.push(daRow.NoOfInstalls);
         };
 
@@ -200,7 +203,107 @@
         $scope.VsmmVisualStudioHelpText = GetTranslation("VsmmVisualStudioHelpText") + ".";
     };
 
-    function PopulateChart(daRowsNoOfInstalls) {
+    function PopulateChart(daRowsNoOfInstalls, daRowsLabels) {
+
+        var backgroundColors =
+            [
+                'red',
+                'blue',
+                'green',
+                'black',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ];
+
+        //////////////////////////////////////////////////var labels = ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"];
+
+        //new Chart(document.getElementById("chartjs-4"), 
+        //    {
+        //        "type": "doughnut",
+        //        "data": {
+        //            "labels": ["Red", "Blue", "Yellow"],
+        //            "datasets": [
+        //                {
+        //                    "label": "My First Dataset",
+        //                    "data": [300, 50, 100],
+        //                    "backgroundColor": [
+        //                        "rgb(255, 99, 132)",
+        //                        "rgb(54, 162, 235)",
+        //                        "rgb(255, 205, 86)"]
+        //                }]
+        //        }
+        //    });
+
         var chartData = [];
         var chartDataElement = {};
         chartData.push(chartDataElement);
@@ -208,18 +311,11 @@
         var myChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                //labels: daRowsLabels.slice(5),
                 datasets: [{
                     label: '# of Votes',
                     data: daRowsNoOfInstalls,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ]
+                    backgroundColor: backgroundColors.slice(daRowsNoOfInstalls.length)
                 }]
             }
         });
