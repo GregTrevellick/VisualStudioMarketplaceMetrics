@@ -12,6 +12,7 @@
         var totalOverallAverageReview = 0;
 
         var DaRows = [];
+        var DaRowsNoOfInstalls = [];
         for (var i = 0; i < newVal.vdom.length; i++) {
             AddRowsToTable(i);
         }
@@ -23,6 +24,7 @@
         $scope.totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
 
         $scope.DaRows = DaRows;
+        $scope.DaRowsNoOfInstalls = DaRowsNoOfInstalls;
 
         var FooterGridTotalInstallCount = "";
         var FooterGridTotalReviewCount = "";
@@ -33,6 +35,8 @@
         $scope.FooterGridTotalReviewCount = FooterGridTotalReviewCount;
         $scope.FooterReviewsAsPercentageOfInstalls = FooterReviewsAsPercentageOfInstalls;
         $scope.FooterOverallAverageReview = FooterOverallAverageReview;
+
+        PopulateChart(DaRowsNoOfInstalls);
 
         $scope.$apply();
 
@@ -75,6 +79,7 @@
             daRow.AverageReviewScore = newVal.vdom[i]["AverageReview"];
 
             DaRows.push(daRow);
+            DaRowsNoOfInstalls.push(daRow.NoOfInstalls);
         };
 
         function SetHeaders() {
@@ -193,6 +198,31 @@
         $scope.VsmmUninitialised = GetTranslation("VsmmUninitialised");
         $scope.VsmmUnknown = GetTranslation("VsmmUnknown");
         $scope.VsmmVisualStudioHelpText = GetTranslation("VsmmVisualStudioHelpText") + ".";
+    };
+
+    function PopulateChart(daRowsNoOfInstalls) {
+        var chartData = [];
+        var chartDataElement = {};
+        chartData.push(chartDataElement);
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                datasets: [{
+                    label: '# of Votes',
+                    data: daRowsNoOfInstalls,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ]
+                }]
+            }
+        });
     };
 
 }]);
