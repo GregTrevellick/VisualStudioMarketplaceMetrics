@@ -216,7 +216,7 @@
             sortedChartDataLabels.push(value[1]);
         });
 
-        var backgroundColors =
+        var colors =
             [
                 'red',
                 'blue',
@@ -300,7 +300,7 @@
         var chartDataElement = {};
         chartData.push(chartDataElement);
         var ctx = document.getElementById("vsmmChart").getContext('2d');
-        var bgColors = backgroundColors.slice(sortedChartDataValues.length);
+        var backgroundColors = colors.slice(sortedChartDataValues.length);
 
         var vsmmChart = new Chart(ctx, {
             type: 'pie',
@@ -309,7 +309,7 @@
                 datasets: [{
                     label: '# of Votes',
                     data: sortedChartDataValues,
-                    backgroundColor: bgColors
+                    backgroundColor: backgroundColors
                 }]
             }
         });
