@@ -12,7 +12,6 @@
         var totalOverallAverageReview = 0;
 
         var DaRows = [];
-        var DaRowsLabels = [];
         var DaRowsNoOfInstalls = [];
         for (var i = 0; i < newVal.vdom.length; i++) {
             AddRowsToTable(i);
@@ -25,7 +24,6 @@
         $scope.totalOverallAverageReview = overallAverageReview.toFixed(2).toLocaleString();
 
         $scope.DaRows = DaRows;
-        $scope.DaRowsLabels = DaRowsLabels;
         $scope.DaRowsNoOfInstalls = DaRowsNoOfInstalls;
 
         var FooterGridTotalInstallCount = "";
@@ -38,7 +36,7 @@
         $scope.FooterReviewsAsPercentageOfInstalls = FooterReviewsAsPercentageOfInstalls;
         $scope.FooterOverallAverageReview = FooterOverallAverageReview;
 
-        PopulateChart(DaRowsNoOfInstalls, DaRowsLabels);
+        PopulateChart(DaRowsNoOfInstalls);
 
         $scope.$apply();
 
@@ -81,8 +79,9 @@
             daRow.AverageReviewScore = newVal.vdom[i]["AverageReview"];
 
             DaRows.push(daRow);
-            DaRowsLabels.push(daRow.ExtnNameShort);
-            DaRowsNoOfInstalls.push(daRow.NoOfInstalls);
+
+            var vsmmChartData = [daRow.NoOfInstalls, daRow.ExtnNameShort];
+            DaRowsNoOfInstalls.push(vsmmChartData);
         };
 
         function SetHeaders() {
@@ -203,7 +202,19 @@
         $scope.VsmmVisualStudioHelpText = GetTranslation("VsmmVisualStudioHelpText") + ".";
     };
 
-    function PopulateChart(daRowsNoOfInstalls, daRowsLabels) {
+    function PopulateChart(daRowsNoOfInstalls) {
+
+        var sortedChartData = daRowsNoOfInstalls.sort(function (a, b) {
+                return a[0] - b[0];
+        });
+
+        var sortedChartDataValues = [];
+        var sortedChartDataLabels = [];
+
+        $.each(sortedChartData, function (index, value) {
+            sortedChartDataValues.push(value[0]);
+            sortedChartDataLabels.push(value[1]);
+        });
 
         var backgroundColors =
             [
@@ -285,7 +296,6 @@
                 'rgba(255, 159, 64, 0.2)'
             ];
 
-
         var chartData = [];
         var chartDataElement = {};
         chartData.push(chartDataElement);
@@ -294,11 +304,11 @@
         var vsmmChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: daRowsLabels,
+                labels: sortedChartDataLabels,
                 datasets: [{
                     label: '# of Votes',
-                    data: daRowsNoOfInstalls,
-                    backgroundColor: backgroundColors.slice(daRowsNoOfInstalls.length)
+                    data: sortedChartDataValues,
+                    backgroundColor: backgroundColors.slice(sortedChartDataValues.length)
                 }]
             }
         });
