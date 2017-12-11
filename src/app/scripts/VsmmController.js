@@ -289,9 +289,9 @@
         var chartData = [];
         var chartDataElement = {};
         chartData.push(chartDataElement);
-        var ctx = document.getElementById("myChart").getContext('2d');
+        var ctx = document.getElementById("vsmmChart").getContext('2d');
 
-        var myChart = new Chart(ctx, {
+        var vsmmChart = new Chart(ctx, {
             type: 'pie',
             data: {
                 labels: daRowsLabels,
