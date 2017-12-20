@@ -3,6 +3,7 @@
 # Visual Studio Marketplace Metrics
 
 [![License](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)
+[![CharityWare](https://img.shields.io/badge/Charity%20Ware-Thank%20You-brightgreen.svg)][CharityWareURL]
 
 A [CharityWare][CharityWareURL] repository for the [Visual Studio Marketplace Metrics][ChromeExtensionURL] Chrome browser extension, that allows the user to see the total install count and other metrics for all their Visual Studio Marketplace extensions in one place.
 
