@@ -1,4 +1,5 @@
 [CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware
+[WhyURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Why
 
 # Visual Studio Marketplace Metrics
 
@@ -20,6 +21,8 @@ Bugs can be logged [here][GitHubRepoIssuesURL].
 See the [change log](CHANGELOG.md) for release history.
 
 Software License is available [here](/LICENSE.txt).
+
+[Why?][WhyURL]
 
 ---------------------------------------
 
