@@ -1,8 +1,10 @@
+[CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/blob/master/MiscellaneousArtefacts/CharityWare.MD
+
 # Visual Studio Marketplace Metrics
 
 [![License](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)
 
-A repository for the [Visual Studio Marketplace Metrics][ChromeExtensionURL] Chrome browser extension, that allows the user to see the total install count and other metrics for all their Visual Studio Marketplace extensions in one place.
+A [CharityWare][CharityWareURL] repository for the [Visual Studio Marketplace Metrics][ChromeExtensionURL] Chrome browser extension, that allows the user to see the total install count and other metrics for all their Visual Studio Marketplace extensions in one place.
 
 This [Chrome extension][ChromeExtensionURL] is officially available at the [Chrome webstore][ChromeExtensionURL].
 
