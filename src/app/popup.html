@@ -6,17 +6,13 @@
     <link rel="stylesheet" href="scripts/tablesorter/themes/blue/style.css" />
     <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="scripts/tablesorter/jquery.tablesorter.min.js"></script>
-    <script type="text/javascript" src="scripts/Chart.min.js"></script>
     <script type="text/javascript" src="scripts/console.image.min.js"></script>
     <script type="text/javascript" src="scripts/angular.min.js"></script>
     <script type="text/javascript" src="scripts/app.js"></script>
     <script type="text/javascript" src="scripts/VsmmController.js" defer></script>
     <script type="text/javascript" src="scripts/popup.js"></script>
 </head>
-<body> 
-
-    <canvas id="vsmmChart"></canvas>
-
+<body>
     <div ng-app="myApp">
         <div ng-controller="VsmmController">
             <img src="img/ajax-loader.gif" id="ajaxLoader" class="ajaxLoader" />
@@ -55,6 +51,14 @@
                 </h2>
                 {{VsmmOnSlowerConnectionsText}}
             </div>
+            <div style="color:red">
+                <h2>
+                    Friends, I am aware of the ### issue and am looking into it. For updates see
+                    <a href="https://github.com/GregTrevellick/VisualStudioMarketplaceMetrics/issues/3" target="_blank" id="UserNotification">here</a>
+                </h2>
+                </br>
+                </br>
+            </div>
             <div id="dataAvailable" hidden="hidden">
                 <h2>
                     {{totalExtensionsCount | number}}&nbsp;{{VsmmShown}}
@@ -64,7 +68,7 @@
                     {{TotalReviewCount | number}}&nbsp;{{VsmmReviews}}
                     <br />
                     <span ng-show="ShowTotalOverallAverageReview()">
-                          {{totalOverallAverageReview}}&nbsp;{{VsmmAverageReviewScore_Lower}}
+                        {{totalOverallAverageReview}}&nbsp;{{VsmmAverageReviewScore_Lower}}
                     </span>
                 </h2>
                 <a aria-label="Copy table to clipboard" href="#" id="CopyToClipboard" class="copyToClipboard">
