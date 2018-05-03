@@ -1,0 +1,1 @@
+﻿Zip up the 'app' folder & upload to google dev dashboard
