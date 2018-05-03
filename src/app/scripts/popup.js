@@ -260,15 +260,13 @@ function GetTranslation(textKey) {
     }
 
     function GetTranslationForUiSelectedLocale(textKey, locale) {
-        var messages;
         var result;
         if (typeof messages == "undefined") {
             $.ajax({
                 url: "/_locales/" + locale + "/messages.json",
                 async: false,
                 success: function (data) {
-                    messages = JSON.parse(data);
-                    result = messages[textKey].message;
+                    result = data[textKey].message;
                 },
                 error: function () {
                     result = "A very rare ajax error has occured. Please inform vsmarketplacemetrics@gmail.com.";
