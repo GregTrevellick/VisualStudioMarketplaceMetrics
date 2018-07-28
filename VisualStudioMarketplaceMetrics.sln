@@ -1,17 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSMarketplaceMetrics", "src\VSMarketplaceMetrics.csproj", "{4EE59A43-BFCE-4966-B43C-350E06592DE7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{53343514-DE3E-491E-9B5A-1F133EB9BFF4}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.travis.yml = .travis.yml
+		_config.yml = _config.yml
+		appveyor.yml = appveyor.yml
 		CHANGELOG.md = CHANGELOG.md
 		chart.png = chart.png
 		LICENSE.txt = LICENSE.txt
 		README.md = README.md
 		ReadMeAnimatedUsage.gif = ReadMeAnimatedUsage.gif
+		renovate.json = renovate.json
 	EndProjectSection
 EndProject
 Global
@@ -27,5 +32,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5BB2D96-8B04-41B5-8A4F-C30F336371F3}
 	EndGlobalSection
 EndGlobal
