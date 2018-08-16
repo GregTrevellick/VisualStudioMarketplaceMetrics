@@ -25,6 +25,7 @@
 
 
 
+
 A [CharityWare][CharityWareURL] repository for the [Visual Studio Marketplace Metrics][ChromeExtensionURL] Chrome browser extension, that allows the user to see the total install count and other metrics for all their Visual Studio Marketplace extensions in one place.
 
 This [Chrome extension][ChromeExtensionURL] is officially available at the [Chrome webstore][ChromeExtensionURL].
