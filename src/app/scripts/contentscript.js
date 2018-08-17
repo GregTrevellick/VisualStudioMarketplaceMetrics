@@ -82,7 +82,7 @@ chrome.runtime.onMessage.addListener(
                                 vsmpDomJsonDataArray.push(vsmpDomJsonData);
                             }
 
-                        };
+                        }
 
                     });
                 }
@@ -249,4 +249,4 @@ function GetInstallCount(installCountRounded) {
             return installCountRounded;
         }
     }
-};
+}

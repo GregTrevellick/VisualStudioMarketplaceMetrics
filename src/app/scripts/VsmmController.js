@@ -82,7 +82,7 @@
 
             var vsmmChartData = [daRow.NoOfInstalls, daRow.ExtnNameShort];
             DaRowsNoOfInstalls.push(vsmmChartData);
-        };
+        }
 
         function SetHeaders() {
 
@@ -102,14 +102,14 @@
             //gregt:  remove VsmmPercentageOfInstallations from the .json files
 
             showVsmmAverageReviewScore_Lower = false;
-        };
+        }
 
         function SetFooters() {
             FooterGridTotalInstallCount = totalInstallCount.toLocaleString();
             FooterGridTotalReviewCount = totalReviewCount.toLocaleString();
             FooterReviewsAsPercentageOfInstalls = totalReviewsAsPercentageOfTotalInstalls.toFixed(2).toLocaleString();
             FooterOverallAverageReview = totalOverallAverageReview;
-        };
+        }
     });
     // Unbind the listener when the scope is destroyed
     $scope.$on('$destroy', unbind);
@@ -151,7 +151,7 @@
             }
             else {
                 return false;
-            };
+            }
         } catch (e) {
             CommonErrorHandler(e);
         }
@@ -200,7 +200,7 @@
         $scope.VsmmUninitialised = GetTranslation("VsmmUninitialised");
         $scope.VsmmUnknown = GetTranslation("VsmmUnknown");
         $scope.VsmmVisualStudioHelpText = GetTranslation("VsmmVisualStudioHelpText") + ".";
-    };
+    }
 
     //function PopulateChart(daRowsNoOfInstalls) {
 
