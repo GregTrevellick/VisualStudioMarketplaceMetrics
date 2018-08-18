@@ -1,0 +1,4 @@
+exclude:
+- .*/jquery\.tablesorter\.js
+- .*/chrome-api-vsdoc\.js
+- .*/console\.image\.js
