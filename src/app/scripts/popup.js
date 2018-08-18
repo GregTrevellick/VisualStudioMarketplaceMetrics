@@ -57,7 +57,7 @@ function onLoadRequestDomFromVsmp() {
                 popUpCallBack
             );
         });
-};
+}
 
 function popUpCallBack(vsmpDom) {
 
@@ -82,7 +82,7 @@ function popUpCallBack(vsmpDom) {
            
             if (vsmpDom[0]["URL"] == "errorOccurred") {
                 throw vsmpDom[0]["Error"];
-            };
+            }
 
             if (vsmpDom[0]["URL"] == "notAllowed") {
                 ShowDataUnavailableMessage();
@@ -99,7 +99,7 @@ function popUpCallBack(vsmpDom) {
     } catch (e) {
         CommonErrorHandler(e);
     }
-};
+}
 
 $(document).on('click', '#DataUnavailableEmail', function () {
     try {
@@ -146,7 +146,7 @@ $(document).on('click', '#CopyToClipboard', function () {
                 range.moveToElementText(element);
                 range.select();
             }
-        };
+        }
         document.execCommand('copy');
         document.getSelection().removeAllRanges();
     } catch (e) {
@@ -191,7 +191,7 @@ function GetPageUrl() {
         return vsmpDomPageUrl;
     } else {
         return "";
-    };
+    }
 }
 
 function GetJavascriptError(e) {
@@ -208,8 +208,8 @@ function GetJavascriptError(e) {
         } else {
             return "Indeterminate error";
         }
-    };
-};
+    }
+}
 
 function GetLocaleBySource() {
     if (useChromeLocale) {
@@ -281,11 +281,11 @@ function GetTranslation(textKey) {
 function ShowDataUnavailableMessage() {
     PopulateDataUnavailableElements();
     document.getElementById('dataUnavailableForPage').removeAttribute("hidden");//TODO convert to ng-show
-};
+}
 
 function PopulateDataUnavailableElements() {
     document.getElementById('PageUrl').innerHTML = vsmpDomPageUrl;
     document.getElementById('UserAgent').innerHTML = GetUserAgent();
     document.getElementById('Locale').innerHTML = GetLocaleBySource();
     document.getElementById('notificationItems').removeAttribute("hidden");
-};
+}

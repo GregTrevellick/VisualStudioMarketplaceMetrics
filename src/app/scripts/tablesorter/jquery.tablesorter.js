@@ -197,7 +197,7 @@
                 }
 
                 return list;
-            };
+            }
 
             function detectParserForColumn(table, rows, rowIndex, cellIndex) {
                 var l = parsers.length,
@@ -282,14 +282,14 @@
                     cols.push(cache.normalized.length); // add position for rowCache
                     cache.normalized.push(cols);
                     cols = null;
-                };
+                }
 
                 if (table.config.debug) {
                     benchmark("Building cache for " + totalRows + " rows:", cacheTime);
                 }
 
                 return cache;
-            };
+            }
 
             function getElementText(config, node) {
 
@@ -372,7 +372,7 @@
                     $(table).trigger("sortEnd");
                 }, 0);
 
-            };
+            }
 
             function buildHeaders(table) {
 
@@ -412,7 +412,7 @@
 
                 return $tableHeaders;
 
-            };
+            }
 
             // from:
             // http://www.javascripttoolbox.com/lib/table/examples.php
@@ -478,19 +478,19 @@
                     }
                 }
                 return arr;
-            };
+            }
 
             function checkHeaderMetadata(cell) {
                 if (($.metadata) && ($(cell).metadata().sorter === false)) {
                     return true;
-                };
+                }
                 return false;
             }
 
             function checkHeaderOptions(table, i) {
                 if ((table.config.headers[i]) && (table.config.headers[i].sorter === false)) {
                     return true;
-                };
+                }
                 return false;
             }
 			
@@ -516,7 +516,7 @@
                         return widgets[i];
                     }
                 }
-            };
+            }
 
             function formatSortingOrder(v) {
                 if (typeof(v) != "Number") {
@@ -561,7 +561,7 @@
                         colgroup.append($('<col>').css('width', $(this).width()));
                     });
                     $(table).prepend(colgroup);
-                };
+                }
             }
 
             function updateHeaderSortCount(table, sortList) {
@@ -631,7 +631,7 @@
                 }
 
                 return cache;
-            };
+            }
 
             function makeSortFunction(type, direction, index) {
                 var a = "a[" + index + "]",
@@ -645,45 +645,45 @@
                 } else if (type == 'numeric' && direction == 'desc') {
                     return "(" + a + " === null && " + b + " === null) ? 0 :(" + a + " === null ? Number.POSITIVE_INFINITY : (" + b + " === null ? Number.NEGATIVE_INFINITY : " + b + " - " + a + "));";
                 }
-            };
+            }
 
             function makeSortText(i) {
                 return "((a[" + i + "] < b[" + i + "]) ? -1 : ((a[" + i + "] > b[" + i + "]) ? 1 : 0));";
-            };
+            }
 
             function makeSortTextDesc(i) {
                 return "((b[" + i + "] < a[" + i + "]) ? -1 : ((b[" + i + "] > a[" + i + "]) ? 1 : 0));";
-            };
+            }
 
             function makeSortNumeric(i) {
                 return "a[" + i + "]-b[" + i + "];";
-            };
+            }
 
             function makeSortNumericDesc(i) {
                 return "b[" + i + "]-a[" + i + "];";
-            };
+            }
 
             function sortText(a, b) {
                 if (table.config.sortLocaleCompare) return a.localeCompare(b);
                 return ((a < b) ? -1 : ((a > b) ? 1 : 0));
-            };
+            }
 
             function sortTextDesc(a, b) {
                 if (table.config.sortLocaleCompare) return b.localeCompare(a);
                 return ((b < a) ? -1 : ((b > a) ? 1 : 0));
-            };
+            }
 
             function sortNumeric(a, b) {
                 return a - b;
-            };
+            }
 
             function sortNumericDesc(a, b) {
                 return b - a;
-            };
+            }
 
             function getCachedSortType(parsers, i) {
                 return parsers[i].type;
-            }; /* public methods */
+            } /* public methods */
             this.construct = function (settings) {
                 return this.each(function () {
                     // if no thead or tbody quit.
@@ -763,7 +763,7 @@
                                     // add column to sort list array
                                     config.sortList.push([i, this.order]);
                                 }
-                            };
+                            }
                             setTimeout(function () {
                                 // set css for headers
                                 setHeadersCss($this[0], $headers, config.sortList, sortCSS);
@@ -841,7 +841,7 @@
                 }
                 if (a) {
                     parsers.push(parser);
-                };
+                }
             };
             this.addWidget = function (widget) {
                 widgets.push(widget);
