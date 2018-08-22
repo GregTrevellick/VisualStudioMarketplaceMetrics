@@ -51,7 +51,7 @@
     <None Include="app\_locales\es\messages.json" />
     <None Include="app\_locales\fr\messages.json" />
     <None Include="reference_scripts\flag-icon-css-master.zip" />
-    <None Include="reference_scripts\__jquery.tablesorter.zip" />
+    <None Include="reference_scripts\__jquery.tablesorter.zip"/>
     <None Include="unit_tests\TestCases.xlsx" />
   </ItemGroup>
   <ItemGroup>
@@ -72,25 +72,37 @@
     <Content Include="assets\YouTube-logo-full_color.png" />
     <Content Include="assets\zReadMeAnimatedUsage.gif" />
     <Content Include="ReadMe.txt" />
-    <Content Include="reference_scripts\console.image.js" />
-    <Content Include="app\scripts\console.image.min.js" />
+    <Content Include="reference_scripts\console.image.js">
+		<SonarQubeExclude>true</SonarQubeExclude>
+	</Content>
+	<Content Include="app\scripts\console.image.min.js" />
     <Content Include="app\img\icon_19x19.png" />
     <Content Include="app\popup.html" />
     <Content Include="app\scripts\background.js" />
     <Content Include="app\img\icon_128x128.png" />
     <Content Include="app\img\icon_48x48.png" />
-    <Content Include="app\scripts\tablesorter\jquery.metadata.js" />
-    <Content Include="app\scripts\tablesorter\jquery.tablesorter.js" />
-    <Content Include="app\scripts\tablesorter\jquery.tablesorter.min.js" />
-    <Content Include="app\scripts\popup.js" />
+    <Content Include="app\scripts\tablesorter\jquery.metadata.js">
+		<SonarQubeExclude>true</SonarQubeExclude>
+	</Content>
+    <Content Include="app\scripts\tablesorter\jquery.tablesorter.js">
+		<SonarQubeExclude>true</SonarQubeExclude>
+	</Content>
+    <Content Include="app\scripts\tablesorter\jquery.tablesorter.min.js">
+		<SonarQubeExclude>true</SonarQubeExclude>
+	</Content>
+	<Content Include="app\scripts\popup.js" />
     <Content Include="app\scripts\contentscript.js" />
     <Content Include="app\scripts\tablesorter\themes\blue\asc.gif" />
     <Content Include="app\scripts\tablesorter\themes\blue\bg.gif" />
     <Content Include="app\scripts\tablesorter\themes\blue\desc.gif" />
     <Content Include="app\scripts\tablesorter\themes\blue\style.css" />
     <Content Include="app\styles\vsmm.css" />
-    <Content Include="reference_scripts\chrome-api-vsdoc.js" />
-    <Content Include="reference_scripts\_references.js" />
+	<Content Include="reference_scripts\chrome-api-vsdoc.js">
+	  <SonarQubeExclude>true</SonarQubeExclude>
+	</Content>
+    <Content Include="reference_scripts\_references.js">
+	  <SonarQubeExclude>true</SonarQubeExclude>
+	</Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dummy.cs" />
