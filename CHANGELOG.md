@@ -2,7 +2,7 @@
 
 These are the changes to each version that has been released in the Chrome Web Store.
 
-## 1.0.5
+## 1.0.6
 **2018-09-11** 
 - [x] Cater for Microsoft name change from 'vsts' to 'azure dev ops'
 
