@@ -112,8 +112,8 @@ chrome.runtime.onMessage.addListener(
                         case "https://marketplace.visualstudio.com/vs":
                             visitType = "browse_VS";
                             break;
-                        case "http://marketplace.visualstudio.com/vsts":
-                        case "https://marketplace.visualstudio.com/vsts":
+                        case "http://marketplace.visualstudio.com/azuredevops":
+                        case "https://marketplace.visualstudio.com/azuredevops":
                             visitType = "browse_VSTS";
                             break;
                         case "http://marketplace.visualstudio.com/vscode":
