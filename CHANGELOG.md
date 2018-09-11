@@ -7,7 +7,7 @@ These are the changes to each version that has been released in the Chrome Web S
 - [x] Cater for Microsoft name change from 'vsts' to 'azure dev ops'
 
 ## 1.0.4
-**2018-xx-xx** 
+**2018-05-03** 
 - [x] Fix issue #3
       
 ## 1.0.3
