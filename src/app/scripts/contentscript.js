@@ -131,7 +131,7 @@ chrome.runtime.onMessage.addListener(
                                         visitType = "search_VSCode";
                                     }
                                     else {
-                                        if (pageUrl.indexOf("target=VSTS&") != -1) {
+                                        if (pageUrl.indexOf("target=AzureDevOps&") != -1) {
                                             visitType = "search_VSTS";
                                         }
                                     }
