@@ -7,6 +7,7 @@
 [![Read Me Synchronizer](https://img.shields.io/badge/-powered%20by%20read%20me%20synchronizer-brightgreen.svg)](https://github.com/GregTrevellick/ReadMeSynchronizer)
 <!-- Powered by https://github.com/GregTrevellick/ReadMeSynchronizer -->
 
+**[Subscribe](https://github.com/GregTrevellick/VisualStudioMarketplaceMetrics/subscription) to receive notificatons.**
 [![BetterCodeHub compliance](https://bettercodehub.com/edge/badge/GregTrevellick/VisualStudioMarketplaceMetrics?branch=master)](https://bettercodehub.com/results/GregTrevellick/VisualStudioMarketplaceMetrics)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7e6f7c8bd4d240398affcd2202b84fd8)](https://www.codacy.com/project/gtrevellick/VisualStudioMarketplaceMetrics/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GregTrevellick/VisualStudioMarketplaceMetrics&amp;utm_campaign=Badge_Grade_Dashboard)
 [![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/VisualStudioMarketplaceMetrics/badge)](https://www.codefactor.io/repository/github/GregTrevellick/VisualStudioMarketplaceMetrics)
