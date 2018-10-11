@@ -4,8 +4,8 @@
 # Visual Studio Marketplace Metrics
 
 <!--BadgesSTART-->
-[![Read Me Synchronizer](https://img.shields.io/badge/-powered%20by%20read%20me%20synchronizer-brightgreen.svg)](https://github.com/GregTrevellick/ReadMeSynchronizer)
-<!-- Powered by https://github.com/GregTrevellick/ReadMeSynchronizer -->
+[![Read Me Synchronizer](https://img.shields.io/badge/-powered%20by%20read%20me%20synchronizer-brightgreen.svg)](https://github.com/undefined/ReadMeSynchronizer)
+<!-- Powered by https://github.com/undefined/ReadMeSynchronizer -->
 
 [Subscribe](https://github.com/GregTrevellick/VisualStudioMarketplaceMetrics/subscription) to receive notificatons.
 
